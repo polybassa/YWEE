@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(html?|php)\ HTTP/
+    RewriteRule ^index\.(html?|php)$ http://pts.tatzel.cc/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /404\.php\ HTTP/
+    RewriteRule ^404\.php$ http://pts.tatzel.cc/ [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^tatzel.cc [NC]
+    RewriteRule ^(.*)$ http://pts.tatzel.cc/$1 [L,R=301]
+
+# Ging bei mir nicht
+#ExpiresActive on
+#    ExpiresDefault “access plus 2 days”
+
+<FilesMatch "^\." >
+    deny from all
+</FilesMatch>
+
+ErrorDocument 404 /404.php
