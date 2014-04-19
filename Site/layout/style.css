@@ -33,6 +33,7 @@ h2
     font-size:20px;
     font-weight: normal;
     margin:0;
+    text-shadow: #c0c0c0 3px 3px 5px;
 }
 
 img.download {vertical-align:middle;}
@@ -44,6 +45,9 @@ img.download {vertical-align:middle;}
     margin-bottom: 10px;
     margin: 0 auto;
     background-color: #e1ddd9;
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc;
 }
 
 /* ----------banner for logo-------------- */

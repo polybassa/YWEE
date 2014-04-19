@@ -1,5 +1,5 @@
 <?php
-//include("/scripts/counter.php");
+//include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
 
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 

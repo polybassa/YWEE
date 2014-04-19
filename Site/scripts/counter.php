@@ -7,12 +7,9 @@ session_start();
 /* Session basierter Counter Idee mit PDO (getestet) -- Daniel Tatzel */
 /* PDO muss erst noch weiter angeschaut werden, hat aber bereits bei der lokalen DB funktioniert */
 
-echo "Inhalt ".$_SESSION['counter_ip']."-";
-$_SESSION['counter_ip'] = true;
-echo "Inhalt ".$_SESSION['counter_ip']."-";
-if ( isset( $_SESSION['counter_ip'] ) )
+if ( !isset( $_SESSION['counter_ip'] ) )
 {
-    /* Verbindung aufbauen */
+    // Verbindung aufbauen
     $dsn = 'mysql:dbname=uni;host=127.0.0.1';
     $user = 'dekan';
     $pass = 'passwd';
@@ -38,4 +35,5 @@ if ( isset( $_SESSION['counter_ip'] ) )
     
     //print_r($result);
 }
+
 ?> 
