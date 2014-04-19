@@ -8,14 +8,31 @@
     <br>
     <br>
     Nur mal damit was da steht :D<br>
-    <form method="POST" action="index.php">
-        <input type="text" name="username" value="Benutzername">
-        <input type="text" name="passwd" value="Passwort">
-        <input type="submit" name="login" value="Login">
-    </form>
+    <?php
+        
+        echo "Session-ID: ".session_id()."<br>";
+        echo "counter-ip: ".$_SESSION['counter_ip']."<br>";
+        echo "Logged-in: ".$_SESSION['logged-in']."<br>";
+        
+        if ( !isset( $_SESSION['logged-in'] ) )
+        {
+            echo '<form method="POST" action="">
+                <input type="text" name="username" value="Benutzername">
+                <input type="password" name="passwd" value="Passwort">
+                <input type="hidden" name="PHPSESSID" value="'.session_id().'">
+                <input type="submit" name="login" value="Login">
+            </form>';
+        }
+        else
+        {
+            echo '<form method="POST" action="">
+                <input type="hidden" name="PHPSESSID" value="'.session_id().'">
+                <input type="submit" name="logout" value="Logout">
+            </form>';
+        }
+    ?>
     
     <br>
-    
     <form method="POST" action="index.php">
         <input type="text" name="search" value="Suche">
         <input type="submit" name="search" value="Suchen">

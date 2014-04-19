@@ -1,5 +1,6 @@
 <?php
-//include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
+include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
+include("$_SERVER[DOCUMENT_ROOT]/scripts/login.php");   // Bleibt vorerst so, muesste mit AJAX implementiert werden
 
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 
@@ -11,8 +12,12 @@ include("$_SERVER[DOCUMENT_ROOT]/layout/nav.php");      // Inkludiert die Naviga
 include("$_SERVER[DOCUMENT_ROOT]/layout/leftbar.php");  // Inkludiert den linken Balken
 include("$_SERVER[DOCUMENT_ROOT]/layout/rightbar.php"); // Inkludiert den rechten Balken
 
+// $_POST Debug
+//print_r($_POST);
+
 // Inhalt von: Daniel Tatzel
 ?>
+
 
 <h2>Inhalt</h2>
 

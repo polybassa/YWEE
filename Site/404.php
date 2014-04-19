@@ -1,5 +1,6 @@
 <?php
-//include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
+include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
+include("$_SERVER[DOCUMENT_ROOT]/scripts/login.php");   // Bleibt vorerst so, muesste mit AJAX implementiert werden
 
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 
