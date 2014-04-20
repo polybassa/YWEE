@@ -5,13 +5,13 @@ session_start();
 
 /* Session basierter Counter Idee mit PDO (getestet) -- Daniel Tatzel */
 /* PDO muss erst noch weiter angeschaut werden, hat aber bereits bei der lokalen DB funktioniert */
-include("ConToDB.php");
+//include("ConToDB.php");
 
 if ( !isset( $_SESSION['counter_ip'] ) )
 {
 
     $_SESSION['counter_ip'] = true;
-
+/*
     // Baue Verbindung auf
     $dbConnection = ConnectToDB();
     
@@ -30,7 +30,7 @@ if ( !isset( $_SESSION['counter_ip'] ) )
     
     
     //print_r($result);
-
+*/
 
 }
 
