@@ -1,16 +1,19 @@
 <?php
+    // Autor von ConnectToDB(): Daniel Tatzel
+    // Baut die Verbindung zur lokalen Datenbank mittels PDO auf
+    function ConnectToDB()
+    {
+        // Verbindung aufbauen
 
-function ConnectToDB()
-{
-    // Verbindung aufbauen
-    $dsn = 'mysql:dbname=uni;host=127.0.0.1';
-    $user = 'dekan';
-    $pass = 'passwd';
+        // Da ich keine Benutzerdaten auf Git hochladen will, da es nicht privat ist, muesst ihr diese auf dem Server lassen!!!!!
+        $dsn = 'mysql:dbname=;host=127.0.0.1';
+        $user = '';
+        $pass = '';
 
-    // Baue Verbindung auf
-    $dbConnection = new PDO($dsn, $user, $pass);
-    
-    return $dbConnection;
-}
+        // Baue Verbindung auf
+        $dbConnection = new PDO($dsn, $user, $pass);
+        
+        return $dbConnection;
+    }
 
 ?>
