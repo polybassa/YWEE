@@ -1,4 +1,6 @@
 <?php
+include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/ConToDB.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/StaticDBFuncs.php");
 include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
 include("$_SERVER[DOCUMENT_ROOT]/scripts/login.php");   // Bleibt vorerst so, muesste mit AJAX implementiert werden
 

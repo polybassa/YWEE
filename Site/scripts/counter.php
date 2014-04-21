@@ -11,7 +11,7 @@ if ( !isset( $_SESSION['counter_ip'] ) )
 {
 
     $_SESSION['counter_ip'] = true;
-/*
+
     // Baue Verbindung auf
     $dbConnection = ConnectToDB();
     
@@ -20,17 +20,17 @@ if ( !isset( $_SESSION['counter_ip'] ) )
 
     $query = $dbConnection->prepare("update Counter set number = number + 1");
     $query->execute();
-
-    $query = $dbConnection->prepare("select * from Studenten;");
+    
+    /* In StaticDBFuncs definiert
+    $query = $dbConnection->prepare("select * from Counter;");
     $query->execute();
 
     $result = $query->fetch(PDO::FETCH_LAZY);
 
     echo "Counter: ".$result["MatrNr"]."<br>";
-    
+    */
     
     //print_r($result);
-*/
 
 }
 

@@ -7,7 +7,7 @@
     Map
     <br>
     <br>
-    Nur mal damit was da steht :D<br>
+    Nur mal damit was da steht :D<br><br>
     <?php
         
         echo "Session-ID: ".session_id()."<br>";

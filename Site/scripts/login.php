@@ -4,7 +4,7 @@
     
     if ( !isset( $_SESSION['logged-in'] ) && isset($_POST['login'] ) )
     {
-        /* Vorerst auskommentiert, da die DB noch nicht existiert
+        // Vorerst auskommentiert, da die DB noch nicht existiert
 
         //include("ConToDB.php");
         // Datenbank Ueberpruefung ob Passwort korrekt ist muss noch eingebaut werden
@@ -21,8 +21,7 @@
 
         $result = $query->fetch(PDO::FETCH_LAZY);
         
-        if ( $query->rowCount() > 0 && $result["passwd"] == $_POST['passwd'] )  // Evtl muss $_POST['passwd'] noch verschluesselt werden
-        */
+        if ( $query->rowCount() > 0 && $result["passwd"] == $_POST['passwd'] )  // $_POST['passwd'] muss noch verschluesselt werden
             $_SESSION['logged-in'] = true;  // Login auf True setzen
 
     }
