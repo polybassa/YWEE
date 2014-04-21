@@ -1,4 +1,6 @@
 <?php
+    // Autor von GetCounterValue(): Daniel Tatzel
+
     function GetCounterValue()
     {
         // Baue Verbindung auf

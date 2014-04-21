@@ -9,7 +9,7 @@
     <br>
     Nur mal damit was da steht :D<br><br>
     <?php
-        
+        // Autor des PHP-Abschnitts: Daniel Tatzel
         echo "Session-ID: ".session_id()."<br>";
         echo "counter-ip: ".$_SESSION['counter_ip']."<br>";
         echo "Logged-in: ".$_SESSION['logged-in']."<br>";

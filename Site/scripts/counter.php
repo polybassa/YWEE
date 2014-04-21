@@ -3,7 +3,8 @@ session_set_cookie_params(10800);
 session_start();
 /* ^ Muss direkt am anfang stehen vor allem anderen!! */
 
-/* Session basierter Counter Idee mit PDO (getestet) -- Daniel Tatzel */
+// Autor des Sessionbasierten Counters: Daniel Tatzel
+
 /* PDO muss erst noch weiter angeschaut werden, hat aber bereits bei der lokalen DB funktioniert */
 //include("ConToDB.php");
 

@@ -1,5 +1,6 @@
 <?php
-
+    // Autor von ConnectToDB(): Daniel Tatzel
+    
     function ConnectToDB()
     {
         // Verbindung aufbauen
