@@ -10,9 +10,10 @@
     Nur mal damit was da steht :D<br><br>
     <?php
         // Autor des PHP-Abschnitts: Daniel Tatzel
-        echo "Session-ID: ".session_id()."<br>";
-        echo "counter-ip: ".$_SESSION['counter_ip']."<br>";
-        echo "Logged-in: ".$_SESSION['logged-in']."<br>";
+        // Gibt entsprechendes Formular aus, je nachdem, ob der Nutzer angemeldet ist oder nicht
+        echo "Session-ID: ".session_id()."<br>";            // Debug Info
+        echo "counter-ip: ".$_SESSION['counter_ip']."<br>"; // Debug Info
+        echo "Logged-in: ".$_SESSION['logged-in']."<br>";   // Debug Info
         
         if ( !isset( $_SESSION['logged-in'] ) )
         {

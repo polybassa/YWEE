@@ -1,12 +1,11 @@
 <?php
     // Autor von GetCounterValue(): Daniel Tatzel
-
+    // Holt sich den aktuellen Wert des Counters aus der DB mittels PDO und gibt ihn zurueck
     function GetCounterValue()
     {
         // Baue Verbindung auf
         $dbConnection = ConnectToDB();
         
-        // Set the case in which to return column_names.
         $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
         $query = $dbConnection->prepare("select * from Counter;");

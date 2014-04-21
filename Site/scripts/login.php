@@ -1,18 +1,11 @@
 <?php
     // Autor: Daniel Tatzel
-    // Grob getestet
-    
+    // Prueft ob der Benutzer die richtigen Anmeldedaten eingegeben hat beim Login oder ob er sich abmelden will
     if ( !isset( $_SESSION['logged-in'] ) && isset($_POST['login'] ) )
     {
-        // Vorerst auskommentiert, da die DB noch nicht existiert
-
-        //include("ConToDB.php");
-        // Datenbank Ueberpruefung ob Passwort korrekt ist muss noch eingebaut werden
-        
         // Baue Verbindung auf
         $dbConnection = ConnectToDB();
         
-        // Set the case in which to return column_names.
         $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
         $query = $dbConnection->prepare("select * from login where username = :user");
@@ -27,6 +20,6 @@
     }
     else if ( isset( $_SESSION['logged-in'] ) && isset($_POST['logout'] ) )
     {
-        $_SESSION['logged-in'] = NULL;  // Login auf NULL setzen
+        $_SESSION['logged-in'] = NULL;  // Login auf NULL setzen, damit es mit isset() funktioniert
     }
 ?>

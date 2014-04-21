@@ -1,6 +1,6 @@
 <?php
     // Autor von ConnectToDB(): Daniel Tatzel
-    
+    // Baut die Verbindung zur lokalen Datenbank mittels PDO auf
     function ConnectToDB()
     {
         // Verbindung aufbauen

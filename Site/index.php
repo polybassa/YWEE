@@ -1,12 +1,11 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/ConToDB.php");
-include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/StaticDBFuncs.php");
-include("$_SERVER[DOCUMENT_ROOT]/scripts/counter.php");
-include("$_SERVER[DOCUMENT_ROOT]/scripts/login.php");   // Bleibt vorerst so, muesste mit AJAX implementiert werden
-
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
-
 // Muss in der Reihenfolge bleiben
+include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/StaticDBFuncs.php"); // Inkludiert statische DB Funktionen
+include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/counter.php");       // Inkludiert den Counter Script
+include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
+
 $titel = "Die Tutoren Agentur"; // Name der Seite die im Browser angezeigt werden soll
 
 include("$_SERVER[DOCUMENT_ROOT]/layout/header.php");   // Inkludiert den Header
