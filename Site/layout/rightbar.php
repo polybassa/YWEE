@@ -14,20 +14,24 @@
         echo "Session-ID: ".session_id()."<br>";            // Debug Info
         echo "counter-ip: ".$_SESSION['counter_ip']."<br>"; // Debug Info
         echo "Logged-in: ".$_SESSION['logged-in']."<br>";   // Debug Info
-        
+
+        if ( $StatusCodeError)
+            echo '<form method="POST" action="index.php">';
+        else
+            echo '<form method="POST" action="">';
+            
         if ( !isset( $_SESSION['logged-in'] ) )
         {
-            echo '<form method="POST" action="">
-                <input type="text" name="username" value="Benutzername">
+            echo '<input type="text" name="username" value="Benutzername">
                 <input type="password" name="passwd" value="Passwort">
                 <input type="hidden" name="PHPSESSID" value="'.session_id().'">
                 <input type="submit" name="login" value="Login">
+                <input type="submit" name="register" value="Registrieren">
             </form>';
         }
         else
         {
-            echo '<form method="POST" action="">
-                <input type="hidden" name="PHPSESSID" value="'.session_id().'">
+            echo '<input type="hidden" name="PHPSESSID" value="'.session_id().'">
                 <input type="submit" name="logout" value="Logout">
             </form>';
         }

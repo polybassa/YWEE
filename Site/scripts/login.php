@@ -8,13 +8,14 @@
         
         $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
-        $query = $dbConnection->prepare("select * from login where username = :user");
+        $query = $dbConnection->prepare("select * from login where username = :user and passwd = :pass");
         $query->bindParam(":user",$_POST['username']);
+        $query->bindParam(":pass", md5( $_POST['passwd'] ) );
         $query->execute();
 
         $result = $query->fetch(PDO::FETCH_LAZY);
         
-        if ( $query->rowCount() > 0 && $result["passwd"] == $_POST['passwd'] )  // $_POST['passwd'] muss noch verschluesselt werden
+        if ( $query->rowCount() > 0 )  // Falls ein Eintrag vorhanden ist, dann war der Login erfolgreich
             $_SESSION['logged-in'] = true;  // Login auf True setzen
 
     }
@@ -22,4 +23,7 @@
     {
         $_SESSION['logged-in'] = NULL;  // Login auf NULL setzen, damit es mit isset() funktioniert
     }
+    
+    if ( isset($_POST['register'] ) )
+        CreateUser();
 ?>
