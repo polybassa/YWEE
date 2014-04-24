@@ -25,5 +25,5 @@
     }
     
     if ( isset($_POST['register'] ) )
-        include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/CreateUser.php");       // Inkludiert den Counter Script
+        include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/CreateUser.php");       // Inkludiert das CreateUser Script
 ?>
