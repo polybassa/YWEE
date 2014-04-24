@@ -1,0 +1,279 @@
+\documentclass[10pt,a4paper]{scrartcl}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\begin{document}
+
+\begin{center}
+%\includegraphics{SAD_Titelblatt_v11.png}
+\end{center}
+
+%\begin{table}[h]
+%	\hspace{2.5cm} \begin{tabular}{|r|l|p{10cm}} 
+%	\hline
+%	Projekt: &  Tutorenwebseite \\ \hline
+%	Team No.: & 2 \\ 
+%	\hline
+%	Class: & Web Engineering \\
+%	Modul: & System Requirements Analysis (SRA) \\
+%	Dokumententyp: & SRA Document \\
+%	\hline
+%	\end{tabular}
+%	\caption{Version: 1.0, Datum: \today}
+%\end{table}
+
+\newpage
+\begin{itemize}
+\item[] \textbf{\large Beitragende:}\\
+Sven Liebl\\
+Matthias Goetz\\
+Christian Dauerer\\
+Maxmilian Schröter\\
+Stefan Holz\\
+Viet Nguyen\\
+Daniel Tatzel\\
+Nils Weiss\\
+Florian Laufenböck\\
+Alexander Strobl\\
+Matthias Birnthaler\\
+Tobias Schwindl
+\end{itemize}
+
+\bigskip
+
+\begin{table}[!h]
+ 	\centering
+	\begin{tabular}{|c|c|c|c||c|} 
+	\hline
+	\textbf{VersionsNr} &  \textbf{Datum} & \textbf{Auslöser} & \textbf{Veränderungsgrad} & \textbf{Beschreibung} \\
+	\hline
+	1.0 & 23.04.2014 & I-wer & Erster Entwurf & First Draft \\
+	\hline
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	\hline
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	\hline
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	\hline
+	\end{tabular}
+
+\caption{Überarbeitungshistorie}
+\end{table}
+
+\newpage
+\tableofcontents
+\listoftables
+
+\newpage
+\section{3: Software Architecture}
+%und alle anderen Diagramme!!
+\subsection{Kontextdiagramm 1}
+\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf}
+\subsection{Kontextdiagramm 2}
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_11.pdf}}
+
+\section{4: Systems Requirement}
+
+\subsection{F1: Öffentlicher Bereich}
+\begin{itemize}
+\item[] \textbf{F11: Startseite} \\
+
+Matthias G. und Sven
+
+Informiert den Besucher über das Auswahlkonzept bzw. $-$kriterien der Tutoren. Ebenfalls wird eine Karte mit den Standorten von Tutoren in Deutschland implementiert. Ein Teaser über das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse fördern. Durch die Anzeige von Top Gästebucheinträgen wird dem Gast das Gefühl der Vertrauenswürdigkeit und der Kompetenz übermittelt. 
+
+\item[] \textbf{F12: Gästebuch}\\
+
+Backend
+
+Im Gästebuch können die Besucher ihre Kommentare bzw. Bewertungen über den Service hinterlassen. Bevor es aber endgültig im Gästebuch erscheint, muss es vom Administrator freigegeben werden, um Falschaussagen zu vermeiden. 
+
+\item[] \textbf{F13: Anzeige von verfügbaren Tutoren in der Nähe}\\
+
+Stefan und Viet
+
+Anhand einer Postleitzahlsuche ist im Voraus überprüfbar, ob Tutoren in der Nähe zu finden sind.
+
+\item[] \textbf{F14: Erweiterte Suchkriterien}\\
+
+Backend
+
+Beinhalten die Suche der gewünschten Schulart, Fach, Klasse, Preis und die maximale Fahrzeit zwischen Tutoren und Schülern. 
+
+\item[] \textbf{F15: Registrierungs- und Anmeldefenster}\\
+
+Backend
+
+Um den kompletten Serviceumfang ausnutzen zu können, ist eine Anmeldung bzw. Registrierung nötig.
+
+\item[] \textbf{F16: About us (Impressum)}\\
+
+Alex
+
+Das Impressum enthält folgende Informationen: Firma, Straße, Postleitzahl, Ort, Telefonnummer, E-Mailadresse, Internetadresse, Vertretungsberechtigter, \\ Geschäftsführer, Inhaltlich Verantwortlicher und Haftungshinweis. 
+
+\item[] \textbf{F17: Preismodell/Zahlungsinfos}\\
+
+Statisch, irgendwer
+
+Informiert vorab über die Zahlungshinweise und Preise, um Irrtümer zu vermeiden.
+
+
+\item[] \textbf{F18: Auswahl der Sprache}\\
+
+Backend
+
+Dem Besucher ist es möglich, zwischen Deutsch und Englischer Sprache auszuwählen. Diese Option unterstützt die Benutzerfreundlichkeit für Besucher außerhalb des deutschsprachigen Raumes. 
+
+\item[] \textbf{F19: Support und Kontaktdaten}\\
+
+Alex
+
+Persönliche Hilfen oder Anfragen, sind an den Support zu stellen. Erreichbar ist der Support per E-Mail. 
+
+\end{itemize}
+
+
+
+\subsection{F2: Administrator}
+\begin{itemize}
+\item[] \textbf{F21: Anmelden}\\
+
+Backend
+
+Der Administrator meldet sich mit einem Nutzernamen und einem Passwort an, um den privaten Adminbereich betreten zu können.
+	
+\item[] \textbf{F22: Persönliche Einstellungen}\\
+
+Matthias G und Sven
+
+Wie jeder Nutzer verfügt der Administrator über ein persönliches Profil welches Vorname, Nachname, Geburtsdatum, Profilbild, Straße, Hausnummer, Wohnort, E-Mail, Telefon und Handynummer enthält. Die Bearbeitung und Löschung dieser Informationen ist über entsprechende Masken und Formularen zu er-möglichen.
+
+\item[] \textbf{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}\\
+
+Frontend (Tabellen Ausgabe)(Backend für Datenbank)
+
+Der Administrator hat Zugriff auf Kundendaten. Diese kann er mittels Masken und Formularen bearbeiten und löschen. Weiterhin kann er Kundenkonten löschen und hinzufügen. Des Weiteren kann er neue Admin-Accounts erstellen.
+
+\item[] \textbf{F23: Zugriff auf Nachrichtensystem}\\
+
+Backend
+
+Der Administrator kann Nachrichten an die Nutzer versenden und welche von diesen erhalten. Ungelesene Nachrichten werden angezeigt. 
+
+\item[] \textbf{F24: Freischaltung von Gästebucheinträge}\\
+
+Backend
+
+Neue Gästebucheinträge werden dem Administrator angezeigt/gemeldet und erst nach seiner Freischaltung veröffentlicht. 
+	
+\item[] \textbf{F25: Abmelden}\\
+
+Backend
+
+Der Administrator kann sich abmelden und es stehen ihm nur noch die Funktionalitäten des öffentlichen Bereiches zur Verfügung.
+
+\item[] \textbf{F26: Besucherzähler}\\
+
+Backend
+
+Zählt die Anzahl der der Leute, die die Seite besucht haben. Dadurch kann die Popularität der Website ermittelt werden.
+\bigskip
+
+$^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
+$^2$ Kundeninformationen: Persönliche Informationen der Kundenkonten
+\end{itemize}
+
+
+
+
+\subsection{F3: Schüler}
+\begin{itemize}\item[]Jeder Besucher hat die Möglichkeit ein Profil anzulegen und sich mit den erhaltenen Zugangsdaten einzuloggen.
+Dadurch erhält er Zugriff auf seinen Privaten Bereich, in dem er seine bei der Registrierung hinterlegten persönlichen Daten ändern kann.
+Die persönlichen Daten setzen sich aus Vorname, Nachname, Alter, Anschrift, Schultyp, Jahrgangsstufe, Passwort Kontaktdaten und Profilbild zusammen. 
+Es besteht die Option seinen Account zu löschen.
+
+\item[] \textbf{F32: Detaillierte Suche}\\
+
+Wie bei Suche oben
+
+Im Gegensatz zum nicht registrierten Besucher besitzt der Anwender die Möglichkeit einer detaillierten Suche nach folgenden Kriterien: Lehrer, Ort, Fach.
+
+\item[] \textbf{F33: Tutorprofil/Tutorbewertung}\\
+
+Matthias G und Sven
+
+Der registrierte Anwender ist berechtigt das Profil des Tutors einzusehen, das für den Anwender folgende Informationen bereit hält:
+
+\begin{itemize}
+	\item Geschlecht
+	\item Stundenlöhne 
+	\item Verfügbarkeiten 
+	\item Fächer / Jahrgangsstufen 
+	\item Verfügbare Orte / Regionen - Eintrag auf Karte
+	\item Profilbild
+	\item Kontaktdaten
+	\item Lehrerbewertung
+\end{itemize}
+	
+Er ist in der Lage das Schwarze Brett des Tutors einzusehen.
+\end{itemize}
+
+\subsection{F4: Lehrer / Mentor}
+\begin{itemize}
+\item[] \textbf{F41 Profil einstellen}\\
+
+Matthias G und Sven
+
+Der Tutor kann ein Profil erstellen, um sich kurz vorzustellen und Werbung in eigener Sache machen zu können. Schüler können ihn bewerten (z.B. Verbesserung der Note).
+
+Das Profil soll beinhalten / anbieten:
+\begin{itemize}
+	\item Geschlecht
+	\item Stundenlöhne verlangen
+	\item Verfügbarkeiten angeben
+	\item Fächer / Jahrgangsstufen einstellen
+	\item Verfügbare Orte / Regionen anbieten - Eintrag auf Karte
+	\item Zahlungsdaten zur Verfügung stellen
+	\item Sieht in einer Übersicht seine Schüler und einen Kalender mit den nächsten Terminen
+	\item Rechnungen / Zahlungserinnerungen verschicken
+	\item Profilbild
+	\item Kontaktdaten
+	\item Lehrerbewertung / Gästebuch
+\end{itemize}
+
+\item[] \textbf{F42 Lehrmaterialien online stellen und verteilen}\\
+
+Backend
+
+Er kann Dateien nach Bedarf für die Schüler per eMail verteilen.
+
+\item[] \textbf{F43 Beurteilungen schreiben}\\
+
+Stefan und Viet
+
+Der Schüler kann Feedback für seine abgegeben Aufgaben / Leistungen erhalten
+
+\item[] \textbf{F44 Schwarzes Brett}\\
+
+Stefan und Viet
+
+Der Mentor kann allgemeine Informationen hinzufügen z.B. bei Krankheit
+\end{itemize}
+
+%\section{Glossar}
+
+
+
+\end{document}
+
+
+
