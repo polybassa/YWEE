@@ -6,6 +6,6 @@
     Benutzerz&auml;hler (nur Admin)<br>
     <br>
     <br>
-    Counter: <?php echo GetCounterValue(); ?>
+    Counter: <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/GetCounterValue.php"); ?>
     </p>
 </div>
