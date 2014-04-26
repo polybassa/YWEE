@@ -13,6 +13,8 @@
     include("$_SERVER[DOCUMENT_ROOT]/layout/rightbar.php"); // Inkludiert den rechten Balken
 
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
+
+    //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
     
     // Inhalt von: Alexander Strobl
 ?>
