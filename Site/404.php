@@ -16,6 +16,8 @@
     
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
 
+    //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
+    
     // Inhalt von: Daniel Tatzel
 ?>
 

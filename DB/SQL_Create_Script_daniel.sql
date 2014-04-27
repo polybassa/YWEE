@@ -6,18 +6,18 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema pts
+-- Schema usr_web288_1
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `pts` ;
-CREATE SCHEMA IF NOT EXISTS `pts` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `pts` ;
+DROP SCHEMA IF EXISTS `usr_web288_1` ;
+CREATE SCHEMA IF NOT EXISTS `usr_web288_1` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `usr_web288_1` ;
 
 -- -----------------------------------------------------
--- Table `pts`.`gaestebuch`
+-- Table `usr_web288_1`.`gaestebuch`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`gaestebuch` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`gaestebuch` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`gaestebuch` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`gaestebuch` (
   `gaestebuch` TEXT NOT NULL,
   `benutzername` VARCHAR(45) NOT NULL,
   `autorisiert` INT UNSIGNED NULL,
@@ -27,11 +27,11 @@ COMMENT = 'Enthält alle Autorisierten und Unautorisierten Gästebucheinträge';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`mitglieder`
+-- Table `usr_web288_1`.`mitglieder`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`mitglieder` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`mitglieder` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`mitglieder` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`mitglieder` (
   `benutzername` VARCHAR(20) NOT NULL,
   `geschlecht` INT NULL,
   `vorname` VARCHAR(45) NULL,
@@ -54,11 +54,11 @@ COMMENT = 'Enthält alle persönlichen Daten eines jeden Mitglieds';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`login`
+-- Table `usr_web288_1`.`login`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`login` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`login` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`login` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`login` (
   `benutzername` VARCHAR(20) NOT NULL,
   `passwort` VARCHAR(32) NULL,
   `rolle` INT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `pts`.`login` (
   INDEX `Rolle` (`rolle` ASC),
   CONSTRAINT `fk_login_mitglieder1`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`mitglieder` (`benutzername`)
+    REFERENCES `usr_web288_1`.`mitglieder` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -74,17 +74,17 @@ COMMENT = 'Enthält die Benutzernamen und Passwörter (in MD5)';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`profilbild`
+-- Table `usr_web288_1`.`profilbild`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`profilbild` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`profilbild` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`profilbild` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`profilbild` (
   `benutzername` VARCHAR(20) NOT NULL,
   `bild` BLOB NULL,
   PRIMARY KEY (`benutzername`),
   CONSTRAINT `fk_profilbild_mitglieder1`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`mitglieder` (`benutzername`)
+    REFERENCES `usr_web288_1`.`mitglieder` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -92,11 +92,11 @@ COMMENT = 'Speichert die Profilbilder';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`nachrichten`
+-- Table `usr_web288_1`.`nachrichten`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`nachrichten` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`nachrichten` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`nachrichten` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`nachrichten` (
   `benutzername` VARCHAR(20) NOT NULL COMMENT '\"an\"',
   `von` VARCHAR(20) NOT NULL,
   `zeit` DATETIME NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `pts`.`nachrichten` (
   PRIMARY KEY (`benutzername`, `von`, `zeit`),
   CONSTRAINT `fk_nachrichten_mitglieder`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`mitglieder` (`benutzername`)
+    REFERENCES `usr_web288_1`.`mitglieder` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -113,22 +113,22 @@ COMMENT = 'Enthält alle Nachrichten aller Nutzer.';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`besucherzaehler`
+-- Table `usr_web288_1`.`besucherzaehler`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`besucherzaehler` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`besucherzaehler` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`besucherzaehler` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`besucherzaehler` (
   `zaehler` INT UNSIGNED NOT NULL)
 ENGINE = InnoDB
 COMMENT = 'Besucherzähler';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`tutoren`
+-- Table `usr_web288_1`.`tutoren`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`tutoren` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`tutoren` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`tutoren` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`tutoren` (
   `benutzername` VARCHAR(20) NOT NULL,
   `umkreis` INT UNSIGNED NULL,
   `stundenlohn` INT UNSIGNED NULL,
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `pts`.`tutoren` (
   PRIMARY KEY (`benutzername`),
   CONSTRAINT `fk_tutoren_mitglieder1`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`mitglieder` (`benutzername`)
+    REFERENCES `usr_web288_1`.`mitglieder` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -145,17 +145,17 @@ COMMENT = 'Tutoren samt Informationen.';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`verfuegbarkeit`
+-- Table `usr_web288_1`.`verfuegbarkeit`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`verfuegbarkeit` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`verfuegbarkeit` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`verfuegbarkeit` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`verfuegbarkeit` (
   `benutzername` VARCHAR(20) NOT NULL,
   `zeitraum` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`benutzername`, `zeitraum`),
   CONSTRAINT `fk_verfuegbarkeit_tutoren1`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`tutoren` (`benutzername`)
+    REFERENCES `usr_web288_1`.`tutoren` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -163,18 +163,18 @@ COMMENT = 'Enthält die Verfügbarkeiten der einzelnen Tutoren.';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`leistung`
+-- Table `usr_web288_1`.`leistung`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`leistung` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`leistung` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`leistung` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`leistung` (
   `benutzername` VARCHAR(20) NOT NULL,
   `fach` VARCHAR(30) NOT NULL,
   `stufen` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`benutzername`, `fach`, `stufen`),
   CONSTRAINT `fk_leistung_tutoren1`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`tutoren` (`benutzername`)
+    REFERENCES `usr_web288_1`.`tutoren` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -182,18 +182,18 @@ COMMENT = 'Enthält die Leistungen eines Tutors.';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`schwarzesbrett`
+-- Table `usr_web288_1`.`schwarzesbrett`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`schwarzesbrett` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`schwarzesbrett` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`schwarzesbrett` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`schwarzesbrett` (
   `benutzername` VARCHAR(45) NOT NULL,
   `zeit` DATETIME NOT NULL,
   `nachricht` TEXT NULL,
   PRIMARY KEY (`benutzername`, `zeit`),
   CONSTRAINT `fk_schwarzesbrett_tutoren1`
     FOREIGN KEY (`benutzername`)
-    REFERENCES `pts`.`tutoren` (`benutzername`)
+    REFERENCES `usr_web288_1`.`tutoren` (`benutzername`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -201,11 +201,11 @@ COMMENT = 'Schwarzes Brett der Tutoren.';
 
 
 -- -----------------------------------------------------
--- Table `pts`.`news`
+-- Table `usr_web288_1`.`news`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `pts`.`news` ;
+DROP TABLE IF EXISTS `usr_web288_1`.`news` ;
 
-CREATE TABLE IF NOT EXISTS `pts`.`news` (
+CREATE TABLE IF NOT EXISTS `usr_web288_1`.`news` (
   `benutzername` VARCHAR(20) NOT NULL,
   `zeit` DATETIME NOT NULL,
   `nachricht` TEXT NULL,
@@ -213,61 +213,38 @@ CREATE TABLE IF NOT EXISTS `pts`.`news` (
 ENGINE = InnoDB
 COMMENT = 'Newsticker';
 
-USE `pts` ;
-
--- -----------------------------------------------------
--- Placeholder table for view `pts`.`suche`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pts`.`suche` (`id` INT);
-
--- -----------------------------------------------------
--- View `pts`.`suche`
--- -----------------------------------------------------
-DROP VIEW IF EXISTS `pts`.`suche` ;
-DROP TABLE IF EXISTS `pts`.`suche`;
-USE `pts`;
-CREATE  OR REPLACE VIEW `suche` AS 
-	(select m.benutzername, m.Wohnort, t.umkreis, t.stundenlohn, t.bewertung, l.fach, l.stufen  
-		from tutoren t join leistung l join mitglieder m);
-
-SET SQL_MODE = '';
-GRANT USAGE ON *.* TO ptsadmin@localhost;
- DROP USER ptsadmin@localhost;
-SET SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-CREATE USER 'ptsadmin'@'localhost' IDENTIFIED BY 'geheim';
-
-GRANT ALL ON `pts`.* TO 'ptsadmin'@'localhost';
+USE `usr_web288_1` ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `pts`.`mitglieder`
+-- Data for table `usr_web288_1`.`mitglieder`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `pts`;
-INSERT INTO `pts`.`mitglieder` (`benutzername`, `geschlecht`, `vorname`, `nachname`, `geburtsdatum`, `wohnort`, `strasse`, `hausnummer`, `hnrzusatz`, `email`, `telefon`, `handy`, `sprache`, `rolle`) VALUES ('admin', 1, 'Daniel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'deutsch', 0);
+USE `usr_web288_1`;
+INSERT INTO `usr_web288_1`.`mitglieder` (`benutzername`, `geschlecht`, `vorname`, `nachname`, `geburtsdatum`, `wohnort`, `strasse`, `hausnummer`, `hnrzusatz`, `email`, `telefon`, `handy`, `sprache`, `rolle`) VALUES ('admin', 1, 'Daniel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'deutsch', 0);
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `pts`.`login`
+-- Data for table `usr_web288_1`.`login`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `pts`;
-INSERT INTO `pts`.`login` (`benutzername`, `passwort`, `rolle`) VALUES ('admin', 'e8636ea013e682faf61f56ce1cb1ab5c', 1);
+USE `usr_web288_1`;
+INSERT INTO `usr_web288_1`.`login` (`benutzername`, `passwort`, `rolle`) VALUES ('admin', 'e8636ea013e682faf61f56ce1cb1ab5c', 1);
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `pts`.`besucherzaehler`
+-- Data for table `usr_web288_1`.`besucherzaehler`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `pts`;
-INSERT INTO `pts`.`besucherzaehler` (`zaehler`) VALUES (0);
+USE `usr_web288_1`;
+INSERT INTO `usr_web288_1`.`besucherzaehler` (`zaehler`) VALUES (0);
 
 COMMIT;
 
