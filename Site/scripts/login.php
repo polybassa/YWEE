@@ -1,7 +1,10 @@
 <?php
     // Autor von login.php: Daniel Tatzel
     // Prueft ob der Benutzer die richtigen Anmeldedaten eingegeben hat beim Login oder ob er sich abmelden will
-    if ( !isset( $_SESSION['logged-in'] ) && isset($_POST['login'] ) )
+
+    //include($_SERVER["DOCUMENT_ROOT"] . "/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+    
+    if ( !isset( $_SESSION['logged-in'] ) /*&& isset($_POST['login'] )*/ )
     {
         // Baue Verbindung auf
         $dbConnection = ConnectToDB();
@@ -21,7 +24,11 @@
 
             if ( $result["rolle"] == 1 )
                 $_SESSION['admin'] = true;
+
+            echo 'Sie sind angemeldet!<br>';
         }
+        else
+            echo 'Anmeldung Fehlgeschlagen!<br>';
 
     }
     else if ( isset( $_SESSION['logged-in'] ) && isset($_POST['logout'] ) )
