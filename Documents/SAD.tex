@@ -11,24 +11,7 @@
 \usepackage[ngerman]{babel}
 
 \begin{document}
-
-\begin{center}
-%\includegraphics{SAD_Titelblatt_v11.png}
-\end{center}
-
-%\begin{table}[h]
-%	\hspace{2.5cm} \begin{tabular}{|r|l|p{10cm}} 
-%	\hline
-%	Projekt: &  Tutorenwebseite \\ \hline
-%	Team No.: & 2 \\ 
-%	\hline
-%	Class: & Web Engineering \\
-%	Modul: & System Requirements Analysis (SRA) \\
-%	Dokumententyp: & SRA Document \\
-%	\hline
-%	\end{tabular}
-%	\caption{Version: 1.0, Datum: \today}
-%\end{table}
+\includepdf{SAD_Titelseite.pdf}
 
 \newpage
 \begin{itemize}
@@ -83,105 +66,109 @@ Tobias Schwindl
 \section{4: Systems Requirement}
 
 \subsection{F1: Öffentlicher Bereich}
-\begin{itemize}
-\item[] \textbf{F11: Startseite} \\
-
+\subsubsection*{F11: Startseite}
 Matthias G. und Sven
 
 Informiert den Besucher über das Auswahlkonzept bzw. $-$kriterien der Tutoren. Ebenfalls wird eine Karte mit den Standorten von Tutoren in Deutschland implementiert. Ein Teaser über das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse fördern. Durch die Anzeige von Top Gästebucheinträgen wird dem Gast das Gefühl der Vertrauenswürdigkeit und der Kompetenz übermittelt. 
 
-\item[] \textbf{F12: Gästebuch}\\
+\subsubsection*{F12: Gästebuch}
 
 Backend
 
 Im Gästebuch können die Besucher ihre Kommentare bzw. Bewertungen über den Service hinterlassen. Bevor es aber endgültig im Gästebuch erscheint, muss es vom Administrator freigegeben werden, um Falschaussagen zu vermeiden. 
 
-\item[] \textbf{F13: Anzeige von verfügbaren Tutoren in der Nähe}\\
+\subsubsection*{F13: Anzeige von verfügbaren Tutoren in der Nähe}
 
 Stefan und Viet
 
 Anhand einer Postleitzahlsuche ist im Voraus überprüfbar, ob Tutoren in der Nähe zu finden sind.
 
-\item[] \textbf{F14: Erweiterte Suchkriterien}\\
+\subsubsection*{F14: Erweiterte Suchkriterien}
 
 Backend
 
 Beinhalten die Suche der gewünschten Schulart, Fach, Klasse, Preis und die maximale Fahrzeit zwischen Tutoren und Schülern. 
 
-\item[] \textbf{F15: Registrierungs- und Anmeldefenster}\\
+\subsubsection*{F15: Registrierungs- und Anmeldefenster}
 
-Backend
+Die Registrierung erfolt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen.
+Das OnlineFormular ist im \underline{HTML5} standard geschrieben, um gleich Validierungen der Eingaben durchführen zu können, 
+ohne die Informationen erst zum Server schicken zu müssen. 
+Eingaben, die eindeutig sein sollen(wie z.B. der Benutzername) werden während der Eingabe mittels \underline{AJAX,JAVASCRIPT} 
+zum Server geschickt und dort überprüft, sodass der Benutzer sofort erfährt(ohne auf einen Button klicken zu müssen), ob dieser Benutzername schon vergeben ist. Wenn alle Daten eingegeben wurden, die Validierungen erfolgreich waren, klickt der Benutzer auf einen Button und schickt die Daten damit zum Server. Dort werden die Daten mittels \underline{PHP} zur \underline{Datenbank} geschickt, um dort gespeichert zu werden.
 
-Um den kompletten Serviceumfang ausnutzen zu können, ist eine Anmeldung bzw. Registrierung nötig.
-
-\item[] \textbf{F16: About us (Impressum)}\\
+\subsubsection*{F16: About us (Impressum)}
 
 Alex
 
 Das Impressum enthält folgende Informationen: Firma, Straße, Postleitzahl, Ort, Telefonnummer, E-Mailadresse, Internetadresse, Vertretungsberechtigter, \\ Geschäftsführer, Inhaltlich Verantwortlicher und Haftungshinweis. 
 
-\item[] \textbf{F17: Preismodell/Zahlungsinfos}\\
+\subsubsection*{F17: Preismodell/Zahlungsinfos}
 
 Statisch, irgendwer
 
 Informiert vorab über die Zahlungshinweise und Preise, um Irrtümer zu vermeiden.
 
+\subsubsection*{F18: Auswahl der Sprache}
 
-\item[] \textbf{F18: Auswahl der Sprache}\\
+Die Auswahl der Sprache erfolgt über eine \underline{Serverseitige} \underline{Sessionvariable}, mit Hilfe derer 
+die Serverseitig eingesetzte Skriptsprache \underline{PHP} sich über den gesamten Verlauf der Interaktion mit dem User "merken" kann,
+welche Sprache der User benutzen will. Alternativ kann ein zusätzliches \underline{Feld} in der \underline{Datenbank} für die 
+Sprache reserviert werden, womit bei jedem neuen Einloggen des Benutzers die Sprache automatisch ausgewählt wird. Sollte der Benutzer
+die Sprache dann doch einmal ändern, wird diese Änderung unverzüglich in die \underline{Datenbank} geschrieben.
+Umgesetzt wird das erstellen des Formulars so umgesetzt:
+\begin{itemize}
+ \item Für jeden Teil der Seite gibt es eine Vorlage in den Sprachen(z.B. Impressum)
+ \item \underline{PHP} wählt dann zur Laufzeit aus, welche Elemente der Seite in der Sprache geladen werden muss
+ \item und fügt alle Elemente mit Hilfe einer leeren "Dummy"Datei zu einer, korrekten, \underline{HTML5} Datei zusammen
+ \item welche dann an den Client geschickt wird.
+\end{itemize}
 
-Backend
-
-Dem Besucher ist es möglich, zwischen Deutsch und Englischer Sprache auszuwählen. Diese Option unterstützt die Benutzerfreundlichkeit für Besucher außerhalb des deutschsprachigen Raumes. 
-
-\item[] \textbf{F19: Support und Kontaktdaten}\\
+\subsubsection*{F19: Support und Kontaktdaten}
 
 Alex
 
 Persönliche Hilfen oder Anfragen, sind an den Support zu stellen. Erreichbar ist der Support per E-Mail. 
 
-\end{itemize}
-
-
 
 \subsection{F2: Administrator}
-\begin{itemize}
-\item[] \textbf{F21: Anmelden}\\
+\subsubsection*{F21: Anmelden}
 
 Backend
 
 Der Administrator meldet sich mit einem Nutzernamen und einem Passwort an, um den privaten Adminbereich betreten zu können.
-	
-\item[] \textbf{F22: Persönliche Einstellungen}\\
+
+\subsubsection*{F22: Persönliche Einstellungen}
 
 Matthias G und Sven
 
 Wie jeder Nutzer verfügt der Administrator über ein persönliches Profil welches Vorname, Nachname, Geburtsdatum, Profilbild, Straße, Hausnummer, Wohnort, E-Mail, Telefon und Handynummer enthält. Die Bearbeitung und Löschung dieser Informationen ist über entsprechende Masken und Formularen zu er-möglichen.
 
-\item[] \textbf{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}\\
+\subsubsection*{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}
 
 Frontend (Tabellen Ausgabe)(Backend für Datenbank)
 
 Der Administrator hat Zugriff auf Kundendaten. Diese kann er mittels Masken und Formularen bearbeiten und löschen. Weiterhin kann er Kundenkonten löschen und hinzufügen. Des Weiteren kann er neue Admin-Accounts erstellen.
 
-\item[] \textbf{F23: Zugriff auf Nachrichtensystem}\\
+\subsubsection*{F24: Zugriff auf Nachrichtensystem}
 
 Backend
 
 Der Administrator kann Nachrichten an die Nutzer versenden und welche von diesen erhalten. Ungelesene Nachrichten werden angezeigt. 
 
-\item[] \textbf{F24: Freischaltung von Gästebucheinträge}\\
+\subsubsection*{F25: Freischaltung von Gästebucheinträge}
 
 Backend
 
 Neue Gästebucheinträge werden dem Administrator angezeigt/gemeldet und erst nach seiner Freischaltung veröffentlicht. 
-	
-\item[] \textbf{F25: Abmelden}\\
+
+\subsubsection*{F26: Abmelden}
 
 Backend
 
 Der Administrator kann sich abmelden und es stehen ihm nur noch die Funktionalitäten des öffentlichen Bereiches zur Verfügung.
 
-\item[] \textbf{F26: Besucherzähler}\\
+\subsubsection*{F27: Besucherzähler}
 
 Backend
 
@@ -190,24 +177,20 @@ Zählt die Anzahl der der Leute, die die Seite besucht haben. Dadurch kann die Po
 
 $^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
 $^2$ Kundeninformationen: Persönliche Informationen der Kundenkonten
-\end{itemize}
-
-
-
 
 \subsection{F3: Schüler}
-\begin{itemize}\item[]Jeder Besucher hat die Möglichkeit ein Profil anzulegen und sich mit den erhaltenen Zugangsdaten einzuloggen.
+Jeder Besucher hat die Möglichkeit ein Profil anzulegen und sich mit den erhaltenen Zugangsdaten einzuloggen.
 Dadurch erhält er Zugriff auf seinen Privaten Bereich, in dem er seine bei der Registrierung hinterlegten persönlichen Daten ändern kann.
 Die persönlichen Daten setzen sich aus Vorname, Nachname, Alter, Anschrift, Schultyp, Jahrgangsstufe, Passwort Kontaktdaten und Profilbild zusammen. 
 Es besteht die Option seinen Account zu löschen.
 
-\item[] \textbf{F32: Detaillierte Suche}\\
+\subsubsection*{F31: Detaillierte Suche}
 
 Wie bei Suche oben
 
 Im Gegensatz zum nicht registrierten Besucher besitzt der Anwender die Möglichkeit einer detaillierten Suche nach folgenden Kriterien: Lehrer, Ort, Fach.
 
-\item[] \textbf{F33: Tutorprofil/Tutorbewertung}\\
+\subsubsection*{F32: Tutorprofil/Tutorbewertung}
 
 Matthias G und Sven
 
@@ -225,11 +208,9 @@ Der registrierte Anwender ist berechtigt das Profil des Tutors einzusehen, das f
 \end{itemize}
 	
 Er ist in der Lage das Schwarze Brett des Tutors einzusehen.
-\end{itemize}
 
 \subsection{F4: Lehrer / Mentor}
-\begin{itemize}
-\item[] \textbf{F41 Profil einstellen}\\
+\subsubsection*{F41 Profil einstellen}
 
 Matthias G und Sven
 
@@ -250,24 +231,23 @@ Das Profil soll beinhalten / anbieten:
 	\item Lehrerbewertung / Gästebuch
 \end{itemize}
 
-\item[] \textbf{F42 Lehrmaterialien online stellen und verteilen}\\
+% Streichen falls möglich
+\subsubsection*{F42 Lehrmaterialien online stellen und verteilen -- Streichen falls möglich}
 
-Backend
+Jeder Schüler muss sich in Online-Kurse eintragen, bei welchem Tutor er welches Fach belegt. Der Tutor kann über einen Upload-Bereich(jquery bietet diese Möglichkeit) Dateien zum Server laden, dort werden diese in der \underline{Datenbank} gespeichert.
+Der Schüler kann sich dann die Formulare über den Browser wieder herunterladen
 
-Er kann Dateien nach Bedarf für die Schüler per eMail verteilen.
-
-\item[] \textbf{F43 Beurteilungen schreiben}\\
+\subsubsection*{F43 Beurteilungen schreiben}
 
 Stefan und Viet
 
 Der Schüler kann Feedback für seine abgegeben Aufgaben / Leistungen erhalten
 
-\item[] \textbf{F44 Schwarzes Brett}\\
+\subsubsection*{F44 Schwarzes Brett}
 
 Stefan und Viet
 
 Der Mentor kann allgemeine Informationen hinzufügen z.B. bei Krankheit
-\end{itemize}
 
 %\section{Glossar}
 
