@@ -90,9 +90,7 @@ Profil bearbeiten
 
 \subsubsection*{F12: Gästebuch}
 
-Backend
-
-Im Gästebuch können die Besucher ihre Kommentare bzw. Bewertungen über den Service hinterlassen. Bevor es aber endgültig im Gästebuch erscheint, muss es vom Administrator freigegeben werden, um Falschaussagen zu vermeiden. 
+Das Gästebuch ermöglicht den Nutzern eigene Kommentare abzugeben. Diese werden in einer SQL - Datenbank abgespeichert. Zusätzlich wird dazu der Autor abgespeichert und eine Variable, welche erfasst, ob ein Gästebuch eintragt bereits von einem Administrator autorisiert wurde, oder nicht. Mittels PHP, im speziellen mit dem PDO werden die Gästebucheinträge zum Frontend der Website weitergeleitet und dort angezeigt. Einträge, die sehr gute Bewertungen erhalten werden zur Werbung für die Website eingesetzt.
 
 \subsubsection*{F13: Anzeige von verfügbaren Tutoren in der Nähe}
 
@@ -163,15 +161,39 @@ Wie jeder Nutzer verfügt der Administrator über ein persönliches Profil welches 
 
 \subsubsection*{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}
 
-Frontend (Tabellen Ausgabe)(Backend für Datenbank)
+Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht
+aller Kundenkonten anzeigen zu lassen. Diese Informationen werden in Form einer Tabelle auf 
+einer separaten Seite angezeigt. Beim Aufruf der Seite werden alle notwendigen Informationen 
+über Ajax aus der Datenbank geladen und über JSON an den Browser des Admins geliefert. Um
+bei einer großen Datenbank die Wartezeit gering zu halten, werden die Daten nur teilweise
+aus der Datenbank geladen. So ist es beispielsweise nicht sinnvoll mehr wie 20 Datensätze 
+gleichzeitig zu laden, da in der Regel nicht mehr angezeigt werden kann.
 
-Der Administrator hat Zugriff auf Kundendaten. Diese kann er mittels Masken und Formularen bearbeiten und löschen. Weiterhin kann er Kundenkonten löschen und hinzufügen. Des Weiteren kann er neue Admin-Accounts erstellen.
+Durch eine Tabellen-PlugIn für jQuery werden die Rohdaten übersichtlich dargestellt.
+Die Tabelle soll außerdem die Möglichkeit bieten die Datensätze nach Spalten zu sortieren.
+
+Änderungen der Daten werden ebenfalls über jQuery an die Datenbank übergeben, wenn der Administrator
+einen "Speichern" Knopf drückt.
+
+Die Validierung der Daten wird über HTML5 und gegebenenfalls einer PHP-Funktion durchgeführt.
 
 \subsubsection*{F24: Zugriff auf Nachrichtensystem}
 
-Backend
+In der Datenbank befinden sich eine große Tabelle in der alle Nachrichten als Rohdaten abgelegt werden.
+Jeder Datensatz hat die Felder: Absender, Empfänger, Datum, Zeit, Nachricht, gelesen.
+Über SQL-Abfragen werden die jeweiligen Nachrichten aus der Datenbank geladen und über JSON an ein
+jQuery-Script übergeben. Möchte ein Nutzer Beispielsweise alle gesendeten Nachrichten einsehen, wird
+der aktuell angemeldete Nutzername in die "WHERE"-Klausel der Datenbankabfrage eingefügt, um so nur 
+die relevanten Nachrichten abzufragen.
 
-Der Administrator kann Nachrichten an die Nutzer versenden und welche von diesen erhalten. Ungelesene Nachrichten werden angezeigt. 
+Zum Abrufen der Nachrichten wird dem angemeldeten Nutzer eine spezielle Webseite zur Verfügung gestellt,
+auf welcher er Nachrichten abrufen und erstellen kann. Die Anzeige wird in Form einer Tabelle über
+ein jQuery-Plugin erstellt. 
+
+Zum Versenden von Nachrichten muss ein Nutzer den Benutzernamen eines Empfängers in ein Textfeld eingeben.
+Bevor eine Nachricht abgesendet werden kann, erfolgt eine Validierung des Benutzernamens des Empfängers.
+Diese Validierung wird durch ein Javascript vorgenommen. 
+Für das Eingabefeld des Empfängers ist es denkbar eine Autovervollständigung über Ajax zur Verfügung zu stellen. 
 
 \subsubsection*{F25: Freischaltung von Gästebucheinträge}
 
@@ -203,9 +225,15 @@ Es besteht die Option seinen Account zu löschen.
 
 \subsubsection*{F31: Detaillierte Suche}
 
-Wie bei Suche oben
-
-Im Gegensatz zum nicht registrierten Besucher besitzt der Anwender die Möglichkeit einer detaillierten Suche nach folgenden Kriterien: Lehrer, Ort, Fach.
+Die Suche wird mittels einer View realisiert. Diese View enthält alles notwendigen Informationen, die es dem User ermöglichen das gewünschte Suchergebnis zu finden, 
+ - Benutzername
+ - Wohnort
+ - Umkreis
+ - Stundenlohn
+ - Bewertung
+ - Fächer
+ - Stufen
+Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben. 
 
 \subsubsection*{F32: Tutorprofil/Tutorbewertung}
 
