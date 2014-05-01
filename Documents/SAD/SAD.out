@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Software Architecture}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Kontextdiagramm 1}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Kontextdiagramm 2}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Systems Requirement}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{F1: \326ffentlicher Bereich}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{F2: Administrator}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{F3: Sch\374ler}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.4}{F4: Lehrer / Mentor}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Annahmen und Beschr\344nkungen}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Annahmen}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Beschr\344nkungen}{section.3}% 11

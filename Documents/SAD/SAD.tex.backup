@@ -1,5 +1,7 @@
 \documentclass[10pt,a4paper]{scrartcl}
+\usepackage[ngerman]{babel}
 \usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -7,8 +9,8 @@
 \usepackage{pdfpages}
 \usepackage{url}
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+
+
 
 \begin{document}
 \includepdf{SAD_Titelseite.pdf}
@@ -53,17 +55,16 @@ Tobias Schwindl
 
 \newpage
 \tableofcontents
-\listoftables
+% \listoftables
 
-\newpage
-\section{3: Software Architecture}
+\section{Software Architecture}
 %und alle anderen Diagramme!!
 \subsection{Kontextdiagramm 1}
 \includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf}
 \subsection{Kontextdiagramm 2}
 \fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_11.pdf}}
 
-\section{4: Systems Requirement}
+\section{Systems Requirement}
 
 \subsection{F1: Öffentlicher Bereich}
 \subsubsection*{F11: Startseite}
@@ -106,11 +107,16 @@ Beinhalten die Suche der gewünschten Schulart, Fach, Klasse, Preis und die maxim
 
 \subsubsection*{F15: Registrierungs- und Anmeldefenster}
 
-Die Registrierung erfolt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen.
+Die Registrierung erfolgt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen.
 Das OnlineFormular ist im \underline{HTML5} standard geschrieben, um gleich Validierungen der Eingaben durchführen zu können, 
-ohne die Informationen erst zum Server schicken zu müssen. 
+ohne die Informationen erst zum Server schicken zu müssen.
+
 Eingaben, die eindeutig sein sollen(wie z.B. der Benutzername) werden während der Eingabe mittels \underline{AJAX,JAVASCRIPT} 
 zum Server geschickt und dort überprüft, sodass der Benutzer sofort erfährt(ohne auf einen Button klicken zu müssen), ob dieser Benutzername schon vergeben ist. Wenn alle Daten eingegeben wurden, die Validierungen erfolgreich waren, klickt der Benutzer auf einen Button und schickt die Daten damit zum Server. Dort werden die Daten mittels \underline{PHP} zur \underline{Datenbank} geschickt, um dort gespeichert zu werden.
+
+\bigskip
+
+Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder Seite eingebunden ist, registrieren. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Nutzers zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Sesseion-Variablen, die angeben, dass der Benutzer angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben.
 
 \subsubsection*{F16: About us (Impressum)}
 
@@ -175,7 +181,7 @@ Die Tabelle soll außerdem die Möglichkeit bieten die Datensätze nach Spalten zu 
 Änderungen der Daten werden ebenfalls über jQuery an die Datenbank übergeben, wenn der Administrator
 einen "Speichern" Knopf drückt.
 
-Die Validierung der Daten wird über HTML5 und gegebenenfalls einer PHP-Funktion durchgeführt.
+Die Validierung der Daten wird über HTML5 und gegebenenfalls mit einer PHP-Funktion durchgeführt.
 
 \subsubsection*{F24: Zugriff auf Nachrichtensystem}
 
@@ -201,15 +207,12 @@ Der Administrator ruft das Gästebuch auf und sieht alle nicht autorisierten Eint
 
 \subsubsection*{F26: Abmelden}
 
-Backend
-
-Der Administrator kann sich abmelden und es stehen ihm nur noch die Funktionalitäten des öffentlichen Bereiches zur Verfügung.
+Jeder angemeldete Nutzer kann sich auch wieder abmelden, dies geschieht durch löschen einer Session-Variable, die bei der erfolgreichen Anmeldung gesetzt wurde. Das löschen der Variable hat keinen Einfluss auf die restlichen Inhalte der Session.
 
 \subsubsection*{F27: Besucherzähler}
 
-Backend
+Für jeden Besucher der Seite wird eine PHP Session in Form eines Cookies, der drei Stunden aktiv ist, initialisiert. Bei jedem Aufruf wird geprüft, ob eine Session-Variable, die zur Erkennung benutzt wird, gesetzt ist. Falls diese nicht gesetzt ist, dann wird der Besucherzähler um eins erhöht. Ist die Variable jedoch gesetzt, dann wurde der Besucher schon gezählt und es wird nichts unternommen.
 
-Zählt die Anzahl der der Leute, die die Seite besucht haben. Dadurch kann die Popularität der Website ermittelt werden.
 \bigskip
 
 $^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
@@ -254,7 +257,7 @@ Er ist in der Lage das Schwarze Brett des Tutors einzusehen.
 
 \subsection*{F33: Zahlungsinformationen}
 
-Der Schüler zahlt mit Kreditkarte. Dazu gibt er seine Kreditkarteninformationen in ein HTML5 Formular u. a. Name, Vorname, Benutzername, Kreditkartennummer, Ablaufdatum der Karte, die Prüfziffer und den zu zahlenden Betrag. Diese werden auf Richtigkeit der Informationen geprüft (HTML5 Formular) und dann für die weitere Verwendung in der SQL ? Datenbank gespeichert. 
+Der Schüler zahlt mit Kreditkarte. Dazu gibt er seine Kreditkarteninformationen in ein HTML5 Formular u. a. Name, Vorname, Benutzername, Kreditkartennummer, Ablaufdatum der Karte, die Prüfziffer und den zu zahlenden Betrag. Diese werden auf Richtigkeit der Informationen geprüft (HTML5 Formular) und dann für die weitere Verwendung in der MySQL Datenbank gespeichert. 
 
 \subsection{F4: Lehrer / Mentor}
 \subsubsection*{F41 Profil einstellen}
@@ -278,19 +281,18 @@ Das Profil soll beinhalten / anbieten:
 	\item Lehrerbewertung / Gästebuch
 \end{itemize}
 
-% Streichen falls möglich
-\subsubsection*{F42 Lehrmaterialien online stellen und verteilen -- Streichen falls möglich}
+% \subsubsection*{F42 Lehrmaterialien online stellen und verteilen}
+% 
+% Jeder Schüler muss sich in Online-Kurse eintragen, bei welchem Tutor er welches Fach belegt. Der Tutor kann über einen Upload-Bereich(jquery bietet diese Möglichkeit) Dateien zum Server laden, dort werden diese in der \underline{Datenbank} gespeichert.
+% Der Schüler kann sich dann die Formulare über den Browser wieder herunterladen
+% 
+% \subsubsection*{F43 Beurteilungen schreiben}
+% 
+% Stefan und Viet
+% 
+% Der Schüler kann Feedback für seine abgegeben Aufgaben / Leistungen erhalten
 
-Jeder Schüler muss sich in Online-Kurse eintragen, bei welchem Tutor er welches Fach belegt. Der Tutor kann über einen Upload-Bereich(jquery bietet diese Möglichkeit) Dateien zum Server laden, dort werden diese in der \underline{Datenbank} gespeichert.
-Der Schüler kann sich dann die Formulare über den Browser wieder herunterladen
-
-\subsubsection*{F43 Beurteilungen schreiben}
-
-Stefan und Viet
-
-Der Schüler kann Feedback für seine abgegeben Aufgaben / Leistungen erhalten
-
-\subsubsection*{F44 Schwarzes Brett}
+\subsubsection*{F42 Schwarzes Brett}
 
 Stefan und Viet
 
@@ -298,6 +300,37 @@ Der Mentor kann allgemeine Informationen hinzufügen z.B. bei Krankheit
 
 %\section{Glossar}
 
+\section{Annahmen und Beschränkungen}
+\subsection{Annahmen}
+
+\subsection{Beschränkungen}
+
+\subsubsection*{Leistung}
+
+Einer der wichtigesten Dinge, auf die zu achten ist, ist die Kommunikation zwischen \underline{javascript} und \underline{PHP} 
+über \underline{AJAX}. Wenn man mit Hilfe von javascripts Daten dynamisch über PHP bzw. PDO aus einer Datenbank laden will, sollte man
+sehr genau auf die Performance dieses Prozesses achten. Wenn man also *.php Skripte ansteuert, sollte man in diesen darauf achten, dass
+das Skript an sich sehr performant ist(z.B. nicht viele, große Klassenobjekte generieren, Operationen durchführen die sehr lange brauchen,
+wie z.B. aufwendige Hash-Operationen), da sonst die Datengenerierung im PHP-Skript sehr lange dauert und dies dazu führt, dass 
+es relativ lange dauert, bis aktualisierte Informationen auf dem Bildschirm des End-Users angezeigt werden.
+
+Um diesem Umstand gerecht zu werden, sollen die Files so angelegt werden, dass pro File möglichst wenig Funktionen enthalten sind.
+Damit soll ein möglichst hoher Grad an Unabhängigkeit von anderen Funktionen erreicht werden, sodass in jedem *.php File nur die 
+für die darin enthaltenen Funktionen benötigten Komponenten ausgeführt werden müssen.
+
+\subsubsection*{PHP Funktionen aus Javascript}
+
+
+
+
+\subsubsection*{Datenbank}
+
+\begin{enumerate}
+ \item Durch das Einsetzen einer MySQL Datenbank sind wir durch das Relationale Design in der Optimalen Aufteilung, wie man es bei einem NoSQL System umsetzen würde um bessere Reaktionszeiten zu erhalten, eingeschränkt.
+ \item Durch den Einsatz eines einzigen Entitätstyp für den Besucherzähler ist die maximale Anzahl an neuen Nutzer, die gleichzeitig auf die Seite zugreifen, die gezählt werden können begrenzt.
+ \item Benutzernamen dürfen maximal eine Länge von 20 Zeichen haben um unnötigen Speicherplatz zu vermeiden.
+ \item Um so wenig NULL Werte wie möglich zu bekommen, ist darauf zu achten, dass
+\end{enumerate}
 
 
 \end{document}
