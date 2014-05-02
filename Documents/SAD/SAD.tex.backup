@@ -57,12 +57,57 @@ Tobias Schwindl
 \tableofcontents
 % \listoftables
 
+\newpage
 \section{Software Architecture}
 %und alle anderen Diagramme!!
-\subsection{Kontextdiagramm 1}
-\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf}
-\subsection{Kontextdiagramm 2}
-\fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_11.pdf}}
+
+\subsection{Kontextdiagramm 1 - Administrator}
+\begin{figure}[!htbp]
+\includegraphics[width=0.86\textwidth]{./Source/UseCaseAdministrator_11.pdf} \caption{2-3 Sätze was man hier sieht!!}
+\end{figure}
+\newpage
+\subsection{Kontextdiagramm 2 - Tutor}
+\begin{figure}[!htbp]
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_13.pdf}} \caption{Dieses Kontextdiagramm beschreibt die Funktionen, die ein eingeloggter Tutor ausführen kann. Des Weiteren sind die Funktionen auf einzelne Unterfunktionen aufgeschlüsselt.}
+\end{figure}
+\newpage
+\subsection{Sequenzdiagramm}
+\begin{figure}[!htbp]
+\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf} \caption{2-3 Sätze was man hier sieht!!}
+\end{figure}
+\newpage
+\subsection{Navigationdiagramm}
+\begin{figure}[!htbp]
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/navigation_diagram.pdf}} \caption{2-3 Sätze was man hier sieht!!}
+\end{figure}
+\newpage
+\subsection{ER-Diagramm}
+\begin{figure}[!htbp]
+\fbox{\includegraphics[width=0.9\textwidth,page=1]{./Source/ER-Diagramm.pdf}} \caption{Entity-Relation Diagramm der Datenbank}
+\end{figure}
+\newpage
+\subsection{Activitydiagramm}
+\begin{figure}[!htbp]
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/Activity.pdf}} \caption{2-3 Sätze was man hier sieht!!}
+\end{figure}
+\newpage
+\section{Objectives} 
+
+\subsection{Business Objectives}
+Ziel der Webseite ist es Tutoren in der Nähe zu finden, und mit Ihnen in 
+Verbindung zu treten. Durch die Möglichkeit ein persönliches Profil erstellen zu 
+können, sollen Nutzer dauerhaft an unser Webangebot gebunden werden. 
+Potentielle Nutzer sollen direkt an Hochschulen geworben werden. Auch 
+Kooperationen mit Universitäten und Hochschulen sollen geschlossen werden.
+
+Unser Webangebot soll kostenfrei sein. Finanziert werden soll das Angebot durch 
+gezielte Werbung.
+
+\subsection{System Objectives}
+Das Webangebot Personal Tutoring Service soll als ``Template" aufgebaut werden. 
+Somit soll es möglich sein, leicht andere Vermittlungsportale, wie z.B. eine 
+Mitfahrzentrale aufzubauen. Somit sollen sich mit geringem Aufwand schnell neue 
+Geschäftszweige erschließen lassen.
 
 \section{Systems Requirement}
 
@@ -298,7 +343,6 @@ Stefan und Viet
 
 Der Mentor kann allgemeine Informationen hinzufügen z.B. bei Krankheit
 
-%\section{Glossar}
 
 \section{Annahmen und Beschränkungen}
 \subsection{Annahmen}
@@ -320,7 +364,7 @@ für die darin enthaltenen Funktionen benötigten Komponenten ausgeführt werden mü
 
 \subsubsection*{PHP Funktionen aus Javascript}
 
-
+Da man mit Hilfe javascript nur einzelne *.php-Skripte ansprechen kann und nicht einzelne Funktionen aus php wird es für die meisten javascript-Funktionen eine *.php-Datei geben, die dann die Dinge ausführt, die Serverseitig gemacht werden sollen. Damit kann man auch mehrere Serverseitige Methoden auf ein Mal abarbeiten.
 
 
 \subsubsection*{Datenbank}
@@ -332,6 +376,7 @@ für die darin enthaltenen Funktionen benötigten Komponenten ausgeführt werden mü
  \item Um so wenig NULL Werte wie möglich zu bekommen, ist darauf zu achten, dass
 \end{enumerate}
 
+%\section{Glossar}
 
 \end{document}
 

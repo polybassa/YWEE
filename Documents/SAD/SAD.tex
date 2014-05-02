@@ -83,7 +83,7 @@ Tobias Schwindl
 \newpage
 \subsection{ER-Diagramm}
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.9\textwidth,page=1]{./Source/ER_Diagramm.pdf}} \caption{2-3 Sätze was man hier sieht!!}
+\fbox{\includegraphics[width=0.9\textwidth,page=1]{./Source/ER-Diagramm.pdf}} \caption{Entity-Relation Diagramm der Datenbank}
 \end{figure}
 \newpage
 \subsection{Activitydiagramm}
@@ -146,9 +146,18 @@ Anhand einer Postleitzahlsuche ist im Voraus überprüfbar, ob Tutoren in der Nähe
 
 \subsubsection*{F14: Erweiterte Suchkriterien}
 
-Backend
+Die Suche wird mittels einer View realisiert. Diese View enthält alles notwendigen Informationen, die es dem User ermöglichen das gewünschte Suchergebnis zu finden,
+\begin{itemize}
+ \item Benutzername
+ \item Wohnort
+ \item Umkreis
+ \item Stundenlohn
+ \item Bewertung
+ \item Fächer
+ \item Stufen
+\end{itemize}
 
-Beinhalten die Suche der gewünschten Schulart, Fach, Klasse, Preis und die maximale Fahrzeit zwischen Tutoren und Schülern. 
+Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben. 
 
 \subsubsection*{F15: Registrierungs- und Anmeldefenster}
 
@@ -200,9 +209,7 @@ Persönliche Hilfen oder Anfragen, sind an den Support zu stellen. Erreichbar ist
 \subsection{F2: Administrator}
 \subsubsection*{F21: Anmelden}
 
-Backend
-
-Der Administrator meldet sich mit einem Nutzernamen und einem Passwort an, um den privaten Adminbereich betreten zu können.
+Der Administrator kann sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Adiminstrator zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Sesseion-Variablen, die angeben, dass der Administrator angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Danach hat der Administrator erweiterte Zugriffsrechte um ihm die Verwaltung zu erleichtern.
 
 \subsubsection*{F22: Persönliche Einstellungen}
 
@@ -271,14 +278,17 @@ Es besteht die Option seinen Account zu löschen.
 
 \subsubsection*{F31: Detaillierte Suche}
 
-Die Suche wird mittels einer View realisiert. Diese View enthält alles notwendigen Informationen, die es dem User ermöglichen das gewünschte Suchergebnis zu finden, 
- - Benutzername
- - Wohnort
- - Umkreis
- - Stundenlohn
- - Bewertung
- - Fächer
- - Stufen
+Die Suche wird mittels einer View realisiert. Diese View enthält alles notwendigen Informationen, die es dem User ermöglichen das gewünschte Suchergebnis zu finden,
+\begin{itemize}
+ \item Benutzername
+ \item Wohnort
+ \item Umkreis
+ \item Stundenlohn
+ \item Bewertung
+ \item Fächer
+ \item Stufen
+\end{itemize}
+
 Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben. 
 
 \subsubsection*{F32: Tutorprofil/Tutorbewertung}
@@ -373,7 +383,7 @@ Da man mit Hilfe javascript nur einzelne *.php-Skripte ansprechen kann und nicht
  \item Durch das Einsetzen einer MySQL Datenbank sind wir durch das Relationale Design in der Optimalen Aufteilung, wie man es bei einem NoSQL System umsetzen würde um bessere Reaktionszeiten zu erhalten, eingeschränkt.
  \item Durch den Einsatz eines einzigen Entitätstyp für den Besucherzähler ist die maximale Anzahl an neuen Nutzer, die gleichzeitig auf die Seite zugreifen, die gezählt werden können begrenzt.
  \item Benutzernamen dürfen maximal eine Länge von 20 Zeichen haben um unnötigen Speicherplatz zu vermeiden.
- \item Um so wenig NULL Werte wie möglich zu bekommen, ist darauf zu achten, dass
+ \item Um so wenig NULL Werte wie möglich zu bekommen, ist darauf zu achten, dass Aufteilung entsprechende gew\"ahlt wird
 \end{enumerate}
 
 %\section{Glossar}
