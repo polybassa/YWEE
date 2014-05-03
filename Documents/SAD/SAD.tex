@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper]{scrartcl}
 \usepackage[ngerman]{babel}
 \usepackage[latin1]{inputenc}
+%\usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -63,7 +64,7 @@ Tobias Schwindl
 
 \subsection{Kontextdiagramm 1 - Administrator}
 \begin{figure}[!htbp]
-\includegraphics[width=0.86\textwidth]{./Source/UseCaseAdministrator_11.pdf} \caption{2-3 Sätze was man hier sieht!!}
+\includegraphics[width=0.86\textwidth]{./Source/UseCaseAdministrator_11.pdf} %\caption{2-3 Sätze was man hier sieht!!}
 \end{figure}
 \newpage
 \subsection{Kontextdiagramm 2 - Tutor}
@@ -72,13 +73,13 @@ Tobias Schwindl
 \end{figure}
 \newpage
 \subsection{Sequenzdiagramm}
-\begin{figure}[!htbp]
-\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf} \caption{2-3 Sätze was man hier sieht!!}
-\end{figure}
+%\begin{figure}[!htbp]
+%\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf} \caption{2-3 Sätze was man hier sieht!!}
+%\end{figure}
 \newpage
 \subsection{Navigationdiagramm}
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.9\textwidth]{./Source/navigation_diagram.pdf}} \caption{2-3 Sätze was man hier sieht!!}
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/navigation_diagram.pdf}} \caption{Dieses Navigationdiagramm beschreibt die Menüführung für ein Gästebuch und Gästebucheinträge. Es wird zwischen einem Menü für normale Besucher und Administratoren unterschieden. Ausserdem ist eine Navigation zu einem Gästebuch oder zu allen erstellten Einträgen eines Benutzers vorgesehen.}
 \end{figure}
 \newpage
 \subsection{ER-Diagramm}
@@ -88,7 +89,8 @@ Tobias Schwindl
 \newpage
 \subsection{Activitydiagramm}
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.9\textwidth]{./Source/Activity.pdf}} \caption{2-3 Sätze was man hier sieht!!}
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/Activity.pdf}} 
+%\caption{2-3 Sätze was man hier sieht!!}
 \end{figure}
 \newpage
 \section{Objectives} 
@@ -99,40 +101,40 @@ Verbindung zu treten. Durch die Möglichkeit ein persönliches Profil erstellen zu
 können, sollen Nutzer dauerhaft an unser Webangebot gebunden werden. 
 Potentielle Nutzer sollen direkt an Hochschulen geworben werden. Auch 
 Kooperationen mit Universitäten und Hochschulen sollen geschlossen werden.
-
+\newline \newline 
 Unser Webangebot soll kostenfrei sein. Finanziert werden soll das Angebot durch 
 gezielte Werbung.
 
 \subsection{System Objectives}
-Das Webangebot Personal Tutoring Service soll als ``Template" aufgebaut werden. 
+Das Webangebot Personal Tutoring Service soll als "Template" aufgebaut werden. 
 Somit soll es möglich sein, leicht andere Vermittlungsportale, wie z.B. eine 
 Mitfahrzentrale aufzubauen. Somit sollen sich mit geringem Aufwand schnell neue 
-Geschäftszweige erschließen lassen.
+Geschäftszweige erschliessen lassen.
 
 \section{Systems Requirement}
 
 \subsection{F1: Öffentlicher Bereich}
 \subsubsection*{F11: Startseite}
-Matthias G. und Sven
-
+%Matthias G. und Sven
 Informiert den Besucher über das Auswahlkonzept bzw. $-$kriterien der Tutoren. Ebenfalls wird eine Karte mit den Standorten von Tutoren in Deutschland implementiert. Ein Teaser über das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse fördern. Durch die Anzeige von Top Gästebucheinträgen wird dem Gast das Gefühl der Vertrauenswürdigkeit und der Kompetenz übermittelt. 
-
-Karte
+\newline \newline 
+Karte\newline 
 Es wird eine Karte von Google-Maps eingebettet. Dies funktioniert mit Hilfe des bereitgestellten Iframes von Google.
-Slideshow
+\newline \newline 
+Slideshow\newline 
 Die Bilder der Slideshow werden mit HTML5 zur Verfügung gestellt. Mittels CSS3 werden die Bilder formatiert. JQuery sorgt für die Slideanimation. 
-Video
+\newline \newline 
+Video\newline 
 Das Video wird mit HTML5 implementiert und ist dadurch ohne Flash abspielbar. Die Kontrollfunktionen werden ebenfalls mit HTML5 zur Verfügung gestellt.
 Controls selbst erstellen
-
-Top Gästebucheinträge
-Nach dem Laden der Seite wird eine Javascript-Funktion ausgeführt, welche die Top-Gästebucheinträge über ein Json-Objekt erhält. Diese Einträge werden über JQuery eingeblendet und über CSS3 formatiert.
-
-Profil bearbeiten
-- HTML5 Formulare
-- Formulare mit HTML5+ JS überprüfen (live)
+\newline \newline 
+Top Gästebucheinträge\newline 
+\newline Nach dem Laden der Seite wird eine Javascript-Funktion ausgeführt, welche die Top-Gästebucheinträge über ein Json-Objekt erhält. Diese Einträge werden über JQuery eingeblendet und über CSS3 formatiert.
+\newline \newline 
+Profil bearbeiten\\
+- HTML5 Formulare\\
+- Formulare mit HTML5+ JS überprüfen (live)\\
 - PHP Script ? Änderung
-
 
 \subsubsection*{F12: Gästebuch}
 
@@ -140,12 +142,16 @@ Das Gästebuch ermöglicht den Nutzern eigene Kommentare abzugeben. Diese werden i
 
 \subsubsection*{F13: Anzeige von verfügbaren Tutoren in der Nähe}
 
+<<<<<<< HEAD
 Stefan und Viet
 
 Anhand einer Postleitzahlsuche ist im Voraus überprüfbar, ob Tutoren in der Nähe zu finden sind.
 Die PLZ-Tutorensuche wird mit Hilfe von JavaScript und MySQL umgesetzt.
 Benutzer gibt PLZ ein, Datenbank wird nach Einträgen von Tutoren mit identischer PLZ durchsucht und die Anzahl der Einträge wird anschließend zurückgegeben.
 Eine implementierte Google Map zeigt den Ort zur eingegebenen PLZ an.
+=======
+Die Wohnort-Tutorensuche wird mit Hilfe von JavaScript und MySQL umgesetzt. Benutzer gibt einen Ort ein und die Datenbank wird nach Eintr\"agen von Tutoren mit identischem Ort durchsucht und die Anzahl der Eintr\"age wird anschlie{\ss}end zur\"ukkgegeben. Eine implementierte Google Map zeigt den Ort von des eingegebenen Ortes an.
+>>>>>>> upstream/master
 
 \subsubsection*{F14: Erweiterte Suchkriterien}
 
@@ -177,15 +183,15 @@ Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder 
 
 \subsubsection*{F16: About us (Impressum)}
 
-Alex
+%Alex
+Das Impressum enthält folgende Informationen: Firma, Straße, Postleitzahl, Ort, Telefonnummer, E-Mailadresse, Internetadresse, Vertretungsberechtigter, Geschäftsführer, Inhaltlich Verantwortlicher und Haftungshinweis.
+\newline Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
 
-Das Impressum enthält folgende Informationen: Firma, Straße, Postleitzahl, Ort, Telefonnummer, E-Mailadresse, Internetadresse, Vertretungsberechtigter, \\ Geschäftsführer, Inhaltlich Verantwortlicher und Haftungshinweis. 
+\subsubsection*{F17: Preismodell und Zahlungsinfos}
 
-\subsubsection*{F17: Preismodell/Zahlungsinfos}
-
-Statisch, irgendwer
-
-Informiert vorab über die Zahlungshinweise und Preise, um Irrtümer zu vermeiden.
+%Alex
+Das Preismodell und Zahlungsinfos enthält Informationen darüber, welche Formen der Abrechnung (z.B. Kreditkarte) unterstützt werden und wie die Abrechnung funktioniert.
+\newline Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist Preismodell und Zahlungsinfos über einen Link in der Navigationsleiste.
 
 \subsubsection*{F18: Auswahl der Sprache}
 
@@ -204,34 +210,32 @@ Umgesetzt wird das erstellen des Formulars so umgesetzt:
 
 \subsubsection*{F19: Support und Kontaktdaten}
 
-Alex
-
-Persönliche Hilfen oder Anfragen, sind an den Support zu stellen. Erreichbar ist der Support per E-Mail. 
+%Alex
+Der Benutzer erfährt hier die Kontaktdaten des Supports, an den er sich bei Fragen und Problemfällen wenden kann. Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
 
 
 \subsection{F2: Administrator}
-\subsubsection*{F21: Anmelden}
+\subsubsection*{F21: Anmelden}
 
-Der Administrator kann sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Adiminstrator zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Sesseion-Variablen, die angeben, dass der Administrator angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Danach hat der Administrator erweiterte Zugriffsrechte um ihm die Verwaltung zu erleichtern.
+Der Administrator kann sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Administrator zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Session-Variablen, die angeben, dass der Administrator angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Danach hat der Administrator erweiterte Zugriffsrechte um ihm die Verwaltung zu erleichtern.
 
-\subsubsection*{F22: Persönliche Einstellungen}
+\subsubsection*{F22: Persönliche Einstellungen}
 
-Matthias G und Sven
-
+%Matthias G und Sven
 Wie jeder Nutzer verfügt der Administrator über ein persönliches Profil welches Vorname, Nachname, Geburtsdatum, Profilbild, Straße, Hausnummer, Wohnort, E-Mail, Telefon und Handynummer enthält. Die Bearbeitung und Löschung dieser Informationen ist über entsprechende Masken und Formularen zu er-möglichen.
 
-\subsubsection*{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}
+\subsubsection*{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}
 
-Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht
+Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht 
 aller Kundenkonten anzeigen zu lassen. Diese Informationen werden in Form einer Tabelle auf 
 einer separaten Seite angezeigt. Beim Aufruf der Seite werden alle notwendigen Informationen 
 über Ajax aus der Datenbank geladen und über JSON an den Browser des Admins geliefert. Um
-bei einer großen Datenbank die Wartezeit gering zu halten, werden die Daten nur teilweise
+bei einer grossen Datenbank die Wartezeit gering zu halten, werden die Daten nur teilweise
 aus der Datenbank geladen. So ist es beispielsweise nicht sinnvoll mehr wie 20 Datensätze 
 gleichzeitig zu laden, da in der Regel nicht mehr angezeigt werden kann.
 
 Durch eine Tabellen-PlugIn für jQuery werden die Rohdaten übersichtlich dargestellt.
-Die Tabelle soll außerdem die Möglichkeit bieten die Datensätze nach Spalten zu sortieren.
+Die Tabelle soll ausserdem die Möglichkeit bieten die Datensätze nach Spalten zu sortieren.
 
 Änderungen der Daten werden ebenfalls über jQuery an die Datenbank übergeben, wenn der Administrator
 einen "Speichern" Knopf drückt.
@@ -240,7 +244,7 @@ Die Validierung der Daten wird über HTML5 und gegebenenfalls mit einer PHP-Funkt
 
 \subsubsection*{F24: Zugriff auf Nachrichtensystem}
 
-In der Datenbank befinden sich eine große Tabelle in der alle Nachrichten als Rohdaten abgelegt werden.
+In der Datenbank befinden sich eine grosse Tabelle in der alle Nachrichten als Rohdaten abgelegt werden.
 Jeder Datensatz hat die Felder: Absender, Empfänger, Datum, Zeit, Nachricht, gelesen.
 Über SQL-Abfragen werden die jeweiligen Nachrichten aus der Datenbank geladen und über JSON an ein
 jQuery-Script übergeben. Möchte ein Nutzer Beispielsweise alle gesendeten Nachrichten einsehen, wird
@@ -296,7 +300,7 @@ Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben.
 
 \subsubsection*{F32: Tutorprofil/Tutorbewertung}
 
-Matthias G und Sven
+%Matthias G und Sven
 
 Der registrierte Anwender ist berechtigt das Profil des Tutors einzusehen, das für den Anwender folgende Informationen bereit hält:
 
@@ -313,15 +317,14 @@ Der registrierte Anwender ist berechtigt das Profil des Tutors einzusehen, das f
 	
 Er ist in der Lage das Schwarze Brett des Tutors einzusehen.
 
-\subsection*{F33: Zahlungsinformationen}
+\subsubsection*{F33: Zahlungsinformationen}
 
 Der Schüler zahlt mit Kreditkarte. Dazu gibt er seine Kreditkarteninformationen in ein HTML5 Formular u. a. Name, Vorname, Benutzername, Kreditkartennummer, Ablaufdatum der Karte, die Prüfziffer und den zu zahlenden Betrag. Diese werden auf Richtigkeit der Informationen geprüft (HTML5 Formular) und dann für die weitere Verwendung in der MySQL Datenbank gespeichert. 
 
 \subsection{F4: Lehrer / Mentor}
 \subsubsection*{F41 Profil einstellen}
 
-Matthias G und Sven
-
+%Matthias G und Sven
 Der Tutor kann ein Profil erstellen, um sich kurz vorzustellen und Werbung in eigener Sache machen zu können. Schüler können ihn bewerten (z.B. Verbesserung der Note).
 
 Das Profil soll beinhalten / anbieten:
@@ -352,11 +355,16 @@ Das Profil soll beinhalten / anbieten:
 
 \subsubsection*{F42 Schwarzes Brett}
 
+<<<<<<< HEAD
 Stefan und Viet
 
 Der Mentor kann allgemeine Informationen hinzufügen z.B. bei Krankheit
 Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt.
 Die Ankündigungen werden in die Datenbank geschrieben und können von dort wieder abgerufen werden.
+=======
+Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt. Die Ank\"undigungen werden in die Datenbank geschrieben und k\"onnen von dort wieder abgerufen werden. 
+
+>>>>>>> upstream/master
 
 \section{Annahmen und Beschränkungen}
 \subsection{Annahmen}
@@ -368,7 +376,7 @@ Die Ankündigungen werden in die Datenbank geschrieben und können von dort wieder
 Einer der wichtigesten Dinge, auf die zu achten ist, ist die Kommunikation zwischen \underline{javascript} und \underline{PHP} 
 über \underline{AJAX}. Wenn man mit Hilfe von javascripts Daten dynamisch über PHP bzw. PDO aus einer Datenbank laden will, sollte man
 sehr genau auf die Performance dieses Prozesses achten. Wenn man also *.php Skripte ansteuert, sollte man in diesen darauf achten, dass
-das Skript an sich sehr performant ist(z.B. nicht viele, große Klassenobjekte generieren, Operationen durchführen die sehr lange brauchen,
+das Skript an sich sehr performant ist(z.B. nicht viele, grosse Klassenobjekte generieren, Operationen durchführen die sehr lange brauchen,
 wie z.B. aufwendige Hash-Operationen), da sonst die Datengenerierung im PHP-Skript sehr lange dauert und dies dazu führt, dass 
 es relativ lange dauert, bis aktualisierte Informationen auf dem Bildschirm des End-Users angezeigt werden.
 
