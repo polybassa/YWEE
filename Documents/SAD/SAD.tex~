@@ -143,9 +143,6 @@ Das Gästebuch ermöglicht den Nutzern eigene Kommentare abzugeben. Diese werden i
 Stefan und Viet
 
 Anhand einer Postleitzahlsuche ist im Voraus überprüfbar, ob Tutoren in der Nähe zu finden sind.
-Die PLZ-Tutorensuche wird mit Hilfe von JavaScript und MySQL umgesetzt.
-Benutzer gibt PLZ ein, Datenbank wird nach Einträgen von Tutoren mit identischer PLZ durchsucht und die Anzahl der Einträge wird anschließend zurückgegeben.
-Eine implementierte Google Map zeigt den Ort zur eingegebenen PLZ an.
 
 \subsubsection*{F14: Erweiterte Suchkriterien}
 
@@ -355,8 +352,7 @@ Das Profil soll beinhalten / anbieten:
 Stefan und Viet
 
 Der Mentor kann allgemeine Informationen hinzufügen z.B. bei Krankheit
-Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt.
-Die Ankündigungen werden in die Datenbank geschrieben und können von dort wieder abgerufen werden.
+
 
 \section{Annahmen und Beschränkungen}
 \subsection{Annahmen}
