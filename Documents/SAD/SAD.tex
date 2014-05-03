@@ -41,7 +41,7 @@ Tobias Schwindl
 	\hline
 	\textbf{VersionsNr} &  \textbf{Datum} & \textbf{Auslöser} & \textbf{Veränderungsgrad} & \textbf{Beschreibung} \\
 	\hline
-	1.0 & 23.04.2014 & I-wer & Erster Entwurf & First Draft \\
+	1.0 & 03.05.2014 & AS & Erster Entwurf & First Draft \\
 	\hline
 	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
 	\hline
@@ -64,7 +64,8 @@ Tobias Schwindl
 
 \subsection{Kontextdiagramm 1 - Administrator}
 \begin{figure}[!htbp]
-\includegraphics[width=0.86\textwidth]{./Source/UseCaseAdministrator_11.pdf} %\caption{2-3 Sätze was man hier sieht!!}
+\includegraphics[width=0.8\textwidth]{./Source/UseCaseAdministrator_11.pdf} 
+\caption{Dieses Kontextdiagramm beschreibt die Funktionen, die ein eingeloggter Administrator ausführen kann. Des Weiteren sind die Funktionen auf einzelne Unterfunktionen aufgeschlüsselt.}
 \end{figure}
 \newpage
 \subsection{Kontextdiagramm 2 - Tutor}
@@ -73,6 +74,7 @@ Tobias Schwindl
 \end{figure}
 \newpage
 \subsection{Sequenzdiagramm}
+Wird nachgereicht
 %\begin{figure}[!htbp]
 %\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf} \caption{2-3 Sätze was man hier sieht!!}
 %\end{figure}
@@ -118,23 +120,23 @@ Geschäftszweige erschliessen lassen.
 %Matthias G. und Sven
 Informiert den Besucher über das Auswahlkonzept bzw. $-$kriterien der Tutoren. Ebenfalls wird eine Karte mit den Standorten von Tutoren in Deutschland implementiert. Ein Teaser über das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse fördern. Durch die Anzeige von Top Gästebucheinträgen wird dem Gast das Gefühl der Vertrauenswürdigkeit und der Kompetenz übermittelt. 
 \newline \newline 
-Karte\newline 
+\textbf{Karte}\newline 
 Es wird eine Karte von Google-Maps eingebettet. Dies funktioniert mit Hilfe des bereitgestellten Iframes von Google.
 \newline \newline 
-Slideshow\newline 
+\textbf{Slideshow}\newline 
 Die Bilder der Slideshow werden mit HTML5 zur Verfügung gestellt. Mittels CSS3 werden die Bilder formatiert. JQuery sorgt für die Slideanimation. 
 \newline \newline 
-Video\newline 
+\textbf{Video}\newline 
 Das Video wird mit HTML5 implementiert und ist dadurch ohne Flash abspielbar. Die Kontrollfunktionen werden ebenfalls mit HTML5 zur Verfügung gestellt.
 Controls selbst erstellen
 \newline \newline 
-Top Gästebucheinträge\newline 
+\textbf{Top Gästebucheinträge}\newline 
 \newline Nach dem Laden der Seite wird eine Javascript-Funktion ausgeführt, welche die Top-Gästebucheinträge über ein Json-Objekt erhält. Diese Einträge werden über JQuery eingeblendet und über CSS3 formatiert.
 \newline \newline 
 Profil bearbeiten\\
 - HTML5 Formulare\\
 - Formulare mit HTML5+ JS überprüfen (live)\\
-- PHP Script ? Änderung
+- PHP Script
 
 \subsubsection*{F12: Gästebuch}
 
@@ -175,27 +177,25 @@ Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder 
 \subsubsection*{F16: About us (Impressum)}
 
 %Alex
-Das Impressum enthält folgende Informationen: Firma, Straße, Postleitzahl, Ort, Telefonnummer, E-Mailadresse, Internetadresse, Vertretungsberechtigter, Geschäftsführer, Inhaltlich Verantwortlicher und Haftungshinweis.
-\newline Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
+Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
 
 \subsubsection*{F17: Preismodell und Zahlungsinfos}
 
 %Alex
-Das Preismodell und Zahlungsinfos enthält Informationen darüber, welche Formen der Abrechnung (z.B. Kreditkarte) unterstützt werden und wie die Abrechnung funktioniert.
-\newline Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist Preismodell und Zahlungsinfos über einen Link in der Navigationsleiste.
+Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist Preismodell und Zahlungsinfos über einen Link in der Navigationsleiste.
 
 \subsubsection*{F18: Auswahl der Sprache}
 
-Die Auswahl der Sprache erfolgt über eine \underline{Serverseitige} \underline{Sessionvariable}, mit Hilfe derer 
-die Serverseitig eingesetzte Skriptsprache \underline{PHP} sich über den gesamten Verlauf der Interaktion mit dem User "merken" kann,
+Die Auswahl der Sprache erfolgt über eine \underline{Serverseitige Sessionvariable}, mit Hilfe derer 
+die serverseitig eingesetzte Skriptsprache \underline{PHP} sich über den gesamten Verlauf der Interaktion mit dem User "merken" kann,
 welche Sprache der User benutzen will. Alternativ kann ein zusätzliches \underline{Feld} in der \underline{Datenbank} für die 
 Sprache reserviert werden, womit bei jedem neuen Einloggen des Benutzers die Sprache automatisch ausgewählt wird. Sollte der Benutzer
-die Sprache dann doch einmal ändern, wird diese Änderung unverzüglich in die \underline{Datenbank} geschrieben.
+die Sprache einmal ändern, wird diese Änderung unverzüglich in die \underline{Datenbank} geschrieben.
 Umgesetzt wird das erstellen des Formulars so umgesetzt:
 \begin{itemize}
  \item Für jeden Teil der Seite gibt es eine Vorlage in den Sprachen(z.B. Impressum)
- \item \underline{PHP} wählt dann zur Laufzeit aus, welche Elemente der Seite in der Sprache geladen werden muss
- \item und fügt alle Elemente mit Hilfe einer leeren "Dummy"Datei zu einer, korrekten, \underline{HTML5} Datei zusammen
+ \item \underline{PHP} wählt zur Laufzeit aus, welche Elemente der Seite in der Sprache geladen werden muss
+ \item und fügt alle Elemente mit Hilfe einer leeren "Dummy"-Datei zu einer, korrekten, \underline{HTML5} Datei zusammen
  \item welche dann an den Client geschickt wird.
 \end{itemize}
 
@@ -213,24 +213,23 @@ Der Administrator kann sich über die Login-Maske, die auf jeder Seite eingebunde
 \subsubsection*{F22: Persönliche Einstellungen}
 
 %Matthias G und Sven
-Wie jeder Nutzer verfügt der Administrator über ein persönliches Profil welches Vorname, Nachname, Geburtsdatum, Profilbild, Straße, Hausnummer, Wohnort, E-Mail, Telefon und Handynummer enthält. Die Bearbeitung und Löschung dieser Informationen ist über entsprechende Masken und Formularen zu er-möglichen.
+Wird nachgereicht.
 
 \subsubsection*{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}
 
-Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht 
-aller Kundenkonten anzeigen zu lassen. Diese Informationen werden in Form einer Tabelle auf 
+Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht aller Kundenkonten anzeigen zu lassen. Diese Informationen werden in Form einer Tabelle auf 
 einer separaten Seite angezeigt. Beim Aufruf der Seite werden alle notwendigen Informationen 
 über Ajax aus der Datenbank geladen und über JSON an den Browser des Admins geliefert. Um
 bei einer grossen Datenbank die Wartezeit gering zu halten, werden die Daten nur teilweise
 aus der Datenbank geladen. So ist es beispielsweise nicht sinnvoll mehr wie 20 Datensätze 
 gleichzeitig zu laden, da in der Regel nicht mehr angezeigt werden kann.
-
+\newline \newline
 Durch eine Tabellen-PlugIn für jQuery werden die Rohdaten übersichtlich dargestellt.
 Die Tabelle soll ausserdem die Möglichkeit bieten die Datensätze nach Spalten zu sortieren.
-
+\newline \newline
 Änderungen der Daten werden ebenfalls über jQuery an die Datenbank übergeben, wenn der Administrator
 einen "Speichern" Knopf drückt.
-
+\newline \newline
 Die Validierung der Daten wird über HTML5 und gegebenenfalls mit einer PHP-Funktion durchgeführt.
 
 \subsubsection*{F24: Zugriff auf Nachrichtensystem}
@@ -241,11 +240,11 @@ Jeder Datensatz hat die Felder: Absender, Empfänger, Datum, Zeit, Nachricht, gel
 jQuery-Script übergeben. Möchte ein Nutzer Beispielsweise alle gesendeten Nachrichten einsehen, wird
 der aktuell angemeldete Nutzername in die "WHERE"-Klausel der Datenbankabfrage eingefügt, um so nur 
 die relevanten Nachrichten abzufragen.
-
+\newline \newline
 Zum Abrufen der Nachrichten wird dem angemeldeten Nutzer eine spezielle Webseite zur Verfügung gestellt,
 auf welcher er Nachrichten abrufen und erstellen kann. Die Anzeige wird in Form einer Tabelle über
 ein jQuery-Plugin erstellt. 
-
+\newline \newline
 Zum Versenden von Nachrichten muss ein Nutzer den Benutzernamen eines Empfängers in ein Textfeld eingeben.
 Bevor eine Nachricht abgesendet werden kann, erfolgt eine Validierung des Benutzernamens des Empfängers.
 Diese Validierung wird durch ein Javascript vorgenommen. 
@@ -253,7 +252,7 @@ Für das Eingabefeld des Empfängers ist es denkbar eine Autovervollständigung übe
 
 \subsubsection*{F25: Freischaltung von Gästebucheinträge}
 
-Der Administrator ruft das Gästebuch auf und sieht alle nicht autorisierten Einträge. Diese kann er dann autorisieren. Dann werden diese in der Datenbank aktualisiert.
+Der Administrator ruft das Gästebuch auf und sieht alle nicht autorisierten Einträge. Diese kann er autorisieren. Dann werden diese in der Datenbank aktualisiert.
 
 \subsubsection*{F26: Abmelden}
 
@@ -261,7 +260,7 @@ Jeder angemeldete Nutzer kann sich auch wieder abmelden, dies geschieht durch lö
 
 \subsubsection*{F27: Besucherzähler}
 
-Für jeden Besucher der Seite wird eine PHP Session in Form eines Cookies, der drei Stunden aktiv ist, initialisiert. Bei jedem Aufruf wird geprüft, ob eine Session-Variable, die zur Erkennung benutzt wird, gesetzt ist. Falls diese nicht gesetzt ist, dann wird der Besucherzähler um eins erhöht. Ist die Variable jedoch gesetzt, dann wurde der Besucher schon gezählt und es wird nichts unternommen.
+Für jeden Besucher der Seite wird eine PHP Session in Form eines Cookies, der drei Stunden aktiv ist, initialisiert. Bei jedem Aufruf wird geprüft, ob eine Session-Variable, die zur Erkennung benutzt wird, gesetzt ist. Falls diese nicht gesetzt ist, wird der Besucherzähler um eins erhöht. Ist die Variable jedoch gesetzt, wurde der Besucher schon gezählt und es wird nichts unternommen.
 
 \bigskip
 
@@ -293,20 +292,7 @@ Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben.
 
 %Matthias G und Sven
 
-Der registrierte Anwender ist berechtigt das Profil des Tutors einzusehen, das für den Anwender folgende Informationen bereit hält:
-
-\begin{itemize}
-	\item Geschlecht
-	\item Stundenlöhne 
-	\item Verfügbarkeiten 
-	\item Fächer / Jahrgangsstufen 
-	\item Verfügbare Orte / Regionen - Eintrag auf Karte
-	\item Profilbild
-	\item Kontaktdaten
-	\item Lehrerbewertung
-\end{itemize}
-	
-Er ist in der Lage das Schwarze Brett des Tutors einzusehen.
+Wird nachgereicht.
 
 \subsubsection*{F33: Zahlungsinformationen}
 
@@ -316,22 +302,7 @@ Der Schüler zahlt mit Kreditkarte. Dazu gibt er seine Kreditkarteninformationen 
 \subsubsection*{F41 Profil einstellen}
 
 %Matthias G und Sven
-Der Tutor kann ein Profil erstellen, um sich kurz vorzustellen und Werbung in eigener Sache machen zu können. Schüler können ihn bewerten (z.B. Verbesserung der Note).
-
-Das Profil soll beinhalten / anbieten:
-\begin{itemize}
-	\item Geschlecht
-	\item Stundenlöhne verlangen
-	\item Verfügbarkeiten angeben
-	\item Fächer / Jahrgangsstufen einstellen
-	\item Verfügbare Orte / Regionen anbieten - Eintrag auf Karte
-	\item Zahlungsdaten zur Verfügung stellen
-	\item Sieht in einer Übersicht seine Schüler und einen Kalender mit den nächsten Terminen
-	\item Rechnungen / Zahlungserinnerungen verschicken
-	\item Profilbild
-	\item Kontaktdaten
-	\item Lehrerbewertung / Gästebuch
-\end{itemize}
+Wird nachgereicht.
 
 % \subsubsection*{F42 Lehrmaterialien online stellen und verteilen}
 % 
@@ -346,12 +317,12 @@ Das Profil soll beinhalten / anbieten:
 
 \subsubsection*{F42 Schwarzes Brett}
 
-Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt. Die Ank\"undigungen werden in die Datenbank geschrieben und k\"onnen von dort wieder abgerufen werden. 
+Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt. Die Ank\"undigungen werden in die Datenbank geschrieben und k\"onnen von dort abgerufen werden. 
 
 
 \section{Annahmen und Beschränkungen}
 \subsection{Annahmen}
-
+Wird nachgereicht.
 \subsection{Beschränkungen}
 
 \subsubsection*{Leistung}
@@ -362,7 +333,7 @@ sehr genau auf die Performance dieses Prozesses achten. Wenn man *.php Skripte a
 das Skript an sich sehr performant ist(z.B. nicht viele, große Klassenobjekte generieren, Operationen durchführen die sehr lange brauchen,
 wie z.B. aufwendige Hash-Operationen), da sonst die Datengenerierung im PHP-Skript sehr lange dauert und dies dazu führt, dass 
 es relativ lange dauert, bis aktualisierte Informationen auf dem Bildschirm des End-Users angezeigt werden.
-
+\newline \newline
 Um diesem Umstand gerecht zu werden, sollen die Files so angelegt werden, dass pro File möglichst wenig Funktionen enthalten sind.
 Damit soll ein möglichst hoher Grad an Unabhängigkeit von anderen Funktionen erreicht werden, sodass in jedem *.php File nur die 
 für die darin enthaltenen Funktionen benötigten Komponenten ausgeführt werden müssen.
@@ -383,6 +354,35 @@ Da man mit Hilfe Javascript nur einzelne *.php-Skripte ansprechen kann und nicht
 
 %\section{Glossar}
 
+\section{Delivery und Schedule}
+\begin{table}[!h]
+ 	\centering
+	\begin{tabular}{|c|c|c|c|c|} 
+	\hline
+	\textbf{VersionsNr} &  \textbf{Datum} & \textbf{Auslöser} & \textbf{Veränderungsgrad} & \textbf{Beschreibung} \\	
+	\hline
+	SRA & 26.03.14 & 09.04.14 & Abgeschlossen & \\
+	\hline
+	SAD & 16.04.14 & 07.05.14 & In Arbeit & \\
+	\hline
+	Datenbank Design & 16.04.14 & 03.05.14 & Abgeschlossen & \\
+	\hline
+	Navigation und Design & 14.05.14 & 11.06.14 & In Arbeit & \\
+	\hline
+	Implementierung & 14.05.14 & 11.06.14 & In Arbeit & \\
+	\hline
+	Test & & 18.06.14 & Geplant & \\
+	\hline
+	Update & & 25.06.14 & Geplant & \\
+	\hline
+	Projekt Ende & & 26.06.14 & Geplant & \\
+	\hline
+	Präsentation & Ende Juni & Anfang Juli & Geplant & \\
+	\hline
+	\end{tabular}
+
+\caption{Zeitplan des Projekts}
+\end{table}
 \end{document}
 
 
