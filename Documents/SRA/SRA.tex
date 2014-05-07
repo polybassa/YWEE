@@ -9,6 +9,7 @@
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage[left=2cm, top=2cm,right=2cm,bottom=2cm]{geometry}
 
 % \ifpdf
 %   \usepackage[pdftex]{graphicx}
@@ -55,7 +56,7 @@ Tobias Schwindl
 	\hline
 	1.2 & 03.05.2014 & Tatzel & Anpassung & Features Entf. \\
 	\hline
-	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	1.3 & 07.05.2014 & Strobl & Anpassung & Kontextdiagramme \\
 	\hline
 	\end{tabular}
 
@@ -349,11 +350,19 @@ wird spaeter eingefuegt} zu erkennen.
 \newpage
 \section{Anhang}
 \subsection{Kontextdiagramm Besucher}
-Der Besucher der Website hat vollen Zugriff auf den öffentlichen Bereich. Außerdem ist er in der Lage sich als Tutor, Schüler oder Admin anzumelden. Zur Anmeldung des Schülers und Tutors ist eine erfolgreiche Registrierung erforderlich.
-\fbox{\includegraphics[page=1, width=0.98\textwidth]{./Source/YWEE_Kontextdiagramm.pdf}}
+\begin{figure}[!htbp]
+\fbox{\includegraphics[page=1, width=1\textwidth]{./Source/YWEE_Kontextdiagramm.pdf}}
+\caption{Der Besucher der Website hat vollen Zugriff auf den öffentlichen Bereich. Außerdem ist er in der Lage sich als Tutor, Schüler oder Admin anzumelden. Zur Anmeldung des Schülers und Tutors ist eine erfolgreiche Registrierung erforderlich.}
+\end{figure}
+\newpage
 \subsection{Kontextdiagramm Tutor/Schüler/Admin}
-\fbox{\includegraphics[page=2, width=0.98\textwidth]{./Source/YWEE_Kontextdiagramm.pdf}}
-Angemeldete Benutzer hingegen haben erweiterte Zugriffsrechte auf folgende Funktionen: 
+\begin{figure}[!htbp]
+\fbox{\includegraphics[page=2, width=1\textwidth]{./Source/YWEE_Kontextdiagramm.pdf}}
+\caption{Angemeldete Benutzer hingegen haben erweiterte Zugriffsrechte auf diese Funktionen
+\newline Grün: erstellen, bearbeiten
+\newline Orange: ansehen
+\newline Rot: Kontrolle (voller Zugriff)} 
+\end{figure}
 
 %\section{Glossar}
 
