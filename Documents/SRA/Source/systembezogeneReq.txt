@@ -1,0 +1,34 @@
+S: Systembezogene Anforderungen
+Hinweis: Die systembezogenen Anforderungen machen deutlich, welche Voraussetzungen hard- und softwareseitig für den Systemeinsatz gegeben sein müssen.
+
+S1: Anforderungen an die Hardware:
+
+S11: Datenbankserver:
+2 Prozessoren mit einer Taktfrequenz > 1 GHz
+Arbeitsspeicher mit einer Speicherkapazität > 1GB
+Festplatten (SCSI): > 500 GByte, RAID 5
+Backupsystem
+Antivirensoftware
+
+S12: Web- und Applicationserver:
+2 Prozessoren mit einer Taktfrequenz > 850 MHz
+Arbeitsspeicher mit einer Speicherkapazität > 1GB
+Festplatten(SCSI): > 100 GB, RAID 0
+Backupsystem
+Antivirensoftware
+Firewall
+
+S2: Anforderungen an die Systemsoftware
+Da keine Kosten für die Nutzung von Systemsoftware anfallen dürfen und das System Mindestanforderungen an die Datensicherheit und den Datenschutz genügen muss, sind folgende freie Softwarekomponenten zu verwenden:
+MySQL als relationale Datenbank für die zentrale Datenhaltung
+Linux als Betriebssystem
+Apache als Web- bzw. Applicationserver
+JVM
+
+S3: Programmiersprache
+Als Programmiersprache ist Java bzw. PHP einzusetzen.
+
+S4: Tools
+HTML-Entwicklungsumgebung
+Java- bzw. PHP-Entwicklungsumgebung
+Für die Entwicklung und den Test der Anwendung muss eine spezielle Testumgebung zur Verfügung gestellt werden.

@@ -1,0 +1,289 @@
+\documentclass[10pt,a4paper]{scrartcl}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\begin{document}
+
+\begin{center}
+%\includegraphics{SAD_Titelblatt_v11.png}
+\end{center}
+
+%\begin{table}[h]
+%	\hspace{2.5cm} \begin{tabular}{|r|l|p{10cm}} 
+%	\hline
+%	Projekt: &  Tutorenwebseite \\ \hline
+%	Team No.: & 2 \\ 
+%	\hline
+%	Class: & Web Engineering \\
+%	Modul: & System Requirements Analysis (SRA) \\
+%	Dokumententyp: & SRA Document \\
+%	\hline
+%	\end{tabular}
+%	\caption{Version: 1.0, Datum: \today}
+%\end{table}
+
+\newpage
+\begin{itemize}
+\item[] \textbf{\large Beitragende:}\\
+Sven Liebl\\
+Matthias Goetz\\
+Christian Dauerer\\
+Maxmilian Schr�ter\\
+Stefan Holz\\
+Viet Nguyen\\
+Daniel Tatzel\\
+Nils Weiss\\
+Florian Laufenb�ck\\
+Alexander Strobl\\
+Matthias Birnthaler\\
+Tobias Schwindl
+\end{itemize}
+
+\bigskip
+
+\begin{table}[!h]
+ 	\centering
+	\begin{tabular}{|c|c|c|c||c|} 
+	\hline
+	\textbf{VersionsNr} &  \textbf{Datum} & \textbf{Ausl�ser} & \textbf{Ver�nderungsgrad} & \textbf{Beschreibung} \\
+	\hline
+	1.0 & 23.04.2014 & I-wer & Erster Entwurf & First Draft \\
+	\hline
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	\hline
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	\hline
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
+	\hline
+	\end{tabular}
+
+\caption{�berarbeitungshistorie}
+\end{table}
+
+\newpage
+\tableofcontents
+\listoftables
+
+\newpage
+\section{3: Software Architecture}
+%und alle anderen Diagramme!!
+\subsection{Kontextdiagramm 1 - Administrator}
+\includegraphics[width=0.9\textwidth]{./Source/UseCaseAdministrator_11.pdf}
+2-3 S�tze was man hier sieht!!
+\subsection{Kontextdiagramm 2 - Mentor}
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_11.pdf}}
+2-3 S�tze was man hier sieht!!
+Extend-Pfeile umdrehen
+\subsection{Sequenzdiagramm}
+2-3 S�tze was man hier sieht!!
+\subsection{Navigationdiagramm}
+2-3 S�tze was man hier sieht!!
+\subsection{ER-Diagramm}
+2-3 S�tze was man hier sieht!!
+\subsection{Activitydiagramm}
+2-3 S�tze was man hier sieht!!
+
+\section{4: Systems Requirement}
+
+\subsection{F1: �ffentlicher Bereich}
+\begin{itemize}
+\item[] \textbf{F11: Startseite} \\
+
+Matthias G. und Sven
+
+Informiert den Besucher �ber das Auswahlkonzept bzw. $-$kriterien der Tutoren. Ebenfalls wird eine Karte mit den Standorten von Tutoren in Deutschland implementiert. Ein Teaser �ber das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse f�rdern. Durch die Anzeige von Top G�stebucheintr�gen wird dem Gast das Gef�hl der Vertrauensw�rdigkeit und der Kompetenz �bermittelt. 
+
+\item[] \textbf{F12: G�stebuch}\\
+
+Backend
+
+Im G�stebuch k�nnen die Besucher ihre Kommentare bzw. Bewertungen �ber den Service hinterlassen. Bevor es aber endg�ltig im G�stebuch erscheint, muss es vom Administrator freigegeben werden, um Falschaussagen zu vermeiden. 
+
+\item[] \textbf{F13: Anzeige von verf�gbaren Tutoren in der N�he}\\
+
+Die PLZ-Tutorensuche wird mit Hilfe von JavaScript und MySQL umgesetzt.
+Benutzer gibt PLZ ein, Datenbank wird nach Einträgen von Tutoren mit identischer PLZ durchsucht und die Anzahl der Einträge wird anschließend zurückgegeben.
+Eine implementierte Google Map zeigt den Ort von der eingegebenen PLZ an.
+
+\item[] \textbf{F14: Erweiterte Suchkriterien}\\
+
+Backend
+
+Beinhalten die Suche der gew�nschten Schulart, Fach, Klasse, Preis und die maximale Fahrzeit zwischen Tutoren und Sch�lern. 
+
+\item[] \textbf{F15: Registrierungs- und Anmeldefenster}\\
+
+Backend
+
+Um den kompletten Serviceumfang ausnutzen zu k�nnen, ist eine Anmeldung bzw. Registrierung n�tig.
+
+\item[] \textbf{F16: About us (Impressum)}\\
+
+Alex
+
+Das Impressum enth�lt folgende Informationen: Firma, Stra�e, Postleitzahl, Ort, Telefonnummer, E-Mailadresse, Internetadresse, Vertretungsberechtigter, \\ Gesch�ftsf�hrer, Inhaltlich Verantwortlicher und Haftungshinweis. 
+
+\item[] \textbf{F17: Preismodell/Zahlungsinfos}\\
+
+Alex
+
+Informiert vorab �ber die Zahlungshinweise und Preise, um Irrt�mer zu vermeiden.
+
+
+\item[] \textbf{F18: Auswahl der Sprache}\\
+
+Backend
+
+Dem Besucher ist es m�glich, zwischen Deutsch und Englischer Sprache auszuw�hlen. Diese Option unterst�tzt die Benutzerfreundlichkeit f�r Besucher au�erhalb des deutschsprachigen Raumes. 
+
+\item[] \textbf{F19: Support und Kontaktdaten}\\
+
+Alex
+
+Pers�nliche Hilfen oder Anfragen, sind an den Support zu stellen. Erreichbar ist der Support per E-Mail. 
+
+\end{itemize}
+
+
+
+\subsection{F2: Administrator}
+\begin{itemize}
+\item[] \textbf{F21:�Anmelden}\\
+
+Backend
+
+Der Administrator meldet sich mit einem Nutzernamen und einem Passwort an, um den privaten Adminbereich betreten zu k�nnen.
+	
+\item[] \textbf{F22:�Pers�nliche Einstellungen}\\
+
+Matthias G und Sven
+
+Wie jeder Nutzer verf�gt der Administrator �ber ein pers�nliches Profil welches Vorname, Nachname, Geburtsdatum, Profilbild, Stra�e, Hausnummer, Wohnort, E-Mail, Telefon und Handynummer enth�lt. Die Bearbeitung und L�schung dieser Informationen ist �ber entsprechende Masken und Formularen zu er-m�glichen.
+
+\item[] \textbf{F23:�Bearbeiten von Kundenkonten$^1$�und Kundeninformationen$^2$}\\
+
+Frontend (Tabellen Ausgabe)(Backend f�r Datenbank)
+
+Der Administrator hat Zugriff auf Kundendaten. Diese kann er mittels Masken und Formularen bearbeiten und l�schen. Weiterhin kann er Kundenkonten l�schen und hinzuf�gen. Des Weiteren kann er neue Admin-Accounts erstellen.
+
+\item[] \textbf{F23: Zugriff auf Nachrichtensystem}\\
+
+Backend
+
+Der Administrator kann Nachrichten an die Nutzer versenden und welche von diesen erhalten. Ungelesene Nachrichten werden angezeigt. 
+
+\item[] \textbf{F24: Freischaltung von G�stebucheintr�ge}\\
+
+Backend
+
+Neue G�stebucheintr�ge werden dem Administrator angezeigt/gemeldet und erst nach seiner Freischaltung ver�ffentlicht. 
+	
+\item[] \textbf{F25: Abmelden}\\
+
+Backend
+
+Der Administrator kann sich abmelden und es stehen ihm nur noch die Funktionalit�ten des �ffentlichen Bereiches zur Verf�gung.
+
+\item[] \textbf{F26: Besucherz�hler}\\
+
+Backend
+
+Z�hlt die Anzahl der der Leute, die die Seite besucht haben. Dadurch kann die Popularit�t der Website ermittelt werden.
+\bigskip
+
+$^1$ Kundenkonten: Tutorenkonten und Sch�lerkonten\\
+$^2$ Kundeninformationen: Pers�nliche Informationen der Kundenkonten
+\end{itemize}
+
+
+
+
+\subsection{F3: Sch�ler}
+\begin{itemize}\item[]Jeder Besucher hat die M�glichkeit ein Profil anzulegen und sich mit den erhaltenen Zugangsdaten einzuloggen.
+Dadurch erh�lt er Zugriff auf seinen Privaten Bereich, in dem er seine bei der Registrierung hinterlegten pers�nlichen Daten �ndern kann.
+Die pers�nlichen Daten setzen sich aus Vorname, Nachname, Alter, Anschrift, Schultyp, Jahrgangsstufe, Passwort Kontaktdaten und Profilbild zusammen. 
+Es besteht die Option seinen Account zu l�schen.
+
+\item[] \textbf{F32: Detaillierte Suche}\\
+
+Wie bei Suche oben
+
+Im Gegensatz zum nicht registrierten Besucher besitzt der Anwender die M�glichkeit einer detaillierten Suche nach folgenden Kriterien: Lehrer, Ort, Fach.
+
+\item[] \textbf{F33: Tutorprofil/Tutorbewertung}\\
+
+Matthias G und Sven
+
+Der registrierte Anwender ist berechtigt das Profil des Tutors einzusehen, das f�r den Anwender folgende Informationen bereit h�lt:
+
+\begin{itemize}
+	\item Geschlecht
+	\item Stundenl�hne 
+	\item Verf�gbarkeiten 
+	\item F�cher / Jahrgangsstufen 
+	\item Verf�gbare Orte / Regionen - Eintrag auf Karte
+	\item Profilbild
+	\item Kontaktdaten
+	\item Lehrerbewertung
+\end{itemize}
+	
+Er ist in der Lage das Schwarze Brett des Tutors einzusehen.
+\end{itemize}
+
+\subsection{F4: Lehrer / Mentor}
+\begin{itemize}
+\item[] \textbf{F41 Profil einstellen}\\
+
+Matthias G und Sven
+
+Der Tutor kann ein Profil erstellen, um sich kurz vorzustellen und Werbung in eigener Sache machen zu k�nnen. Sch�ler k�nnen ihn bewerten (z.B. Verbesserung der Note).
+
+Das Profil soll beinhalten / anbieten:
+\begin{itemize}
+	\item Geschlecht
+	\item Stundenl�hne verlangen
+	\item Verf�gbarkeiten angeben
+	\item F�cher / Jahrgangsstufen einstellen
+	\item Verf�gbare Orte / Regionen anbieten - Eintrag auf Karte
+	\item Zahlungsdaten zur Verf�gung stellen
+	\item Sieht in einer �bersicht seine Sch�ler und einen Kalender mit den n�chsten Terminen
+	\item Rechnungen / Zahlungserinnerungen verschicken
+	\item Profilbild
+	\item Kontaktdaten
+	\item Lehrerbewertung / G�stebuch
+\end{itemize}
+
+\item[] \textbf{F42 Lehrmaterialien online stellen und verteilen}\\
+
+Backend
+
+Er kann Dateien nach Bedarf f�r die Sch�ler per eMail verteilen.
+
+\item[] \textbf{F43 Beurteilungen schreiben}\\
+
+Stefan und Viet
+
+Der Sch�ler kann Feedback f�r seine abgegeben Aufgaben / Leistungen erhalten
+
+\item[] \textbf{F44 Schwarzes Brett}\\
+
+Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt. 
+Die Ankündigungen werden in die Datenbank geschrieben und können von dort wieder abgerufen werden. 
+\end{itemize}
+
+%\section{Glossar}
+
+
+
+\end{document}
+
+
+
