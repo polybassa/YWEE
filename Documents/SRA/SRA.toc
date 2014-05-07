@@ -1,25 +1,25 @@
 \select@language {ngerman}
 \contentsline {section}{\numberline {1}F: Funktionale Anforderungen}{4}{section.1}
 \contentsline {subsection}{\numberline {1.1}F1: \IeC {\"O}ffentlicher Bereich}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}F2: Administrator}{5}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}F3: Sch\IeC {\"u}ler}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.2}F2: Administrator}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}F3: Sch\IeC {\"u}ler}{5}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}F4: Lehrer / Mentor}{6}{subsection.1.4}
-\contentsline {section}{\numberline {2}S: Systemanforderungen}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}S1: Anforderungen an die Hardware}{7}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}S2: Anforderungen an die Systemsoftware}{8}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}S3: Programmiersprache}{8}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}S4: Allgemeine Anforderungen an die Webseite}{8}{subsection.2.4}
-\contentsline {section}{\numberline {3}Q: Qualitative Anforderungen}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Q1: Nachweis der Funktionalit\IeC {\"a}t}{9}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Q2: Gew\IeC {\"a}hrleistung von Datenschutz und Datensicherheit}{9}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Q3: Benutzerfreundliche Oberfl\IeC {\"a}che}{10}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Q4: Zuverl\IeC {\"a}ssigkeit}{10}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Q5: Effizienz}{10}{subsection.3.5}
-\contentsline {subsection}{\numberline {3.6}Q6: Wartbarkeit}{11}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}Q7: Portierbarkeit}{11}{subsection.3.7}
-\contentsline {section}{\numberline {4}P: Prozessbezogene Anwendungen}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}P1: Budget}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}P2: Personal}{11}{subsection.4.2}
-\contentsline {section}{\numberline {5}Anhang}{12}{section.5}
-\contentsline {subsection}{\numberline {5.1}Kontextdiagramm 1}{12}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Kontextdiagramm 2}{12}{subsection.5.2}
+\contentsline {section}{\numberline {2}S: Systemanforderungen}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}S1: Anforderungen an die Hardware}{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}S2: Anforderungen an die Systemsoftware}{7}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}S3: Programmiersprache}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}S4: Allgemeine Anforderungen an die Webseite}{7}{subsection.2.4}
+\contentsline {section}{\numberline {3}Q: Qualitative Anforderungen}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Q1: Nachweis der Funktionalit\IeC {\"a}t}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Q2: Gew\IeC {\"a}hrleistung von Datenschutz und Datensicherheit}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Q3: Benutzerfreundliche Oberfl\IeC {\"a}che}{8}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Q4: Zuverl\IeC {\"a}ssigkeit}{8}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Q5: Effizienz}{8}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Q6: Wartbarkeit}{8}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Q7: Portierbarkeit}{9}{subsection.3.7}
+\contentsline {section}{\numberline {4}P: Prozessbezogene Anwendungen}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}P1: Budget}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}P2: Personal}{9}{subsection.4.2}
+\contentsline {section}{\numberline {5}Anhang}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Kontextdiagramm Besucher}{10}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Kontextdiagramm Tutor/Sch\IeC {\"u}ler/Admin}{11}{subsection.5.2}
