@@ -28,13 +28,13 @@
      inkscape:window-height="726"
      id="namedview432"
      showgrid="false"
-     inkscape:zoom="1.3485026"
-     inkscape:cx="519.15046"
-     inkscape:cy="296.06988"
+     inkscape:zoom="0.6742513"
+     inkscape:cx="588.67487"
+     inkscape:cy="86.418301"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3004" /><metadata
+     inkscape:current-layer="g3012" /><metadata
      id="metadata3010"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
@@ -230,7 +230,19 @@
          id="path3382-9" /></clipPath><clipPath
        id="clipPath3392-6"><path
          d="m 215.99999,414.36001 0,39.6 309.48,0 0,-39.6"
-         id="path3394-4" /></clipPath></defs><g
+         id="path3394-4" /></clipPath><clipPath
+       id="clipPath3636-5"><path
+         inkscape:connector-curvature="0"
+         d="m 215.99999,286.44001 108.12,0 0,46.32 -108.12,0 0,-46.32 z"
+         id="path3638-1" /></clipPath><clipPath
+       id="clipPath3644-3"><path
+         inkscape:connector-curvature="0"
+         d="m 215.99999,286.56001 0,46.2 108,0 0,-46.2"
+         id="path3646-8" /></clipPath><clipPath
+       id="clipPath3656-5"><path
+         inkscape:connector-curvature="0"
+         d="m 215.99999,286.56001 0,46.2 108,0 0,-46.2"
+         id="path3658-0" /></clipPath></defs><g
      transform="matrix(1.25,0,0,-1.25,0,990)"
      id="g3012"><g
        id="g3014" /><g
@@ -757,10 +769,10 @@
              id="g3642"><text
                transform="matrix(0.99810596,0,0,-1,221.39999,297.24002)"
                id="text3648"><tspan
-                 x="0 3.9644315 10.671794 14.013498 20.720861"
+                 x="0 3.9644315 10.671794 20.720861"
                  y="0"
                  id="tspan3650"
-                 style="font-size:12px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold">[1.0]</tspan></text>
+                 style="font-size:12px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold">[1.]</tspan></text>
 </g></g><g
            id="g3652"><g
              clip-path="url(#clipPath3656)"
@@ -925,5 +937,21 @@
          x="379.39087"
          y="-296.57706"
          id="tspan3894"
-         style="font-size:11.19999981px">03.05.2014</tspan></text>
-</g></svg>
+         style="font-size:11.19999981px">10.05.2014</tspan></text>
+<g
+       transform="translate(9.4976925,-0.0228807)"
+       id="g3632-0"><g
+         clip-path="url(#clipPath3636-5)"
+         id="g3634-9"><g
+           id="g3640-4"><g
+             clip-path="url(#clipPath3644-3)"
+             id="g3642-8"><text
+               transform="matrix(0.99810596,0,0,-1,221.39999,297.24002)"
+               id="text3648-6"><tspan
+                 x="3.9644315"
+                 id="tspan3650-5"
+                 style="font-size:12px;font-variant:normal;font-weight:bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold">1</tspan></text>
+</g></g><g
+           id="g3652-9"><g
+             clip-path="url(#clipPath3656-5)"
+             id="g3654-0" /></g></g></g></g></svg>
