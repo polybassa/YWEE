@@ -253,7 +253,7 @@ Jeder angemeldete Nutzer kann sich auch wieder abmelden, dies geschieht durch lö
 
 \subsubsection*{F27: Besucherzähler}
 
-Für jeden Besucher der Seite wird eine PHP Session in Form eines Cookies, der drei Stunden aktiv ist, initialisiert. Bei jedem Aufruf wird geprüft, ob eine Session-Variable, die zur Erkennung benutzt wird, gesetzt ist. Falls diese nicht gesetzt ist, wird der Besucherzähler um eins erhöht. Ist die Variable jedoch gesetzt, wurde der Besucher schon gezählt und es wird nichts unternommen.
+Jeder Aufruf der Startseite wird über eine enstprechende Zählvariable, die in der Datenbank gespeichert ist, mitprotokolliert. Hierfür wird beim Aufbau der Startseite der aktuelle Zählerstand in der Datenbank um eins erhöht, dies geschieht mittels PHP und PDO zum Ansprechen der Datenbank.
 \bigskip
 \newline
 $^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
