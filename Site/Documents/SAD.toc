@@ -1,9 +1,0 @@
-\select@language {ngerman}
-\contentsline {section}{\numberline {1}3: Software Architecture}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Kontextdiagramm 1}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Kontextdiagramm 2}{5}{subsection.1.2}
-\contentsline {section}{\numberline {2}4: Systems Requirement}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}F1: \"Offentlicher Bereich}{6}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}F2: Administrator}{7}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}F3: Sch\"uler}{8}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}F4: Lehrer / Mentor}{9}{subsection.2.4}
