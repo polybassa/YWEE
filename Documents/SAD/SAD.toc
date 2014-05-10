@@ -1,7 +1,7 @@
 \select@language {ngerman}
 \contentsline {section}{\numberline {1}Software Architecture}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Kontextdiagramm 1 - Administrator}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Kontextdiagramm 2 - Tutor}{5}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.1}Anwendungsfalldiagramm 1 - Administrator}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Anwendungsfalldiagramm 2 - Tutor}{5}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Sequenzdiagramm}{6}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Navigationdiagramm}{7}{subsection.1.4}
 \contentsline {subsection}{\numberline {1.5}ER-Diagramm}{8}{subsection.1.5}
