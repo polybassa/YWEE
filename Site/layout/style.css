@@ -2,7 +2,6 @@
 /* css released under Creative Commons License -  http://creativecommons.org/licenses/by/2.0/deed.en  */
 
 /* Angepasst und verändert von: Daniel Tatzel, ..... */
-/* 12.05.14 geändert Matthias Birnthaler*/
 
 body
 {
@@ -51,24 +50,15 @@ img.download {vertical-align:middle;}
     box-shadow:         3px 3px 5px 6px #ccc;
 }
 
-/* ----------banner for logo and slideshow-------------- */
-/*-----------see also slideshow.css---------------------*/
+/* ----------banner for logo-------------- */
 #banner
 {
-   position: relative; 
-   z-index: 0;
+    background-color: #FF0011;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
 }
-#logo
-{
-	position: absolute;
-	z-index: 1;
-	top:25;
-	left:25;
-
-
-}
-
-
+#banner img {padding:10px 0px;} 
 
 /* --------------------Nav-------------- */
 #nav
