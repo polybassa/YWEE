@@ -1,3 +1,0 @@
-Username: ftp_U02_ebenezer-kunatse.net@ebenezer-kunatse.net
-Passwort: WE#net02
-Hostname: ftp.strato.com
