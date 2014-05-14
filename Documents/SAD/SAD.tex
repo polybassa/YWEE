@@ -44,7 +44,7 @@ Tobias Schwindl
 	\hline
 	1.0 & 03.05.2014 & AS & Erster Entwurf & First Draft \\
 	\hline
-	1.1 & 07.05.2014 & AS & Verbesserung & Missing Data added:  \newline Sequencediagram, Annahmen \\
+	1.1 & 10.05.2014 & AS & Verbesserung & Missing Data added:  \newline Sequencediagram, Annahmen \\
 	\hline
 	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
 	\hline
@@ -63,22 +63,21 @@ Tobias Schwindl
 \section{Software Architecture}
 %und alle anderen Diagramme!!
 
-\subsection{Kontextdiagramm 1 - Administrator}
+\subsection{Anwendungsfalldiagramm 1 - Administrator}
 \begin{figure}[!htbp]
 \includegraphics[width=0.8\textwidth]{./Source/UseCaseAdministrator_11.pdf} 
-\caption{Dieses Kontextdiagramm beschreibt die Funktionen, die ein eingeloggter Administrator ausführen kann. Des Weiteren sind die Funktionen auf einzelne Unterfunktionen aufgeschlüsselt.}
+\caption{Dieses Anwendungsfalldiagramm beschreibt die Funktionen, die ein eingeloggter Administrator ausführen kann. Des Weiteren sind die Funktionen auf einzelne Unterfunktionen aufgeschlüsselt.}
 \end{figure}
 \newpage
-\subsection{Kontextdiagramm 2 - Tutor}
+\subsection{Anwendungsfalldiagramm 2 - Tutor}
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_13.pdf}} \caption{Dieses Kontextdiagramm beschreibt die Funktionen, die ein eingeloggter Tutor ausführen kann. Des Weiteren sind die Funktionen auf einzelne Unterfunktionen aufgeschlüsselt.}
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/UseCaseMentor_13.pdf}} \caption{Dieses Anwendungsfalldiagramm beschreibt die Funktionen, die ein eingeloggter Tutor ausführen kann. Des Weiteren sind die Funktionen auf einzelne Unterfunktionen aufgeschlüsselt.}
 \end{figure}
 \newpage
 \subsection{Sequenzdiagramm}
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.91\textheight, angle=-90]{./Source/sequence_diagram.png}}  
-\caption{2-3 Sätze was man hier sieht!!}
-wird nachgereicht
+\fbox{\includegraphics[width=0.9\textheight, angle=-90]{./Source/sequence_diagram.png}}  
+\caption{Dieses Sequenzdiagramm beschreibt, in welcher Reihenfolge Befehle ausgeführt werden müssen, um eine Aktion vollständig und korrekt auszuführen}
 \end{figure}
 \newpage
 \subsection{Navigationdiagramm}
@@ -93,24 +92,17 @@ wird nachgereicht
 \newpage
 \subsection{Activitydiagramm}
 %Viet, Stefan
-Nicht UML-Konform!!
-wird nachgereicht
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.9\textwidth]{./Source/Activity.pdf}} 
-\caption{2-3 Sätze was man hier sieht!!}
+\fbox{\includegraphics[width=0.9\textwidth]{./Source/ActivityNew.pdf}} 
+\caption{User muss sich anmelden, um die erweiterten Funktionen nutzen zu können. Bei erfolgreicher Anmeldung hat der User die Möglichkeit folgende Aktivitäten zu nutzen: Profil bearbeiten, Nachrichten senden und empfangen, Zugriff auf das Schwarze Brett, erweiterte Detailsuche, Bewertung erhalten und abgeben und in Profile einsehen. Um den persönlichen Bereich wieder zu verlassen, muss der User sich abmelden. }
 \end{figure}
 \newpage
 \section{Objectives} 
 
 \subsection{Business Objectives}
-Ziel der Webseite ist es Tutoren in der Nähe zu finden, und mit Ihnen in 
-Verbindung zu treten. Durch die Möglichkeit ein persönliches Profil erstellen zu 
-können, sollen Nutzer dauerhaft an unser Webangebot gebunden werden. 
-Potentielle Nutzer sollen direkt an Hochschulen geworben werden. Auch 
-Kooperationen mit Universitäten und Hochschulen sollen geschlossen werden.
+Ziel der Webseite ist es Tutoren in der Nähe zu finden, und mit Ihnen in Verbindung zu treten. Durch die Möglichkeit ein persönliches Profil erstellen zu können, sollen Nutzer dauerhaft an unser Webangebot gebunden werden. Potentielle Nutzer sollen direkt an Hochschulen geworben werden. Auch Kooperationen mit Universitäten und Hochschulen sollen geschlossen werden.
 \newline \newline 
-Unser Webangebot soll kostenfrei sein. Finanziert werden soll das Angebot durch 
-gezielte Werbung.
+Unser Webangebot soll kostenfrei sein. Finanziert werden soll das Angebot durch gezielte Werbung.
 
 \subsection{System Objectives}
 Das Webangebot Personal Tutoring Service soll als "Template" aufgebaut werden. 
@@ -253,7 +245,7 @@ Jeder angemeldete Nutzer kann sich auch wieder abmelden, dies geschieht durch lö
 
 \subsubsection*{F27: Besucherzähler}
 
-Für jeden Besucher der Seite wird eine PHP Session in Form eines Cookies, der drei Stunden aktiv ist, initialisiert. Bei jedem Aufruf wird geprüft, ob eine Session-Variable, die zur Erkennung benutzt wird, gesetzt ist. Falls diese nicht gesetzt ist, wird der Besucherzähler um eins erhöht. Ist die Variable jedoch gesetzt, wurde der Besucher schon gezählt und es wird nichts unternommen.
+Jeder Aufruf der Startseite wird über eine enstprechende Zählvariable, die in der Datenbank gespeichert ist, mitprotokolliert. Hierfür wird beim Aufbau der Startseite der aktuelle Zählerstand in der Datenbank um eins erhöht, dies geschieht mittels PHP und PDO zum Ansprechen der Datenbank.
 \bigskip
 \newline
 $^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
@@ -402,7 +394,7 @@ Da man mit Hilfe Javascript nur einzelne *.php-Skripte ansprechen kann und nicht
 	\hline
 	SRA & 26.03.14 & 09.04.14 & Abgeschlossen & \\
 	\hline
-	SAD & 16.04.14 & 07.05.14 & In Arbeit & \\
+	SAD & 16.04.14 & 07.05.14 & Abgeschlossen & \\
 	\hline
 	Datenbank Design & 16.04.14 & 03.05.14 & Abgeschlossen & \\
 	\hline

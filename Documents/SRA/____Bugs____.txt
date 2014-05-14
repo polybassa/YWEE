@@ -1,2 +1,0 @@
-Zugriff aufs Mailsystem für schüler / mentor fehlt noch!!!
-Kontextdiagramm 2: Mentor kann keine bewertungen abgeben!!!
