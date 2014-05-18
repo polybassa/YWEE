@@ -1,6 +1,6 @@
 <?php
 	//Tobias Schwindl
-	//Skript für die Autocompletion bei der Suche
+	//Skript für die Autocompletion bei der Suche (in Bearbeitung)
 	
 	//Verbindung aufbauen
 	require "/ConToDB.php";
