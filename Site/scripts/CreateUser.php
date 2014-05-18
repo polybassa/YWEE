@@ -32,7 +32,7 @@
             
         $query->bindParam( ":email", $_POST['email'] );
         $query->bindParam( ":telefon", $_POST['telefon'] );
-        
+
         $query->bindParam( ":sprache", $_POST['sprache'] );
         
         $query->execute();

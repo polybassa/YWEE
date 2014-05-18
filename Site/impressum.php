@@ -16,10 +16,11 @@
 
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
 
-    if ( !isset( $_SESSION['sprache'] ) )
-        include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/impressum.html");       // Inkludiert den deutschen Inhalt
-    else
+    if ( $_SESSION['sprache'] == 'en' || $_GET['lang'] == 'en' )
         include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/en/impressum.html");       // Inkludiert den englischen Inhalt
+    else
+        include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/impressum.html");       // Inkludiert den deutschen Inhalt
+        
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
