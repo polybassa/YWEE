@@ -6,7 +6,11 @@
     //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/counter.php");       // Inkludiert den Counter Script
     //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
 
-    $titel = "Startseite"; // Name der Seite die im Browser angezeigt werden soll
+    if ( $_SESSION['sprache'] == 'en' || $_GET['lang'] == 'en' )
+        $titel = "Homepage"; // Englischer Name der Seite die im Browser angezeigt werden soll
+    else
+        $titel = "Startseite"; // Deutscher Name der Seite die im Browser angezeigt werden soll
+    
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist

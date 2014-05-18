@@ -5,7 +5,11 @@
     //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
 
-    $titel = "Registrierung"; // Name der Seite die im Browser angezeigt werden soll
+    if ( $_SESSION['sprache'] == 'en' || $_GET['lang'] == 'en' )
+        $titel = "Registration"; // Englischer Name der Seite die im Browser angezeigt werden soll
+    else
+        $titel = "Registrierung"; // Deutscher Name der Seite die im Browser angezeigt werden soll
+    
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist

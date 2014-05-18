@@ -5,7 +5,11 @@
     //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
 
-    $titel = "Die Seite konnte nicht gefunden werden"; // Name der Seite die im Browser angezeigt werden soll
+    if ( $_SESSION['sprache'] == 'en' || $_GET['lang'] == 'en' )
+        $titel = "Could not find site"; // Englischer Name der Seite die im Browser angezeigt werden soll
+    else
+        $titel = "Die Seite konnte nicht gefunden werden"; // Deutscher Name der Seite die im Browser angezeigt werden soll
+        
     $StatusCodeError = 1;   // Wird (nur!) hier fuer Login und -out benoetigt (Script wird wegen dem Rewrite nicht ausgefuehrt)
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
