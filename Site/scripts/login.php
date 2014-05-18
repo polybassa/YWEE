@@ -27,6 +27,14 @@
             if ( $result["rolle"] == 1 )
                 $_SESSION['admin'] = true;
 
+            $query2 = $dbConnection->prepare("select sprache from mitglieder where benutzername = :user");
+            $query2->bindParam(":user", $result["benutzername"]);
+            $query2->execute();
+
+            $result2 = $query->fetch(PDO::FETCH_LAZY);
+
+            $_SESSION['sprache'] = $result2["sprache"];
+            
             echo 'Sie sind angemeldet!<br>';
         }
         else
