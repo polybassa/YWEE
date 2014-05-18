@@ -12,12 +12,8 @@
     
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
-    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
-    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/leftbar.php");  // Inkludiert den linken Balken
-    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/rightbar.php"); // Inkludiert den rechten Balken
 
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
-
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
 
     if ( $_SESSION['sprache'] == 'en' || $_GET['lang'] == 'en' )
