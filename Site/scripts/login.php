@@ -22,6 +22,8 @@
         {
             $_SESSION['logged-in'] = true;  // Login auf True setzen
 
+            $_SESSION['user'] = $result["benutzername"];  // Benutzername in die Session schreiben
+
             if ( $result["rolle"] == 1 )
                 $_SESSION['admin'] = true;
 
