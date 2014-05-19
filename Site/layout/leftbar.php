@@ -6,6 +6,12 @@
     Benutzerz&auml;hler (nur Admin)<br>
     <br>
     <br>
-    Counter: <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage ?>
+    <?php
+        if ( $titel == "Startseite" || $titel == "Homepage" )
+        {
+            echo "Counter: ";
+            include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage
+        }
+    ?>
     </p>
 </div>

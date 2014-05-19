@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link type="text/css" href="layout/style.css" rel="stylesheet" media="screen" />
+<link type="text/css" href="/layout/style.css" rel="stylesheet" media="screen" />
 <title><?php echo $titel ?></title>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,3 +16,9 @@
         -->
         Banner (insgesamt 900 Pixel breit): Links das Logo, danaben Slideshow
     </div>
+
+<?php
+    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
+    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/leftbar.php");  // Inkludiert den linken Balken
+    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/rightbar.php"); // Inkludiert den rechten Balken
+?>
