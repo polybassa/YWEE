@@ -1,3 +1,5 @@
+# Autor: Daniel Tatzel
+
 AuthType Basic
 AuthName "Privater Ordner"
 AuthUserFile /home/strato/www/eb/www.ebenezer-kunatse.net/htdocs//test_02/private/.htpasswd

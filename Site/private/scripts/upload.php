@@ -1,4 +1,7 @@
 <?php
+    // Autor von upload.php: Daniel Tatzel
+    // Laedt eine ausgewaehlte Datei auf den Server hoch
+    
     $temp = explode(".", $_FILES["file"]["name"]);
     $extension = end($temp);
 
