@@ -29,7 +29,6 @@
         // Debug Information
         echo '<p>';
         echo "Session: ".session_id()."<br>";            // Debug Info
-        echo "counter-ip: ".$_SESSION['counter_ip']."<br>"; // Debug Info
         echo "Logged-in: ".$_SESSION['logged-in']."<br>";   // Debug Info
         //echo '<div id="LoginStatus"></div>';
         echo '</p>';

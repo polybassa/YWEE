@@ -7,7 +7,7 @@
     <br>
     <br>
     <?php
-        if ( $titel == "Startseite" || $titel == "Homepage" )
+        if ( $_SESSION['admin'] == true )
         {
             echo "Counter: ";
             include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage

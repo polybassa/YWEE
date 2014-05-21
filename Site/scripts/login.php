@@ -44,6 +44,8 @@
     else if ( isset( $_SESSION['logged-in'] ) && isset($_POST['logout'] ) )
     {
         $_SESSION['logged-in'] = NULL;  // Login auf NULL setzen, damit es mit isset() funktioniert
+        if ( $_SESSION['admin'] == true )
+            $_SESSION['admin'] = NULL;      // Admin Status zur&uuml;cksetzen
     }
     
     if ( isset($_POST['register'] ) )
