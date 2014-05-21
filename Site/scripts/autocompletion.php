@@ -30,12 +30,12 @@
 		{
 			$results[] = $row['Wohnort'].  ",Orte.php";
 		}
-		else
+		if(stristr($row['fach'], $_POST['suche']))
 		{
 			$results[] = $row['fach']. ",Tutoren.php";
 		}
 	}
-	
-	echo json_encode($results);
-	return json_encode($results);
+	$result = array_unique($results);
+	//echo json_encode($result);
+	return json_encode($result);
 ?>
