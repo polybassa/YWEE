@@ -10,7 +10,7 @@
         if ( $titel == "Startseite" || $titel == "Homepage" )
         {
             echo "Counter: ";
-            include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage
+            include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage
         }
     ?>
     </p>

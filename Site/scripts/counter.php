@@ -1,6 +1,8 @@
 <?php
     // Autor des Counters: Daniel Tatzel
 
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+    
     // Baue Verbindung auf
     $dbConnection = ConnectToDB();
         

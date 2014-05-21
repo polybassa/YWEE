@@ -2,8 +2,8 @@
     // Anpassung und Aufteilung des Layouts: Daniel Tatzel
     // Muss in der Reihenfolge bleiben
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
-    //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
-    //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
 
     if ( $_SESSION['sprache'] == 'en' || $_GET['lang'] == 'en' )
         $titel = "Registration"; // Englischer Name der Seite die im Browser angezeigt werden soll

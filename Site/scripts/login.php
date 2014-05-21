@@ -2,7 +2,7 @@
     // Autor von login.php: Daniel Tatzel
     // Prueft ob der Benutzer die richtigen Anmeldedaten eingegeben hat beim Login oder ob er sich abmelden will
 
-    //include($_SERVER["DOCUMENT_ROOT"] . "/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     
     if ( !isset( $_SESSION['logged-in'] ) /*&& isset($_POST['login'] )*/ )
     {

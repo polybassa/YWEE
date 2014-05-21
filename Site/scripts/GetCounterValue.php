@@ -2,6 +2,8 @@
     // Autor von GetCounterValue.php: Daniel Tatzel
     // Holt sich den aktuellen Wert des Counters aus der DB mittels PDO und gibt ihn zurueck
 
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+    
     // Baue Verbindung auf
     $dbConnection = ConnectToDB();
         
