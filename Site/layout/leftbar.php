@@ -2,10 +2,11 @@
     <p>
     Linker Balken! (200 Pixel)<br>
     <br>
-    G&auml;stebuch<br>
-    <br>
-    <br>
     <?php
+        include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ReadTopGuestbook.php");       // Inkludiert die Top Gaestebucheintraege
+        
+        echo "<br>";
+        
         if ( $_SESSION['admin'] == true )
         {
             echo "Counter: ";

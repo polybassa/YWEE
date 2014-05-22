@@ -41,6 +41,8 @@
         else
             echo 'Anmeldung Fehlgeschlagen!';
 
+        $dbConnection = null;
+
     }
     else if ( isset( $_SESSION['logged-in'] ) )
     {

@@ -9,8 +9,8 @@
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
-    $query = $dbConnection->prepare("select * from gaestebuch where autorisiert = 1 or autorisiert = 2");
-    
+    $query = $dbConnection->prepare("select * from gaestebuch where autorisiert = 0");
+
     if ( $query->execute() )
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
