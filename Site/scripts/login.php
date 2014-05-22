@@ -2,8 +2,9 @@
     // Autor von login.php: Daniel Tatzel
     // Prueft ob der Benutzer die richtigen Anmeldedaten eingegeben hat beim Login oder ob er sich abmelden will
 
-    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
-    
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert Session
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+
     if ( !isset( $_SESSION['logged-in'] ) /*&& isset($_POST['login'] )*/ )
     {
         // Baue Verbindung auf
@@ -35,17 +36,18 @@
 
             $_SESSION['sprache'] = $result2["sprache"];
             
-            echo 'Sie sind angemeldet!<br>';
+            echo 'Sie sind angemeldet!';
         }
         else
-            echo 'Anmeldung Fehlgeschlagen!<br>';
+            echo 'Anmeldung Fehlgeschlagen!';
 
     }
-    else if ( isset( $_SESSION['logged-in'] ) && isset($_POST['logout'] ) )
+    else if ( isset( $_SESSION['logged-in'] ) )
     {
         $_SESSION['logged-in'] = NULL;  // Login auf NULL setzen, damit es mit isset() funktioniert
         if ( $_SESSION['admin'] == true )
             $_SESSION['admin'] = NULL;      // Admin Status zur&uuml;cksetzen
+        echo "Sie sind abgemeldet";
     }
     
     if ( isset($_POST['register'] ) )
