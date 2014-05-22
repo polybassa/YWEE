@@ -1,23 +1,15 @@
-<html>
-<head>
-<title>Registrierung</title>
-        <style type="text/css">
- 
-            
-            
- 
-            form label {display:inline-block; width:200px;}
- 
-           
-            form input[type="text"],
-            form input[type="password"],
-            form input[type="email"], 
-			form input[type="tel"]{width:180px;}
- 
-           form .line {clear:both;}
-            form .line.submit {text-align:left;}
 
-        </style>
+<title>Registrierung</title>
+<style type="text/css">
+	form label {display:inline-block; width:200px;}  
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"], 
+	form input[type="tel"]{width:180px;}
+ 
+    form .line {clear:both;}
+    form .line.submit {text-align:left;}
+</style>
 <script type="text/javascript">
 
 function chkFormular () {
@@ -30,21 +22,19 @@ return false;
 }
 }
 </script>
-</head>
-<body>
+
 
 <h1>Registrierung</h1>
 
-<form name="Formular" action="file:///C:/Users/Maximilian/Documents/WebDev/loginv1.html"
-  method="post" onsubmit="return chkFormular()">
+<form name="Formular"method="post"onsubmit="return chkFormular()">
 <pre>
 
 
 	<div><label for ="nachname">Name:</label><input type="text" size="45" maxlength = "45" placeholder ="Name" name="nachname" id="nachname" required></div>
 	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" placeholder = "Vorname" name="vorname" id="vorname"required></div>
 	<div><label for ="email">E-Mail:</label><input type="email" size="45" maxlength = "45" placeholder = "beispiel@email.de"id="email"name="email"required></div>
-	<div>Geburtsdatum:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table>	
-	<select name="tag" style="width:60"><option value="0">Tag</option><?php
+	<div><label for ="tag">Geburtsdatum:</label><table>	
+	<select name="tag" id="tag" style="width:50"><option value="0">Tag</option><?php
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
@@ -76,6 +66,3 @@ return false;
 
 </pre>
 </form>
-
-</body>
-</html>
