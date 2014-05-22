@@ -52,5 +52,7 @@
         }
 
         echo "Registrierung erfolgreich!";
+
+        $dbConnection = null;
     }
 ?>
