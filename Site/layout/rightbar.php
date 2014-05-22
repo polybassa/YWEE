@@ -13,8 +13,8 @@
             
         if ( !isset( $_SESSION['logged-in'] ) )
         {
-            echo '<input type="text" name="username" value="Benutzername">
-                <input type="password" name="passwd" value="Passwort">
+            echo '<input type="text" name="username" placeholder="Benutzername">
+                <input type="password" name="passwd" placeholder="Passwort">
                 <input type="hidden" name="PHPSESSID" value="'.session_id().'">
                 <input type="submit" name="login" value="Login">
                 <input type="submit" name="register" value="Registrieren">
@@ -28,11 +28,13 @@
         }
         
         // Debug Information
+        /*
         echo '<p>';
         echo "Session: ".session_id()."<br>";            // Debug Info
         echo "Logged-in: ".$_SESSION['logged-in']."<br>";   // Debug Info
         //echo '<div id="LoginStatus"></div>';
         echo '</p>';
+        */
     ?>
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
@@ -48,7 +50,7 @@
     
     <br>
     <form method="POST" action="index.php">
-        <input type="text" name="search" value="Suche">
+        <input type="text" name="search" placeholder="Suche">
         <input type="submit" name="search" value="Suchen">
     </form>
     <br>
