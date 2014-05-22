@@ -1,14 +1,15 @@
 <div id="right">
     <p>
     Rechter Balken! (200 Pixel)</p>
+    
     <?php
         // Autor des PHP-Abschnitts: Daniel Tatzel
         // Gibt entsprechendes Formular aus, je nachdem, ob der Nutzer angemeldet ist oder nicht
 
         if ( $StatusCodeError)
-            echo '<form method="POST" action="index.php">';
+            echo '<form method="POST" action="index.php" id="loginform">';
         else
-            echo '<form method="POST" action="">';
+            echo '<form method="POST" action="" id="loginform">';
             
         if ( !isset( $_SESSION['logged-in'] ) )
         {
@@ -33,6 +34,18 @@
         //echo '<div id="LoginStatus"></div>';
         echo '</p>';
     ?>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+        $("#loginform").submit(function(e)
+        {
+          e.preventDefault();
+          $.post("scripts/login.php",$("#loginform").serialize(),function(msg) {alert(msg); window.location.reload();});
+        });
+      });
+    </script>
+    
     <br>
     <form method="POST" action="index.php">
         <input type="text" name="search" value="Suche">
