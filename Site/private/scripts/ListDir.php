@@ -8,33 +8,40 @@
     // Kann dann mit JSON in Javascript umgewandelt werden zur Verarbeitung ( Array )
     $FileListing = array_diff(scandir($Dir), array('..', '.'));
 
-    //echo "Test";
-    $file_arr = array();
-
-    foreach ( $FileListing as $Files )
+    if ( count( $FileListing ) > 0 )
     {
-        $temp = filesize($Files)/1024;
-        if ( ($temp) != 0 )
+        $file_arr = array();
+        
+        foreach ( $FileListing as $File )
         {
-            $size = number_format( $temp, 2, ",", "." );
-        }
-        else
-        {
-            $size = $temp;
-        }
+            $temp = filesize($File)/1024;
+            if ( ($temp) != 0 )
+            {
+                $size = number_format( $temp, 2, ",", "." );
+            }
+            else
+            {
+                $size = $temp;
+            }
 
-        // Debug Info
-        echo "<a href=".$Dir."/".$Files.">".$Files."</a> &nbsp;".$size." KB<br>";
+            // Debug Info
+            echo "<a href=".$Dir."/".$File.">".$File."</a> &nbsp;".$size." KB ";
+            echo '<form method="POST" action="">';
+            echo '<input type="hidden" name="file" value="'.$File.'">';
+            echo '<input type="submit" name="delete" value="L&ouml;schen">';
+            echo '</form>';
 
-        // Array fuer JSON Objekt
-        $file_arr[] = array("name" => $Files, "size" => $size);
+            // Array fuer JSON Objekt
+            $file_arr[] = array("name" => $File, "size" => $size);
+
+            echo "<br><br>";
+
+            // JSON Ausgabe
+            //echo json_encode( $file_arr );
+        }
     }
-    echo "<br><br>";
-    // Debug Information
-    print_r($file_arr);
-
-    echo "<br><br>";
-
-    // JSON Ausgabe
-    echo json_encode( $file_arr );
+    else
+    {
+        echo "Keine Dateien vorhanden.";
+    }
 ?>
