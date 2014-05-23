@@ -3,6 +3,7 @@
 ExpiresActive On
 ExpiresDefault "access plus 1 day"
 
+# Zugriffe auf dot-files verbieten
 <FilesMatch "^\." >
     deny from all
 </FilesMatch>
@@ -10,6 +11,8 @@ ExpiresDefault "access plus 1 day"
 RewriteEngine On
 RewriteBase /
 
+# Redirects für Sprachauswahl
+Redirect /en/nachrichten.php http://ebenezer-kunatse.net/en/news.php
 Redirect /en/registrierung.php http://ebenezer-kunatse.net/en/registration.php
 Redirect /en/impressum.php http://ebenezer-kunatse.net/en/sitenotice.php
 
