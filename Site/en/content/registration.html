@@ -1,0 +1,67 @@
+<!-- Inhalt von: Maxi Schröter -->
+<title>Registrierung</title>
+<style type="text/css">
+	form label {display:inline-block; width:200px;}  
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"], 
+	form input[type="tel"]{width:180px;}
+ 
+    form .line {clear:both;}
+    form .line.submit {text-align:left;}
+</style>
+<script type="text/javascript">
+
+function chkFormular () {
+var pass1=document.Formular.pw1.value;
+var pass2=document.Formular.pw2.value;
+if (document.Formular.pw1.value != document.Formular.pw2.value) {
+alert ("Ihre Passw&ouml;rter stimmen nicht &uuml;berein");
+document.Formular.pw1.focus();
+return false;
+}
+}
+</script>
+
+
+<h1>Registrierung</h1>
+
+<form name="Formular"method="post"onsubmit="return chkFormular()" action="">
+<pre>
+		
+
+	<div><label for ="nachname">Surname:</label><input type="text" size="45" maxlength = "45" placeholder ="Surname" name="nachname" id="nachname" required></div>
+	<div><label for ="vorname">Forename:</label><input type="text" size="45" maxlength = "45" placeholder = "Forename" name="vorname" id="vorname"required></div>
+	<div><label for ="email">E-Mail:</label><input type="email" size="45" maxlength = "45" placeholder = "beispiel@email.de"id="email"name="email"required></div>
+	<div><label for ="tag">Birthday:</label><table>	
+	<select name="tag" id="tag" style="width:50"><option value="0">Day</option><?php
+    $i = 0;
+    while ( $i++ < 31)
+    echo '<option value="'.$i.'">'.$i.'</option>';?></select>
+	<select name="monat">
+	<option value="0">Month</option>
+	<?php
+	$i = 0;
+	while ( $i++ < 12)
+	echo '<option value="'.$i.'">'.$i.'</option>';?>
+	</select>
+	<select name="jahr">
+	<option value="0">Year</option>
+	<?php
+    $i = date("Y");
+    while ( $i-- > 1900)
+    echo '<option value="'.$i.'">'.$i.'</option>';?>
+	</select></table></div>
+	<div><label for ="plz">Postcode:</label><input type="text" size="45"placeholder ="00000" id="plz"name="plz"required></div>
+	<div><label for ="wohnort">Residence:</label><input type="text" size="45" maxlength = "45" placeholder ="Residence" id="wohnort"name="wohnort"required></div>
+	<div><label for ="strasse">Street:</label><input type="text" size="45" maxlength = "45" placeholder = "Street"id="strasse"name="strasse"required></div>
+	<div><label for ="hausnummer">House Number:</label><input type="text" size="45" placeholder ="45" id="hausnummer"name="hausnummer"required></div>
+	<div><label for ="telefon">Phone:</label><input type="tel" size="45"placeholder ="0190666666" id="telefon"name="telefon"required></div>
+	<div><label for ="benutzername">Username:</label><input type="text" size="45" maxlength = "45" placeholder= "Username" id="benutzername"name="benutzername"required></div>
+	<div><label for ="pw1">Password:</label><input type="password" size="45" maxlength = "45" name="passwort" id="pw1" ></div>
+	<div><label for ="pw2">Confirm password:</label><input type="password" maxlength = "45" size="45" name="passwortcheck" id ="pw2"></div>
+	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>
+		  
+
+</pre>
+</form>

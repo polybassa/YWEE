@@ -14,10 +14,16 @@ RewriteBase /
 #RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(html?|php)\ HTTP/
 #    RewriteRule ^index\.(html?|php)$ http://ebenezer-kunatse.net/ [L,R=301]
 
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /404\.php\ HTTP/
-    RewriteRule ^404\.php$ http://ebenezer-kunatse.net/ [L,R=301]
-
 RewriteCond %{HTTP_HOST} ^www\.ebenezer-kunatse\.net$
     RewriteRule ^(.*)$ http://ebenezer-kunatse.net/$1 [L,R=301]
+    
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ http://ebenezer-kunatse.net/de/ [R=301,L]
 
-ErrorDocument 404 /404.php
+#RewriteCond %{HTTP_HOST} ^(www.)?ebenezer-kunatse.net$
+#RewriteRule ^(/)?$ de [L]
+
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /404\.php\ HTTP/
+#    RewriteRule ^404\.php$ http://ebenezer-kunatse.net/ [L,R=301]
+
+#ErrorDocument 404 /404.php

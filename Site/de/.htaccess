@@ -1,0 +1,13 @@
+# Autor: Daniel Tatzel
+
+ExpiresActive On
+ExpiresDefault "access plus 1 day"
+
+<FilesMatch "^\." >
+    deny from all
+</FilesMatch>
+
+RewriteEngine On
+RewriteBase /
+
+ErrorDocument 404 http://ebenezer-kunatse.net/de/404.php
