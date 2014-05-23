@@ -5,19 +5,20 @@
     <?php
         // Autor des PHP-Abschnitts: Daniel Tatzel
         // Gibt entsprechendes Formular aus, je nachdem, ob der Nutzer angemeldet ist oder nicht
-
+/*
         if ( $StatusCodeError)
             echo '<form method="POST" action="index.php" id="loginform">';
         else
+        */
             echo '<form method="POST" action="#" id="loginform">';
             
         if ( !isset( $_SESSION['logged-in'] ) )
         {
-            echo '<input type="text" name="username" placeholder="Benutzername">
-                <input type="password" name="passwd" placeholder="Passwort">
+            echo '<input type="text" name="username" placeholder="Username">
+                <input type="password" name="passwd" placeholder="Password">
                 <input type="hidden" name="PHPSESSID" value="'.session_id().'">
                 <input type="submit" name="login" value="Login">
-                <input type="submit" name="register" value="Registrieren">
+                <input type="submit" name="register" value="Register">
                 </form>';
         }
         else
@@ -36,22 +37,22 @@
         echo '</p>';
         */
     ?>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function()
       {
         $("#loginform").submit(function(e)
         {
           e.preventDefault();
-          $.post("scripts/login.php",$("#loginform").serialize(),function(msg) {alert(msg); window.location.reload();});
+          $.post("/scripts/login.php",$("#loginform").serialize(),function(msg) {alert(msg); window.location.reload();});
         });
       });
     </script>
     
     <br>
     <form method="POST" action="index.php">
-        <input type="text" name="search" placeholder="Suche">
-        <input type="submit" name="search" value="Suchen">
+        <input type="text" name="search" placeholder="Search">
+        <input type="submit" name="search" value="Search">
     </form>
     <br>
     <p>Map
