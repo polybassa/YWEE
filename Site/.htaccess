@@ -25,5 +25,3 @@ RewriteRule ^(.*)$ http://ebenezer-kunatse.net/de/ [R=301,L]
 
 #RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /404\.php\ HTTP/
 #    RewriteRule ^404\.php$ http://ebenezer-kunatse.net/ [L,R=301]
-
-#ErrorDocument 404 /404.php

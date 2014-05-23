@@ -30,7 +30,7 @@
         }
         else
         {
-            if ( $_SESSION['sprache'] = "de")
+            if ( $_SESSION['sprache'] == "de")
                 echo 'Anmeldung Fehlgeschlagen!';
             else
                 echo 'Login failed!';
@@ -41,10 +41,11 @@
     }
     else if ( isset( $_SESSION['logged-in'] ) )
     {
-        $_SESSION['logged-in'] = NULL;  // Login auf NULL setzen, damit es mit isset() funktioniert
+        unset( $_SESSION['logged-in'] );    // Login auf NULL setzen, damit es mit isset() funktioniert
+        unset( $_SESSION['user'] );
+        
         if ( $_SESSION['admin'] == true )
-            $_SESSION['admin'] = NULL;      // Admin Status zur&uuml;cksetzen
-        //echo "Sie sind abgemeldet";
+            unset( $_SESSION['admin'] );      // Admin Status zur&uuml;cksetzen
     }
     
     if ( isset($_POST['register'] ) )

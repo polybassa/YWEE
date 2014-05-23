@@ -10,4 +10,7 @@ ExpiresDefault "access plus 1 day"
 RewriteEngine On
 RewriteBase /
 
+Redirect /de/registration.php http://ebenezer-kunatse.net/de/registrierung.php
+Redirect /de/sitenotice.php http://ebenezer-kunatse.net/de/impressum.php
+
 ErrorDocument 404 http://ebenezer-kunatse.net/de/404.php

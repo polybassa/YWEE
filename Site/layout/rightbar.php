@@ -46,36 +46,42 @@
         echo '</p>';
         */
     ?>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function()
       {
         $("#loginform").submit(function(e)
         {
           e.preventDefault();
-          $.post("scripts/login.php",$("#loginform").serialize(),function(msg) {alert(msg); window.location.reload();});
+          $.post("/scripts/login.php", $("#loginform").serialize(),
+          function(msg)
+          {
+            if (msg.length > 2)
+                { alert(msg); }
+            if (msg.length != 27)
+                { window.location.reload(); } });
         });
       });
     </script>
     
     <br>
 
+    <!-- Suchformular --> 
+    <form method="POST" action="index.php">
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
-                echo '<form method="POST" action="index.php">
-                    <input type="text" name="search" placeholder="Search">
-                    <input type="submit" name="search" value="Search">
-                    </form>';
+                echo '<input type="text" name="search" placeholder="Search">
+                    <input type="submit" name="search" value="Search">';
             }
             else
             {
-                echo '<form method="POST" action="index.php">
-                    <input type="text" name="search" placeholder="Suche">
-                    <input type="submit" name="search" value="Suchen">
-                    </form>';
+                echo '<input type="text" name="search" placeholder="Suche">
+                    <input type="submit" name="search" value="Suchen">';
             }
     ?>
+    </form>
+    
     <br>
     <p>Map
     </p>
