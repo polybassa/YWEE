@@ -47,7 +47,4 @@
         if ( $_SESSION['admin'] == true )
             unset( $_SESSION['admin'] );      // Admin Status zur&uuml;cksetzen
     }
-    
-    if ( isset($_POST['register'] ) )
-        include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/CreateUser.php");       // Inkludiert das CreateUser Script
 ?>

@@ -1,7 +1,9 @@
 # Autor: Daniel Tatzel
+RewriteEngine On
+RewriteBase /
 
 AuthType Basic
 AuthName "Privater Ordner"
-AuthUserFile /home/strato/www/eb/www.ebenezer-kunatse.net/htdocs//test_02/private/.htpasswd
+AuthUserFile /home/strato/www/eb/www.ebenezer-kunatse.net/htdocs/test_02/private/.htpasswd
 AuthGroupFile /dev/null
 require user admin
