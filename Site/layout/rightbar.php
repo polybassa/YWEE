@@ -1,12 +1,13 @@
 <div id="right">
     <p>
     Rechter Balken! (200 Pixel)</p>
-    
+
     <?php
-        // Autor des PHP-Abschnitts: Daniel Tatzel
+        // Autoren: Daniel Tatzel (PHP)
         // Gibt entsprechendes Formular aus, je nachdem, ob der Nutzer angemeldet ist oder nicht
 
-        echo '<form method="POST" action="#" id="loginform">';
+        echo '<form method="POST" action="#" id="loginform">
+            <input type="hidden" name="PHPSESSID" value="'.session_id().'">';
 
         if ( !isset( $_SESSION['logged-in'] ) )
         {
@@ -14,27 +15,23 @@
             {
                 echo '<input type="text" name="username" placeholder="Username">
                     <input type="password" name="passwd" placeholder="Password">
-                    <input type="hidden" name="PHPSESSID" value="'.session_id().'">
-                    <input type="submit" name="login" value="Login">
-                    <input type="submit" name="register" value="Register">
-                    </form>';
+                    <input type="submit" name="login" value="Login">';
+                echo ' or <a href="/en/registration.php">register</a>';
             }
             else
             {
                 echo '<input type="text" name="username" placeholder="Benutzername">
                     <input type="password" name="passwd" placeholder="Passwort">
-                    <input type="hidden" name="PHPSESSID" value="'.session_id().'">
-                    <input type="submit" name="login" value="Login">
-                    <input type="submit" name="register" value="Registrieren">
-                    </form>';
+                    <input type="submit" name="login" value="Login">';
+                echo ' oder <a href="/de/registrierung.php">Registrieren</a>';
             }
         }
         else
         {
-            echo '<input type="hidden" name="PHPSESSID" value="'.session_id().'">
-                <input type="submit" name="logout" value="Logout">
-            </form>';
+            echo '<input type="submit" name="logout" value="Logout">';
         }
+
+        echo '</form>';
 
 
         // Debug Information
@@ -42,27 +39,10 @@
         echo '<p>';
         echo "Session: ".session_id()."<br>";            // Debug Info
         echo "Logged-in: ".$_SESSION['logged-in']."<br>";   // Debug Info
-        //echo '<div id="LoginStatus"></div>';
         echo '</p>';
         */
     ?>
-    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function()
-      {
-        $("#loginform").submit(function(e)
-        {
-          e.preventDefault();
-          $.post("/scripts/login.php", $("#loginform").serialize(),
-          function(msg)
-          {
-            if (msg.length > 2)
-                { alert(msg); }
-            if (msg.length != 27)
-                { window.location.reload(); } });
-        });
-      });
-    </script>
+
     
     <br>
 

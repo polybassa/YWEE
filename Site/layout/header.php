@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link type="text/css" href="/layout/style.css" rel="stylesheet" media="screen" />
-<title><?php echo $titel ?></title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="/layout/style.css" rel="stylesheet" media="screen" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <title><?php echo $titel ?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/login.js" type="text/javascript"></script>
 </head>
 <body>
 
