@@ -52,7 +52,7 @@ img.download {vertical-align:middle;}
 }
 
 /* ----------banner for logo and slideshow-------------- */
-/*-----------see also slideshow.css---------------------*/
+/*-----------see also slider.css---------------------*/
 #banner
 {
    position: relative; 
@@ -62,11 +62,59 @@ img.download {vertical-align:middle;}
 {
 	position: absolute;
 	z-index: 1;
-	top:25;
-	left:25;
+	margin: 25px 0px 0px 25px;
 
 
 }
+
+
+/*----------slider_img class defines img size ----------------*/
+		.slider_img
+		{
+		width:900px;
+		height:200px;
+		}
+
+
+/*---------basic div-box ---------------------------------------*/
+		#show 
+		{
+		width:900px;
+		height:200px;
+		position: relative;
+		overflow:hidden;
+		}
+
+		#show .slide {
+			
+			position: absolute;		
+			overflow: hidden;
+			text-align: center;
+		}
+
+/*----------box for infos----------------*/		
+		#show .slide p {
+			
+			font-size: 13px;
+			text-align: left;
+			position: relative; 
+			float:right;
+			z-index: 5; 
+			margin-top: -100px;
+			
+			color: #fefefe;
+			height: 70px;
+			width:450px;
+						
+			background: rgba(0,0,0,0.4);
+			-webkit-border-top-left-radius: 20px;
+			-webkit-border-bottom-left-radius: 20px;
+			-moz-border-radius-topleft: 20px;
+			-moz-border-radius-bottomleft: 20px;
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+			
+		}
 
 
 
