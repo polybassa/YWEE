@@ -15,4 +15,4 @@ RewriteCond %{HTTP_HOST} ^www\.ebenezer-kunatse\.net$
     RewriteRule ^(.*)$ http://ebenezer-kunatse.net/$1 [L,R=301]
     
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ http://ebenezer-kunatse.net/de/ [R=301,L]
+    RewriteRule ^(.*)$ http://ebenezer-kunatse.net/de/ [R=301,L]
