@@ -3,11 +3,12 @@
 	//Skript für die Autocompletion bei der Suche (in Bearbeitung)
 	
 	//Verbindung aufbauen
-	require "/ConToDB.php";
+	//require "/ConToDB.php";
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung
 	try 
 	{
 		$dbConnection = ConnectToDB();
-		echo "Verbindung hergestellt<br>";
+		//echo "Verbindung hergestellt<br>";
 	}
 	catch(Exception $e)
 	{
@@ -15,10 +16,10 @@
 	}
 
 	//in der View suche nach dem vom HTTP Post bekommenden Vorschlag suchen 
-	$_POST['suche'] = "in";
+	//$_POST['suche'] = "te";
 	//Funktion um SQL Injection zu verhindern
 	mysql_real_escape_string($_POST['suche']);
-	
+	//echo "SELECT * FROM suche WHERE (Wohnort LIKE '" . $_POST['suche'] . "%') or (fach LIKE '" . $_POST['suche'] . "%')";
 	//SQL Querry vorbereiten und ausführen
 	$sth = $dbConnection->prepare("SELECT * FROM suche WHERE (Wohnort LIKE '" . $_POST['suche'] . "%') or (fach LIKE '" . $_POST['suche'] . "%')");
 	$sth->execute();
@@ -36,6 +37,6 @@
 		}
 	}
 	$result = array_unique($results);
-	//echo json_encode($result);
-	return json_encode($result);
+	echo json_encode($result);
+	//return json_encode($result);
 ?>
