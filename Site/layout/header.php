@@ -26,6 +26,7 @@
      
     <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
     <script src="/js/login.js" type="text/javascript"></script>
+    <script src="/js/registrierung.js" type="text/javascript"></script>
 </head>
 <body>
     <!--

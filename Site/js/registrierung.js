@@ -7,7 +7,7 @@ $(document).ready(function()
     $("#registerform").submit(function(e)
     {
         e.preventDefault();
-        $.post("/scripts/resistrierung.php", $("#registerform").serialize(),
+        $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
         function(msg)
         {
             /* msg ist leer, außer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
@@ -15,7 +15,7 @@ $(document).ready(function()
                 { alert(msg); }
             /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
             if ( msg.length < 5 )
-                { window.location.reload(); }
+                { window.location = "http://ebenezer-kunatse.net/"; }
         });
     });
 });
