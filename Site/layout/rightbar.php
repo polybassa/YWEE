@@ -1,7 +1,4 @@
 <div id="right">
-    <p>
-    Rechter Balken! (200 Pixel)</p>
-
     <?php
         // Autoren: Daniel Tatzel (PHP)
         // Gibt entsprechendes Formular aus, je nachdem, ob der Nutzer angemeldet ist oder nicht
@@ -22,25 +19,28 @@
             {
                 echo '<input type="text" name="username" placeholder="Benutzername">
                     <input type="password" name="passwd" placeholder="Passwort">
-                    <input type="submit" name="login" value="Login">';
+                    <input type="submit" name="login" value="Anmelden">';
                 echo ' oder <a href="/de/registrierung.php">Registrieren</a>';
             }
         }
         else
         {
-            echo '<input type="submit" name="logout" value="Logout">';
+            if ( $_SESSION['sprache'] == "en" )
+            {
+                echo '<input type="submit" name="logout" value="Logout">';
+            }
+            else
+            {
+                echo '<input type="submit" name="logout" value="Abmelden">';
+            }
+            
         }
 
         echo '</form>';
 
 
         // Debug Information
-        /*
-        echo '<p>';
-        echo "Session: ".session_id()."<br>";            // Debug Info
-        echo "Logged-in: ".$_SESSION['logged-in']."<br>";   // Debug Info
-        echo '</p>';
-        */
+        //echo "Session: ".session_id()."<br>";
     ?>
 
     
