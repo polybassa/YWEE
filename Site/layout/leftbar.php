@@ -1,4 +1,9 @@
 <div id="left">
+
+    <noscript>
+        <br><b>Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!</b><br>
+    </noscript>
+    
     <?php
         /* Grundgeruest fuer Sprachauswahl
         if ( $_SESSION['sprache'] == "en" )
