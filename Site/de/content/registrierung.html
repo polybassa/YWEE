@@ -1,5 +1,5 @@
 <!-- Inhalt von: Maxi Schröter -->
-<title>Registrierung</title>
+
 <style type="text/css">
 	form label {display:inline-block; width:200px;}  
     form input[type="text"],
@@ -10,26 +10,16 @@
     form .line {clear:both;}
     form .line.submit {text-align:left;}
 </style>
-<script type="text/javascript">
 
-function chkFormular () {
-var pass1=document.Formular.pw1.value;
-var pass2=document.Formular.pw2.value;
-if (document.Formular.pw1.value != document.Formular.pw2.value) {
-alert ("Ihre Passw&ouml;rter stimmen nicht &uuml;berein");
-document.Formular.pw1.focus();
-return false;
-}
-}
-</script>
 
 
 <h1>Registrierung</h1>
 
-<form name="Formular"method="post"onsubmit="return chkFormular()" action="#">
+<form name="Formular"method="post" action="#" id="registerform">
 <pre>
 		
 
+	<div><label for ="geschlecht">Geschlecht</label><select name="geschlecht" id="geschlecht"><option value="-1">--</option><option value="0">Frau</option><option value="1">Mann</option></select></div>
 	<div><label for ="nachname">Name:</label><input type="text" size="45" maxlength = "45" placeholder ="Name" name="nachname" id="nachname" required></div>
 	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" placeholder = "Vorname" name="vorname" id="vorname"required></div>
 	<div><label for ="email">E-Mail:</label><input type="email" size="45" maxlength = "45" placeholder = "beispiel@email.de"id="email"name="email"required></div>
@@ -55,12 +45,13 @@ return false;
 	<div><label for ="plz">Postleitzahl:</label><input type="text" size="45"placeholder ="00000" id="plz"name="plz"required></div>
 	<div><label for ="wohnort">Wohnort:</label><input type="text" size="45" maxlength = "45" placeholder ="Wohnort" id="wohnort"name="wohnort"required></div>
 	<div><label for ="strasse">Stra&szlig;e:</label><input type="text" size="45" maxlength = "45" placeholder = "Stra&#223;e"id="strasse"name="strasse"required></div>
-	<div><label for ="hausnummer">Hausnummer:</label><input type="text" size="45" placeholder ="45" id="hausnummer"name="hausnummer"required></div>
-	<div><label for ="telefon">Telefon:</label><input type="tel" size="45"placeholder ="0190666666" id="telefon"name="telefon"required></div>
+	<div><label for ="hausnummer">Hausnummer:</label><input type="text" size="45" placeholder ="45" id="hausnummer"name="hausnummer" required></div>
+	<div><label for ="hausnummerzusatz">Hausnummerzusatz:</label><input type="text" size="" placeholder ="45" id="hausnummerzusatz"name="hausnummerzusatz"></div>
+	<div><label for ="telefon">Telefon:</label><input type="tel" size="45"placeholder ="0190666666" id="telefon"name="telefon" required></div>
 	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" placeholder= "Benutzername" id="benutzername"name="benutzername"required></div>
-	<div><label for ="pw1">Passwort:</label><input type="password" size="45" maxlength = "45" name="passwort" id="pw1" ></div>
-	<div><label for ="pw2">Passwort bestaetigen:</label><input type="password" maxlength = "45" size="45" name="passwortcheck" id ="pw2"></div>
-	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>
+	<div><label for ="pw1">Passwort:</label><input type="password" size="45" maxlength = "45" name="passwort" placeholder= "Passwort" id="pw1" required></div>
+	<div><label for ="pw2">Passwort bestaetigen:</label><input type="password" maxlength = "45" size="45" name="passwortcheck" placeholder= "Passwort" id ="pw2" required></div>
+	<div class="line submit"><input type="submit" value="Absenden"></div>
 		  
 
 </pre>

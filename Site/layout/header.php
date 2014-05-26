@@ -34,7 +34,9 @@
  	<script type="text/javascript" src="/js/jquery.ui.autocomplete.js"></script>
  	<script type="text/javascript" src="/js/jquery.ui.autocomplete.html.js"></script>
  	<script type="text/javascript" src="/js/autocomplete.js"></script>
-    
+ 	<!-- Includes for registrierung -->
+    <script src="/js/registrierung.js" type="text/javascript"></script>
+
 </head>
 <body>
     <!--
