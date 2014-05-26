@@ -51,12 +51,12 @@
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
-                echo '<input type="text" name="search" placeholder="Search">
+                echo '<input type="text" id="search" placeholder="Search">
                     <input type="submit" name="search" value="Search">';
             }
             else
             {
-                echo '<input type="text" name="search" placeholder="Suche">
+                echo '<input type="text" id="search" placeholder="Suche">
                     <input type="submit" name="search" value="Suchen">';
             }
     ?>
