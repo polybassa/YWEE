@@ -3,13 +3,13 @@
 // Inkludiert die Funktion zur Anmeldung
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
-/* // prevent direct access
+ // prevent direct access
   $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND
   strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
   if (!$isAjax) {
   $user_error = 'Access denied - not an AJAX request...';
   trigger_error($user_error, E_USER_ERROR);
-  } */
+  } 
 
 // get what user typed in autocomplete input
 $term = trim($_GET['term']);
@@ -33,22 +33,15 @@ if (preg_match("/[^\040\pL\pN_-]/u", $term)) {
 // database connection
 try {
     $conn = ConnectToDB();
-    //echo "Verbindung hergestellt<br>";
 } catch (Exception $e) {
     die("keine Verbindung möglich: " . $e->getMessage());
 }
 
-/*if ($conn->connect_error) {
-    echo 'Database connection failed...' . 'Error: ' . $conn->connect_errno . ' ' . $conn->connect_error;
-    exit;
-} else {
-    $conn->set_charset('utf8');
-}*/
 /**
  * Create SQL
  */
 $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
-//echo $sql;
+
 $sth = $conn->prepare($sql);
 $sth->execute();
 
@@ -58,7 +51,8 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $a_json_row["value"] = $row['Wohnort'];
         $a_json_row["label"] = $row['Wohnort'];
         array_push($a_json, $a_json_row);
-    } else if (stristr($row['fach'], $term)) {
+    }
+    if (stristr($row['fach'], $term)) {
         $a_json_row["id"] = "Tutoren.php";
         $a_json_row["value"] = $row['fach'];
         $a_json_row["label"] = $row['fach'];
@@ -67,6 +61,6 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 }
 
 $json = json_encode($a_json);
-//echo $json;
+
 print $json;
 ?>
