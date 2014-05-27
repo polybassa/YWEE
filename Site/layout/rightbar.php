@@ -90,12 +90,12 @@
             if ( $_SESSION['sprache'] == "en" )
             {
                 echo '<input type="text" id="search" placeholder="Search" id="starteside_suchen">
-                    <input type="image" src="test_02/images/lupe.png" alt="Suchen"';
+                    <input type="image" src="/images/lupe.png" alt="Suchen"';
             }
             else
             {
                 echo '<input type="text" id="search" placeholder="Suche" id="starteside_suchen">
-                    <input type="image" src="test_02/images/lupe.png" alt="Suchen"';
+                    <input type="image" src="/images/lupe.png" alt="Suchen"';
             }
     ?>
     </form>
@@ -121,7 +121,7 @@
 	?>
 	 
 	<div class="basic-wrapper-bottom">
-	<img src="test_02/images/placeholder_map.jpg"><!--wollt was testn-->
+	<img src="/images/placeholder_map.jpg"><!--wollt was testn-->
 	</div>
 	 <br>
 	
@@ -141,8 +141,12 @@
 			}
 	?>	
 	<div class="basic-wrapper-bottom">
-	<img src="test_02/images/placeholder_video.jpg"><!--wollt was testn-->
+	<img src="/images/placeholder_video.jpg"><!--wollt was testn-->
 	</div>
 	 <br>
 	
+	
+</div><!--right-->
+
+
 <div id="content">
