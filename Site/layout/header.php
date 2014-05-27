@@ -22,31 +22,26 @@
 
     <title><?php echo $titel ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     
-    <script src="/js/jquery-1.10.2.js"></script>
+
+    <!-- Includes for registrierung und login-->
+    <script src="/js/jquery-1.10.2.min.js"></script>
     <script src="/js/login.js" type="text/javascript"></script>
+    <script src="/js/registrierung.js" type="text/javascript"></script>
     
     <!-- Includes for autocompletion -->
     <link rel="stylesheet" type="text/css" href="/layout/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="/layout/autocomplete.css">
-   
-    <!-- Verursacht Fehler in der Session da die deutsche index.php aufgerufen wird -->
-	<script src="/js/jquery-ui-1.10.4.custom.js"></script>
- 	
+	<script src="/js/jquery-ui-1.10.4.custom.min.js"></script>
  	<script src="/js/jquery.ui.autocomplete.js"></script>
  	<script src="/js/jquery.ui.autocomplete.html.js"></script>
  	<script src="/js/autocomplete.js"></script>
- 	 	
- 	<!-- Includes for registrierung -->
-    <script src="/js/registrierung.js" type="text/javascript"></script>
 
 </head>
 <body>
-    <!--
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
-    -->
-    <script src="/js/plugins.js"></script>
+    
+
+    
+    <!-- <script src="/js/plugins.js"></script> -->
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
     <script>

@@ -15,7 +15,19 @@ $(document).ready(function()
                 { alert(msg); }
             /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
             if ( msg.length < 5 )
-                { alert("Registrierung erfolgreich!"); location.replace('index.php'); }
+            {
+                $.post( "/scripts/GetLang.php", function( lang )
+                {
+                    if ( lang.length > 2 )
+                    {
+                        alert("Registration was successful!"); location.replace('index.php');
+                    }
+                    else
+                    {
+                        alert("Registrierung war erfolgreich!"); location.replace('index.php');
+                    }
+                });
+            }
         });
 
 
