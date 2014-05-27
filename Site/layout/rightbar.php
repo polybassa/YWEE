@@ -149,4 +149,4 @@
 </div><!--right-->
 
 
-<div id="content">
+<div id="content" class="basic-wrapper">
