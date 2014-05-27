@@ -59,7 +59,7 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         array_push($a_json, $a_json_row);
     }
 }
-
+$a_json = array_unique($a_json, SORT_REGULAR);
 $json = json_encode($a_json);
 
 print $json;

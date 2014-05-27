@@ -10,6 +10,7 @@
         $user = '';
         $pass = '';
 
+        
         // Baue Verbindung auf
         $dbConnection = new PDO($dsn, $user, $pass);
         

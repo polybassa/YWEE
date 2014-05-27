@@ -15,7 +15,9 @@ $(document).ready(function()
                 { alert(msg); }
             /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
             if ( msg.length < 5 )
-                { window.location = "http://ebenezer-kunatse.net/"; }
+                { alert("Registrierung erfolgreich!"); location.replace('index.php'); }
         });
+
+
     });
 });
