@@ -22,18 +22,17 @@
 
     <title><?php echo $titel ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
      
-    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery-1.10.2.js"></script>
     <script src="/js/login.js" type="text/javascript"></script>
     
     <!-- Includes for autocompletion -->
     <link rel="stylesheet" type="text/css" href="/layout/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="/layout/autocomplete.css">
- 	<script type="text/javascript" src="/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
- 	<script type="text/javascript" src="/js/jquery.ui.autocomplete.js"></script>
- 	<script type="text/javascript" src="/js/jquery.ui.autocomplete.html.js"></script>
- 	<script type="text/javascript" src="/js/autocomplete.js"></script>
+	<script src="/js/jquery-ui-1.10.4.custom.js"></script>
+ 	<script src="/js/jquery.ui.autocomplete.js"></script>
+ 	<script src="/js/jquery.ui.autocomplete.html.js"></script>
+ 	<script src="/js/autocomplete.js"></script>
  	<!-- Includes for registrierung -->
     <script src="/js/registrierung.js" type="text/javascript"></script>
 
