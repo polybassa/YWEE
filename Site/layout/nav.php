@@ -8,7 +8,7 @@
         if ( $_SESSION['sprache'] == "en" )
         { ?>
             Navigation: 	
-			<a href="/en/home.php">Home</a>			
+			<a href="/en/index.php">Home</a>			
 			<a href="/en/news.php">News</a>
 			<a href="/en/corporate.php">Corporate</a>
 			<a href="/en/contact.php">Contact</a>
@@ -26,7 +26,7 @@
         else
         { ?>
             Navigation: 
-			<a href="/de/home.php">Home</a>			
+			<a href="/de/index.php">Home</a>			
 			<a href="/de/news.php">News</a>
 			<a href="/de/unternehmen.php">Unternehmen</a>
 			<a href="/de/kontakt.php">Kontakt</a>
