@@ -14,7 +14,7 @@
 			<a href="/en/contact.php">Contact</a>
 			<a href="/en/guestbook.php">Guestbook</a>
 			<a href="/en/search.php">Search</a>
-            <a href="/en/agb.php">AGB</a><br>
+            <a href="/en/termsandconditions.php">Terms and Conditions</a><br>
 			Current Links:
             <a href="/en/index.php">Home</a> &nbsp; &nbsp;
             <a href="/en/news.php">News</a> &nbsp; &nbsp;
