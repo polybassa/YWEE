@@ -7,8 +7,15 @@
         
         if ( $_SESSION['sprache'] == "en" )
         { ?>
-            Navigation: Home News Company Contakt Guestbook Search AGB(?)<br>
-            Current Links:
+            Navigation: 	
+			<a href="/en/index.php">Home</a>			
+			<a href="/en/news.php">News</a>
+			<a href="/en/corporate.php">Corporate</a>
+			<a href="/en/contact.php">Contact</a>
+			<a href="/en/guestbook.php">Guestbook</a>
+			<a href="/en/search.php">Search</a>
+            <a href="/en/agb.php">AGB</a><br>
+			Current Links:
             <a href="/en/index.php">Home</a> &nbsp; &nbsp;
             <a href="/en/news.php">News</a> &nbsp; &nbsp;
             <a href="/en/sitenotice.php">Site notice</a> &nbsp; &nbsp;
@@ -18,7 +25,14 @@
         }
         else
         { ?>
-            Navigation: Home News Unternehmen Kontakt G&auml;stebuch Suche AGB<br>
+            Navigation: 
+			<a href="/de/index.php">Home</a>			
+			<a href="/de/news.php">News</a>
+			<a href="/de/unternehmen.php">Unternehmen</a>
+			<a href="/de/kontakt.php">Kontakt</a>
+			<a href="/de/gaestebuch.php">G&auml;stebuch</a>
+			<a href="/de/suche.php">Suche</a>
+            <a href="/de/agb.php">AGB</a><br>
             Links zu aktuellen Seiten:
             <a href="/de/index.php">Startseite</a> &nbsp; &nbsp;
             <a href="/de/nachrichten.php">Nachrichten</a> &nbsp; &nbsp;
