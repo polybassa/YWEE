@@ -46,8 +46,9 @@
     
     <br>
 
-    <!-- Suchformular --> 
-    <form method="POST" action="index.php">
+    <!-- Suchformular -->
+    <form method="POST" action="#">
+    <input type="hidden" name="PHPSESSID" value="'.session_id().'">
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
@@ -61,7 +62,6 @@
             }
     ?>
     </form>
-    
     <br>
     <p>Map
     </p>

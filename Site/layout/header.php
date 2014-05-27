@@ -30,10 +30,14 @@
     <!-- Includes for autocompletion -->
     <link rel="stylesheet" type="text/css" href="/layout/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="/layout/autocomplete.css">
- 	<script type="text/javascript" src="/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
+
+    <!-- Verursacht Fehler in der Session da die deutsche index.php aufgerufen wird -->
+ 	<script type="text/javascript" src="/js/jquery-ui-1.10.4.js"></script>
+    
  	<script type="text/javascript" src="/js/jquery.ui.autocomplete.js"></script>
  	<script type="text/javascript" src="/js/jquery.ui.autocomplete.html.js"></script>
  	<script type="text/javascript" src="/js/autocomplete.js"></script>
+    
  	<!-- Includes for registrierung -->
     <script src="/js/registrierung.js" type="text/javascript"></script>
 
@@ -64,7 +68,7 @@
 	   <img src="/images/logo.gif" class="logo">
 	   </div>
 	   
-	   <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img-->
+	   <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img
 	   <div id="show">
 			<div class="img1 slide">
 				<img src="/images/slider_img1.jpg" class="slider_img" />
@@ -87,6 +91,7 @@
 				<p class="desc">"Ich kann meinen Namen jetzt auch schreiben" - Anita 35, studiert soziale Arbeit</p>
 			</div>
     </div>
+    -->
 
 <?php
 
