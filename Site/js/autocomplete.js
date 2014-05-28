@@ -1,6 +1,6 @@
 $(function() {
  
-    $("#search").autocomplete({
+    $('[name="search"]').autocomplete({
         source: "/scripts/autocomplete.php",
         minLength: 2,
         select: function(event, ui) {
