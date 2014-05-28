@@ -10,15 +10,9 @@
     form .line {clear:both;}
     form .line.submit {text-align:left;}
 </style>
-
-
-
 <h1>Bezahlung</h1>
-
 <form name="Formular"method="post" action="#" id="paymentform">
 <pre>
-		
-
 	<div><label for ="nachname">Name:</label><input type="text" size="45" maxlength = "45" placeholder ="Name" name="nachname" id="nachname" required></div>
 	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" placeholder = "Vorname" name="vorname" id="vorname"required></div>
 	<div><label for ="kreditkartennummer">Kreditkartennummer:</label><input type="text" size="45" maxlength = "45" placeholder = "" name="kreditkartennummer" id="kreditkartennummer"required></div>
@@ -41,14 +35,8 @@
     while ( $i-- > 1900)
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></table></div>
-	
-	<div><label for ="empfnachname">Empfängername:</label><input type="text" size="45" maxlength = "45" placeholder ="Empfängername" name="empfnachname" id="empfnachname" required></div>
-	<div><label for ="empfvorname">Empfängervorname:</label><input type="text" size="45" maxlength = "45" placeholder = "Empfängervorname" name="empfvorname" id="empfvorname"required></div>
-	
 	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" placeholder= "Benutzername" id="benutzername"name="benutzername"required></div>
 	<div><label for ="pw1">Passwort:</label><input type="password" size="45" maxlength = "45" name="passwort" id="pw1" ></div>
-	<div class="line submit"><input type="submit" value="Absenden"></div>
-		  
-
+	<div class="line submit"><input type="submit" value="Best&#228;tigen"></div>	
 </pre>
 </form>
