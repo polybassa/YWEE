@@ -5,7 +5,8 @@
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert Session
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     // Baue Verbindung auf
-    
+
+
     if ( $_POST['passwort'] != $_POST['passwortcheck'] )
     {
         if ( $_SESSION['sprache'] == "de")
@@ -16,14 +17,50 @@
         exit;
     }
     
+    if ( $_POST['jahr'] == 0 || $_POST['monat'] == 0 || $_POST['tag'] == 0 ||
+            $_POST['jahr'] == 0 || $_POST['monat'] == 0 || $_POST['tag'] == 0)
+    {
+        if ( $_SESSION['sprache'] == "de")
+            echo 'Bitte überprüfen Sie Ihr Geburtsdatum!';
+        else
+            echo 'Please check your birthday!';
+
+        exit;
+    }
+    
+    if ( $_POST['geschlecht'] == -1 )
+    {
+        if ( $_SESSION['sprache'] == "de")
+            echo 'Bitte waehlen Sie ihr Geschlecht aus!';
+        else
+            echo 'Please select your gender!';
+
+        exit;
+    }
+        
     $dbConnection = ConnectToDB();
         
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
+    $query = $dbConnection->prepare("select * from mitglieder where benutzername like :user");
+    $query->bindParam(":user",$_POST['benutzername']);
+
+    $query->execute();
+
+    $result = $query->fetch(PDO::FETCH_LAZY);
+        
+    if ( strtolower($result['benutzername']) == strtolower($_POST['benutzername']) )  // Falls ein Eintrag vorhanden ist, dann war der Login erfolgreich
+    {
+        if ( $_SESSION['sprache'] == "de")
+            echo 'Der Benutzername ist leider schon vergeben.';
+        else
+            echo 'The username is already taken.';
+
+        exit;
+    }
+        
     $query = $dbConnection->prepare("insert into mitglieder (benutzername, geschlecht, vorname, nachname, geburtsdatum, plz, wohnort, strasse, hausnummer, hnrzusatz, email, telefon, sprache) VALUES (:user, :geschlecht, :vorname, :nachname, :geburtsdatum, :plz, :wohnort, :strasse, :hausnummer, :hnrzusatz, :email, :telefon, :sprache)");
 
-    $_POST['geschlecht'] = 1;
-    
     $query->bindParam(":user",$_POST['benutzername']);
     
     $query->bindParam(":geschlecht", $_POST['geschlecht']);
@@ -66,7 +103,6 @@
         $query->execute();
     }
 
-    echo "Registrierung erfolgreich!";
-
     $dbConnection = null;
+    
 ?>

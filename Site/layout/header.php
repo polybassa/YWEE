@@ -23,27 +23,25 @@
     <title><?php echo $titel ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-     
-    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <!-- Includes for registrierung und login-->
+    <script src="/js/jquery-1.10.2.min.js"></script>
     <script src="/js/login.js" type="text/javascript"></script>
+    <script src="/js/registrierung.js" type="text/javascript"></script>
     
     <!-- Includes for autocompletion -->
     <link rel="stylesheet" type="text/css" href="/layout/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="/layout/autocomplete.css">
- 	<script type="text/javascript" src="/js/jquery-ui-1.10.4.min.js" type="text/javascript"></script>
- 	<script type="text/javascript" src="/js/jquery.ui.autocomplete.js"></script>
- 	<script type="text/javascript" src="/js/jquery.ui.autocomplete.html.js"></script>
- 	<script type="text/javascript" src="/js/autocomplete.js"></script>
- 	<!-- Includes for registrierung -->
-    <script src="/js/registrierung.js" type="text/javascript"></script>
+	<script src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+ 	<script src="/js/jquery.ui.autocomplete.js"></script>
+ 	<script src="/js/jquery.ui.autocomplete.html.js"></script>
+ 	<script src="/js/autocomplete.js"></script>
 
 </head>
 <body>
-    <!--
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
-    -->
-    <script src="/js/plugins.js"></script>
+    
+
+    
+    <!-- <script src="/js/plugins.js"></script> -->
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
     <script>
@@ -64,7 +62,7 @@
 	   <img src="/images/logo.gif" class="logo">
 	   </div>
 	   
-	   <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img-->
+	   <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img
 	   <div id="show">
 			<div class="img1 slide">
 				<img src="/images/slider_img1.jpg" class="slider_img" />
@@ -87,6 +85,7 @@
 				<p class="desc">"Ich kann meinen Namen jetzt auch schreiben" - Anita 35, studiert soziale Arbeit</p>
 			</div>
     </div>
+    -->
 
 <?php
 
