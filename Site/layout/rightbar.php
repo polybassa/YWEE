@@ -47,7 +47,7 @@
     <br>
 
     <!-- Suchformular -->
-    <form method="POST" action="#">
+    <form method="POST" action="Orte.php">
     <input type="hidden" name="PHPSESSID" value="'.session_id().'">
     <?php
             if ( $_SESSION['sprache'] == "en" )
