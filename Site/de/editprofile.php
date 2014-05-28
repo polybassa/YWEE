@@ -9,6 +9,26 @@
 	$titel = "Profil bearbeiten";
 	
 	$_SESSION['sprache'] = "de";
+	
+	if(isset($_SESSION['user']))
+	{
+		//sonderfall: wenn profil gelöscht werden soll; warum sonderfall: ich schicke einen neuen header, das muss geschehen
+		// bevor html-daten an browser geschickt wurden
+		if(isset($_GET['DeleteProfile']))
+		{
+			if($_GET['DeleteProfile'] == 'true')
+			{
+				//insert functions for deleting profile
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteProfile.php");
+				unset($_SESSION['user']);
+				unset($_SESSION['logged_in']);
+				//link noch entsprechend anpassen und am server testen
+				header("Location: localhost/test_02/de/index.php");
+				die();
+			}
+		}
+	}
+	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
 	if(isset($_GET['username']))
@@ -18,14 +38,15 @@
 	}
 	else
 		$fl_username = null;
-	if(isset($_GET['value']))
-	{
-		//then the profil shall be updated
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/takeprofile.php");
-		echo "<h1>Profil erfolgreich geändert!</h1>";
-	}
+
 	if(isset($_SESSION['user']))
 	{	
+		if(isset($_GET['value']))
+		{
+			//then the profil shall be updated
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/takeprofile.php");
+			echo "<h1>Profil erfolgreich geändert!</h1>";
+		}
 		if(isset($_GET['password']))
 		{
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ChangePassword.html");
