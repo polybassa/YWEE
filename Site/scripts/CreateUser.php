@@ -42,14 +42,14 @@
         
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
-    $query = $dbConnection->prepare("select * from mitglieder where benutzername = :user");
+    $query = $dbConnection->prepare("select * from mitglieder where benutzername like :user");
     $query->bindParam(":user",$_POST['benutzername']);
 
     $query->execute();
 
     $result = $query->fetch(PDO::FETCH_LAZY);
         
-    if ( $query->rowCount() > 0 )  // Falls ein Eintrag vorhanden ist, dann war der Login erfolgreich
+    if ( strtolower($result['benutzername']) == strtolower($_POST['benutzername']) )  // Falls ein Eintrag vorhanden ist, dann war der Login erfolgreich
     {
         if ( $_SESSION['sprache'] == "de")
             echo 'Der Benutzername ist leider schon vergeben.';
