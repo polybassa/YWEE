@@ -41,48 +41,26 @@
 	?>
 	 
 	<div class="basic-wrapper-middle">
-	<br>
 	placeholder für Gästebuch
-	<br>
-	<br>
 	<hr class="lane">
 	</div>
-	
-	
 	<div class="basic-wrapper-middle">
-	<br>
 	Inhalt steht zum Anschaun im leftbar.php (uncool) 
-	<br>
-	<br>
 	<hr class="lane">
 	</div>
-	
 	<div class="basic-wrapper-middle">
-	<br>
 	des kann muss noch irgendwer hinbiegen
-	<br>
-	<br>
 	<hr class="lane">
 	</div>
-	
 	<div class="basic-wrapper-middle"> <!-- middle item-->
-	<br>
 	ich nicht ich bin fürs layout da 
-	<br>
-	<br>
 	<hr class="lane">
 	</div>
-	
 	<div class="basic-wrapper-middle">
-	<br>
 	nutz mein layout 
-	<br>
-	<br>
 	<hr class="lane">
 	</div>
-	
-	<div class="basic-wrapper-bottom"> <!--last item- no lane for the last item-->
-	<br>
+	<div class="basic-wrapper-bottom"> <!--last item - no lane for the last item-->
 	ich würde nicht läger gehen als die rechte spalte (scrollbalken oder max Einträge!) 
 	</div
 	
