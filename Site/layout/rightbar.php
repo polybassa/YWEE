@@ -149,4 +149,4 @@
 </div><!--right-->
 
 
-<div id="content" class="basic-wrapper">
+<div id="content" class="basic-wrapper box-shadow">
