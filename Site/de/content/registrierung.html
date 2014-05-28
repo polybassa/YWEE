@@ -24,20 +24,19 @@ Sie k&#246;nnen sp&#228;ter entscheiden, ob Sie die Rolle des Tutors oder des Sc
 	<div><label class="zeile" for ="tag">Geburtsdatum:</label><table>	
 	<select name="tag" id="tag" style="width:50"><option value="0">Tag</option><?php
     $i = 0;
-    while ( $i++ < 31)
+    while ( $i++ < 31)							//Schleife zum füllen des Selects mit 31 Tagen
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
 	<select name="monat">
-	<option value="0">Monat</option>
 	<?php
 	$i = 0;
-	while ( $i++ < 12)
+	while ( $i++ < 12)//Schleife zum füllen des Selects mit den Monaten
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
 	<select name="jahr">
 	<option value="0">Jahr</option>
 	<?php
     $i = date("Y");
-    while ( $i-- > 1900)
+    while ( $i-- > 1900)//Schleife zum füllen des Selects mit Jahren zurück bis 1990
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></table></div>
 	<div><label class="zeile" for ="plz">Postleitzahl:</label><input type="text" class="eingabe" size="45"placeholder ="00000" id="plz"name="plz"required></div>

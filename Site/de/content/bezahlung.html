@@ -19,13 +19,13 @@
 	<div><label class="zeile" for ="tag">Ablaufdaum:</label><table>	
 	<select name="tag" id="tag" style="width:50"><option value="0">Tag</option><?php
     $i = 0;
-    while ( $i++ < 31)
+    while ( $i++ < 31)//Schleife zum füllen des Selects mit 31 Tagen
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
 	<select name="monat">
 	<option value="0">Monat</option>
 	<?php
 	$i = 0;
-	while ( $i++ < 12)
+	while ( $i++ < 12)//Schleife zum füllen des Selects mit den Monaten
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
 	<select name="jahr">
