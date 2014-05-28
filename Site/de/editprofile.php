@@ -11,6 +11,13 @@
 	$_SESSION['sprache'] = "de";
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
+	if(isset($_GET['username']))
+	{	
+		//get username and save it for later use by seeing profile's
+		$fl_username = $_GET['username'];
+	}
+	else
+		$fl_username = null;
 	if(isset($_GET['value']))
 	{
 		//then the profil shall be updated
