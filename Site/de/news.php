@@ -8,9 +8,7 @@
 	 
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	 
-	if ( $_SESSION['user'] == "admin" )
-	{		
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/news.html");       // Inkludiert den Inhalt
-	}
+	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/news.html");       // Inkludiert den Inhalt
+	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
