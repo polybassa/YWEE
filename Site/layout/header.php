@@ -14,8 +14,7 @@
      
     <meta charset="utf-8">
     <?php header('X-UA-Compatible: IE=edge'); ?>
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <meta name="description" content="">
+    <meta name="description" content="Die Tutoren AG ist DIE Anlaufstelle f&uuml;r wissenshungrige, die nach einem Tutor in ihrer N&auml;he suchen!!!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
       
@@ -24,10 +23,9 @@
     <title><?php echo $titel ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <!-- Includes for registrierung und login-->
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/login.js" type="text/javascript"></script>
-    <script src="/js/registrierung.js" type="text/javascript"></script>
+    <!-- Includes for registrierung und login -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/js/login_registration.js" type="text/javascript"></script>
     
     <!-- Includes for autocompletion -->
     <link rel="stylesheet" type="text/css" href="/layout/jquery-ui.css">

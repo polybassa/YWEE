@@ -4,11 +4,13 @@
 User-agent: *
 
 #Directories
-#Disallow: /images/
-#Disallow: /includes/
+Disallow: /images/
+Disallow: /private/
 Disallow: /layout/
-#Disallow: /mail/
+Disallow: /phpmyadmin/
 Disallow: /scripts/
+Disallow: /js/
+Disallow: /doc/
 
 #Files
 #Disallow: /file-name.php
