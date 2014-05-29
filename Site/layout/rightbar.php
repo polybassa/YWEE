@@ -45,15 +45,15 @@
         {
             if ( $_SESSION['sprache'] == "en" )
             {
-                echo '<input type="text" name="username" placeholder="Username" id="startside_field">
-                    <input type="password" name="passwd" placeholder="Password" id="startside_field">
+                echo '<input type="text" name="username" placeholder="Username" class="login_field">
+                    <input type="password" name="passwd" placeholder="Password" class="login_field">
                     <input type="submit" name="login" value="Login">';
                 echo ' or <a href="/en/registration.php">register</a>';
             }
             else
             {
-                echo '<input type="text" name="username" placeholder="Benutzername" id="startside_field">
-                    <input type="password" name="passwd" placeholder="Passwort" id="startside_field">
+                echo '<input type="text" name="username" placeholder="Benutzername" class="login_field">
+                    <input type="password" name="passwd" placeholder="Passwort" class="login_field">
                     <input type="submit" name="login" value="Anmelden">';
                 echo ' oder <a href="/de/registrierung.php">Registrieren</a>';
             }
@@ -89,11 +89,11 @@
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
-                echo '<input type="text" name="search" placeholder="Search" id="starteside_suchen">';
+                echo '<input type="text" name="search" placeholder="Search" class="suchen_field">';
             }
             else
             {
-                echo '<input type="text" name="search" placeholder="Suche" id="starteside_suchen">';
+                echo '<input type="text" name="search" placeholder="Suche" class="suchen_field">';
             }
     ?>
     <input type="image" src="/images/lupe.png" alt="Search">
@@ -104,7 +104,7 @@
 	
 	
 	
-	<!----------Block for Map by Matthias Birnthaler ----------------->
+	<!--Block for Map by Matthias Birnthaler-->
 	<?php
 	
 	if ( $_SESSION['sprache'] == "en" )
@@ -125,7 +125,7 @@
 	 <br>
 	
 	
-	<!----------Block for Film by Matthias Birnthaler ----------------->
+	<!--Block for Film by Matthias Birnthaler-->
 	<?php
 	// von Matthias Birnthaler (Video zu Film übersetzen.... irgendwie witzlos)
 	if ( $_SESSION['sprache'] == "en" )
@@ -148,4 +148,4 @@
 </div><!--right-->
 
 
-<div id="content" class="basic-wrapper">
+<div id="content" class="basic-wrapper box-shadow">
