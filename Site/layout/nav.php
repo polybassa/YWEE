@@ -21,7 +21,7 @@
             <a href="/en/sitenotice.php">Site notice</a> &nbsp; &nbsp;
             <a href="/en/registration.php">Registration</a>
         <?php
-            echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'"></a> &nbsp; <a href="/en/'.$forwardto.'"><img src="'.$enflag.'"></a>';
+            echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" alt="DE-Flagge"></a> &nbsp; <a href="/en/'.$forwardto.'"><img src="'.$enflag.'" alt="GB-Flagge"></a>';
         }
         else
         { ?>
@@ -39,7 +39,7 @@
             <a href="/de/impressum.php">Impressum</a> &nbsp; &nbsp;
             <a href="/de/registrierung.php">Registrierung</a>
         <?php
-            echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'"></a> &nbsp; <a href="/en/'.$forwardto.'"><img src="'.$enflag.'"></a>';
+            echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" alt="GER-Flag"></a> &nbsp; <a href="/en/'.$forwardto.'"><img src="'.$enflag.'" alt="GB-FLAG"></a>';
         }
         ?>
             

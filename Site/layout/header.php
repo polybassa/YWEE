@@ -13,7 +13,8 @@
     <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
      
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <?php header('X-UA-Compatible: IE=edge'); ?>
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,7 +36,9 @@
  	<script src="/js/jquery.ui.autocomplete.js"></script>
  	<script src="/js/jquery.ui.autocomplete.html.js"></script>
  	<script src="/js/autocomplete.js"></script>
-
+ 	
+ 	<!-- Includes for dataTable -->
+ 	<link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
 </head>
 <body>
     
@@ -59,7 +62,7 @@
     <div id="banner" >
        <!--Div Box für logo img-->
 	   <div id= "logo">
-	   <img src="/images/logo.gif" class="logo">
+	   <img src="/images/logo.gif" class="logo" alt="logo">
 	   </div>
 	   
 	   <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img

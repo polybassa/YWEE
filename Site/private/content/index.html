@@ -18,8 +18,25 @@ enctype="multipart/form-data">
     
     if ( isset( $_POST['delete'] ) )
         include_once("scripts/delete.php");
-        
+
     // Auflistung aus Files erstellen
-    include_once("scripts/ListDir.php");
 ?>
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/js/filesTable.js"></script>
+    <script type="text/javascript">
+        var files = <?php include_once("scripts/ListDir.php"); ?>;
+    </script>
+    
+<table id="filesTable" class="display" cellspacing="0" width="100%" align="left">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gr&ouml;&szlig;e in KB</th>
+      <th>l&ouml;schen</th>
+    </tr>
+  </thead>
+</table>
+
+
+
 

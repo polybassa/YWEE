@@ -96,7 +96,7 @@
                 echo '<input type="text" name="search" placeholder="Suche" class="suchen_field">';
             }
     ?>
-    <input type="image" src="/images/lupe.png" alt="Search">
+    <input type="image" src="/images/lupe.png" alt="Lupe">
     </form>
     </div>
 	
@@ -120,7 +120,7 @@
 	?>
 	 
 	<div class="basic-wrapper-bottom">
-	<img src="/images/placeholder_map.jpg"><!--wollt was testn-->
+	<img src="/images/placeholder_map.jpg" alt="Platzhalter"><!--wollt was testn-->
 	</div>
 	 <br>
 	
@@ -140,12 +140,11 @@
 			}
 	?>	
 	<div class="basic-wrapper-bottom">
-	<img src="/images/placeholder_video.jpg"><!--wollt was testn-->
+	<img src="/images/placeholder_video.jpg" alt="Video"><!--wollt was testn-->
 	</div>
 	 <br>
 	
 	
 </div><!--right-->
-
 
 <div id="content" class="basic-wrapper box-shadow">
