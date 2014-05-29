@@ -89,7 +89,7 @@
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
-                echo '<input type="text" name="search" placeholder="Search" class="suchen_field"">';
+                echo '<input type="text" name="search" placeholder="Search" class="suchen_field">';
             }
             else
             {
