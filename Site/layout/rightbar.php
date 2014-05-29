@@ -104,7 +104,7 @@
 	
 	
 	
-	<!----------Block for Map by Matthias Birnthaler ----------------->
+	<!--Block for Map by Matthias Birnthaler-->
 	<?php
 	
 	if ( $_SESSION['sprache'] == "en" )
@@ -125,7 +125,7 @@
 	 <br>
 	
 	
-	<!----------Block for Film by Matthias Birnthaler ----------------->
+	<!--Block for Film by Matthias Birnthaler-->
 	<?php
 	// von Matthias Birnthaler (Video zu Film übersetzen.... irgendwie witzlos)
 	if ( $_SESSION['sprache'] == "en" )

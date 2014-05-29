@@ -25,7 +25,7 @@
         }
     ?>
     
-	<!----------Block for Map by Matthias Birnthaler ----------------->
+	<!--Block for Guestbook by Matthias Birnthaler-->
 	<?php
 	
 	if ( $_SESSION['sprache'] == "en" )
