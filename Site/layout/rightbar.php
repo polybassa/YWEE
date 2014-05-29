@@ -89,21 +89,11 @@
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
-<<<<<<< HEAD
-                echo '<input type="text" id="search" placeholder="Search" class="suchen_field">
-                    <input type="image" src="/images/lupe.png" alt="Suchen"';
-            }
-            else
-            {
-                echo '<input type="text" id="search" placeholder="Suche" class="suchen_field">
-                    <input type="image" src="/images/lupe.png" alt="Suchen"';
-=======
                 echo '<input type="text" name="search" placeholder="Search" class="suchen_field"">';
             }
             else
             {
                 echo '<input type="text" name="search" placeholder="Suche" class="suchen_field">';
->>>>>>> master
             }
     ?>
     <input type="image" src="/images/lupe.png" alt="Search">
