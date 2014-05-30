@@ -30,7 +30,7 @@
 				//insert functions for deleting profile
 				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteProfile.php");
 				unset($_SESSION['user']);
-				unset($_SESSION['logged_in']);
+				unset($_SESSION['logged-in']);
 				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ProfileDeleteRight.html");
 				exit();
 			}
