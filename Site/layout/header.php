@@ -23,8 +23,9 @@
     <title><?php echo $titel ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <!-- Includes for registrierung und login -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Includes for registrierung und login 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="/js/jquery-1.10.2.min.js"></script> 
     <script src="/js/login_registration.js" type="text/javascript"></script>
     
     <!-- Includes for autocompletion -->

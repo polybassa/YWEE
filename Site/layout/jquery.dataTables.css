@@ -4,7 +4,7 @@
  */
 table.dataTable {
 	margin: 0 auto;
-	clear: both;
+	clear: none;
 	width: 100%;
 }
 
@@ -47,7 +47,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  */
 .dataTables_wrapper {
 	position: relative;
-	clear: both;
+	clear: none;
 	*zoom: 1;
 }
 
@@ -73,7 +73,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  * Table information
  */
 .dataTables_info {
-	clear: both;
+	clear: none;
 	float: left;
 }
 
@@ -126,11 +126,11 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 
 .paginate_enabled_previous { background: url('../images/back_enabled.png') no-repeat top left; }
 .paginate_enabled_previous:hover { background: url('../images/back_enabled_hover.png') no-repeat top left; }
-.paginate_disabled_previous { background: url('../images/back_disabled.png') no-repeat top left; }
+.paginate_disabled_previous { background: url('../images/back_disabled.jpg') no-repeat top left; }
 
 .paginate_enabled_next { background: url('../images/forward_enabled.png') no-repeat top right; }
 .paginate_enabled_next:hover { background: url('../images/forward_enabled_hover.png') no-repeat top right; }
-.paginate_disabled_next { background: url('../images/forward_disabled.png') no-repeat top right; }
+.paginate_disabled_next { background: url('../images/forward_disabled.jpg') no-repeat top right; }
 
 /* Full number pagination */
 .paging_full_numbers {
@@ -211,7 +211,7 @@ table.dataTable thead td:active {
  * Scrolling
  */
 .dataTables_scroll {
-	clear: both;
+	clear: none;
 }
 
 .dataTables_scrollBody {
