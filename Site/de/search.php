@@ -81,7 +81,5 @@ if (count($a_json) === 1) {
     <?php
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/search.html");       // Inkludiert den Inhalt
 }
-
-
 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>

@@ -8,13 +8,27 @@
     if ( !isset( $_SESSION['logged-in'] ) )
     {
         // Baue Verbindung auf
-        $dbConnection = ConnectToDB();
+        try {
+            $dbConnection = ConnectToDB();
+        } catch (Exception $e) {
+            die("keine Verbindung möglich: " . $e->getMessage());
+        }
+
+        // SECURITY HOLE ***************************************************************
+        // allow space, any unicode letter and digit, underscore and dash
+        if ( preg_match("/[^\040\pL\pN_-]/u", $_POST['username']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['passwd']) ) {
+            exit;
+        }
         
+        // replace multiple spaces with one
+        $user = preg_replace('/\s+/', ' ', $_POST['username']);
+        $passwd = preg_replace('/\s+/', ' ', $_POST['passwd']);
+    
         $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
         $query = $dbConnection->prepare("select * from login where benutzername = :user and passwort = :pass");
-        $query->bindParam(":user",$_POST['username']);
-        $query->bindParam(":pass", md5( $_POST['passwd'] ) );
+        $query->bindParam(":user", $user);
+        $query->bindParam(":pass", md5( $passwd ) );
         $query->execute();
 
         $result = $query->fetch(PDO::FETCH_LAZY);
@@ -41,10 +55,10 @@
     }
     else if ( isset( $_SESSION['logged-in'] ) )
     {
-        unset( $_SESSION['logged-in'] );    // Login auf NULL setzen, damit es mit isset() funktioniert
+        unset( $_SESSION['logged-in'] );    // Login zuruecksetzen
         unset( $_SESSION['user'] );
         
         if ( $_SESSION['admin'] == true )
-            unset( $_SESSION['admin'] );      // Admin Status zur&uuml;cksetzen
+            unset( $_SESSION['admin'] );      // Admin Status zuruecksetzen
     }
 ?>

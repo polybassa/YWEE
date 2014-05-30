@@ -4,7 +4,11 @@
  */
 table.dataTable {
 	margin: 0 auto;
+<<<<<<< HEAD
 	clear: both;
+=======
+	clear: none;
+>>>>>>> 2acb98b60a143e9af67a5a83db5fb072e6753ee6
 	width: 100%;
 }
 
@@ -47,7 +51,11 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  */
 .dataTables_wrapper {
 	position: relative;
+<<<<<<< HEAD
 	clear: both;
+=======
+	clear: none;
+>>>>>>> 2acb98b60a143e9af67a5a83db5fb072e6753ee6
 	*zoom: 1;
 }
 
@@ -73,7 +81,11 @@ table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
  * Table information
  */
 .dataTables_info {
+<<<<<<< HEAD
 	clear: both;
+=======
+	clear: none;
+>>>>>>> 2acb98b60a143e9af67a5a83db5fb072e6753ee6
 	float: left;
 }
 
@@ -211,7 +223,11 @@ table.dataTable thead td:active {
  * Scrolling
  */
 .dataTables_scroll {
+<<<<<<< HEAD
 	clear: both;
+=======
+	clear: none;
+>>>>>>> 2acb98b60a143e9af67a5a83db5fb072e6753ee6
 }
 
 .dataTables_scrollBody {

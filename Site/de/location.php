@@ -59,6 +59,5 @@ $json = json_encode($a_json);
 
 <?php
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/location.html");       // Inkludiert den Inhalt
-
 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
