@@ -9,6 +9,7 @@
 	$titel = "Profil bearbeiten";
 	
 	$_SESSION['sprache'] = "de";
+	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
 	if(isset($_GET['username']))
@@ -18,14 +19,28 @@
 	}
 	else
 		$fl_username = null;
-	if(isset($_GET['value']))
-	{
-		//then the profil shall be updated
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/takeprofile.php");
-		echo "<h1>Profil erfolgreich geändert!</h1>";
-	}
+
 	if(isset($_SESSION['user']))
 	{	
+		
+		if(isset($_GET['DeleteProfile']))
+		{
+			if($_GET['DeleteProfile'] == 'true')
+			{
+				//insert functions for deleting profile
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteProfile.php");
+				unset($_SESSION['user']);
+				unset($_SESSION['logged_in']);
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ProfileDeleteRight.html");
+				exit();
+			}
+		}
+		if(isset($_GET['value']))
+		{
+			//then the profil shall be updated
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/takeprofile.php");
+			echo "<h1>Profil erfolgreich geändert!</h1>";
+		}
 		if(isset($_GET['password']))
 		{
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ChangePassword.html");
