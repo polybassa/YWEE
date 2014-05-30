@@ -83,9 +83,10 @@
 	
     <!-- Suchformular --><!--Sprachabfrage nicht nötig, da Button-->
     <div class="basic-wrapper orange">
-    <form method="POST" action="Orte.php" id="searchform">
+    <form method="POST" action="/de/search.php" id="searchform">
 
     <input type="hidden" name="PHPSESSID" value="'.session_id().'">
+    <input type="hidden" name="valueTyp" value="#">
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {

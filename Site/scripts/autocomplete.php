@@ -47,15 +47,15 @@ $sth->execute();
 
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     if (stristr($row['Wohnort'], $term)) {
-        $a_json_row["id"] = "Orte.php";
+        $a_json_row["id"] = "search.php";
         $a_json_row["value"] = $row['Wohnort'];
-        $a_json_row["label"] = $row['Wohnort'];
+        $a_json_row["typ"] = "location";
         array_push($a_json, $a_json_row);
     }
     if (stristr($row['fach'], $term)) {
-        $a_json_row["id"] = "Tutoren.php";
+        $a_json_row["id"] = "search.php";
         $a_json_row["value"] = $row['fach'];
-        $a_json_row["label"] = $row['fach'];
+        $a_json_row["typ"] = "subject";
         array_push($a_json, $a_json_row);
     }
 }

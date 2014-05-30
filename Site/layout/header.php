@@ -35,6 +35,10 @@
  	<script src="/js/jquery.ui.autocomplete.js"></script>
  	<script src="/js/jquery.ui.autocomplete.html.js"></script>
  	<script src="/js/autocomplete.js"></script>
+ 	
+ 	<!-- Includes for dataTable -->
+ 	<link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
+
 
 </head>
 <body>
