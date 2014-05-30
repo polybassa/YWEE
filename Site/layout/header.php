@@ -37,11 +37,6 @@
  	
  	<!-- Includes for dataTable -->
  	<link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 2acb98b60a143e9af67a5a83db5fb072e6753ee6
 </head>
 <body>
     
