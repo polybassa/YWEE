@@ -83,9 +83,10 @@
 	
     <!-- Suchformular --><!--Sprachabfrage nicht nötig, da Button-->
     <div class="basic-wrapper orange">
-    <form method="POST" action="Orte.php" id="searchform">
+    <form method="POST" action="/de/search.php" id="searchform">
 
     <input type="hidden" name="PHPSESSID" value="'.session_id().'">
+    <input type="hidden" name="valueTyp" value="#">
     <?php
             if ( $_SESSION['sprache'] == "en" )
             {
@@ -96,7 +97,7 @@
                 echo '<input type="text" name="search" placeholder="Suche" class="suchen_field">';
             }
     ?>
-    <input type="image" src="/images/lupe.png" alt="Search">
+    <input type="image" src="/images/lupe.png" alt="Lupe">
     </form>
     </div>
 	
@@ -120,7 +121,7 @@
 	?>
 	 
 	<div class="basic-wrapper-bottom">
-	<img src="/images/placeholder_map.jpg"><!--wollt was testn-->
+	<img src="/images/placeholder_map.jpg" alt="Platzhalter"><!--wollt was testn-->
 	</div>
 	 <br>
 	
@@ -140,12 +141,11 @@
 			}
 	?>	
 	<div class="basic-wrapper-bottom">
-	<img src="/images/placeholder_video.jpg"><!--wollt was testn-->
+	<img src="/images/placeholder_video.jpg" alt="Video"><!--wollt was testn-->
 	</div>
 	 <br>
 	
 	
 </div><!--right-->
-
 
 <div id="content" class="basic-wrapper box-shadow">

@@ -301,6 +301,14 @@ width:80%;
 box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Standard */
 }
 
+form label {display:inline-block; width:200px;}  
+form input[type="text"],
+form input[type="password"],
+form input[type="email"], 
+form input[type="tel"]{width:180px;}
+ 
+form .line {clear:both;}
+form .line.submit {text-align:left;}
 
 /*mit ie 6-8*/
 /*.boxshadow 

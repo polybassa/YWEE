@@ -8,7 +8,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludie
 
 $value = trim($_GET['term']);
 
-$titel = 'Tutoren in ' . $value; // Name der Seite die im Browser angezeigt werden soll
+$titel = 'Tutoren die ' . $value . 'unterrichten.'; // Name der Seite die im Browser angezeigt werden soll
 
 $_SESSION['sprache'] = "de";
 
@@ -38,14 +38,14 @@ try {
 /**
  * Create SQL
  */
-$sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "')";
+$sql = "SELECT * FROM suche WHERE (fach LIKE '" . $value . "%')";
 
 $sth = $conn->prepare($sql);
 $sth->execute();
 
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     $a_json_row["value"] = $row['benutzername'];
-    $a_json_row["typ"] = $row['fach'];
+    $a_json_row["typ"] = $row['Wohnort'];
     $a_json_row["url"] = "editprofile.php?username=" . $row['benutzername'];
 
     array_push($a_json, $a_json_row);
@@ -58,6 +58,7 @@ $json = json_encode($a_json);
 </script>
 
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/location.html");       // Inkludiert den Inhalt
+include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/subject.html");       // Inkludiert den Inhalt
+
 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
