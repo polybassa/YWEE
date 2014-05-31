@@ -3,12 +3,12 @@
 // Muss in der Reihenfolge bleiben
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
-include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
-
 
 $value = trim($_GET['term']);
 
 $titel = 'Tutoren in ' . $value; // Name der Seite die im Browser angezeigt werden soll
+
+include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 
 $_SESSION['sprache'] = "de";
 
