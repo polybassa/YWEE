@@ -1,5 +1,5 @@
 /* Autor: Daniel Tatzel */
-/* Ruft das PHP Login SCript auf und übergibt den Benutzernamen und das Passwort via POST */
+/* Ruft das PHP Login Script auf und übergibt den Benutzernamen und das Passwort via POST */
 $(document).ready(function()
 {    $("#loginform").submit(function(e)
      {   e.preventDefault();
@@ -14,7 +14,7 @@ $(document).ready(function()
 });
 
 /* Autor: Daniel Tatzel */
-/* Ruft das PHP Register SCript auf und übergibt die Daten via POST */
+/* Ruft das PHP Register Script auf und übergibt die Daten via POST */
 $(document).ready(function()
 {   $("#registerform").submit(function(e)
     {   e.preventDefault();
