@@ -19,6 +19,7 @@
     // replace multiple spaces with one
     $msg = preg_replace('/\s+/', ' ', $_POST['nachricht']);
 	$subject = preg_replace('/\s+/', ' ', $_POST['subject']);
+	mysql_real_escape_string($msg);
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 	
@@ -31,7 +32,12 @@
     $query->execute();
 	
 	//print_r($_POST);
-	//$lang = "en/news.php";
+	if( $_SESSION['sprache'] == 'en')
+	{
+		$lang = "en/news.php";
+	}
+	else
+		$lang = "de/nachrichten.php";
 	header("Location: http://ebenezer-kunatse.net/$lang");
     $dbConnection = null;
 	
