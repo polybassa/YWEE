@@ -56,12 +56,12 @@ $json = json_encode($a_json);
 if (count($a_json) === 1) {
     if ($a_json[0]['typ'] == "Ort") {
         $id = $a_json[0]['value'];
-        header("Location: http://www.ebenezer-kunatse.net/de/location.php?term=$id");
+        header("Location: http://ebenezer-kunatse.net/de/location.php?term=$id");
         exit;
         //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/search.html");// Inkludiert den Inhalt
     } else if ($a_json[0]['typ'] == "Fach") {
         $id = $a_json[0]['value'];
-        header("Location: http://www.ebenezer-kunatse.net/de/subject.php?term=$id");
+        header("Location: http://ebenezer-kunatse.net/de/subject.php?term=$id");
         exit;
     }
 } else {
