@@ -1,7 +1,8 @@
 <?php
     //News schreiben, für den Admin, Tobias Schwindl
 
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");
+	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     // Baue Verbindung auf
     try {
         $dbConnection = ConnectToDB();
@@ -34,5 +35,6 @@
 	print_r($_POST);
 	
     $dbConnection = null;
+	header("Location: http://ebenezer-kunatse.net/$lang/news.php");
 ?> 
 

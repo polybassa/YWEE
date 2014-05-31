@@ -39,8 +39,7 @@
  	<!-- Includes for dataTable -->
  	<link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
 	
-	<!--Includes for news -->
-	<script src="/js/news.js>"></script>
+	
 </head>
 <body>
     
