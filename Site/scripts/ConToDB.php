@@ -6,11 +6,10 @@
         // Verbindung aufbauen
 
         // Da ich keine Benutzerdaten auf Git hochladen will, da es nicht privat ist, muesst ihr diese auf dem Server lassen!!!!!
-        $dsn = 'mysql:dbname=;host=rdbms.strato.de';
+        $dsn = 'mysql:dbname=;host=rdbms.strato.de;charset=UTF8';
         $user = '';
         $pass = '';
 
-        
         // Baue Verbindung auf
         $dbConnection = new PDO($dsn, $user, $pass);
         
