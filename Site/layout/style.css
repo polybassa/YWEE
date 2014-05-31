@@ -209,11 +209,7 @@ div#content
 	background-color: #ffffff;
 	padding:10px;
 	margin: 0px 10px 10px;
-	
-	border-top: solid 1px #c3c5c9;
-	border-left: solid 1px #c3c5c9;
-	border-right: solid 1px #c3c5c9;
-	border-bottom: solid 1px #c3c5c9;
+	border: solid 1px #c3c5c9;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -274,31 +270,33 @@ div#content
 
 .lane 
 {
-width:75%;
-margin-top:20px;
+	width:75%;
+	margin-top:20px;
 
 }
 
-
-
 #loginform
 {
-width:100%;
+	width:100%;
 }
 .login_field
 {
 	width:100%;	
 }
+
+#searchform
 .suchen_field
 {
-width:80%;
+	width:80%;
 }
 
-.box-shadow
+.boxshadow #content
 {
 -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* WebKit */
 -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Firefox */
 box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Standard */
+/*Rahmen wird entfernt*/
+border:0;
 }
 
 form label {display:inline-block; width:200px;}  
@@ -310,22 +308,5 @@ form input[type="tel"]{width:180px;}
 form .line {clear:both;}
 form .line.submit {text-align:left;}
 
-/*mit ie 6-8*/
-/*.boxshadow 
-{
-zoom: 1; filter:
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=0, Strength=3)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=45, Strength=2)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=90, Strength=3)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=135, Strength=2)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=180, Strength=3)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=225, Strength=2)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=260, Strength=3)
-progid:DXImageTransform.Microsoft.Shadow(color='#999', Direction=305, Strength=2);
--moz-box-shadow: 0 0 5px #222;  Firefox 
--webkit-box-shadow: 0 0 5px #222;  Webkit 
-box-shadow: 0 0 5px #222;  Standard 
-}
-*/
 
 
