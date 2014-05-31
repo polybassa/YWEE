@@ -13,8 +13,8 @@
     <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
      
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
+    <?php header('X-UA-Compatible: IE=edge'); ?>
+    <meta name="description" content="Die Tutoren AG ist DIE Anlaufstelle f&uuml;r wissenshungrige, die nach einem Tutor in ihrer N&auml;he suchen!!!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
       
@@ -23,10 +23,10 @@
     <title><?php echo $titel ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <!-- Includes for registrierung und login-->
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/login.js" type="text/javascript"></script>
-    <script src="/js/registrierung.js" type="text/javascript"></script>
+    <!-- Includes for registrierung und login 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="/js/jquery-1.10.2.min.js"></script> 
+    <script src="/js/login_registration.js" type="text/javascript"></script>
     
     <!-- Includes for autocompletion -->
     <link rel="stylesheet" type="text/css" href="/layout/jquery-ui.css">
@@ -35,7 +35,9 @@
  	<script src="/js/jquery.ui.autocomplete.js"></script>
  	<script src="/js/jquery.ui.autocomplete.html.js"></script>
  	<script src="/js/autocomplete.js"></script>
-
+ 	
+ 	<!-- Includes for dataTable -->
+ 	<link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
 </head>
 <body>
     
@@ -59,7 +61,7 @@
     <div id="banner" >
        <!--Div Box für logo img-->
 	   <div id= "logo">
-	   <img src="/images/logo.gif" class="logo">
+	   <img src="/images/logo.gif" class="logo" alt="logo">
 	   </div>
 	   
 	   <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img

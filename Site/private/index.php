@@ -2,10 +2,8 @@
     // Anpassung und Aufteilung des Layouts: Daniel Tatzel
     // Muss in der Reihenfolge bleiben
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/login.php");         // Inkludiert das Login Script. Bleibt vorerst so, muesste mit AJAX implementiert werden
 
     $titel = "Privater Ordner"; // Name der Seite die im Browser angezeigt werden soll
-    
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 
