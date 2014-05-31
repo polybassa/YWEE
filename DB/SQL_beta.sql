@@ -129,7 +129,7 @@ COMMENT = 'Enthält die Leistungen eines Tutors.';
 DROP TABLE IF EXISTS `DB1695063`.`news` ;
 
 CREATE TABLE IF NOT EXISTS `DB1695063`.`news` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `benutzername` VARCHAR(20) NOT NULL,
   `zeit` DATE NOT NULL,
   `nachricht` TEXT NOT NULL,
