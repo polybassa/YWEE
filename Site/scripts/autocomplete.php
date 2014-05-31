@@ -3,14 +3,14 @@
 // Inkludiert die Funktion zur Anmeldung
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
- // prevent direct access
-  $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND
-  strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
-  if (!$isAjax) {
-  $user_error = 'Access denied - not an AJAX request...';
-  trigger_error($user_error, E_USER_ERROR);
-  } 
-
+// prevent direct access
+$isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND
+        strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+if (!$isAjax) {
+    $user_error = 'Access denied - not an AJAX request...';
+    trigger_error($user_error, E_USER_ERROR);
+}
+//echo "ajax<br>";
 // get what user typed in autocomplete input
 $term = trim($_GET['term']);
 
