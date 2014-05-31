@@ -1,9 +1,9 @@
 <?php
     //News schreiben, für den Admin, Tobias Schwindl
-
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");
+	//include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
-    // Baue Verbindung auf
+	 
+	// Baue Verbindung auf
     try {
         $dbConnection = ConnectToDB();
     } catch (Exception $e) {
@@ -17,24 +17,23 @@
     }
     
     // replace multiple spaces with one
-    $user = preg_replace('/\s+/', ' ', $_SESSION['user']);
     $msg = preg_replace('/\s+/', ' ', $_POST['nachricht']);
 	$subject = preg_replace('/\s+/', ' ', $_POST['subject']);
-    
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 	
-    $query = $dbConnection->prepare("insert into news (benutzername, zeit, nachricht, betreff) VALUES ( :user, CURRENT_TIMESTAMP, :msg, :subject)");
+    $query = $dbConnection->prepare("insert into news (benutzername, zeit, nachricht, betreff) VALUES ( :user, CURRENT_DATE, :msg, :subject)");
 
     $query->bindParam( ":msg", $msg );
-	  $query->bindParam( ":user", $user );
+	$query->bindParam( ":user", $_POST['user'] );
 	$query->bindParam( ":subject", $subject);
     
     $query->execute();
 	
-	print_r($_POST);
-	
+	//print_r($_POST);
+	//$lang = "en/news.php";
+	header("Location: http://ebenezer-kunatse.net/$lang");
     $dbConnection = null;
-	header("Location: http://ebenezer-kunatse.net/$lang/news.php");
+	
 ?> 
 
