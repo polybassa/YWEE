@@ -1,6 +1,6 @@
 <h1>Profil bearbeiten</h1>
 
-<form name="Formular"method="post" action="/de/editprofile.php?value=edit&username=<?php echo $_SESSION['user']?>">
+<form name="Formular"method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user']?>">
 	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["benutzername"]?>" id="benutzername" name="benutzername"required readonly></div>
 	<div><label for ="nachname">Name(nicht ändern):</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["nachname"] ?>" name="nachname" id="nachname" readonly></div>
 	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["vorname"] ?>"name="vorname" id="vorname" readonly></div>
@@ -13,4 +13,5 @@
 	<div><label for ="telefon">Telefon:</label><input type="tel" size="45" value="<?php echo $result["telefon"]?>"id="telefon" name="telefon" required <?php if($fl_username != $_SESSION['user']) echo "readonly"?>></div>
 	<?php if($fl_username == $_SESSION['user']) echo '<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>' ?>
 </form> 
-<?php if($fl_username == $_SESSION['user']) echo '<a class="btn" href="/de/editprofile.php?DeleteProfile=true">Profil löschen</a>' ?>
+<?php if((!$tutor_result) and ($fl_username == $_SESSION['user'])) echo '<a class="btn" href="/de/tutor.php?new=true">Sie wollen Tutor werden</a>' ?>
+<?php if($fl_username == $_SESSION['user']) echo '<a class="btn" href="/de/profile.php?DeleteProfile=true">Profil löschen</a>' ?>
