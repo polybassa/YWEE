@@ -2,7 +2,7 @@
 
 <h1>Bezahlung</h1>
 <form name="Formular" method="post" action="#" id="paymentform">
-	<div><label class="zeile"for ="benutzername">Username:</label><input type="text" size="45" maxlength ="20" class="eingabe" placeholder="Username" id="benutzername" name="benutzername" required></div>
+	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">E-Mail:</label><input type="text" size="45" maxlength ="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="tag">Date of Expire:</label>
 	<select name="tag"> <option value="0"></option><?php 
@@ -24,5 +24,6 @@
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></div>
 	<div><label class="zeile"for ="pruefziffer">Checknumber:</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
+	<div><label class="zeile"for ="betrag">Amount:</label><input type="number" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
 	<div class="line submit"><input type="submit" value="Confirm"></div>
 </form>
