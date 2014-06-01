@@ -4,12 +4,8 @@
 <form name="Formular" method="post" action="#" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">E-Mail:</label><input type="text" size="45" maxlength ="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
-	<div><label class="zeile" for ="day">Date of Expire:</label>
-	<select name="tag" id="day"> <option value="0"></option><?php 
-    $i = 0;
-    while ( $i++ < 31)
-    echo '<option value="'.$i.'">'.$i.'</option>'; ?></select>
-	<select name="monat">
+	<div><label class="zeile" for ="month">Date of Expire:</label>
+	<select name="monat" id="month">
 	<option value="0"></option>
 	<?php
 	$i = 0;
