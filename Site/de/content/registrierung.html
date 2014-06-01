@@ -16,7 +16,8 @@ Sie k&#246;nnen sp&#228;ter entscheiden, ob Sie die Rolle des Tutors oder des Sc
 	<div><label class="zeile" for ="vorname">Vorname:</label><input type="text" size="45" maxlength ="45" class="eingabe"  placeholder ="Vorname" name="vorname" id="vorname" required></div>
 	<div><label class="zeile" for ="email">E-Mail:</label><input type="email" size="45" maxlength ="45" class="eingabe" placeholder ="beispiel@email.de" id="email" name="email" required></div>
 	<div><label class="zeile" for ="day">Geburtsdatum:</label>
-	<select name="tag" id="day"><option value="0">Tag</option><?php 
+	<select name="tag" id="day"><option value="0">Tag</option>
+	<?php 
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>'; ?></select>
