@@ -12,17 +12,18 @@
 	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
+	$_SESSION['user'] = "admin";
+	
 	if(isset($_GET['username']))
 	{	
 		//get username and save it for later use by seeing profile's
 		$fl_username = $_GET['username'];
 	}
 	else
-		$fl_username = null;
+		$fl_username = $_SESSION['user'];	// wenn kein Benutzername angegeben ist, dann wird das eigene Profil geholt
 
 	if(isset($_SESSION['user']))
 	{	
-		
 		if(isset($_GET['DeleteProfile']))
 		{
 			if($_GET['DeleteProfile'] == 'true')
@@ -59,11 +60,16 @@
 		}	
 		else
 		{
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/beeingTutor.php");
 			// user isset, so we can take all data from the DB for this user and display it in a formular; not all data's are editable
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/GetProfile.php");
-			$result = $result[0];
-			// here there is a variable called $result with the result
-			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/editprofile.html");   // Inkludiert static things
+			if(isset($result[0]))
+			{
+				$result = $result[0];
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/profile.html");   // Inkludiert static things
+			}
+			else  // this user doesn't exist
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/noProfile.html");
 		}
 	}
 	else
