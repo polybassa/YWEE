@@ -19,7 +19,11 @@
     // replace multiple spaces with one
     $msg = preg_replace('/\s+/', ' ', $_POST['nachricht']);
 	$subject = preg_replace('/\s+/', ' ', $_POST['subject']);
-	mysql_real_escape_string($msg);
+
+    /* Nicht noetig und auch gefaehrlich, da andere lib!
+     * mysql_real_escape_string($msg);
+     */
+
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 	
