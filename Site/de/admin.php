@@ -9,7 +9,7 @@
 	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
-	if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true)
+	if(isset($_SESSION['user']) and ($_SESSION['admin']) and $_SESSION['admin'] == true)
 	{
 		if($_GET['guestbook'] == true)
 		{
@@ -26,7 +26,7 @@
 				$guestbook_print .= "<tr> ";
 				$guestbook_print .= "<th>" . $eintrag["eintrag"] . "</th> ";
 				//todo: ändern des links für den produktiven Einsatz hier und in ShowUnauthGuestbook.html
-				$guestbook_print .= "<th> <a href='/de/profile.php?username=" . $eintrag["benutzername"] . "'>" . $eintrag["benutzername"] . "</a> </th> ";
+				$guestbook_print .= "<th> ". $eintrag["benutzername"] . "</th> ";
 				$guestbook_print .= '<th> <input type="checkbox" name="freigaben[]" value="'. $eintrag["id"] . '"</th>';
 				$guestbook_print .= "</tr>";
 			}
