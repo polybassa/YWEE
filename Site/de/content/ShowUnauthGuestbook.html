@@ -1,0 +1,17 @@
+<h2>Unautorisierte G&auml;stebucheintr&auml;ge</h2>
+<!-- author: Florian Laufenboeck -->
+<form name="formular" method="post" action="de/admin.php?guestbook=true&fired=true">
+	<table border="1" rules="groups">
+		<thead>
+			<tr>
+				<th>G&auml;stebucheintrg</th>
+				<th>User</th>
+				<th>freigeben</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php echo $guestbook_print?>
+		</tbody>
+	</table>
+	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>
+</form>
