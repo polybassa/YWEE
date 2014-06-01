@@ -1,18 +1,17 @@
 <!-- Inhalt von: Maxi Schröter -->
-<script src="/js/registration.js" type="text/javascript"></script>
 
 <h1>Registration</h1>
 
 Here you can register for our tutoring website. Please fill in all information to ensure full functionality of our homepage. You can decide later whether you're in the role of a tutor or a student.
 
 <form name="Formular" method="post" action="#" id="registerform">
-    <div><label class="zeile" for ="geschlecht">Gender</label><select name="geschlecht" id="geschlecht"><option value="-1">--</option><option value="0">Female</option><option value="1">Male</option></select></div>
-	<div><label class="zeile" for ="nachname">Surname:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder ="Surname" name="nachname" id="nachname" required></div>
-	<div><label class="zeile" for ="vorname">Forename:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder ="Forename" name="vorname" id="vorname" required></div>
-	<div><label class="zeile" for ="email">E-Mail:</label><input type="email" class="eingabe" size="45" maxlength ="45" placeholder ="beispiel@email.de" id="email" name="email" required></div>
-	<div><label for="tag" class="zeile">Birthday:</label>
-	<select name="tag" id="tag" style="width:50"><option value="0">Day</option>
-	<?php
+
+    <div><label for ="geschlecht">Gender</label><select name="geschlecht" id="geschlecht"><option value="-1">--</option><option value="0">Female</option><option value="1">Male</option></select></div>
+	<div><label for ="nachname">Surname:</label><input type="text" size="45" maxlength ="45" placeholder ="Surname" name="nachname" id="nachname" required></div>
+	<div><label for ="vorname">Forename:</label><input type="text" size="45" maxlength ="45" placeholder ="Forename" name="vorname" id="vorname" required></div>
+	<div><label for ="email">E-Mail:</label><input type="email" size="45" maxlength ="45" placeholder ="beispiel@email.de" id="email" name="email" required></div>
+	<div><label>Birthday:</label>
+	<select name="tag" id="tag" style="width:50"><option value="0">Day</option><?php
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
@@ -30,14 +29,14 @@ Here you can register for our tutoring website. Please fill in all information t
     while ( $i-- > 1900)
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></div>
-	<div><label class="zeile" for ="plz">Postcode:</label><input type="text" class="eingabe" size="45" maxlength ="5" placeholder ="00000" id="plz" name="plz" required></div>
-	<div><label class="zeile" for ="wohnort">Residence:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder="residence" id="wohnort" name="wohnort" required></div>
-	<div><label class="zeile" for ="strasse">Street:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder="Street" id="strasse" name="strasse" required></div>
-	<div><label class="zeile" for ="hausnummer">House Number:</label><input type="text" class="eingabe" size="45" placeholder="45" id="hausnummer" name="hausnummer" required></div>
-	<div><label class="zeile" for ="hausnummerzusatz">Addition to Address:</label><input type="text" maxlength ="20" class="eingabe" size="45" placeholder="45" id="hausnummerzusatz" name="hausnummerzusatz"></div>
-	<div><label class="zeile" for ="telefon">Phone:</label><input type="tel" size="45" class="eingabe" maxlength ="15" placeholder="0190666666" id="telefon" name="telefon" required></div>
-	<div><label class="zeile" for ="benutzername">Username:</label><input type="text" class="eingabe" size="45" maxlength="20" placeholder="Username" id="benutzername" name="benutzername" required></div>
-	<div><label class="zeile" for ="pw1">Password:</label><input type="password" size="45" class="eingabe" maxlength ="45" name="passwort" placeholder="Password" id="pw1" required></div>
-	<div><label class="zeile" for ="pw2">Confirm password:</label><input type="password" class="eingabe" maxlength ="45" size="45" name="passwortcheck" placeholder="Password" id ="pw2" required></div>
+	<div><label for ="plz">Postcode:</label><input type="text" size="45" placeholder ="00000" id="plz" name="plz" required></div>
+	<div><label for ="wohnort">Residence:</label><input type="text" size="45" maxlength ="45" placeholder="residence" id="wohnort" name="wohnort" required></div>
+	<div><label for ="strasse">Street:</label><input type="text" size="45" maxlength ="45" placeholder="Street" id="strasse" name="strasse" required></div>
+	<div><label for ="hausnummer">House Number:</label><input type="text" size="45" placeholder="45" id="hausnummer" name="hausnummer" required></div>
+	<div><label for ="hausnummerzusatz">Addition to Address:</label><input type="text" size="45" placeholder="45" id="hausnummerzusatz" name="hausnummerzusatz"></div>
+	<div><label for ="telefon">Phone:</label><input type="tel" size="45" placeholder="0190666666" id="telefon" name="telefon" required></div>
+	<div><label for ="benutzername">Username:</label><input type="text" size="45" maxlength="45" placeholder="Username" id="benutzername" name="benutzername" required></div>
+	<div><label for ="pw1">Password:</label><input type="password" size="45" maxlength ="45" name="passwort" placeholder="Password" id="pw1" required></div>
+	<div><label for ="pw2">Confirm password:</label><input type="password" maxlength ="45" size="45" name="passwortcheck" placeholder="Password" id ="pw2" required></div>
 	<div class="line submit"><input type="submit" value="Submit"></div>
 </form>

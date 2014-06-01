@@ -7,7 +7,7 @@
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php"); // connection to DB
     $dbConnection = ConnectToDB();
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
-    $query = $dbConnection->prepare("select * from mitglieder where benutzername = '" . $fl_username . "'");
+    $query = $dbConnection->prepare("select * from mitglieder where benutzername = '" . $_SESSION['user'] . "'");
     if($query->execute())
 	{	
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);

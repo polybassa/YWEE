@@ -2,13 +2,10 @@
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 // Muss in der Reihenfolge bleiben
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
 $value = trim($_GET['term']);
 
-$titel = 'Tutoren in ' . $value; // Name der Seite die im Browser angezeigt werden soll
-
-include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
+$titel = "Tutoren in " . $value; // Name der Seite die im Browser angezeigt werden soll
 
 $_SESSION['sprache'] = "de";
 
@@ -46,8 +43,6 @@ $sth->execute();
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     $a_json_row["value"] = $row['benutzername'];
     $a_json_row["typ"] = $row['fach'];
-    $a_json_row["url"] = "editprofile.php?username=" . $row['benutzername'];
-
     array_push($a_json, $a_json_row);
 }
 $a_json = array_unique($a_json, SORT_REGULAR);
@@ -58,6 +53,8 @@ $json = json_encode($a_json);
 </script>
 
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/location.html");       // Inkludiert den Inhalt
+include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/search.html");       // Inkludiert den Inhalt
+
+
 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>

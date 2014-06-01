@@ -16,21 +16,19 @@
 
         // SECURITY HOLE ***************************************************************
         // allow space, any unicode letter and digit, underscore and dash
-        if ( preg_match("/\W/", $_POST['username']) ) {
-            
-            if ( $_SESSION['sprache'] == "de")
-                echo 'Anmeldung Fehlgeschlagen!';
-            else
-                echo 'Login failed!';
-                
+        if ( preg_match("/[^\040\pL\pN_-]/u", $_POST['username']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['passwd']) ) {
             exit;
         }
         
+        // replace multiple spaces with one
+        $user = preg_replace('/\s+/', ' ', $_POST['username']);
+        $passwd = preg_replace('/\s+/', ' ', $_POST['passwd']);
+    
         $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
         $query = $dbConnection->prepare("select * from login where benutzername = :user and passwort = :pass");
-        $query->bindParam(":user", $_POST['username']);
-        $query->bindParam(":pass", md5( $_POST['passwd'] ) );
+        $query->bindParam(":user", $user);
+        $query->bindParam(":pass", md5( $passwd ) );
         $query->execute();
 
         $result = $query->fetch(PDO::FETCH_LAZY);

@@ -12,7 +12,7 @@ $(document).ready(function() {
     jQuery.each(searchresults, function() {
         mTable.fnAddData(['<a href="' + this.url + '" > ' + this.value + '</a>', this.typ]);
     });
-    //mTable.draw();
+    mTable.draw();
 
     /*
      $('#searchresultTable').dataTable( {
