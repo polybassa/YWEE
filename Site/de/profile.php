@@ -12,8 +12,6 @@
 	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
-	$_SESSION['user'] = "admin";
-	
 	if(isset($_GET['username']))
 	{	
 		//get username and save it for later use by seeing profile's
