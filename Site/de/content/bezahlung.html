@@ -4,8 +4,8 @@
 <form name="Formular" method="post" action="#" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">E-Mail:</label><input type="text" size="45" maxlength ="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
-	<div><label class="zeile" for ="tag">Ablaufdatum:</label>
-	<select name="tag"> <option value="0"></option><?php 
+	<div><label class="zeile" for ="day">Ablaufdatum:</label>
+	<select name="tag" id="day"> <option value="0"></option><?php 
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>'; ?></select>
@@ -23,7 +23,7 @@
     while ( $i++ < (date("Y")+20))
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></div>
-	<div><label class="zeile"for ="pruefziffer">Pr&#252;fziffer:</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
-	<div><label class="zeile"for ="betrag">Betrag:</label><input type="number" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
+	<div><label class="zeile" for ="pruefziffer">Pr&#252;fziffer:</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
+	<div><label class="zeile" for ="betrag">Betrag:</label><input type="text" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
 	<div class="line submit"><input type="submit" value="Best&#228;tigen"></div>
 </form>
