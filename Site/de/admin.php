@@ -38,7 +38,7 @@
 		}
 	}
 	else
-		echo "<h2>Fehler! Die aufgerufene Seite existiert nicht oder Sie m&uuml;ssen sich erst einloggen</h2>"
+		echo "<h2>Fehler! Die aufgerufene Seite existiert nicht oder Sie m&uuml;ssen sich erst einloggen</h2>";
 	
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
