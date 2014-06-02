@@ -46,7 +46,7 @@
         exit;
     }
 
-    if ( preg_match( "/[A-Za-z0-9\.!#$%&'*+-\/=?\^_`\{\|\}~]/", $_POST['email'] ) )
+    if ( preg_match( "/[^A-Za-z0-9\.!#$%&'*+-\/=@?\^_`\{\|\}~]/", $_POST['email'] ) )
         {
             if ( $_SESSION['sprache'] == "de")
                 echo 'Ihre E-Mail Adresse ist ungueltig!';

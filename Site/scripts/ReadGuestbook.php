@@ -19,8 +19,13 @@
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 	echo json_encode($result);
+<<<<<<< HEAD
 	//return json_encode($result);
     //print_r($result);
+=======
+	// return json_encode($result);
+    // print_r($result);
+>>>>>>> 67491ab76866d7650746b0fd31895006218a6dbc
     
     $dbConnection = null;
 ?> 
