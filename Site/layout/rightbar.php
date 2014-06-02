@@ -134,8 +134,19 @@
 	<div id="map">
 		
 
-				<script src="http://maps.google.se/maps/api/js?sensor=false"></script>
+				<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 				<script>
+				
+				<!-- Karte vor Geolocation -->
+				var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
+				function gmegInitializeMap(){gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
+				gmegMap = new google.maps.Map(document.getElementById("map"),{zoom:14,center:gmegLatLng,mapTypeId:google.maps.MapTypeId.ROADMAP});
+				gmegMarker = new google.maps.Marker({map:gmegMap,position:gmegLatLng});
+				gmegInfoWindow = new google.maps.InfoWindow({content:'<b>Hochschule</b><br>Seybothstra0e<br>Regensburg'});
+				gmegInfoWindow.open(gmegMap,gmegMarker);}google.maps.event.addDomListener(window,"load",gmegInitializeMap);
+				
+				
+				<!-- Karte: Routenplaner -->
 					(function () {
 						var directionsService = new google.maps.DirectionsService(),
 							directionsDisplay = new google.maps.DirectionsRenderer(),
@@ -173,7 +184,7 @@
 										});
 									}, 
 									function () {
-										// Gelocation fallback: Defaults to Stockholm, Sweden
+										// Fallback: Hochschule Amberg
 										createMap({
 											coords : false,
 											address : "Hochschule, Amberg"
@@ -182,10 +193,10 @@
 								);
 							}
 							else {
-								// No geolocation fallback: Defaults to Lisbon, Portugal
+								// No geolocation fallback: Hochschule Weiden
 								createMap({
 									coords : false,
-									address : "Hochschule, Amberg"
+									address : "Hochschule, Weiden"
 								});
 							}
 					})();
@@ -307,17 +318,21 @@
 	} </script> 
 	
 	<div id="video_player_box"> 
-	<video id="my_video" width="200" height="100" autoplay> 
-		<source src="/images/video.mp4"> 
-	</video> <div id="video_controls_bar"> 
-		<button id="playpausebtn"></button> 
-		<input id="seekslider" type="range" min="0" max="100" value="0" step="1"> 
-		<span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span> 
-		<button id="mutebtn">Mute</button> 
-		<input id="volumeslider" type="range" min="0" max="100" value="100" step="1"> 
-		<button id="fullscreenbtn">[ &nbsp; ]</button> 
+		<video id="my_video" width="200" height="100"> 
+			<source src="/images/video.mp4" type="video/mp4"> 
+			<source src?"/images/video.ogg" type="video/ogg">
+			Your browser does not support the video tag.
+		</video> 
+	
+		<div id="video_controls_bar"> 
+			<button id="playpausebtn"></button> 
+			<input id="seekslider" type="range" min="0" max="100" value="0" step="1"> 
+			<span id="curtimetext">00:00</span> / <span id="durtimetext">00:00</span> 
+			<button id="mutebtn">Mute</button> 
+			<input id="volumeslider" type="range" min="0" max="100" value="100" step="1"> 
+			<button id="fullscreenbtn">[ &nbsp; ]</button> 
+		</div> 
 	</div> 
-</div> 
 	
 	</div>
 	
