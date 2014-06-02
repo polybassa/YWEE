@@ -11,12 +11,12 @@
     
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
-	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/en/content/news.html");       // Inkludiert den Inhalt
+	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/en/content/news.html");       // Inkludiert den Inhalt
 	if( $_SESSION['admin'] == true )
 	{
-	$lang = $_SESSION['sprache'];
+	//$lang = $_SESSION['sprache'];
 ?>
-	<form name="News" method="post" action="/test_02/scripts/WriteNews.php" id="newsform">
+	<form name="News" method="post" action="/scripts/WriteNews.php" id="newsform">
 	<input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 		<div><label for ="betreff"></label><input type="text" size="44" maxlength = "60" placeholder = "Subject" name="subject" id="betreff"required></div>

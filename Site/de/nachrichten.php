@@ -2,7 +2,7 @@
     // Anpassung und Aufteilung des Layouts: Daniel Tatzel
     // Muss in der Reihenfolge bleiben
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
-	//$lang = $_SESSION['sprache'];
+
     $titel = "Nachrichten"; // Name der Seite die im Browser angezeigt werden soll
 
     $_SESSION['sprache'] = "de";
@@ -14,8 +14,8 @@
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/Nachrichten.html");
     if( $_SESSION['admin'] == true )
 	{
+	//$lang = $_SESSION['sprache'];
 ?>
-
 	<form name="News" method="post" action="/scripts/WriteNews.php" id="newsform">
 	<input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">

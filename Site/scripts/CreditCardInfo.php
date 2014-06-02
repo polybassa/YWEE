@@ -11,7 +11,7 @@
 	
 	// SECURITY HOLE ***************************************************************
     // allow space, any unicode letter and digit, underscore and dash
-    if ( preg_match("/[^\040\pL\pN_-]/u", $_SESSION['user']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['kreditkartennummer']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['pruefziffer']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['betrag'])) {
+    if ( preg_match("/[^\040\pL\pN_-]/u", $_POST['kreditkartennummer']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['pruefziffer']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['betrag'])) {
         exit;
     }
     $_SESSION['user'] = admin;
@@ -22,9 +22,6 @@
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 	
-	
-	//$_POST['jahr'] = 2025;
-	//$_POST['monat'] = 3;
 	$real_date = $_POST['jahr'] . "-" . $_POST['monat'] ."-31";	
 	//print($real_date);
     $query = $dbConnection->prepare("insert into abrechnungen (benutzername, kreditkartennummer, ablaufdatum, pruefziffer, betrag) VALUES ( :user, :number, :date, :check, :sum)");
