@@ -12,8 +12,8 @@
     
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
-
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/gaestebuch.html");       // Inkludiert den Inhalt
-        
+	// Inkludiert den Inhalt    
+	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/gaestebuch.html"); 
+	        
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
