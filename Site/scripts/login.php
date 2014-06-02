@@ -8,12 +8,28 @@
     if ( !isset( $_SESSION['logged-in'] ) )
     {
         // Baue Verbindung auf
-        $dbConnection = ConnectToDB();
+        try {
+            $dbConnection = ConnectToDB();
+        } catch (Exception $e) {
+            die("keine Verbindung möglich: " . $e->getMessage());
+        }
+
+        // SECURITY HOLE ***************************************************************
+        // allow space, any unicode letter and digit, underscore and dash
+        if ( preg_match("/\W/", $_POST['username']) ) {
+            
+            if ( $_SESSION['sprache'] == "de")
+                echo 'Anmeldung Fehlgeschlagen!';
+            else
+                echo 'Login failed!';
+                
+            exit;
+        }
         
         $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
         $query = $dbConnection->prepare("select * from login where benutzername = :user and passwort = :pass");
-        $query->bindParam(":user",$_POST['username']);
+        $query->bindParam(":user", $_POST['username']);
         $query->bindParam(":pass", md5( $_POST['passwd'] ) );
         $query->execute();
 
@@ -41,10 +57,10 @@
     }
     else if ( isset( $_SESSION['logged-in'] ) )
     {
-        unset( $_SESSION['logged-in'] );    // Login auf NULL setzen, damit es mit isset() funktioniert
+        unset( $_SESSION['logged-in'] );    // Login zuruecksetzen
         unset( $_SESSION['user'] );
         
         if ( $_SESSION['admin'] == true )
-            unset( $_SESSION['admin'] );      // Admin Status zur&uuml;cksetzen
+            unset( $_SESSION['admin'] );      // Admin Status zuruecksetzen
     }
 ?>
