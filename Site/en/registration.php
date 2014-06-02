@@ -12,7 +12,21 @@
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
 
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/en/content/registration.html");       // Inkludiert den Inhalt
+    if ( !isset($_SESSION['logged-in']) )
+    {
+        include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/en/content/registration.html");       // Inkludiert den Inhalt
+    }
+    else
+    {
+?>
+        <script type="text/javascript">
+            <!--
+            window.location = "http://ebenezer-kunatse.net/de/profile.php";
+            //-->
+        </script>
+<?php
+    }
+    
 
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>
