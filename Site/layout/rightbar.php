@@ -320,7 +320,7 @@
 	<div id="video_player_box"> 
 		<video id="my_video" width="200" height="100"> 
 			<source src="/images/video.mp4" type="video/mp4"> 
-			<source src?"/images/video.ogg" type="video/ogg">
+			<source src="/images/video.ogg" type="video/ogg">
 			Your browser does not support the video tag.
 		</video> 
 	
