@@ -24,10 +24,10 @@ h1
 {
     font-size: 11px;
     text-transform:uppercase;
-    background-color: #E0A3B7;
+    background-color: #DE8642;
     border-top:1px solid #564b47;
     border-bottom:1px solid #564b47;
-    padding:5px 15px;
+    padding:0.4% 1.6%;
     margin:0
 }
 
@@ -157,8 +157,12 @@ section
 	float: left;
 	margin: 0 0.8%;
 	width:56.8%;
+	height:750px;
+	overflow:hidden;
+	/*
 	min-height:750px;
     height:expression(this.scrollHeight > 750 ? "auto":"750px"); 
+	*/
 }
 
 
@@ -190,7 +194,7 @@ section
 }
 
 /* -----------Footer--------------------------- */
-footer
+#footer
 {
     background-color:#DE8642;
     color: #ffffff;
@@ -243,7 +247,7 @@ footer
 .basic-wrapper-middle/*use for box middle part*/
 {
 	background-color: #ffffff;
-	padding:10px;
+	padding:0px 10px;
 	overflow:hidden;
 	border-left: solid 1px #c3c5c9;
 	border-right: solid 1px #c3c5c9;
@@ -305,6 +309,29 @@ box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Standard */
 /*Rahmen wird entfernt*/
 border:0;
 }
+
+/*Guestbook*/
+.GBauthor
+{
+
+	/*font*/
+
+}
+.GBauthor::first-letter
+{
+	font-size: 200%;
+}
+
+.GBauthor::after
+{
+	content:" schrieb:"
+}
+p#databargb
+{
+padding:0 auto;
+margin:0 auto;
+}
+
 
 form label {display:inline-block; width:200px;}  
 form input[type="text"],
