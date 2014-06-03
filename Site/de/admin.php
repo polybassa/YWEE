@@ -34,7 +34,26 @@
 		}
 		if(isset($_GET['deleteUser']) and $_GET['deleteUser'] == true)
 		{
-			// wenn ein Nutzer gelöscht werden soll
+			if(isset($_GET['letter']))
+			{
+				$letter_to_take = $_GET['letter'];
+				$AllUsersWithThisLetter = "";
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ad_GetUsers.php");
+				foreach($ad_result as $user)
+				{
+					$AllUsersWithThisLetter .= "<tr> ";
+					$AllUsersWithThisLetter .= "<th>" . "<a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
+					$AllUsersWithThisLetter .= '<th> <input type="checkbox" name="freigaben[]" value="'. $user["benutzername"] . '"</th>';
+					$AllUsersWithThisLetter .= "</tr>";
+				}
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_ShowUsers.html");
+			}
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_GetLetters.html");
+		}
+		else
+		{
+			//auf der landing page
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/AdminLanding.html");
 		}
 	}
 	else
