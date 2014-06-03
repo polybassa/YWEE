@@ -21,7 +21,7 @@
 
 <form name="Formular" method="post" action="/scripts/CreditCardInfo.php" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
-	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input pattern="[0-9]" size="45" maxlength ="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
+	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="month">Expire Date:</label>
 	<select name="monat" id="month">
 	<option value="0">Month</option>
