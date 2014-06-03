@@ -1,4 +1,4 @@
-<div id="right">
+<aside id="right">
     
 	<?php
    //: von Matthias Birnthaler
@@ -341,6 +341,6 @@
 	 <br>
 	
 	
-</div><!--right-->
+</aside><!--right-->
 
-<div id="content" class="basic-wrapper boxshadow">
+<article id="content" class="basic-wrapper boxshadow">

@@ -127,7 +127,7 @@ img.download {vertical-align:middle;}
 		
 
 /* --------------------Nav-------------- */
-#nav
+nav
 {
 	height:44px;
 	padding: 0px;
@@ -135,7 +135,7 @@ img.download {vertical-align:middle;}
 }
 
 /*----------------wrapper-(left+right+content)*/
-#wrapper
+section
 {
 padding:10px;
 background-color:#f6f8f9;
@@ -188,7 +188,7 @@ div#content
 }
 
 /* -----------Footer--------------------------- */
-#footer
+footer
 {
     background-color:#DE8642;
     color: #ffffff;
