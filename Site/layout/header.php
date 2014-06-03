@@ -38,6 +38,10 @@
 
         <!-- Includes for dataTable -->
         <link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
+        
+        <!-- Inlclude for jquery validate -->
+        <script src="/js/jquery.validate.min.js"></script>
+        
     </head>
     <body>
 
