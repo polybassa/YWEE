@@ -89,9 +89,8 @@
                                      <img src="/images/slider_img5.jpg" class="slider_img" />
                                      <p class="desc">"Ich kann meinen Namen jetzt auch schreiben" - Anita 35, studiert soziale Arbeit</p>
                              </div>
-         </div>
-                -->
-
+					</div>-->
+			</div><!-- Banner div fix-->
                 <?php
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/leftbar.php");  // Inkludiert den linken Balken
