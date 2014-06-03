@@ -13,7 +13,7 @@
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 
-    $query = $dbConnection->prepare("select * from gaestebuch where autorisiert = 0");
+    $query = $dbConnection->prepare("select * from gaestebuch where autorisiert = 0 order by id asc");
 
     if ( $query->execute() )
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
