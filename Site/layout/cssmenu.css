@@ -1,0 +1,231 @@
+/*css-menu*/
+/*by Matthias Birnthaler*/
+
+
+/*----basic box for menu-----*/
+#cssmenu 
+{
+	position: relative;
+	height: 44px;
+	background: #EEEEEE;
+	width: auto;
+}
+/*blendet den menu Punkt aus, da er nur für responsive benörigt wird */
+#cssmenu ul li.responsive
+{
+display:none;
+}
+
+/*-----stlyes the list-----*/
+#cssmenu ul 
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+
+/*-----styles the list */
+#cssmenu > ul 
+{
+	position: relative;
+	display: block;
+	background: #EEEEEE;
+	height: 32px;
+	width: 100%;
+	z-index:10;
+}
+/*-----styles the drop - down menu points*/
+#cssmenu > ul > li 
+{
+	display: block;
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*------link styling----------*/
+#cssmenu ul li a {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+/*------styles menu text-------*/
+#cssmenu > ul > li > a 
+{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px 20px;
+  color: #000000;
+  text-transform: uppercase;
+
+}
+/*-----padding right for subsections need for arrow*/
+#cssmenu > ul > li.has-sub > a {
+  padding-right: 32px;
+}
+/*-----styles 1th level menu with hover---*/
+#cssmenu > ul > li:hover > a {
+  color: #DE8642;
+}
+/*-----arrow for top down-----*/
+#cssmenu li.has-sub::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+/*-----arrow for top down ----*/
+#cssmenu > ul > li.has-sub::after {
+  right: 10px;
+  top: 20px;
+  border: 5px solid transparent;
+  border-top-color: #000000;
+}
+/*------styles the arrow hover*/
+#cssmenu > ul > li:hover::after 
+{
+  border-top-color: #DE8642;
+}
+
+/*-----styles the 2th level menu*/
+#cssmenu ul ul 
+{
+  position: absolute;
+  top: 70px;
+  opacity: 0;
+  /*for a better look in browser who support the cssanimations*/
+  -webkit-transition: opacity .3s ease, top .25s ease;
+  -moz-transition: opacity .3s ease, top .25s ease;
+  -ms-transition: opacity .3s ease, top .25s ease;
+  -o-transition: opacity .3s ease, top .25s ease;
+  transition: opacity .3s ease, top .25s ease;
+  z-index: 99;
+
+}
+/*shows the 2th level menu on hover*/
+#cssmenu > ul > li:hover > ul 
+{
+  left: auto;
+  top: 44px;
+  opacity: 1;
+}
+/*styles the 2th level links*/
+#cssmenu ul ul li a {
+  width: 130px;
+  border-bottom: 1px solid #000000;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #000000;
+  background: #EEEEEE;
+
+}
+
+/*hover and text color for 2th level*/
+#cssmenu ul ul li:hover > a {
+  background: #de8642;
+  color: #00000;
+}
+
+
+
+
+
+@media screen and (max-width: 800px) 
+{
+	#cssmenu 
+	{
+		width: auto;
+	}
+	#cssmenu ul 
+	{
+		width: auto;
+	}
+
+
+	#cssmenu > ul 
+	{
+		height: auto;
+		display: block;
+	}
+	/*kein "Zusammenschieben" */
+	#cssmenu > ul > li 
+	{
+		float: none;
+	}
+
+	/*zeigt den menupunkt für responsive an*/
+	#cssmenu ul li.responsive
+	{
+		display:block;
+	}
+	/*skaliert die Breite auf 100%*/
+	#cssmenu 
+	{
+		width:100%;
+		text-align: center;
+	}
+	/*style für erste Menüpunkte*/
+	#cssmenu ul li
+	{
+		width:100%;
+		list-style: none;
+		border-top:1px solid #000000;
+	}
+	/*Positon der "Menüschift"*/
+	#cssmenu > ul > li > a
+	{
+		text-align: left;
+	}
+
+	#cssmenu  ul  li
+	{
+	display: none;
+	}
+	/*----showes the menu on hover*/
+	#cssmenu  ul:hover li
+	{
+	display: block;
+	}
+
+	/*-----arrow for top down ----*/
+	#cssmenu > ul > li.has-sub::after {
+	
+	left: 130px;
+	top: 20px;
+	}
+	/*----restyle the 2th level menu for responsive*/
+	#cssmenu ul ul 
+	{
+	position: relative;
+	width:100%;
+	border:none;
+	top: 0px;
+	opacity: 1;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+	z-index:5;
+	}
+	
+	/*showes the th menu when open*/
+	#cssmenu > ul > li:hover > ul 
+	{
+	left: auto;
+	top: 0px;
+	opacity: 1;
+	}
+	/*styles the text for 2th level menu */
+	#cssmenu ul ul li a
+	{
+	text-align:left;
+	width:100%;
+	border:0;
+	}
+}
+
