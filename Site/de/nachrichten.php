@@ -11,7 +11,7 @@
     
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
-	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/Nachrichten.html");
+	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/nachrichten.html");
     if( $_SESSION['admin'] == true )
 	{
 	//$lang = $_SESSION['sprache'];
