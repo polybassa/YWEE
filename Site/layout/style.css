@@ -137,27 +137,34 @@ img.download {vertical-align:middle;}
 /*----------------wrapper-(left+right+content)*/
 #wrapper
 {
-padding:10px;
+
+padding:0.8%;
 background-color:#f6f8f9;
 border-left: solid 1px #e1e5e7;
 border-right: solid 1px #e1e5e7;
 
+	 
+    min-height:700px;
+    height:expression(this.scrollHeight > 700 ? "auto":"700px");
 }
 
 
 /* -----------------Inhalt--------------------- */
 #content
 { 
-	padding-left:10px;
-	padding-right:10px;
-    width:58%;
-    margin: 0 auto;
+	padding-left:0.8%;
+	padding-right:0.8%;
+    top:0;
+	float: left;
+	margin: 0 0.8%;
+	width:56.8%;
+   
 	
 }
 div#content 
 { 
-    min-height:700px;
-    height:expression(this.scrollHeight > 700 ? "auto":"700px"); 
+    min-height:650px;
+    height:expression(this.scrollHeight > 650 ? "auto":"650px"); 
 }
 
 
@@ -302,5 +309,48 @@ form input[type="tel"]{width:180px;}
 form .line {clear:both;}
 form .line.submit {text-align:left;}
 
+@media screen and (max-width:800px)
+{
+	#wrapper
+	{
+	height:auto;
+	}
+	#content
+	{
+	width:96.8%;
+	margin-bottom: 1.6%;
+	}
+	#left
+	{
+	margin-left:-0.8%;
+	width:50%;
+	}
+	#right
+	{
+	margin-right:-0.8%;
+	width:50%;
+	}
+	
 
+}
+
+
+@media screen and (max-width: 400px)
+{
+	
+	#left
+	{
+	float:left;
+	width:100%;
+	margin-bottom: 1.6%;;
+	}
+	#right
+	{
+	float:left;
+	width:100%;
+	margin-bottom: 1.6%;
+	}
+
+
+}
 
