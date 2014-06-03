@@ -21,7 +21,7 @@
 
 <form name="Formular" method="post" action="/scripts/CreditCardInfo.php" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
-	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input type="text" size="45" maxlength ="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
+	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input pattern="[0-9]" size="45" maxlength ="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="month">Expire Date:</label>
 	<select name="monat" id="month">
 	<option value="0">Month</option>
@@ -38,7 +38,7 @@
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></div>
 	<div><label class="zeile" for ="pruefziffer">Check Digits</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
-	<div><label class="zeile" for ="betrag">Amount:</label><input type="text" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
+	<div><label class="zeile" for ="betrag">Amount:</label><input type="number" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
 	<div class="line submit"><input type="submit" value="Best&#228;tigen"></div>
 </form>
 <?php
