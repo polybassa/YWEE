@@ -23,7 +23,7 @@ $(document).ready(function myFunction() {
 			}
 			
 			var AllEntries = SingleEntry.join('');
-			document.getElementById("data").innerHTML = AllEntries;
+			document.getElementById("databargb").innerHTML = AllEntries;
 		}
 	});
 });
