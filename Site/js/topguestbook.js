@@ -1,4 +1,4 @@
-
+// Content by Alexander Strobl
 $(document).ready(function myFunction() {
 	var url = "/scripts/ReadTopGuestbook.php";
 	
