@@ -15,7 +15,7 @@
         */
         
         
-        echo "<br>";
+        //echo "<br>";
         
         if ( $_SESSION['admin'] == true )
         {
@@ -42,5 +42,5 @@
     <p id="databargb"></p>
 
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
-	
+	<div class="basic-wrapper-bottom">link zu großem GB ? </div>
 </aside>
