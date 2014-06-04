@@ -177,10 +177,11 @@ footer
 	background-color:#EEEEEE;
     height:44px;
 	clear: both;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     text-align: center;
 }
+
 
 
 #map 
