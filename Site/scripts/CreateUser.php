@@ -4,7 +4,7 @@
 
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert Session
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
-
+/*
     if ( $_POST['geschlecht'] == -1 )
     {
         if ( $_SESSION['sprache'] == "de")
@@ -72,7 +72,7 @@
         
         $element = preg_replace('/\s+/', ' ', $element);
     }
-
+*/
     // Baue Verbindung auf
     try {
         $dbConnection = ConnectToDB();
@@ -144,5 +144,9 @@
     }
 
     $dbConnection = null;
-    
+
+    if ( $_SESSION['sprache'] == "de")
+        echo 'Die Registrierung war erfolgreich.';
+    else
+        echo 'The registration was successful.';    
 ?>
