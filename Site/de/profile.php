@@ -71,6 +71,6 @@
 		}
 	}
 	else
-		echo "<h2>Ups... Das hätte nicht passieren dürfen. Sie sind nicht eingeloggt!</h2>";
+		echo "<h2>Aus Datenschutzgründen können Sie die Daten des Users nicht ansehen. Bitte melden Sie sich an...</h2>";
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>

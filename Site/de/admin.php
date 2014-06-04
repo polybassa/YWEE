@@ -36,6 +36,12 @@
 		{
 			if(isset($_GET['letter']))
 			{
+				if(isset($_GET['fired']) and ($_GET['fired'] == true) and isset($_POST["deleteUser"]))
+				{
+					// jetzt soll ein User gelöscht werden
+					$deleteUser = $_POST["deleteUser"];
+					include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteUserfromAdmin.php");
+				}
 				$letter_to_take = $_GET['letter'];
 				$AllUsersWithThisLetter = "";
 				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ad_GetUsers.php");
@@ -43,7 +49,7 @@
 				{
 					$AllUsersWithThisLetter .= "<tr> ";
 					$AllUsersWithThisLetter .= "<th>" . "<a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
-					$AllUsersWithThisLetter .= '<th> <input type="checkbox" name="freigaben[]" value="'. $user["benutzername"] . '"</th>';
+					$AllUsersWithThisLetter .= '<th> <input type="checkbox" name="deleteUser[]" value="'. $user["benutzername"] . '"</th>';
 					$AllUsersWithThisLetter .= "</tr>";
 				}
 				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_ShowUsers.html");
