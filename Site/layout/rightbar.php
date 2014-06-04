@@ -120,15 +120,7 @@
 			}
 	?>
 	 
-	<style>
-	#map {
-			float: left;
-			width: 200px;
-			height: 300px;
-			margin: 50px auto;
-		}
-	</style>
-	 
+	
 	 
 	<div class="basic-wrapper-bottom">
 	<div id="map">
@@ -221,32 +213,7 @@
 						Film</div>';
 			}
 	?>	
-	
-	<style type="text/css"> div#video_player_box{ width:200px; background:#000; margin:0px auto;} 
-	div#video_controls_bar{ background: #FFFFFF; padding:10px; color:#000000; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;} 
-	button#playpausebtn{ 
-		background:url(/images/pause.png); 
-		border:none; 
-		width:25px; 
-		height:25px; 
-		cursor:pointer; 
-		opacity:0.5; } 
-	button#playpausebtn:hover{ opacity:1; } 
-	input#seekslider{ width:70px; } 
-	input#volumeslider{ width: 80px;} 
-	input[type='range'] {
-		-webkit-appearance: none !important; 
-		background: #000; 
-			border:#666 1px solid; 
-		height:4px; } 
-	input[type='range']::-webkit-slider-thumb { 
-		-webkit-appearance: none !important; 
-		background: #FFF; 
-		height:15px; 
-		width:15px; 
-		border-radius:100%; 
-		cursor:pointer; } 
-	</style> 
+	 
 
 	<div class="basic-wrapper-bottom">
 	

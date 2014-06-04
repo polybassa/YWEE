@@ -39,7 +39,7 @@
 	}
 	?>
 	<!-- Input by Alexander Strobl -->
-    <p id="data"></p>
+    <p id="databargb"></p>
 
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
 	
