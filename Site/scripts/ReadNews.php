@@ -9,7 +9,7 @@
         die("keine Verbindung möglich: " . $e->getMessage());
     }
 	
-	$query = $dbConnection->prepare("SELECT * FROM news where 1");
+	$query = $dbConnection->prepare("SELECT * FROM news where 1 order by id desc");
 	$query->execute();
 	$results = $query->fetchAll(PDO::FETCH_ASSOC);
 	
