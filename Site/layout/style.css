@@ -171,10 +171,11 @@ section
 }
 
 /* -----------Footer--------------------------- */
-#footer
+footer
 {
-    background-color:#DE8642;
-    color: #ffffff;
+	border-top: solid 3px #DE8642;
+	background-color:#EEEEEE;
+    height:44px;
 	clear: both;
     margin: 0;
     padding: 0;
