@@ -56,13 +56,13 @@
 							<li class="last"><a href="/de/gaestebuch.php"><span>Gästebuch</span></a></li>
 						</ul>
 					</li>
-					<li><a href="/de/suche.php"><span>Suche<span></a></li>
+					<li><a href="/de/suche.php"><span>Suche</span></a></li>
 					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="'.$enflag.'" alt="GB-Flagge"></a>'; ?> </li>
 					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" alt="DE-Flagge"></a>'; ?> </li>
 						
 						
 						
-					</li>
+					
 					
 				</ul>
 			</div>
