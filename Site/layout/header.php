@@ -72,29 +72,24 @@
                     <img src="/images/logo.gif" class="logo" alt="logo">
                 </div>
 
-                <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img
+                
                 <div id="show">
                              <div class="img1 slide">
-                                     <img src="/images/slider_img1.jpg" class="slider_img" />
-                                     <p class="desc">"Dank Die Tutoren Agentur hat sich meine Note in Deutsch von einer 5 auf eine 2 verbessert" - Karlos 18 </p>
+                                     <img src="/images/slider_img1.jpg" class="slider_img" alt="slider_img1" />         
                              </div>
                              <div class="img2 slide">
-                                     <img src="/images/slider_img2.jpg" class="slider_img" />
-                                     <p class="desc">Montag 19.05.14 Infoveranstalltung an der OTH Regensburg zum Thema: "Erweiterte Faulheitsstrategien"</p>
+                                     <img src="/images/slider_img2.jpg" class="slider_img" alt="slider_img2"/>                       
                              </div>
                              <div class="img3 slide">
-                                     <img src="/images/slider_img3.jpg" class="slider_img" />
-                                     <p class="desc">"Dank Die Tutoren Agentur kann mein Sohn jetzt auch bis 10 zählen", Harry(42) Vater von Sohn Felix (20) </p>
+                                     <img src="/images/slider_img3.jpg" class="slider_img" alt="slider_img3"/>                            
                              </div>
                              <div class="img4 slide">
-                                     <img src="/images/slider_img4.jpg" class="slider_img" />
-                                     <p class="desc">Filmtipp der Woche: ÜML aus dem Eis</p>
+                                     <img src="/images/slider_img4.jpg" class="slider_img" alt="slider_img4"/>               
                              </div>
                              <div class="img5 slide">
-                                     <img src="/images/slider_img5.jpg" class="slider_img" />
-                                     <p class="desc">"Ich kann meinen Namen jetzt auch schreiben" - Anita 35, studiert soziale Arbeit</p>
+                                     <img src="/images/slider_img5.jpg" class="slider_img" alt="slider_img5">                                   
                              </div>
-					</div>-->
+					</div>
 			</div><!-- Banner div fix-->
                 <?php
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist

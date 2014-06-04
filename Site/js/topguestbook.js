@@ -19,7 +19,7 @@ $(document).ready(function myFunction() {
 			
 			for(var i = 0; i < Entries; i++)
 			{
-				SingleEntry.push("<div class='GBTopEntry'><div class='GBTopauthor'>" +  data[i]['benutzername'] + "</div><div class='GBTopmessage'>" + data[i]['eintrag'] + "</div></div>");
+				SingleEntry.push("<div class='basic-wrapper-middle'><div class='GBauthor'>" +  data[i]['benutzername'] + "</div><div class='GBmessage'>" + data[i]['eintrag'] + "</div><hr class='lane'></div>");
 			}
 			
 			var AllEntries = SingleEntry.join('');
