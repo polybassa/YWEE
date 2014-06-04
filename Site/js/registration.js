@@ -7,7 +7,7 @@ $(document).ready(function()
         e.preventDefault();
         $('[name="Formular"]').validate({
             invalidHandler: function(event, validator) {
-// 'this' refers to the form
+			// 'this' refers to the form
                 var errors = validator.numberOfInvalids();
                 if (errors) {
                     var message = errors == 1
@@ -40,7 +40,7 @@ $(document).ready(function()
                                 });
                             }
                         });
-                form.submit();
+                //form.submit();
             }
         });
     });
