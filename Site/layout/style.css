@@ -127,7 +127,7 @@ img.download {vertical-align:middle;}
 		
 
 /* --------------------Nav-------------- */
-#nav
+nav
 {
 	height:44px;
 	padding: 0px;
@@ -135,30 +135,32 @@ img.download {vertical-align:middle;}
 }
 
 /*----------------wrapper-(left+right+content)*/
-#wrapper
+section
 {
-padding:10px;
-background-color:#f6f8f9;
-border-left: solid 1px #e1e5e7;
-border-right: solid 1px #e1e5e7;
 
+	padding:0.8%;
+	background-color:#f6f8f9;
+	border-left: solid 1px #e1e5e7;
+	border-right: solid 1px #e1e5e7;
+	min-height: 800px;
+
+    
 }
 
 
 /* -----------------Inhalt--------------------- */
 #content
 { 
-	padding-left:10px;
-	padding-right:10px;
-    width:58%;
-    margin: 0 auto;
-	
+	padding-left:0.8%;
+	padding-right:0.8%;
+    top:0;
+	float: left;
+	margin: 0 0.8%;
+	width:56.8%;
+	min-height:750px;
+    height:expression(this.scrollHeight > 750 ? "auto":"750px"); 
 }
-div#content 
-{ 
-    min-height:700px;
-    height:expression(this.scrollHeight > 700 ? "auto":"700px"); 
-}
+
 
 
 
@@ -188,7 +190,7 @@ div#content
 }
 
 /* -----------Footer--------------------------- */
-#footer
+footer
 {
     background-color:#DE8642;
     color: #ffffff;
@@ -197,6 +199,17 @@ div#content
     padding: 0;
     text-align: center;
 }
+
+
+#map 
+{
+	float: left;
+	width: 100%;
+	height: 300px;
+
+}
+
+
 
 .basic-wrapper
 {
@@ -303,4 +316,81 @@ form .line {clear:both;}
 form .line.submit {text-align:left;}
 
 
+/*------------style for vido by Matthias Götz und Freunde----------------*/
+div#video_player_box{ width:200px; background:#000; margin:0px auto;} 
+	div#video_controls_bar{ background: #FFFFFF; padding:10px; color:#000000; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;} 
+	button#playpausebtn{ 
+		background:url(/images/pause.png); 
+		border:none; 
+		width:25px; 
+		height:25px; 
+		cursor:pointer; 
+		opacity:0.5; } 
+	button#playpausebtn:hover{ opacity:1; } 
+	input#seekslider{ width:70px; } 
+	input#volumeslider{ width: 80px;} 
+	input[type='range'] {
+		-webkit-appearance: none !important; 
+		background: #000; 
+			border:#666 1px solid; 
+		height:4px; } 
+	input[type='range']::-webkit-slider-thumb { 
+		-webkit-appearance: none !important; 
+		background: #FFF; 
+		height:15px; 
+		width:15px; 
+		border-radius:100%; 
+		cursor:pointer; } 
+/*----------------------------------------------------------------------*/
+
+
+
+
+
+
+
+@media screen and (max-width:800px)
+{
+	section
+	{
+	height:auto;
+	}
+	#content
+	{
+	width:96.8%;
+	margin-bottom: 1.6%;
+	}
+	#left
+	{
+	margin-left:-0.8%;
+	width:50%;
+	}
+	#right
+	{
+	margin-right:-0.8%;
+	width:50%;
+	}
+	
+
+}
+
+
+@media screen and (max-width: 400px)
+{
+	
+	#left
+	{
+	float:left;
+	width:100%;
+	margin-bottom: 1.6%;;
+	}
+	#right
+	{
+	float:left;
+	width:100%;
+	margin-bottom: 1.6%;
+	}
+
+
+}
 

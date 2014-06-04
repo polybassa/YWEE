@@ -5,9 +5,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <link type="text/css" href="/layout/style.css" rel="stylesheet" media="screen" />
-        <link rel="stylesheet" type="text/css" media="all" href="/layout/slide.css" />    <!-- muss noch angepasst werden (Modernizr und javascript slideshow !!!)-->
-
-        <!-- test von Daniel mit HTML5 Boilerplate -->
+        <link rel="stylesheet" type="text/css" media="all" href="/layout/slide.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="/layout/cssmenu.css" />
+        
+		<!-- test von Daniel mit HTML5 Boilerplate -->
         <link rel="stylesheet" href="/layout/normalize.css">
         <link rel="stylesheet" href="/layout/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -93,9 +94,8 @@
                                      <img src="/images/slider_img5.jpg" class="slider_img" />
                                      <p class="desc">"Ich kann meinen Namen jetzt auch schreiben" - Anita 35, studiert soziale Arbeit</p>
                              </div>
-         </div>
-                -->
-
+					</div>-->
+			</div><!-- Banner div fix-->
                 <?php
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/leftbar.php");  // Inkludiert den linken Balken

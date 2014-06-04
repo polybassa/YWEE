@@ -1,9 +1,9 @@
-    </div> <!-- ID: Content -->
-	</div> <!--wrapper-->
+    </article> <!-- ID: Content -->
+	</section> <!--ehemals wrapper-->
     
-    <div id="footer">
+    <footer>
         Footer Inhalt! <a href="/phpinfo.php">PHP Info</a>
-    </div>
+    </footer>
 </div>
 </div> <!-- ID: Container -->
 </body>

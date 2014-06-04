@@ -316,7 +316,7 @@ INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('B
 INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Brain', 'Erdkunde', 8);
 INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Brain', 'Erdkunde', 9);
 INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Brain', 'Informatik', 5);
-INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Brain', 'Inforamtik', 6);
+INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Brain', 'Informatik', 6);
 INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Brain', 'Biologie', 7);
 INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Schafkopf', 'Wirtschaft', 5);
 INSERT INTO `DB1695063`.`leistung` (`benutzername`, `fach`, `stufen`) VALUES ('Schafkopf', 'Wirtschaft', 6);

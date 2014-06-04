@@ -1,4 +1,4 @@
-    <div id="nav" >
+    <nav>
         <?php
         $forwardto = basename( $_SERVER['PHP_SELF'] );
 
@@ -87,4 +87,4 @@
         }
         ?>
             
-    </div>
+    </nav>
