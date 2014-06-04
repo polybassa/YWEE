@@ -72,7 +72,7 @@
                     <img src="/images/logo.gif" class="logo" alt="logo">
                 </div>
 
-                <!--Slideshow. die texte sind nicht must have und können auch entfernt werden img
+                
                 <div id="show">
                              <div class="img1 slide">
                                      <img src="/images/slider_img1.jpg" class="slider_img" alt="slider_img1" />         
@@ -89,7 +89,7 @@
                              <div class="img5 slide">
                                      <img src="/images/slider_img5.jpg" class="slider_img" alt="slider_img5">                                   
                              </div>
-					</div>-->
+					</div>
 			</div><!-- Banner div fix-->
                 <?php
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
