@@ -9,11 +9,11 @@ body
     background-color:#ffffff;
     font-size: 11px;
     font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
-    
+
     padding:0;
     margin:0;
-	width: 100%;
-	
+    width: 100%;
+
 }
 a {color: #DB7093;}
 a:visited {color:#DB7093;}
@@ -44,11 +44,11 @@ img.download {vertical-align:middle;}
 #container
 {
     width: 100%;
-	max-width:1250px;
+    max-width:1250px;
     background-color:#ffffff;
     position: relative;
-	margin: 0px auto;
-	
+    margin: 0px auto;
+
 }
 
 
@@ -56,17 +56,17 @@ img.download {vertical-align:middle;}
 /*-----------see also slider.css---------------------*/
 #banner
 {
-	width: 100%;
-	height: 200px;
-	position: relative; 
-	z-index: 0;
-   
+    width: 100%;
+    height: 200px;
+    position: relative; 
+    z-index: 0;
+
 }
 #logo
 {
-	position: absolute;
-	z-index: 1;
-	margin: 2% 0% 0% 2%;
+    position: absolute;
+    z-index: 1;
+    margin: 2% 0% 0% 2%;
 
 
 }
@@ -76,61 +76,61 @@ img.download {vertical-align:middle;}
 
 
 /*----------slider_img class defines img size ----------------*/
-		.slider_img
-		{
-		width:100%;
-		height:200px;
-		}
+.slider_img
+{
+    width:100%;
+    height:200px;
+}
 
 
 /*---------basic div-box ---------------------------------------*/
-		#show 
-		{
-		width:100%;
-		height:200px;
-		position: relative;
-		overflow:hidden;
-		margin: 0 auto;
-		}
+#show 
+{
+    width:100%;
+    height:200px;
+    position: relative;
+    overflow:hidden;
+    margin: 0 auto;
+}
 
-		#show .slide {
-			
-			position: absolute;		
-			overflow: hidden;
-			text-align: center;
-		}
+#show .slide {
+
+    position: absolute;		
+    overflow: hidden;
+    text-align: center;
+}
 
 /*----------box for infos----------------*/		
-		#show .slide p {
-			
-			font-size: 13px;
-			text-align: left;
-			position: relative; 
-			float:right;
-			z-index: 5; 
-			margin-top: -100px;
-			
-			color: #fefefe;
-			height: 70px;
-			width:450px;
-						
-			background: rgba(0,0,0,0.4);
-			-webkit-border-top-left-radius: 20px;
-			-webkit-border-bottom-left-radius: 20px;
-			-moz-border-radius-topleft: 20px;
-			-moz-border-radius-bottomleft: 20px;
-			border-top-left-radius: 20px;
-			border-bottom-left-radius: 20px;
-			
-		}
+#show .slide p {
 
-		
+    font-size: 13px;
+    text-align: left;
+    position: relative; 
+    float:right;
+    z-index: 5; 
+    margin-top: -100px;
+
+    color: #fefefe;
+    height: 70px;
+    width:450px;
+
+    background: rgba(0,0,0,0.4);
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+
 
 /* --------------------Nav-------------- */
 nav
 {
-	height:44px;
-	padding: 0px;
+    height:44px;
+    padding: 0px;
     margin: 0px;
 }
 
@@ -138,26 +138,26 @@ nav
 section
 {
 
-	padding:0.8%;
-	background-color:#f6f8f9;
-	border-left: solid 1px #e1e5e7;
-	border-right: solid 1px #e1e5e7;
-	min-height: 800px;
+    padding:0.8%;
+    background-color:#f6f8f9;
+    border-left: solid 1px #e1e5e7;
+    border-right: solid 1px #e1e5e7;
+    min-height: 800px;
 
-    
+
 }
 
 
 /* -----------------Inhalt--------------------- */
 #content
 { 
-	padding-left:0.8%;
-	padding-right:0.8%;
+    padding-left:0.8%;
+    padding-right:0.8%;
     top:0;
-	float: left;
-	margin: 0 0.8%;
-	width:56.8%;
-	min-height:750px;
+    float: left;
+    margin: 0 0.8%;
+    width:56.8%;
+    min-height:750px;
     height:expression(this.scrollHeight > 750 ? "auto":"750px"); 
 }
 
@@ -168,25 +168,25 @@ section
 /* --------------Balken------------- */
 #left
 {
-	
+
     float: left;
     width: 20%;
     margin: 0;
     padding: 0;
-	
+
 
 }
 
 
 #right
 {
-	
+
     float: right;
     width: 20%;
     margin: 0;
     padding: 0;
-	
-	
+
+
 }
 
 /* -----------Footer--------------------------- */
@@ -194,7 +194,7 @@ footer
 {
     background-color:#DE8642;
     color: #ffffff;
-	clear: both;
+    clear: both;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -203,9 +203,9 @@ footer
 
 #map 
 {
-	float: left;
-	width: 100%;
-	height: 300px;
+    float: left;
+    width: 100%;
+    height: 300px;
 
 }
 
@@ -213,58 +213,58 @@ footer
 
 .basic-wrapper
 {
-	background-color: #ffffff;
-	padding:10px;
-	margin: 0px 10px 10px;
-	border: solid 1px #c3c5c9;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+    background-color: #ffffff;
+    padding:10px;
+    margin: 0px 10px 10px;
+    border: solid 1px #c3c5c9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .basic-wrapper-top/*use for box headlines*/
 {
-	background-color:#DE8642;
-	text-align:center;
-	margin: 0px 10px;
-	padding:3px;
-	overflow:hidden;
-	border-left: solid 1px #c3c5c9;
-	border-right: solid 1px #c3c5c9;
-	border-bottom: solid 1px #c3c5c9;
-	-webkit-border-top-left-radius: 4px;
-	-webkit-border-top-right-radius: 4px;
-	-moz-border-radius-topleft: 4px;
-	-moz-border-radius-topright: 4px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+    background-color:#DE8642;
+    text-align:center;
+    margin: 0px 10px;
+    padding:3px;
+    overflow:hidden;
+    border-left: solid 1px #c3c5c9;
+    border-right: solid 1px #c3c5c9;
+    border-bottom: solid 1px #c3c5c9;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 .basic-wrapper-middle/*use for box middle part*/
 {
-	background-color: #ffffff;
-	padding:10px;
-	overflow:hidden;
-	border-left: solid 1px #c3c5c9;
-	border-right: solid 1px #c3c5c9;
-	margin: 0px 10px auto;
+    background-color: #ffffff;
+    padding:10px;
+    overflow:hidden;
+    border-left: solid 1px #c3c5c9;
+    border-right: solid 1px #c3c5c9;
+    margin: 0px 10px auto;
 }
 
 .basic-wrapper-bottom/*use for box bottom part*/
 {
-	background-color: #ffffff;
-	padding:10px 10px 10px 10px;
-	overflow:hidden;
-	margin: 0px 10px 10px;
-	border-left: solid 1px #c3c5c9;
-	border-right: solid 1px #c3c5c9;
-	border-bottom: solid 1px #c3c5c9;
-	-webkit-border-bottom-right-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-bottomright: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
+    background-color: #ffffff;
+    padding:10px 10px 10px 10px;
+    overflow:hidden;
+    margin: 0px 10px 10px;
+    border-left: solid 1px #c3c5c9;
+    border-right: solid 1px #c3c5c9;
+    border-bottom: solid 1px #c3c5c9;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
 
 
 
@@ -272,38 +272,38 @@ footer
 
 .orange
 {
-	background-color:#DE8642;
+    background-color:#DE8642;
 }
 
 .lane 
 {
-	width:75%;
-	margin-top:20px;
+    width:75%;
+    margin-top:20px;
 
 }
 
 #loginform
 {
-	width:100%;
+    width:100%;
 }
 .login_field
 {
-	width:100%;	
+    width:100%;	
 }
 
 #searchform
 .suchen_field
 {
-	width:80%;
+    width:80%;
 }
 
 .boxshadow #content
 {
--webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* WebKit */
--moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Firefox */
-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Standard */
-/*Rahmen wird entfernt*/
-border:0;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* WebKit */
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Firefox */
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Standard */
+    /*Rahmen wird entfernt*/
+    border:0;
 }
 
 form label {display:inline-block; width:200px;}  
@@ -311,85 +311,88 @@ form input[type="text"],
 form input[type="password"],
 form input[type="email"], 
 form input[type="tel"]{width:180px;}
- 
+
 form .line {clear:both;}
 form .line.submit {text-align:left;}
 
 
 /*------------style for vido by Matthias Götz und Freunde----------------*/
 div#video_player_box{ width:200px; background:#000; margin:0px auto;} 
-	div#video_controls_bar{ background: #FFFFFF; padding:10px; color:#000000; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;} 
-	button#playpausebtn{ 
-		background:url(/images/pause.png); 
-		border:none; 
-		width:25px; 
-		height:25px; 
-		cursor:pointer; 
-		opacity:0.5; } 
-	button#playpausebtn:hover{ opacity:1; } 
-	input#seekslider{ width:70px; } 
-	input#volumeslider{ width: 80px;} 
-	input[type='range'] {
-		-webkit-appearance: none !important; 
-		background: #000; 
-			border:#666 1px solid; 
-		height:4px; } 
-	input[type='range']::-webkit-slider-thumb { 
-		-webkit-appearance: none !important; 
-		background: #FFF; 
-		height:15px; 
-		width:15px; 
-		border-radius:100%; 
-		cursor:pointer; } 
+div#video_controls_bar{ background: #FFFFFF; padding:10px; color:#000000; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;} 
+button#playpausebtn{ 
+    background:url(/images/pause.png); 
+    border:none; 
+    width:25px; 
+    height:25px; 
+    cursor:pointer; 
+    opacity:0.5; } 
+button#playpausebtn:hover{ opacity:1; } 
+input#seekslider{ width:70px; } 
+input#volumeslider{ width: 80px;} 
+input[type='range'] {
+    -webkit-appearance: none !important; 
+    background: #000; 
+    border:#666 1px solid; 
+    height:4px; } 
+input[type='range']::-webkit-slider-thumb { 
+    -webkit-appearance: none !important; 
+    background: #FFF; 
+    height:15px; 
+    width:15px; 
+    border-radius:100%; 
+    cursor:pointer; } 
 /*----------------------------------------------------------------------*/
 
 
-
+.scrollablecontentbox{
+    height:750px; 
+    overflow:auto;
+}
 
 
 
 
 @media screen and (max-width:800px)
 {
-	section
-	{
-	height:auto;
-	}
-	#content
-	{
-	width:96.8%;
-	margin-bottom: 1.6%;
-	}
-	#left
-	{
-	margin-left:-0.8%;
-	width:50%;
-	}
-	#right
-	{
-	margin-right:-0.8%;
-	width:50%;
-	}
-	
+    section
+    {
+        height:auto;
+    }
+    #content
+    {
+        width:96.8%;
+        margin-bottom: 1.6%;
+    }
+    #left
+    {
+        margin-left:-0.8%;
+        width:50%;
+    }
+    #right
+    {
+        margin-right:-0.8%;
+        width:50%;
+    }
+
 
 }
 
 
 @media screen and (max-width: 400px)
 {
-	
-	#left
-	{
-	float:left;
-	width:100%;
-	margin-bottom: 1.6%;;
-	}
-	#right
-	{
-	float:left;
-	width:100%;
-	margin-bottom: 1.6%;
-	}
+
+    #left
+    {
+        float:left;
+        width:100%;
+        margin-bottom: 1.6%;;
+    }
+    #right
+    {
+        float:left;
+        width:100%;
+        margin-bottom: 1.6%;
+    }
 
 
 }

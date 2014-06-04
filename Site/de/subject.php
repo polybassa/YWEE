@@ -47,7 +47,7 @@ $sth->execute();
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     $a_json_row["value"] = $row['benutzername'];
     $a_json_row["typ"] = $row['Wohnort'];
-    $a_json_row["url"] = "editprofile.php?username=" . $row['benutzername'];
+    $a_json_row["url"] = "profile.php?username=" . $row['benutzername'];
 
     array_push($a_json, $a_json_row);
 }
