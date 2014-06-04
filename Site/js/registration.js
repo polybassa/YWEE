@@ -8,6 +8,7 @@ $(document).ready(function()
         $("#registerform").validate({
         rules:{
             geschlecht:{
+            min: 0,
             number: true,
             requierd:true
             },
@@ -28,14 +29,17 @@ $(document).ready(function()
             maxlength: 45
             },
             tag:{
+            min: 1,
             number: true,
             requierd: true     
             },
             month:{
+            min:1,
             number: true,
             requierd: true    
             },
             year:{
+            min:1,
             number: true,
             requierd: true     
             },
@@ -75,15 +79,29 @@ $(document).ready(function()
             },
             pw1:{
             requierd: true,
-            minlength: 2,
+            minlength: 6,
             maxlength: 45
             },
             pw2:{
             requierd: true,
-            minlength: 2,
+            minlength: 6,
             maxlength: 45
             }
         },   
+        messages:{
+            jahr:{
+                min: jQuery.validator.format("Please enter a valid Year.")
+            },
+            geschlecht:{
+                min: jQuery.validator.format("Please select a gender.")
+            },
+            pw1:{
+                minlength: jQuery.validator.format("Your password must have 6 or morce charakters")
+            },
+            pw2:{
+                minlength: jQuery.validator.format("Your password must have 6 or morce charakters")
+            }
+        },
        invalidHandler: function(event, validator) {
 			// 'this' refers to the form
                 var errors = validator.numberOfInvalids();
