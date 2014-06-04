@@ -5,8 +5,86 @@ $(document).ready(function()
     $("#registerform").submit(function(e)
     {
         e.preventDefault();
-        $('[name="Formular"]').validate({
-            invalidHandler: function(event, validator) {
+        $("#registerform").validate({
+        rules:{
+            geschlecht:{
+            number: true,
+            requierd:true
+            },
+            nachname:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45
+            },
+            vorname:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45     
+            },
+            email:{
+            requierd: true,
+            email: true,
+            minlength: 2,
+            maxlength: 45
+            },
+            tag:{
+            number: true,
+            requierd: true     
+            },
+            month:{
+            number: true,
+            requierd: true    
+            },
+            year:{
+            number: true,
+            requierd: true     
+            },
+            plz:{
+            number: true,
+            requierd: true,
+            minlength: 5,
+            maxlength: 5
+            },
+            wohnort:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45
+            },
+            strasse:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45
+            },
+            hausnummer:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45
+            },
+            hausnummerzusatz:{
+            maxlength: 20
+            },
+            telefon:{
+            phone: true,
+            maxlength: 15,
+            requierd: true    
+            },
+            benutzername:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45    
+            },
+            pw1:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45
+            },
+            pw2:{
+            requierd: true,
+            minlength: 2,
+            maxlength: 45
+            }
+        },   
+       invalidHandler: function(event, validator) {
 			// 'this' refers to the form
                 var errors = validator.numberOfInvalids();
                 if (errors) {
@@ -44,7 +122,7 @@ $(document).ready(function()
             }
         });
     });
-
+   
     jQuery.extend(jQuery.validator.messages, {
         required: "This field is required by us!.",
         remote: "Please fix this field.",
@@ -56,6 +134,7 @@ $(document).ready(function()
         digits: "Please enter only digits.",
         creditcard: "Please enter a valid credit card number.",
         equalTo: "Please enter the same value again.",
+        phone: "Must be a valid phone number",
         accept: "Please enter a value with a valid extension.",
         maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
         minlength: jQuery.validator.format("Please enter at least {0} characters."),
