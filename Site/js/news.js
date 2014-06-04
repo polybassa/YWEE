@@ -13,11 +13,11 @@ $(document).ready(function myFunction() {
 			
 			for(var i = 0; i < data.length; i++)
 			{
-				SingleEntry.push("<div class='NewsEntry'><div class='Newsauthor'>" +  data[i]['benutzername'] + "</div><br><div class='Newsdate'>" + data[i]['zeit'] + "</div><br><div class='Newstopic'>" + data[i]['betreff'] +"</div><br><div class='Newsmessage'>" + data[i]['eintrag'] + "</div></div>");
+				SingleEntry.push("<div class='NewsEntry'><div class='Newsauthor'>" +  data[i]['benutzername'] + "</div><br><div class='Newsdate'>" + data[i]['zeit'] + "</div><br><div class='Newstopic'>" + data[i]['betreff'] +"</div><br><div class='Newsmessage'>" + data[i]['nachricht'] + "</div></div>");
 			}
 			
 			var AllEntries = SingleEntry.join('');
-			document.getElementById("data").innerHTML = AllEntries;
+			document.getElementById("newsdata").innerHTML = AllEntries;
 		}
 	});
 });
