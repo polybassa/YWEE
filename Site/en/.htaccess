@@ -16,4 +16,14 @@ Redirect /en/nachrichten.php http://ebenezer-kunatse.net/en/news.php
 Redirect /en/registrierung.php http://ebenezer-kunatse.net/en/registration.php
 Redirect /en/impressum.php http://ebenezer-kunatse.net/en/sitenotice.php
 
+Redirect /en/kontakt.php http://ebenezer-kunatse.net/en/contact.php
+Redirect /en/gaestebuch.php http://ebenezer-kunatse.net/en/guestbook.php
+Redirect /en/spenden.php http://ebenezer-kunatse.net/en/donate.php
+Redirect /en/agb.php http://ebenezer-kunatse.net/en/termsandconditions.php
+Redirect /en/unternehmen.php http://ebenezer-kunatse.net/en/corporate.php
+
+Redirect /en/profile.php http://ebenezer-kunatse.net/de/profile.php
+Redirect /en/tutor.php http://ebenezer-kunatse.net/de/tutor.php
+Redirect /en/admin.php http://ebenezer-kunatse.net/de/admin.php
+
 ErrorDocument 404 http://ebenezer-kunatse.net/en/404.php
