@@ -10,14 +10,32 @@ $(document).ready(function()
                 geschlecht:{
                     min: 0
                 },
+                tag:{
+                    min: 1
+                },
                 jahr:{
                     min: 1
+                },
+                month:{
+                    min: 1
+                },
+                telefon:{
+                    phoneUS: true
                 }
                 
             },
             messages: {
+                tag:{
+                    min: jQuery.validator.format("Please enter a valid Date.")
+                },
+                month:{
+                    min: jQuery.validator.format("Please enter a valid Date.")
+                },
+                telefon:{
+                    phoneUS: "Please enter a valid phone number"
+                },
                 jahr: {
-                    min: jQuery.validator.format("Please enter a valid Year.")
+                    min: jQuery.validator.format("Please enter a valid Date.")
                 },
                 geschlecht: {
                     min: jQuery.validator.format("Please select a gender.")
@@ -73,7 +91,6 @@ $(document).ready(function()
         digits: "Please enter only digits.",
         creditcard: "Please enter a valid credit card number.",
         equalTo: "Please enter the same value again.",
-        tel: "Please enter a valid phone number",
         accept: "Please enter a value with a valid extension.",
         maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
         minlength: jQuery.validator.format("Please enter at least {0} characters."),
