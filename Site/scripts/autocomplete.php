@@ -52,19 +52,19 @@ $sth->execute();
 
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     if (stristr($row['Wohnort'], $term)) {
-        $a_json_row["id"] = "search.php";
+        $a_json_row["id"] = "/de/search.php";
         $a_json_row["value"] = $row['Wohnort'];
         $a_json_row["typ"] = "location";
         array_push($a_json, $a_json_row);
     }
     if (stristr($row['benutzername'], $term)) {
-        $a_json_row["id"] = "profile.php?username=" . $row['benutzername'];
+        $a_json_row["id"] = "/de/profile.php?username=" . $row['benutzername'];
         $a_json_row["value"] = $row['benutzername'];
         $a_json_row["typ"] = "user";
         array_push($a_json, $a_json_row);
     }
     if (stristr($row['fach'], $term)) {
-        $a_json_row["id"] = "search.php";
+        $a_json_row["id"] = "/de/search.php";
         $a_json_row["value"] = $row['fach'];
         $a_json_row["typ"] = "subject";
         array_push($a_json, $a_json_row);

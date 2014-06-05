@@ -14,7 +14,7 @@ $.widget("custom.catcomplete", $.ui.autocomplete, {
             if (item.typ != currentCategory) {
                 var temptyp;
                 if (item.typ === "user") {
-                    temptyp = "Benutzer";
+                    temptyp = "Tutor";
                 } else if (item.typ === "location") {
                     temptyp = "Wohnort";
                 } else {

@@ -1,10 +1,9 @@
 <?php
-
 /*
-	 * author: Nils Weiss
-	 * script for intelligent searchfunction 
-	 * 
-	 */
+ * author: Nils Weiss
+ * script for intelligent searchfunction 
+ * 
+ */
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
 $typ = trim($_POST['valueTyp']);
@@ -37,7 +36,7 @@ if ($typ === 'location')
 else if ($typ === 'subject')
     $sql = "SELECT * FROM suche WHERE (fach LIKE '" . $value . "%')";
 else
-    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%') or (fach LIKE '" . $value . "%')";
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%') or (fach LIKE '" . $value . "%') or (benutzername LIKE '" . $value . "%')";
 
 $sth = $conn->prepare($sql);
 $sth->execute();
@@ -46,13 +45,19 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     if (stristr($row['Wohnort'], $value)) {
         $a_json_row["value"] = $row['Wohnort'];
         $a_json_row["typ"] = "Ort";
-        $a_json_row["url"] = "location.php?term=" . $row['Wohnort'];
+        $a_json_row["url"] = "/de/location.php?term=" . $row['Wohnort'];
+        array_push($a_json, $a_json_row);
+    }
+    if (stristr($row['benutzername'], $value)) {
+        $a_json_row["value"] = $row['benutzername'];
+        $a_json_row["typ"] = "Tutor";
+        $a_json_row["url"] = "/de/profile.php?username=" . $row['benutzername'];
         array_push($a_json, $a_json_row);
     }
     if (stristr($row['fach'], $value)) {
         $a_json_row["value"] = $row['fach'];
         $a_json_row["typ"] = "Fach";
-        $a_json_row["url"] = "subject.php?term=" . $row['fach'];
+        $a_json_row["url"] = "/de/subject.php?term=" . $row['fach'];
         array_push($a_json, $a_json_row);
     }
 }
@@ -68,6 +73,10 @@ if (count($a_json) === 1) {
     } else if ($a_json[0]['typ'] == "Fach") {
         $id = $a_json[0]['value'];
         header("Location: http://ebenezer-kunatse.net/de/subject.php?term=$id");
+        exit;
+    } else if ($a_json[0]['typ'] == "Tutor") {
+        $id = $a_json[0]['value'];
+        header('Location: http://ebenezer-kunatse.net' . $a_json[0]['url']);
         exit;
     }
 } else {
