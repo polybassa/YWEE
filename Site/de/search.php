@@ -1,4 +1,10 @@
 <?php
+
+/*
+	 * author: Nils Weiss
+	 * script for intelligent searchfunction 
+	 * 
+	 */
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
 $typ = trim($_POST['valueTyp']);

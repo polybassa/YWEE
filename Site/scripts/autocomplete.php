@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * author: Nils Weiss
+ * script for json Object of autocomplete values 
+ * 
+ */
 // Inkludiert die Funktion zur Anmeldung
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
@@ -40,7 +45,7 @@ try {
 /**
  * Create SQL
  */
-$sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
+$sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
 
 $sth = $conn->prepare($sql);
 $sth->execute();
@@ -50,6 +55,12 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $a_json_row["id"] = "search.php";
         $a_json_row["value"] = $row['Wohnort'];
         $a_json_row["typ"] = "location";
+        array_push($a_json, $a_json_row);
+    }
+    if (stristr($row['benutzername'], $term)) {
+        $a_json_row["id"] = "profile.php?username=" . $row['benutzername'];
+        $a_json_row["value"] = $row['benutzername'];
+        $a_json_row["typ"] = "user";
         array_push($a_json, $a_json_row);
     }
     if (stristr($row['fach'], $term)) {

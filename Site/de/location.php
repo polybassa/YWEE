@@ -1,4 +1,10 @@
 <?php
+/*
+	 * author: Nils Weiss
+	 * script for output of location values 
+	 * 
+	 */
+
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 // Muss in der Reihenfolge bleiben
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
