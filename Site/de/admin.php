@@ -6,7 +6,11 @@
 	 * 
 	 */
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session	
-	
+
+    $titel = "Allgemeine Gesch&auml;ftsbedingungen"; // Name der Seite die im Browser angezeigt werden soll
+
+    $_SESSION['sprache'] = "de";
+    
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
 	if(isset($_SESSION['user']) and ($_SESSION['admin']) and $_SESSION['admin'] == true)

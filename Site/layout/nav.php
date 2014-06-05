@@ -20,16 +20,12 @@
 							<li class="last"><a href="/en/guestbook.php"><span>Guestbook</span></a></li>
 						</ul>
 					</li>
-					<li><a href="/en/search.php"><span>Search<span></a></li>
-					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="'.$enflag.'" alt="GB-Flagge"></a>'; ?> </li>
+					<li><a href="/en/donate.php"><span>Donation<span></a></li>
 					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" alt="DE-Flagge"></a>'; ?> </li>
 						
 										
 				</ul>
 			</div>
-			
-			
-			
 			<!--
             <a href="/en/termsandconditions.php">Terms and Conditions</a><br>
 			Current Links:
@@ -56,14 +52,8 @@
 							<li class="last"><a href="/de/gaestebuch.php"><span>Gästebuch</span></a></li>
 						</ul>
 					</li>
-					<li><a href="/de/suche.php"><span>Suche</span></a></li>
+					<li><a href="/de/spenden.php"><span>Spenden</span></a></li>
 					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="'.$enflag.'" alt="GB-Flagge"></a>'; ?> </li>
-					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" alt="DE-Flagge"></a>'; ?> </li>
-						
-						
-						
-					
-					
 				</ul>
 			</div>
 			
