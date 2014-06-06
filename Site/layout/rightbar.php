@@ -128,7 +128,6 @@
 		
 
 				<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-				<script language="javascript" type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 				<script language="javascript" type="text/javascript" src="/js/jquery.cookie.js"></script>
 				<script>
 				
