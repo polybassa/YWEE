@@ -1,4 +1,4 @@
-<aside id="right">
+<div id="right">
     
 	<?php
    //: von Matthias Birnthaler
@@ -85,9 +85,10 @@
     <div class="basic-wrapper orange">
     <form method="POST" action="/de/search.php" id="searchform">
 
-    <input type="hidden" name="PHPSESSID" value="'.session_id().'">
     <input type="hidden" name="valueTyp" value="#">
     <?php
+            echo '<input type="hidden" name="PHPSESSID" value="'.session_id().'">';
+            
             if ( $_SESSION['sprache'] == "en" )
             {
                 echo '<input type="text" name="search" placeholder="Search" class="suchen_field">';
@@ -308,6 +309,6 @@
 	 <br>
 	
 	
-</aside><!--right-->
+</div><!--right-->
 
 <article id="content" class="basic-wrapper boxshadow">
