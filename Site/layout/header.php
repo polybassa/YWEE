@@ -5,6 +5,22 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <link type="text/css" href="/layout/style.css" rel="stylesheet" media="screen" />
+		
+		<!--Dieses Script einfügen und href ändern und die beiden css einfügen-->
+		<script>
+		var browser = navigator.userAgent;
+	
+		//aktueller chrome
+		if (browser == "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36"){
+			document.write('<link rel="Stylesheet" href="/video/css/style_gc.css" type="text/css" />');	
+		}
+		//IE 11
+		if (browser == "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; Tablet PC 2.0; InfoPath.3; rv:11.0) like Gecko"){
+			document.write('<link rel="Stylesheet" href="/layout/style_ie.css" type="text/css" />');
+		}
+		//Fortsetzung folgt
+		</script>
+		
         <link rel="stylesheet" type="text/css" media="all" href="/layout/slide.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/layout/cssmenu.css" />
         
