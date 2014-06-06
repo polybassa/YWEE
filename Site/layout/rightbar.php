@@ -1,38 +1,32 @@
 <div id="right">
     
 	<?php
-   //: von Matthias Birnthaler
-   if ( !isset( $_SESSION['logged-in'] ) )
+       //: von Matthias Birnthaler
+        if ( !isset( $_SESSION['logged-in'] ) )
         {
             if ( $_SESSION['sprache'] == "en" )
             {
-                echo '<div class="basic-wrapper-top">
-						Sign in </div>';      
+                echo '<div class="basic-wrapper-top"> Sign in </div>';      
             }
             else
             {
                 echo '<div class="basic-wrapper-top">
-						Anmeldung</div>';
-			}
+                            Anmeldung</div>';
+            }
         }
         else
         {
-           if ( $_SESSION['sprache'] == "en" )
-			{
-			echo '<div class="basic-wrapper-top">
-						Log out </div>'; 
-			}
-			else 
-			{
-			echo '<div class="basic-wrapper-top">
-						Abmelden </div>';
-			}
-		}
-
+            if ( $_SESSION['sprache'] == "en" )
+            {
+                echo '<div class="basic-wrapper-top"> Log out </div>'; 
+            }
+            else 
+            {
+                echo '<div class="basic-wrapper-top"> Abmelden </div>';
+            }
+        }
 	?>
-	
-	
-	
+
 	<div class="basic-wrapper-bottom">
 	<?php
         // Autoren: Daniel Tatzel (PHP)
