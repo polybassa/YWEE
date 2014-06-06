@@ -3,7 +3,7 @@
 
 
 /*----basic box for menu-----*/
-#cssmenu 
+.cssmenu 
 {
 	position: relative;
 	height: 44px;
@@ -11,13 +11,13 @@
 	width: auto;
 }
 /*blendet den menu Punkt aus, da er nur für responsive benörigt wird */
-#cssmenu ul li.responsive
+.cssmenu ul li.responsive
 {
 display:none;
 }
 
 /*-----stlyes the list-----*/
-#cssmenu ul 
+.cssmenu ul 
 {
 	list-style: none;
 	padding: 0;
@@ -26,7 +26,7 @@ display:none;
 }
 
 /*-----styles the list */
-#cssmenu > ul 
+.cssmenu > ul 
 {
 	position: relative;
 	display: block;
@@ -36,7 +36,7 @@ display:none;
 	z-index:10;
 }
 /*-----styles the drop - down menu points*/
-#cssmenu > ul > li 
+.cssmenu > ul > li 
 {
 	display: block;
 	position: relative;
@@ -47,13 +47,13 @@ display:none;
 
 
 /*------link styling----------*/
-#cssmenu ul li a {
+.cssmenu ul li a {
   display: block;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
 }
 /*------styles menu text-------*/
-#cssmenu > ul > li > a 
+.cssmenu > ul > li > a 
 {
   font-size: 14px;
   font-weight: bold;
@@ -63,15 +63,15 @@ display:none;
 
 }
 /*-----padding right for subsections need for arrow*/
-#cssmenu > ul > li.has-sub > a {
+.cssmenu > ul > li.has-sub > a {
   padding-right: 32px;
 }
 /*-----styles 1th level menu with hover---*/
-#cssmenu > ul > li:hover > a {
+.cssmenu > ul > li:hover > a {
   color: #DE8642;
 }
 /*-----arrow for top down-----*/
-#cssmenu li.has-sub::after {
+.cssmenu li.has-sub::after {
   display: block;
   content: '';
   position: absolute;
@@ -79,20 +79,20 @@ display:none;
   height: 0;
 }
 /*-----arrow for top down ----*/
-#cssmenu > ul > li.has-sub::after {
+.cssmenu > ul > li.has-sub::after {
   right: 10px;
   top: 20px;
   border: 5px solid transparent;
   border-top-color: #000000;
 }
 /*------styles the arrow hover*/
-#cssmenu > ul > li:hover::after 
+.cssmenu > ul > li:hover::after 
 {
   border-top-color: #DE8642;
 }
 
 /*-----styles the 2th level menu*/
-#cssmenu ul ul 
+.cssmenu ul ul 
 {
   position: absolute;
   top: 70px;
@@ -107,14 +107,14 @@ display:none;
 
 }
 /*shows the 2th level menu on hover*/
-#cssmenu > ul > li:hover > ul 
+.cssmenu > ul > li:hover > ul 
 {
   left: auto;
   top: 44px;
   opacity: 1;
 }
 /*styles the 2th level links*/
-#cssmenu ul ul li a {
+.cssmenu ul ul li a {
   width: 130px;
   border-bottom: 1px solid #000000;
   padding: 10px 20px;
@@ -125,7 +125,7 @@ display:none;
 }
 
 /*hover and text color for 2th level*/
-#cssmenu ul ul li:hover > a {
+.cssmenu ul ul li:hover > a {
   background: #de8642;
   color: #00000;
 }
@@ -136,69 +136,69 @@ display:none;
 
 @media screen and (max-width: 800px) 
 {
-	#cssmenu 
+	.cssmenu 
 	{
 		width: auto;
 	}
-	#cssmenu ul 
+	.cssmenu ul 
 	{
 		width: auto;
 	}
 
 
-	#cssmenu > ul 
+	.cssmenu > ul 
 	{
 		height: auto;
 		display: block;
 	}
 	/*kein "Zusammenschieben" */
-	#cssmenu > ul > li 
+	.cssmenu > ul > li 
 	{
 		float: none;
 	}
 
 	/*zeigt den menupunkt für responsive an*/
-	#cssmenu ul li.responsive
+	.cssmenu ul li.responsive
 	{
 		display:block;
 	}
 	/*skaliert die Breite auf 100%*/
-	#cssmenu 
+	.cssmenu 
 	{
 		width:100%;
 		text-align: center;
 	}
 	/*style für erste Menüpunkte*/
-	#cssmenu ul li
+	.cssmenu ul li
 	{
 		width:100%;
 		list-style: none;
 		border-top:1px solid #000000;
 	}
 	/*Positon der "Menüschift"*/
-	#cssmenu > ul > li > a
+	.cssmenu > ul > li > a
 	{
 		text-align: left;
 	}
 
-	#cssmenu  ul  li
+	.cssmenu  ul  li
 	{
 	display: none;
 	}
 	/*----showes the menu on hover*/
-	#cssmenu  ul:hover li
+	.cssmenu  ul:hover li
 	{
 	display: block;
 	}
 
 	/*-----arrow for top down ----*/
-	#cssmenu > ul > li.has-sub::after {
+	.cssmenu > ul > li.has-sub::after {
 	
 	left: 130px;
 	top: 20px;
 	}
 	/*----restyle the 2th level menu for responsive*/
-	#cssmenu ul ul 
+	.cssmenu ul ul 
 	{
 	position: relative;
 	width:100%;
@@ -214,14 +214,14 @@ display:none;
 	}
 	
 	/*showes the th menu when open*/
-	#cssmenu > ul > li:hover > ul 
+	.cssmenu > ul > li:hover > ul 
 	{
 	left: auto;
 	top: 0px;
 	opacity: 1;
 	}
 	/*styles the text for 2th level menu */
-	#cssmenu ul ul li a
+	.cssmenu ul ul li a
 	{
 	text-align:left;
 	width:100%;

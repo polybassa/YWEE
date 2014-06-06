@@ -1,22 +1,12 @@
-<section> <!--ehemals wrapper--> 
+<div id="wrapper"> <!--ehemals wrapper--> 
 
-<aside id="left">
+<div id="left">
 
     <noscript>
         <br><b>Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!</b><br>
     </noscript>
     
     <?php
-        /* Grundgeruest fuer Sprachauswahl
-        if ( $_SESSION['sprache'] == "en" )
-            echo "Englisch";
-        else
-            echo "Deutsch";
-        */
-        
-        
-        //echo "<br>";
-        
         if ( $_SESSION['admin'] == true )
         {
             echo "Counter: ";
@@ -43,4 +33,4 @@
 
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
 	<div class="basic-wrapper-bottom">link zu großem GB ? </div>
-</aside>
+</div> <!-- left -->
