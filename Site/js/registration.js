@@ -74,7 +74,7 @@ $(document).ready(function()
 
                                     }
                                 });
-                        form.submit();
+                        //form.submit();
                     }
                 });
             });
@@ -170,7 +170,7 @@ $(document).ready(function()
 
                                     }
                                 });
-                        form.submit();
+                        //form.submit();
                     }
                 });
             });
