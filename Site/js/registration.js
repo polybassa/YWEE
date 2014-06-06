@@ -5,7 +5,10 @@ $(document).ready(function()
 
     $.post("/scripts/GetLang.php", function(lang) {
         if (lang.length > 2) {
-
+            $.validator.addMethod('phone', function(value) {
+                var numbers = value.split(/\d/).length - 1;
+                return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
+            }, 'Please enter a valid phone number');
             $("#registerform").submit(function(e)
             {
                 e.preventDefault();
@@ -101,6 +104,10 @@ $(document).ready(function()
 
         }
         else {
+            $.validator.addMethod('phone', function(value) {
+                var numbers = value.split(/\d/).length - 1;
+                return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
+            }, 'Bitte eine g&uuml;ltige Telefonnummer angeben.');
 
             $("#registerform").submit(function(e)
             {
@@ -126,19 +133,19 @@ $(document).ready(function()
                     },
                     messages: {
                         tag: {
-                            min: jQuery.validator.format("Bitte ein g&#252;ltiges Datum eingeben.")
+                            min: jQuery.validator.format("Bitte ein g&ouml;ltiges Datum eingeben.")
                         },
                         month: {
-                            min: jQuery.validator.format("Bitte ein g&#252;ltiges Datum eingeben.")
+                            min: jQuery.validator.format("Bitte ein g&ouml;ltiges Datum eingeben.")
                         },
                         telefon: {
                             phoneUS: "Bitte eine Telefonnummer eingeben"
                         },
                         jahr: {
-                            min: jQuery.validator.format("Bitte ein g&#252;ltiges Datum eingeben.")
+                            min: jQuery.validator.format("Bitte ein g&ouml;ltiges Datum eingeben.")
                         },
                         geschlecht: {
-                            min: jQuery.validator.format("Bitte ein Geschlecht wählen.")
+                            min: jQuery.validator.format("Bitte ein Geschlecht w&auml;hlen.")
                         }
                     },
                     invalidHandler: function(event, validator) {
@@ -176,15 +183,15 @@ $(document).ready(function()
             });
 
             jQuery.extend(jQuery.validator.messages, {
-                required: "Wir ben&#246;tigen dieses Feld.",
+                required: "Wir ben&uuml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
-                email: "Bitte eine g&#252;ltige Email Addresse angeben.",
-                url: "Bitte eine g&#252;tltige URL angeben.",
-                date: "Bitte ein g&#252;ltiges Datum angeben.",
-                dateISO: "Bitte ein g&#252;ltiges Datum angeben (ISO).",
-                number: "Bitte eine g&#252;ltige Zahl eingeben.",
+                email: "Bitte eine g&ouml;ltige Email Addresse angeben.",
+                url: "Bitte eine g&ouml;tltige URL angeben.",
+                date: "Bitte ein g&ouml;ltiges Datum angeben.",
+                dateISO: "Bitte ein g&ouml;ltiges Datum angeben (ISO).",
+                number: "Bitte eine g&ouml;ltige Zahl eingeben.",
                 digits: "Bitte nur Ziffern eingeben.",
-                creditcard: "Bitte eine g&#252;ltige Kreditkartennummer eingeben.",
+                creditcard: "Bitte eine g&ouml;ltige Kreditkartennummer eingeben.",
                 equalTo: "Bitte das selbe nochmal eingeben.",
                 accept: "Please enter a value with a valid extension.",
                 maxlength: jQuery.validator.format("Bitte nicht mehr als {0} Zeichen."),
