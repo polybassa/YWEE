@@ -128,16 +128,9 @@
 		
 
 				<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+				<script language="javascript" type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+				<script language="javascript" type="text/javascript" src="/js/jquery.cookie.js"></script>
 				<script>
-				
-				<!-- Karte vor Geolocation -->
-				var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
-				function gmegInitializeMap(){gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
-				gmegMap = new google.maps.Map(document.getElementById("map"),{zoom:14,center:gmegLatLng,mapTypeId:google.maps.MapTypeId.ROADMAP});
-				gmegMarker = new google.maps.Marker({map:gmegMap,position:gmegLatLng});
-				gmegInfoWindow = new google.maps.InfoWindow({content:'<b>Hochschule</b><br>Seybothstra0e<br>Regensburg'});
-				gmegInfoWindow.open(gmegMap,gmegMarker);}google.maps.event.addDomListener(window,"load",gmegInitializeMap);
-				
 				
 				<!-- Karte: Routenplaner -->
 					(function () {
@@ -165,31 +158,43 @@
 									}
 								});
 							};
-
+							
+							
 							// Check for geolocation support	
-							if (navigator.geolocation) {
+							if (!$.cookie("posLat")) {
 								navigator.geolocation.getCurrentPosition(function (position) {
 										// Success!
+										latitude = position.coords.latitude;
+										longitude = position.coords.longitude;
+										//write to cookie
+										$.cookie("posLat", latitude);
+										$.cookie("posLon", longitude);
 										createMap({
 											coords : true,
-											lat : position.coords.latitude,
-											lng : position.coords.longitude
+											lat : latitude,
+											lng : longitude
 										});
 									}, 
 									function () {
 										// Fallback: Hochschule Amberg
 										createMap({
+										
 											coords : false,
 											address : "Hochschule, Amberg"
+										
 										});
 									}
 								);
+								
 							}
 							else {
-								// No geolocation fallback: Hochschule Weiden
+								//coords aus Datei
+								latitude = $.cookie("posLat");
+								longitude = $.cookie("posLon");
 								createMap({
-									coords : false,
-									address : "Hochschule, Weiden"
+									coords : true,
+									lat : latitude,
+									lng : longitude
 								});
 							}
 					})();
