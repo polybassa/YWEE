@@ -27,7 +27,7 @@ $(document).ready(function()
                             min: 1
                         },
                         telefon: {
-                            phoneUS: true
+                            phone: true
                         }
 
                     },
@@ -127,7 +127,7 @@ $(document).ready(function()
                             min: 1
                         },
                         telefon: {
-                            phoneUS: true
+                            phone: true
                         }
 
                     },
