@@ -5,15 +5,16 @@
     <noscript>
         <br><b>Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!</b><br>
     </noscript>
-    
+
     <?php
         if ( $_SESSION['admin'] == true )
         {
-            echo "Counter: ";
+            echo '<div class="basic-wrapper-top"> Besucherz&auml;hler </div>';
+            echo '<div class="basic-wrapper-bottom" align="center">';
             include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage
+            echo '</div>';
         }
     ?>
-    
 	<!--Block for Guestbook by Matthias Birnthaler-->
 	<?php
 	
@@ -34,3 +35,5 @@
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
 	<div class="basic-wrapper-bottom">link zu großem GB ? </div>
 </div> <!-- left -->
+
+    
