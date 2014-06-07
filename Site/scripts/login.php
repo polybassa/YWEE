@@ -35,7 +35,7 @@
 
         $result = $query->fetch(PDO::FETCH_LAZY);
         
-        if ( $query->rowCount() > 0 )  // Falls ein Eintrag vorhanden ist, dann war der Login erfolgreich
+        if ( $query->rowCount() > 0 && $result["rolle"] != 2)  // Falls ein Eintrag vorhanden ist und der Nutzer freigeschaltet wurde, dann war der Login erfolgreich
         {
             $_SESSION['logged-in'] = true;  // Login auf True setzen
 

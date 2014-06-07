@@ -129,7 +129,7 @@
     
     $query->execute();
 
-    $query = $dbConnection->prepare( "insert into login (benutzername, passwort, rolle) VALUES ( :user, :pass, 0)" );
+    $query = $dbConnection->prepare( "insert into login (benutzername, passwort, rolle) VALUES ( :user, :pass, 2)" );
     $query->bindParam( ":user", $_POST['benutzername'] );
     $query->bindParam( ":pass", md5( $_POST['passwort'] ) );
     $query->execute();
