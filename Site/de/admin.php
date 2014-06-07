@@ -60,6 +60,24 @@
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_GetLetters.html");
 		}
+		if(isset($_GET['unlockUser']) and $_GET['unlockUser'] == true)
+		{
+			if(isset($_GET['fired']) and ($_GET['fired'] == true) and isset($_POST["UsersToUnlock"]))
+			{
+				$tounlockUser = $_POST["UsersToUnlock"];
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/UnlockUsers.php");
+			}
+			$lockedUsers = "";
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ad_GetLockedUsers.php");
+			foreach($get_locked_users as $user)
+			{
+				$lockedUsers .= "<tr> ";
+				$lockedUsers .= "<a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
+				$lockedUsers .= '<th> <input type="checkbox" name="UsersToUnlock[]" value="'. $user["benutzername"] . '"</th>';
+				$lockedUsers .= "</tr>";
+			}
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_unlockUsers.html");
+		}
 		else
 		{
 			//auf der landing page
