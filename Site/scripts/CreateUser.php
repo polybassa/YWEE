@@ -4,75 +4,7 @@
 
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert Session
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
-/*
-    if ( $_POST['geschlecht'] == -1 )
-    {
-        if ( $_SESSION['sprache'] == "de")
-            echo 'Bitte waehlen Sie ihr Geschlecht aus!';
-        else
-            echo 'Please select your gender!';
 
-        exit;
-    }
-
-    if ( $_POST['jahr'] == 0 || $_POST['monat'] == 0 || $_POST['tag'] == 0 ||
-            $_POST['jahr'] == 0 || $_POST['monat'] == 0 || $_POST['tag'] == 0)
-    {
-        if ( $_SESSION['sprache'] == "de")
-            echo 'Bitte überprüfen Sie Ihr Geburtsdatum!';
-        else
-            echo 'Please check your birthday!';
-
-        exit;
-    }
-
-    if ( preg_match( "/\W/", $_POST['benutzername'] ) )
-    {
-        if ( $_SESSION['sprache'] == "de")
-            echo 'Es sind nur fuer den Benutzernamen nur Buchstaben, Zahlen und "_" erlaubt!';
-        else
-            echo 'It is only allowed to use letters, numbers and "_" for the username!';
-
-        exit;
-    }
-
-    if ( $_POST['passwort'] != $_POST['passwortcheck'] )
-    {
-        if ( $_SESSION['sprache'] == "de")
-            echo 'Passwörter stimmen nicht überein!';
-        else
-            echo 'Passwords do not match!';
-
-        exit;
-    }
-
-    if ( preg_match( "/[^A-Za-z0-9\.!#$%&'*+-\/=@?\^_`\{\|\}~]/", $_POST['email'] ) )
-        {
-            if ( $_SESSION['sprache'] == "de")
-                echo 'Ihre E-Mail Adresse ist ungueltig!';
-            else
-                echo 'Your email adress is invalid!';
-
-            exit;
-        }
-
-    foreach($_POST as $key=>$element)
-    {
-        if ( $key == "passwort" || $key == "passwortcheck" || $key == "email" )
-            continue;
-
-        if ( preg_match( "/[^a-zA-Z0-9öäüÄÜÖß\._-]/", $element )  ) {
-            if ( $_SESSION['sprache'] == "de")
-                echo 'Es sind nur Buchstaben, Zahlen, "_". "." und "-" erlaubt fuer alle Felder außer Passwort und E-Mail!';
-            else
-                echo 'It is only allowed to use letters, numbers, "_". "." and "-" for all fields except password and email!';
-
-            exit;
-        }
-        
-        $element = preg_replace('/\s+/', ' ', $element);
-    }
-*/
     // Baue Verbindung auf
     try {
         $dbConnection = ConnectToDB();
@@ -129,7 +61,7 @@
     
     $query->execute();
 
-    $query = $dbConnection->prepare( "insert into login (benutzername, passwort, rolle) VALUES ( :user, :pass, 0)" );
+    $query = $dbConnection->prepare( "insert into login (benutzername, passwort, rolle) VALUES ( :user, :pass, 2)" );
     $query->bindParam( ":user", $_POST['benutzername'] );
     $query->bindParam( ":pass", md5( $_POST['passwort'] ) );
     $query->execute();
@@ -144,9 +76,4 @@
     }
 
     $dbConnection = null;
-
-    if ( $_SESSION['sprache'] == "de")
-        echo 'Die Registrierung war erfolgreich.';
-    else
-        echo 'The registration was successful.';    
 ?>

@@ -26,4 +26,7 @@ Redirect /en/profile.php http://ebenezer-kunatse.net/de/profile.php
 Redirect /en/tutor.php http://ebenezer-kunatse.net/de/tutor.php
 Redirect /en/admin.php http://ebenezer-kunatse.net/de/admin.php
 
+Redirect /en/location.php http://ebenezer-kunatse.net/en/index.php
+Redirect /en/subject.php http://ebenezer-kunatse.net/en/index.php
+
 ErrorDocument 404 http://ebenezer-kunatse.net/en/404.php

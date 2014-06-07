@@ -12,7 +12,7 @@
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
 	
-	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/payment.html");
+	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/en/content/payment.html");
 	
 	if(isset($_SESSION['logged-in']))
 	{
