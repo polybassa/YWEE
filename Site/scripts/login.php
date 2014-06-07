@@ -46,10 +46,20 @@
         }
         else
         {
-            if ( $_SESSION['sprache'] == "de")
-                echo 'Anmeldung Fehlgeschlagen!';
+            if ( $result["rolle"] == 2 )
+            {
+                if ( $_SESSION['sprache'] == "de")
+                    echo 'Sie wurden noch nicht freigeschaltet!';
+                else
+                    echo 'You are not unlocked yet!';
+            }
             else
-                echo 'Login failed!';
+            {
+                if ( $_SESSION['sprache'] == "de")
+                    echo 'Anmeldung Fehlgeschlagen!';
+                else
+                    echo 'Login failed!';
+            }
         }
 
         $dbConnection = null;

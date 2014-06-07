@@ -71,7 +71,7 @@ $(document).ready(function()
                                     /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
                                     if (msg.length < 5) {
 
-                                        alert("Registration was successful!");
+                                        alert("The registration was successful, please wait till you get unlocked.");
                                         location.replace('index.php');
 
 
@@ -171,7 +171,7 @@ $(document).ready(function()
                                     /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
                                     if (msg.length < 5) {
 
-                                        alert("Registrierung war Erfolgreich!");
+                                        alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");
                                         location.replace('index.php');
 
 
