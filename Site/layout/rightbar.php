@@ -122,7 +122,7 @@
 		
 
 				<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-				<script language="javascript" type="text/javascript" src="/js/jquery.cookie.js"></script>
+				<script type="text/javascript" src="/js/jquery.cookie.js"></script>
 				<script>
 				
 				<!-- Karte: Routenplaner -->
