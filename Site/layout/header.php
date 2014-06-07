@@ -43,7 +43,13 @@
         <!-- Inlclude for jquery validate -->
         <script src="/js/jquery.validate.min.js"></script>
         
-    </head>
+		<!-- font -->
+		<link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	
+	</head>
     <body>
 
         <script>
@@ -69,7 +75,7 @@
             <div id="banner" >
                 <!--Div Box für logo img-->
                 <div id= "logo">
-                    <img src="/images/logo.gif" class="logo" alt="logo">
+                    <img src="/images/logo.png" class="logo_img" alt="logo">
                 </div>
 
                 

@@ -4,13 +4,15 @@
 /* Angepasst und verändert von: Daniel Tatzel, ..... */
 /*  geändert Matthias Birnthaler*/
 
+
+
 body
 {
     background-color:#ffffff;
     font-size: 11px;
-    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif 'Yesteryear''Berkshire Swash''Changa One''Lobster';
 
-    padding:0;
+	padding:0;
     margin:0;
     width: 100%;
 
@@ -66,7 +68,11 @@ img.download {vertical-align:middle;}
 {
     position: absolute;
     z-index: 1;
-    margin: 2% 0% 0% 2%;
+}
+.logo_img
+{
+	width:300px; 
+	height:300px;
 }
 
 
@@ -206,12 +212,12 @@ footer
 {
     background-color:#DE8642;
     text-align:center;
-    margin: 0px 10px;
+    font-family: 'Changa One', cursive;
+	font-size:120%;
+	margin: 0px 10px;
     padding:3px;
     overflow:hidden;
-    border-left: solid 1px #c3c5c9;
-    border-right: solid 1px #c3c5c9;
-    border-bottom: solid 1px #c3c5c9;
+    border: solid 1px #c3c5c9;
     -webkit-border-top-left-radius: 4px;
     -webkit-border-top-right-radius: 4px;
     -moz-border-radius-topleft: 4px;
@@ -223,7 +229,7 @@ footer
 .basic-wrapper-middle/*use for box middle part*/
 {
     background-color: #ffffff;
-    padding:0px 10px;
+    padding:0 10px;
     overflow:hidden;
     border-left: solid 1px #c3c5c9;
     border-right: solid 1px #c3c5c9;
@@ -258,24 +264,26 @@ footer
 .lane 
 {
     width:75%;
-    margin-top:20px;
-
+    margin:0px auto;
+	margin-top: 20px;
+	
 }
 
 #loginform
 {
-    width:100%;
+    width:98.4%;
 }
 .login_field
 {
-    width:100%;	
+    width:98.4%;	
 }
 
 #searchform
 .suchen_field
 {
-    width:80%;
+	width:80%;
 }
+
 
 .boxshadow #content
 {
@@ -290,12 +298,12 @@ footer
 .GBauthor
 {
 
-    /*font*/
-
+    font-family:'Berkshire Swash' cursive;
+	font-size: 110%;
 }
 .GBauthor::first-letter
 {
-    font-size: 200%;
+    font-size: 175%;
 }
 
 .GBauthor::after
@@ -309,11 +317,11 @@ p#databargb
 }
 
 
-form label {display:inline-block; width:200px;}  
+form label {display:inline-block; width:100%;}  
 form input[type="text"],
 form input[type="password"],
 form input[type="email"], 
-form input[type="tel"]{width:180px;}
+form input[type="tel"]{width:100%;}
 
 form .line {clear:both;}
 form .line.submit {text-align:left;}
@@ -364,10 +372,17 @@ input[type='range']::-webkit-slider-thumb {
         height:200px;
     }
     .slider_img 
-    {
+	{
         width:100%;
         height:200px;
     }
+	
+	.logo_img
+	{
+	width:200px; 
+	height:200px;
+	}
+
 }
 
 
@@ -376,45 +391,59 @@ input[type='range']::-webkit-slider-thumb {
 
 @media screen and (max-width:800px)
 {
-
-    section
-    {
-        height:auto;
-    }
+	
+	
+    #wrapper
+	{
+        min-height:1600px;
+	}
     #content
-    {
+	{
         width:96.8%;
         margin-bottom: 1.6%;
-    }
+	}
     #left
-    {
+	{
         margin-left:-0.8%;
         width:50%;
-    }
+	}
     #right
-    {
+	{
         margin-right:-0.8%;
         width:50%;
-    }
+	}
     #banner 
-    {
+	{
         height:150px;
-    }
+	}
     #show 
-    {
+	{
         width:100%;
         height:150px;
-    }
+	}
     .slider_img 
-    {
+	{
         width:100%;
         height:150px;
-    }
+	}
+	
+	.logo_img
+	{
+		width:150px; 
+		height:150px;
+	}
+
+	
 }
 
 
 @media screen and (max-width: 400px)
 {
+	#wrapper
+	{
+	min-height:2100px;
+	height:auto;
+	}
 
 
     #left
@@ -444,6 +473,12 @@ input[type='range']::-webkit-slider-thumb {
         width:100%;
         height:100px;
     }
+	.logo_img
+	{
+	width:100px; 
+	height:100px;
+	}
 
+	
 }
 
