@@ -54,6 +54,15 @@
 		<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		
+		<!-- Slideshow CSS/JS Modernizr Abfrage -->
+		<script>
+		yepnope({
+			test : Modernizr.cssanimations,
+			yep  : 'slide.css',
+			nope : '/js/slide.js'
+		});    
+		</script>
 	
 	</head>
     <body>
