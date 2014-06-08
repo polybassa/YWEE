@@ -1,0 +1,11 @@
+<!-- Inhalt von Alexander Strobl  -->
+<select name="letter" id="Please Choose..." method="post">
+	<option value="0">Buchstabe w&auml;hlen</option>
+	<?php
+		foreach(range('A', 'Z') as $letter) 
+		{
+			echo '<option value="'.$letter.'">'.$letter.'</option>';
+		}
+	?>
+	<input type="submit" value="select">
+</select>
