@@ -59,7 +59,7 @@
 		<script>
 		yepnope({
 			test : Modernizr.cssanimations,
-			yep  : 'slide.css',
+			yep  : '/layout/slide.css',
 			nope : '/js/slide.js'
 		});    
 		</script>
