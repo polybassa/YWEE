@@ -28,10 +28,10 @@
 			foreach($guestbookresults as $eintrag)
 			{
 				$guestbook_print .= "<tr> ";
-				$guestbook_print .= "<th>" . $eintrag["eintrag"] . "</th> ";
+				$guestbook_print .= "<th><div class='UnauthGBEntry'> " . $eintrag["eintrag"] . "</div></th>";
 				//todo: ändern des links für den produktiven Einsatz hier und in ShowUnauthGuestbook.html
-				$guestbook_print .= "<th> ". $eintrag["benutzername"] . "</th> ";
-				$guestbook_print .= '<th> <input type="checkbox" name="freigaben[]" value="'. $eintrag["id"] . '"</th>';
+				$guestbook_print .= "<th><div class='UnauthGBAuthor'> ". $eintrag["benutzername"] . "</div></th> ";
+				$guestbook_print .= '<th><div class="UnauthGBCheckbox"><input type="checkbox" name="freigaben[]" value="'. $eintrag["id"] . '"</div></th>';
 				$guestbook_print .= "</tr>";
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ShowUnauthGuestbook.html");
