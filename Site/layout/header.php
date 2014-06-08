@@ -15,9 +15,15 @@
 
         <meta charset="utf-8">
         <?php header('X-UA-Compatible: IE=edge'); ?>
-        <meta name="description" content="Die Tutoren AG ist DIE Anlaufstelle f&uuml;r wissenshungrige, die nach einem Tutor in ihrer N&auml;he suchen!!!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<meta name="author" content="YWEE Gruppe_02">
+		<meta name="date" content="2014-05-17">
+		<meta name="description" lang="de" content="'Die Tutoren AG' ist DIE Anlaufstelle f&uuml;r wissenshungrige, die nach einem Tutor in ihrer N&auml;he suchen!!! 
+		Wenn Sie selbst gerne unterrichten und Geld verdienen wollen, melden Sie sich an und werden Tutor!">
+		<meta name="keywords" lang="de" content="Tutor, Nachhilfe, Unterricht, Lernen">
+		<meta name="description" lang="en" content="'Die Tutoren AG' is THE contact point for inquisitive people, who search for a tutor nearby!!! 
+		Register and become a tutor if you like to teach and earn big money!">
+		<meta name="keywords" lang="en" content="tutor, tutoring, lesson, education, learning, study">
 
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
