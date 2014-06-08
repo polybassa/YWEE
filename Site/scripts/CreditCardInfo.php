@@ -1,4 +1,5 @@
 <?php
+	//Autor: Tobias Schwindl
 	 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     // Baue Verbindung auf
     try 
