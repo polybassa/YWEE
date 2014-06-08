@@ -97,22 +97,32 @@ display:none;
   position: absolute;
   top: 70px;
   opacity: 0;
-  /*for a better look in browser who support the cssanimations*/
+  left: -99999px;
+  /*for a better look in browser that support the cssanimations*/
   -webkit-transition: opacity .3s ease, top .25s ease;
   -moz-transition: opacity .3s ease, top .25s ease;
   -ms-transition: opacity .3s ease, top .25s ease;
   -o-transition: opacity .3s ease, top .25s ease;
   transition: opacity .3s ease, top .25s ease;
-  z-index: 99;
+  z-index: -99;
 
 }
 /*shows the 2th level menu on hover*/
-.cssmenu > ul > li:hover > ul 
+.cssmenu ul > li:hover > ul 
 {
   left: auto;
   top: 44px;
   opacity: 1;
 }
+
+.cssmenu ul ul li:hover > ul 
+{
+  left: 170px;
+  top: 0;
+  opacity: 1;
+}
+
+
 /*styles the 2th level links*/
 .cssmenu ul ul li a {
   width: 130px;
@@ -136,10 +146,7 @@ display:none;
 
 @media screen and (max-width: 800px) 
 {
-	.cssmenu 
-	{
-		width: auto;
-	}
+	
 	.cssmenu ul 
 	{
 		width: auto;
@@ -212,20 +219,42 @@ display:none;
 	transition: none;
 	z-index:5;
 	}
-	
-	/*showes the th menu when open*/
-	.cssmenu > ul > li:hover > ul 
+	/*showes the the menu when open*/
+	.cssmenu > ul > li> ul 
 	{
 	left: auto;
 	top: 0px;
 	opacity: 1;
 	}
+	
+	.cssmenu ul ul li
+	{
+	width:100%;
+	padding:0;
+	margin:0;
+	}
+	.cssmenu ul > li:hover > ul 
+	{
+	left: auto;
+	top: 0px;
+	opacity: 1;
+	}
+
+	
 	/*styles the text for 2th level menu */
 	.cssmenu ul ul li a
 	{
 	text-align:left;
-	width:100%;
+	width:90%;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10%;
+	padding-right:0;
 	border:0;
+	margin:0;
 	}
+
+	
+	
 }
 
