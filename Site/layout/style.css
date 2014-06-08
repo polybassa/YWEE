@@ -113,6 +113,12 @@ nav
     padding: 0px;
     margin: 0px;
 }
+.flag_img
+{
+height: 14px;
+width: 100%;
+
+}
 
 /*----------------wrapper-(left+right+content)*/
 #wrapper
