@@ -5,7 +5,9 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <link type="text/css" href="/layout/style.css" rel="stylesheet" media="screen" />
-        <link rel="stylesheet" type="text/css" media="all" href="/layout/slide.css" />
+        <noscript>
+            <link rel="stylesheet" type="text/css" media="all" href="/layout/slide.css" />
+        </noscript>
 		<link rel="stylesheet" type="text/css" media="all" href="/layout/cssmenu.css" />
         
 		<!-- test von Daniel mit HTML5 Boilerplate -->
