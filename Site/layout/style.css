@@ -396,20 +396,30 @@ input[type='range']::-webkit-slider-thumb {
     #wrapper
 	{
         min-height:1600px;
+		position: relative;
 	}
     #content
 	{
-        width:96.8%;
-        margin-bottom: 1.6%;
+		position: absolute;
+        top:0;
+		width:96.4%;
+        margin-top: 10px;
+		margin-right: 0.8%;
+		margin-left:0.8%;
 	}
     #left
 	{
+		position: absolute;
+		top:790px;
         margin-left:-0.8%;
         width:50%;
 	}
     #right
 	{
-        margin-right:-0.8%;
+		position: absolute;
+        top:790px;
+		right: 0;
+		margin-right:-0.8%;
         width:50%;
 	}
     #banner 
@@ -441,14 +451,15 @@ input[type='range']::-webkit-slider-thumb {
 {
 	#wrapper
 	{
-	min-height:2100px;
+	min-height:2200px;
 	height:auto;
 	}
 
 
     #left
     {
-        float:left;
+        top:1570px;
+		float:left;
         width:100%;
         margin-bottom: 1.6%;;
     }
