@@ -1,6 +1,5 @@
 <?php
-// Anpassung und Aufteilung des Layouts: Daniel Tatzel
-    // Muss in der Reihenfolge bleiben
+	//Autor: Tobias Schwindl
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 	//$lang = $_SESSION['sprache'];
     $titel = "Donate"; // Name der Seite die im Browser angezeigt werden soll
@@ -18,7 +17,7 @@
 	{
 ?>
 <h1>Donate</h1>
-
+We only accept Visa Cards!<br>
 <form name="Formular" method="post" action="/scripts/CreditCardInfo.php" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
@@ -42,6 +41,10 @@
 	<div class="line submit"><input type="submit" value="Best&#228;tigen"></div>
 </form>
 <?php
-	}	
+	}
+	else
+	{
+		echo "Please log in to donate!";
+	}
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>

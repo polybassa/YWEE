@@ -1,6 +1,5 @@
 <?php
-    // Anpassung und Aufteilung des Layouts: Daniel Tatzel
-    // Muss in der Reihenfolge bleiben
+    //Autor: Tobias Schwindl
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 
     $titel = "Nachrichten"; // Name der Seite die im Browser angezeigt werden soll
@@ -11,10 +10,10 @@
     
     //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
     //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
-	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/nachrichten.html");
+	
     if( $_SESSION['admin'] == true )
 	{
-	//$lang = $_SESSION['sprache'];
+		//$lang = $_SESSION['sprache'];
 ?>
 	<form name="News" method="post" action="/scripts/WriteNews.php" id="newsform">
 	<input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
@@ -29,5 +28,6 @@
 
 <?php
 	}
+	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/nachrichten.html");
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>

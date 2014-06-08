@@ -12,9 +12,11 @@
 	
     // SECURITY HOLE ***************************************************************
     // allow space, any unicode letter and digit, underscore and dash
+	/* Nicht benötigt
     if ( preg_match("/[^\040\pL\pN_-]/u", $_POST['nachricht']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['subject'])) {
         exit;
     }
+	*/
     
     // replace multiple spaces with one
     $msg = preg_replace('/\s+/', ' ', $_POST['nachricht']);
@@ -36,6 +38,7 @@
     $query->execute();
 	
 	//print_r($_POST);
+	//auf richtige Seite weiterleiten
 	if( $_SESSION['sprache'] == 'en')
 	{
 		$lang = "en/news.php";
