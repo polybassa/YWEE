@@ -312,3 +312,7 @@
 </div><!--right-->
 
 <article id="content" class="basic-wrapper boxshadow">
+
+    <noscript>
+        <br><b>Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!</b><br>
+    </noscript>
