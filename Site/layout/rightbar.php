@@ -56,10 +56,12 @@
         {
             if ( $_SESSION['sprache'] == "en" )
             {
+                echo 'Logged in as <b>'.$_SESSION['user'].'</b>.<br><br>';
                 echo '<input type="submit" name="logout" value="Logout">';
             }
             else
             {
+                echo 'Angemeldet als <b>'.$_SESSION['user'].'</b>.<br><br>';
                 echo '<input type="submit" name="logout" value="Abmelden">';
             }
             
