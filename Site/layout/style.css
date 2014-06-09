@@ -225,6 +225,7 @@ footer
     text-align:center;
     font-family: 'Changa One', cursive;
 	font-size:120%;
+	text-transform: uppercase;
 	margin: 0px 10px;
     padding:3px;
     overflow:hidden;
