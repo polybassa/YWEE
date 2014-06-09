@@ -116,7 +116,7 @@ nav
 .flag_img
 {
 height: 14px;
-width: 100%;
+width: auto;
 
 }
 
@@ -151,7 +151,7 @@ width: 100%;
 	margin:0 auto\9;
 }
 
-/*wird gebraucht da ohne js kein Inhalt in leftbar und sonst pos verschoben wäre*/
+/*wird gebraucht da ohne js kein Inhalt in leftbar und sonst die Positionen verschoben wären*/
 .no-js #content
 {
 	float:none;
