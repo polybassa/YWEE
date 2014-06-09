@@ -56,10 +56,12 @@
         {
             if ( $_SESSION['sprache'] == "en" )
             {
+                echo 'Logged in as <b>'.$_SESSION['user'].'</b>.<br><br>';
                 echo '<input type="submit" name="logout" value="Logout">';
             }
             else
             {
+                echo 'Angemeldet als <b>'.$_SESSION['user'].'</b>.<br><br>';
                 echo '<input type="submit" name="logout" value="Abmelden">';
             }
             
@@ -310,3 +312,20 @@
 </div><!--right-->
 
 <article id="content" class="basic-wrapper boxshadow">
+
+
+    <noscript>
+        <div id="noscript">
+        <?php
+            if ( $_SESSION['sprache'] == "en" )
+            {
+                echo 'You have disabled Javascript. Activate Javascript to use all features on our site!';
+            }
+            else
+            {
+                echo 'Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!';
+            }
+        ?>
+		</div>
+	</noscript>
+	

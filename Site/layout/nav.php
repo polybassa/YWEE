@@ -26,8 +26,13 @@
                         {
                             echo '<li><a href="/private/index.php"><span>Private folder</span></a></li>';
                         }
+
+                        if ( $_SESSION['logged-in'] == true )
+                        {
+                            echo '<li><a href="/en/profile.php"><span>Profile</span></a></li>';
+                        }
                     ?>
-					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" alt="DE-Flagge"></a>'; ?> </li>		
+					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" class="flag_img" alt="DE-Flagge"></a>'; ?> </li>		
 				</ul>
 		<?php
         }
@@ -51,8 +56,13 @@
                         {
                             echo '<li><a href="/private/index.php"><span>Privater Ordner</span></a></li>';
                         }
+
+                        if ( $_SESSION['logged-in'] == true )
+                        {
+                            echo '<li><a href="/de/profile.php"><span>Profil</span></a></li>';
+                        }
                     ?>
-					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="'.$enflag.'" alt="GB-Flagge"></a>'; ?> </li>
+					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="'.$enflag.'" class="flag_img" alt="GB-Flagge"></a>'; ?> </li>
 				</ul>
 		<?php
         }

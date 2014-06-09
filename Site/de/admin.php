@@ -72,7 +72,7 @@
 			foreach($get_locked_users as $user)
 			{
 				$lockedUsers .= "<tr> ";
-				$lockedUsers .= "<a href='/de/profile.php?amp;username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
+				$lockedUsers .= "<th> <a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
 				$lockedUsers .= '<th> <input type="checkbox" name="UsersToUnlock[]" value="'. $user["benutzername"] . '"></th>';
 				$lockedUsers .= "</tr>";
 			}

@@ -1,5 +1,5 @@
 <!--author: Florian Laufenboeck-->
-<form name="formular" method="post" action="/de/admin.php?deleteUser=true&amp;letter=<?php echo $letter_to_take ?>&amp;fired=true">
+<form name="formular" method="post" action="/de/admin.php?deleteUser=true&letter=<?php echo $letter_to_take;?>&fired=true">
 	<table border="1" rules="groups">
 		<thead>
 			<tr>
@@ -8,7 +8,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php echo $AllUsersWithThisLetter?>
+			<?php echo $AllUsersWithThisLetter;?>
 		</tbody>
 	</table>
 	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>

@@ -2,20 +2,24 @@
 
 <div id="left">
 
-    <noscript>
-        <br><b>Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!</b><br>
-    </noscript>
-
     <?php
         if ( $_SESSION['admin'] == true )
         {
 			// Admin-Menu by Alexander Strobl
             echo '<div class="basic-wrapper-top"> Admin-Menu </div>';
             echo '<div class="basic-wrapper-bottom">';
-			echo '<a href="/de/admin.php"><span>Admin-Verwaltung</span></a>';
+			echo '<li><a href="/de/admin.php"><span>Admin-Verwaltung</span></a></li>';
+            
             echo '</div>';
-			
-            echo '<div class="basic-wrapper-top"> Besucherz&auml;hler </div>';
+            if ( $_SESSION['sprache'] == "en" )
+            {
+                echo '<div class="basic-wrapper-top"> Visitor counter </div>';   
+            }
+            else
+            {
+                echo '<div class="basic-wrapper-top"> Besucherz&auml;hler </div>';
+            }
+            
             echo '<div class="basic-wrapper-bottom">';
             include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage
             echo '</div>';			
@@ -39,7 +43,20 @@
     <p id="databargb"></p>
 
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
-	<div class="basic-wrapper-bottom">link zu großem GB ? </div>
+	<?php
+	
+	if ( $_SESSION['sprache'] == "en" )
+	{
+		echo '<div class="basic-wrapper-bottom"><div class="button"><a href="/en/guestbook.php">show all</div></a></div>';      
+	}
+	else
+	{
+		echo '<div class="basic-wrapper-bottom"><div class="button"><a href="/de/gaestebuch.php">zeige alle</div></a></div>';
+	}
+	?>
+	
+	
+	
 </div> <!-- left -->
 
     

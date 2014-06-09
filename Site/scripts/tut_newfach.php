@@ -1,5 +1,4 @@
 <?php
-
 	/*
 	 * author: Florian Laufenböck
 	 */
@@ -13,16 +12,14 @@
     
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
     
-    $query = "UPDATE login SET rolle = 0 where ";
+    $query_leistungen = "INSERT INTO leistung VALUES('" . $_SESSION['user'] . "', '" . $fach . "', " . $stufe . ")";
     
-    foreach($tounlockUser as $user)
+    $que_leistungen = $dbConnection->prepare($query_leistungen);
+    
+    if(!$que_leistungen->execute())
     {
-		$query .= "benutzername= '" . $user . "' or ";
+		print_r("unbekannter Datenbankfehler in tut_newfach.php");
 	}
-	// hier ist ein " or " zum Schluss zuviel angefügt worden, dies wird jetzt wieder entfernt
-	$query = substr($query, 0, strripos($query," or"));
-	$que = $dbConnection->prepare($query);
-	$que->execute();
 	
 	$dbConnection = null;
 

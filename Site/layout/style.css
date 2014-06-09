@@ -113,6 +113,12 @@ nav
     padding: 0px;
     margin: 0px;
 }
+.flag_img
+{
+height: 14px;
+width: auto;
+
+}
 
 /*----------------wrapper-(left+right+content)*/
 #wrapper
@@ -139,12 +145,18 @@ nav
     width:56.8%;
     height:750px;
     overflow:hidden;
-    /*
-    min-height:750px;
-height:expression(this.scrollHeight > 750 ? "auto":"750px"); 
-    */
+  
+	/*fixes IE <9*/
+	float:none\9;
+	margin:0 auto\9;
 }
 
+/*wird gebraucht da ohne js kein Inhalt in leftbar und sonst die Positionen verschoben wären*/
+.no-js #content
+{
+	float:none;
+	margin: 0 auto;
+}
 
 
 
@@ -152,7 +164,6 @@ height:expression(this.scrollHeight > 750 ? "auto":"750px");
 /* --------------Balken------------- */
 #left
 {
-
     float: left;
     width: 20%;
     margin: 0;
@@ -316,6 +327,54 @@ p#databargb
     margin:0 auto;
 }
 
+.button
+{
+width: auto;
+margin:  0 auto; 
+padding: 5px;
+border: solid 1px #DE8642;
+background-color: #eeeeee;
+text-align: center;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+
+}
+
+.button  a 
+{
+display: block;
+width: auto;
+font-size: 14px;
+text-decoration: none;
+color: #000000;
+text-transform: uppercase;
+font-weight: bold;
+list-style: none;
+font-family: Helvetica, sans-serif;
+
+}
+
+.button:hover  a 
+{
+color: #DE8642;
+
+}
+
+
+#noscript
+{
+	background-color: #ffffff;
+    padding:10px;
+    margin: 0px 10px 10px;
+    border: solid 3px #FF0000;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	font-size:175%;
+	color:#FF0000;
+}
+
 
 form label {display:inline-block; width:100%;}  
 form input[type="text"],
@@ -396,20 +455,30 @@ input[type='range']::-webkit-slider-thumb {
     #wrapper
 	{
         min-height:1600px;
+		position: relative;
 	}
     #content
 	{
-        width:96.8%;
-        margin-bottom: 1.6%;
+		position: absolute;
+        top:0;
+		width:96.4%;
+        margin-top: 10px;
+		margin-right: 0.8%;
+		margin-left:0.8%;
 	}
     #left
 	{
+		position: absolute;
+		top:790px;
         margin-left:-0.8%;
         width:50%;
 	}
     #right
 	{
-        margin-right:-0.8%;
+		position: absolute;
+        top:790px;
+		right: 0;
+		margin-right:-0.8%;
         width:50%;
 	}
     #banner 
@@ -441,14 +510,15 @@ input[type='range']::-webkit-slider-thumb {
 {
 	#wrapper
 	{
-	min-height:2100px;
+	min-height:2200px;
 	height:auto;
 	}
 
 
     #left
     {
-        float:left;
+        top:1570px;
+		float:left;
         width:100%;
         margin-bottom: 1.6%;;
     }

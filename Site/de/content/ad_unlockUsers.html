@@ -1,5 +1,5 @@
 <!--author: Florian Laufenboeck-->
-<form name="formular" method="post" action="/de/admin.php?amp;unlockUser=true&amp;fired=true">
+<form name="formular" method="post" action="/de/admin.php?unlockUser=true&fired=true">
 	<table border="1" rules="groups">
 		<thead>
 			<tr>
@@ -8,7 +8,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php echo $lockedUsers?>
+			<?php echo $lockedUsers;?>
 		</tbody>
 	</table>
 	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>

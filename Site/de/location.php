@@ -1,9 +1,9 @@
 <?php
 /*
-	 * author: Nils Weiss
-	 * script for output of location values 
-	 * 
-	 */
+ * author: Nils Weiss
+ * script to display all tutors for a given location 
+ * 
+ */
 
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 // Muss in der Reihenfolge bleiben
@@ -60,6 +60,9 @@ $a_json = array_unique($a_json, SORT_REGULAR);
 $json = json_encode($a_json);
 ?>
 <script type="text/javascript">
+    /*
+     * print out all search results in an json object to use it later in an other script
+     */
     var searchresults = <?php echo $json; ?>;
 </script>
 

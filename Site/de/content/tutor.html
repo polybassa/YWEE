@@ -1,0 +1,27 @@
+<!-- author Florian Laufenboeck-->
+<h2>Tutorverwaltung</h2>
+
+<form name="formular" method="post" action="/de/tutor.php?deletefach=true">
+	<table border="1" rules="groups">
+		<thead>
+			<tr>
+				<th>Fach</th>
+				<th>Stufe</th>
+				<th>L&ouml;schen</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php echo $allfach;?>
+		</tbody>
+	</table>
+	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>
+</form>
+
+<a class="btn" href="/de/tutor.php?newfach=true">Neues Fach hinzuf&uuml;gen</a>
+
+<form name="formular1" method="post" action="/de/tutor.php?changedata=true">
+	
+	<div><label for ="umkreis">Umkreis</label><input type="number" value="<?php echo $tutor_data['umkreis'];?>" id="umkreis" name="umkreis"required></div>
+	<div><label for ="gehalt">Gehalt</label><input type="number" value="<?php echo $tutor_data['stundenlohn'];?>" id="gehalt" name="gehalt"></div>
+	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>
+</form>
