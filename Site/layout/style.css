@@ -327,6 +327,41 @@ p#databargb
     margin:0 auto;
 }
 
+.button
+{
+width: auto;
+margin:  0 auto; 
+padding: 5px;
+border: solid 1px #DE8642;
+background-color: #eeeeee;
+text-align: center;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+
+}
+
+.button  a 
+{
+display: block;
+width: auto;
+font-size: 14px;
+text-decoration: none;
+color: #000000;
+text-transform: uppercase;
+font-weight: bold;
+list-style: none;
+font-family: Helvetica, sans-serif;
+
+}
+
+.button:hover  a 
+{
+color: #DE8642;
+
+}
+
+
 #noscript
 {
 	background-color: #ffffff;

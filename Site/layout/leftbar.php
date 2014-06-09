@@ -43,7 +43,20 @@
     <p id="databargb"></p>
 
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
-	<div class="basic-wrapper-bottom"><a href="/de/gaestebuch.php">G&auml;stebuch</a></div>
+	<?php
+	
+	if ( $_SESSION['sprache'] == "en" )
+	{
+		echo '<div class="basic-wrapper-bottom"><div class="button"><a href="/de/gaestebuch.php">show all</div></a></div>';      
+	}
+	else
+	{
+		echo '<div class="basic-wrapper-bottom"><div class="button"><a href="/de/gaestebuch.php">zeige alle</div></a></div>';
+	}
+	?>
+	
+	
+	
 </div> <!-- left -->
 
     
