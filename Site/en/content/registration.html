@@ -16,14 +16,14 @@ Here you can register for our tutoring website. Please fill in all information t
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
-	<select name="monat">
+	<select name="monat" id="month">
 	<option value="0">Month</option>
 	<?php
 	$i = 0;
 	while ( $i++ < 12)
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
-	<select name="jahr">
+	<select name="jahr" id="jahr">
 	<option value="0">Year</option>
 	<?php
     $i = date("Y");

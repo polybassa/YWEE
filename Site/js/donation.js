@@ -1,65 +1,49 @@
-/* Autor: Daniel Tatzel */
+/* Autor Maxi Schröter */
 /* Ruft das PHP Register Script auf und Ã¼bergibt die Daten via POST */
 $(document).ready(function()
 {
 
     $.post("/scripts/GetLang.php", function(lang) {
         if (lang.length > 2) {
-            $.validator.addMethod('phone', function(value) {
-                var numbers = value.split(/\d/).length - 1;
-                return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
-            }, 'Please enter a valid phone number');
-            $("#registerform").submit(function(e)
+            $("#paymentform").submit(function(e)
             {
                 e.preventDefault();
                 $('[name="Formular"]').validate({
                     rules: {
-                        plz:{
-                            number: true,
-                            minlength: 5,
-                            maxlength: 5
+                        kreditkartennummer: {
+                            creditcard: true
                         },
-                        geschlecht: {
+                        pruefziffer: {
+                            maxlength: 4,
+                            minlength: 4,
+                            number: true
+                        },
+                        betrag: {
                             min: 0
-                        },
-                        tag: {
-                            min: 1
                         },
                         jahr: {
                             min: 1
                         },
                         month: {
                             min: 1
-                        },
-                        telefon: {
-                            phone: true
                         }
+
 
                     },
                     messages: {
-                        plz:{
-                            number: "A Postcode can only contain numbers",
-                            minlength: jQuery.validator.format("A Postcode has only 5 digits."),
-                            maxlength: jQuery.validator.format("A Postcode has only 5 digits.")
-                        },
-                        tag: {
-                            min: jQuery.validator.format("Please enter a valid Date.")
+                        betrag: {
+                            min: jQuery.validator.format("You cannot spend 0 &euro;.")
                         },
                         month: {
                             min: jQuery.validator.format("Please enter a valid Date.")
                         },
-                        telefon: {
-                            phoneUS: "Please enter a valid phone number"
-                        },
                         jahr: {
                             min: jQuery.validator.format("Please enter a valid Date.")
-                        },
-                        geschlecht: {
-                            min: jQuery.validator.format("Please select a gender.")
                         }
+
                     },
                     invalidHandler: function(event, validator) {
-// 'this' refers to the form
+                        // 'this' refers to the form
                         var errors = validator.numberOfInvalids();
                         if (errors) {
                             var message = errors == 1
@@ -72,27 +56,15 @@ $(document).ready(function()
                         }
                     },
                     submitHandler: function(form) {
-                        $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
-                                function(msg) {
-                                    /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
-                                    if (msg.length > 2) {
-                                        alert(msg);
-                                    }
-                                    /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
-                                    if (msg.length < 5) {
-
-                                        alert("The registration was successful, please wait till you get unlocked.");
-                                        location.replace('index.php');
-
-
-                                    }
-                                });
-                        //form.submit();
+                        alert("We thank you for your donation.");
+                        location.replace('index.php');
                     }
-                });
+                
+                    });
             });
 
             jQuery.extend(jQuery.validator.messages, {
+                
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
                 email: "Please enter a valid email address.",
@@ -114,62 +86,44 @@ $(document).ready(function()
 
         }
         else {
-            $.validator.addMethod('phone', function(value) {
-                var numbers = value.split(/\d/).length - 1;
-                return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
-            }, 'Bitte eine g&uuml;ltige Telefonnummer angeben.');
 
-            $("#registerform").submit(function(e)
+            $("#payment").submit(function(e)
             {
                 e.preventDefault();
                 $('[name="Formular"]').validate({
                     rules: {
-                        plz:{
-                            number: true,
-                            minlength: 5,
-                            maxlength: 5
+                        
+                        kreditkartennummer: {
+                            creditcard: true
                         },
-                        geschlecht: {
+                        pruefziffer: {
+                            maxlength: 4,
+                            minlength: 4,
+                            number: true
+                        },
+                        betrag: {
                             min: 0
                         },
-                        tag: {
-                            min: 1
-                        },
                         jahr: {
                             min: 1
                         },
                         month: {
                             min: 1
-                        },
-                        telefon: {
-                            phone: true
                         }
-
                     },
                     messages: {
-                        plz:{
-                            number: "Eine Postleitzahl besteht nur aus Zahlen.",
-                            minlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen."),
-                            maxlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen.")
-                        },
-                        tag: {
-                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                        betrag: {
+                            min: jQuery.validator.format("Du kannst keine 0 &euro; spenden.")
                         },
                         month: {
                             min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                         },
-                        telefon: {
-                            phoneUS: "Bitte eine Telefonnummer eingeben"
-                        },
                         jahr: {
                             min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                        },
-                        geschlecht: {
-                            min: jQuery.validator.format("Bitte ein Geschlecht w&auml;hlen.")
                         }
                     },
                     invalidHandler: function(event, validator) {
-                    // 'this' refers to the form
+// 'this' refers to the form
                         var errors = validator.numberOfInvalids();
                         if (errors) {
                             var message = errors == 1
@@ -182,24 +136,11 @@ $(document).ready(function()
                         }
                     },
                     submitHandler: function(form) {
-                        $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
-                                function(msg) {
-                                    /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
-                                    if (msg.length > 2) {
-                                        alert(msg);
-                                    }
-                                    /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
-                                    if (msg.length < 5) {
-
-                                        alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");
-                                        location.replace('index.php');
-
-
-                                    }
-                                });
-                        //form.submit();
+                        alert("Wir bedanken uns für Ihre Spende");
+                        location.replace('index.php');
                     }
-                });
+                
+                    });
             });
 
             jQuery.extend(jQuery.validator.messages, {
@@ -210,7 +151,7 @@ $(document).ready(function()
                 date: "Bitte ein g&uuml;ltiges Datum angeben.",
                 dateISO: "Bitte ein g&uuml;ltiges Datum angeben (ISO).",
                 number: "Bitte eine g&uuml;ltige Zahl eingeben.",
-                digits: "Bitte nur Buchstaben eingeben.",
+                digits: "Bitte nur Ziffern eingeben.",
                 creditcard: "Bitte eine g&uuml;ltige Kreditkartennummer eingeben.",
                 equalTo: "Bitte das selbe nochmal eingeben.",
                 accept: "Please enter a value with a valid extension.",

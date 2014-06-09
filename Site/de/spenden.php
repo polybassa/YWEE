@@ -17,6 +17,7 @@
 	{
 ?>
 <h1>Spende</h1>
+<script src="/js/donation.js" type="text/javascript"></script>
 Wir akzeptieren nur Visa Karten!<br>
 <form name="Formular" method="post" action="/scripts/CreditCardInfo.php" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
@@ -29,7 +30,7 @@ Wir akzeptieren nur Visa Karten!<br>
 	while ( $i++ < 12)
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
-	<select name="jahr">
+	<select name="jahr" id="jahr">
 	<option value="0">Jahr</option>
 	<?php
     $i = (date("Y")-1);
