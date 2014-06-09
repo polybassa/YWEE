@@ -52,7 +52,7 @@
 				foreach($ad_result as $user)
 				{
 					$AllUsersWithThisLetter .= "<tr> ";
-					$AllUsersWithThisLetter .= "<th>" . "<a href='/de/profile.php?amp;username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
+					$AllUsersWithThisLetter .= "<th>" . "<a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
 					$AllUsersWithThisLetter .= '<th> <input type="checkbox" name="deleteUser[]" value="'. $user["benutzername"] . '"></th>';
 					$AllUsersWithThisLetter .= "</tr>";
 				}
