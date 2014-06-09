@@ -116,7 +116,7 @@ nav
 .flag_img
 {
 height: 14px;
-width: 100%;
+width: auto;
 
 }
 
@@ -151,7 +151,7 @@ width: 100%;
 	margin:0 auto\9;
 }
 
-/*wird gebraucht da ohne js kein Inhalt in leftbar und sonst pos verschoben wäre*/
+/*wird gebraucht da ohne js kein Inhalt in leftbar und sonst die Positionen verschoben wären*/
 .no-js #content
 {
 	float:none;
@@ -326,6 +326,41 @@ p#databargb
     padding:0 auto;
     margin:0 auto;
 }
+
+.button
+{
+width: auto;
+margin:  0 auto; 
+padding: 5px;
+border: solid 1px #DE8642;
+background-color: #eeeeee;
+text-align: center;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+
+}
+
+.button  a 
+{
+display: block;
+width: auto;
+font-size: 14px;
+text-decoration: none;
+color: #000000;
+text-transform: uppercase;
+font-weight: bold;
+list-style: none;
+font-family: Helvetica, sans-serif;
+
+}
+
+.button:hover  a 
+{
+color: #DE8642;
+
+}
+
 
 #noscript
 {
