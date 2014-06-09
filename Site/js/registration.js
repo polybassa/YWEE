@@ -2,6 +2,7 @@
 /* Ruft das PHP Register Script auf und Ã¼bergibt die Daten via POST */
 $(document).ready(function()
 {
+    
 
     $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script für Sprachauswahl*/
         if (lang.length > 2) {  /*If Abfrage für Sprache, zuerst English*/
@@ -9,10 +10,18 @@ $(document).ready(function()
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
             }, 'Please enter a valid phone number');
+            
             $("#registerform").submit(function(e)
             {
+                
                 e.preventDefault();
                 $('[name="Formular"]').validate({
+                    errorPlacement: function(error,element){
+                        error.insertBefore(element);
+                    },
+                    
+                    
+                    
                     rules: {    /*Regeln für die Validation*/
                         plz:{
                             number: true,
@@ -91,7 +100,8 @@ $(document).ready(function()
                     }
                 });
             });
-
+            
+            
             jQuery.extend(jQuery.validator.messages, {
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
@@ -123,6 +133,9 @@ $(document).ready(function()
             {
                 e.preventDefault();
                 $('[name="Formular"]').validate({
+                    errorPlacement: function(error,element){
+                        element.prev("label").replaceWith(error);
+                    },
                     rules: {
                         plz:{
                             number: true,
@@ -210,7 +223,7 @@ $(document).ready(function()
                 date: "Bitte ein g&uuml;ltiges Datum angeben.",
                 dateISO: "Bitte ein g&uuml;ltiges Datum angeben (ISO).",
                 number: "Bitte eine g&uuml;ltige Zahl eingeben.",
-                digits: "Bitte nur Buchstaben eingeben.",
+                digits: "Bitte nur Zahlen eingeben.",
                 creditcard: "Bitte eine g&uuml;ltige Kreditkartennummer eingeben.",
                 equalTo: "Bitte das selbe nochmal eingeben.",
                 accept: "Please enter a value with a valid extension.",
