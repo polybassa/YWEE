@@ -6,8 +6,8 @@
         if ( $_SESSION['admin'] == true )
         {
 			// Admin-Menu by Alexander Strobl
-            echo '<div class="basic-wrapper-top" align="center"> Admin-Menu </div>';
-            echo '<div class="basic-wrapper-bottom" align="center">';
+            echo '<div class="basic-wrapper-top"> Admin-Menu </div>';
+            echo '<div class="basic-wrapper-bottom">';
 			echo '<li><a href="/de/admin.php"><span>Admin-Verwaltung</span></a></li>';
             
             echo '</div>';
@@ -20,7 +20,7 @@
                 echo '<div class="basic-wrapper-top"> Besucherz&auml;hler </div>';
             }
             
-            echo '<div class="basic-wrapper-bottom" align="center">';
+            echo '<div class="basic-wrapper-bottom">';
             include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/GetCounterValue.php"); // Inkludiert die Counter Abfrage
             echo '</div>';			
         }
@@ -47,7 +47,7 @@
 	
 	if ( $_SESSION['sprache'] == "en" )
 	{
-		echo '<div class="basic-wrapper-bottom"><div class="button"><a href="/de/gaestebuch.php">show all</div></a></div>';      
+		echo '<div class="basic-wrapper-bottom"><div class="button"><a href="/en/guestbook.php">show all</div></a></div>';      
 	}
 	else
 	{

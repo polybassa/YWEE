@@ -31,4 +31,20 @@
     $query->execute();
 
     $dbConnection = null;
+	
+	if ( $_POST['sprache'] == "en" )
+	{
+		header("Location: http://ebenezer-kunatse.net/en/guestbook.php");
+		?>
+		<li><a href="/en/guestbook.php"><span>Back to Guestbook</span></a></li>
+		<?php
+	}
+	else
+	{
+		header("Location: http://ebenezer-kunatse.net/de/gaestebuch.php");
+		?>
+		<li><a href="/de/gaestebuch.php"><span>Zur&uuml;ck zum G&auml;stebuch</span></a></li>
+		<?php
+	}
 ?> 
+

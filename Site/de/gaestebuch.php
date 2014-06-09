@@ -10,8 +10,32 @@
     
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
     
-    //print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
-    //echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
+	if( isset($_SESSION['logged-in']))
+	{
+?>
+	<form name="addguestbookentry" method="post" action="/scripts/WriteGuestbook.php" id="gbform">
+		<input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
+		<input type="hidden" name="username" value="<?php echo $_SESSION['user']; ?>">
+		<div>
+			<label for ="nachrichtentext"></label>
+			<p>
+				<textarea name="eintrag" cols="33" rows="5" maxlength="300" placeholder ="Schreiben Sie hier ihren Gästebucheintrag..." required></textarea>
+			</p>
+		</div>
+		<div class="line submit">
+			<input type="submit" value="Absenden">
+		</div>
+	</form>
+
+<?php	
+	}
+	else
+	{
+	?>
+		Nur eingeloggte User k&ouml;nnen G&auml;stebucheintr&auml;ge verfassen!
+		<br>
+	<?php	
+	}
 	// Inkludiert den Inhalt    
 	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/gaestebuch.html"); 
 	        

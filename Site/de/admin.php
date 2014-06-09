@@ -31,7 +31,7 @@
 				$guestbook_print .= "<th><div class='UnauthGBEntry'> " . $eintrag["eintrag"] . "</div></th>";
 				//todo: ändern des links für den produktiven Einsatz hier und in ShowUnauthGuestbook.html
 				$guestbook_print .= "<th><div class='UnauthGBAuthor'> ". $eintrag["benutzername"] . "</div></th> ";
-				$guestbook_print .= '<th><div class="UnauthGBCheckbox"><input type="checkbox" name="freigaben[]" value="'. $eintrag["id"] . '"</div></th>';
+				$guestbook_print .= '<th><div class="UnauthGBCheckbox"><input type="checkbox" name="freigaben[]" value="'. $eintrag["id"] . '"></div></th>';
 				$guestbook_print .= "</tr>";
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ShowUnauthGuestbook.html");
@@ -53,7 +53,7 @@
 				{
 					$AllUsersWithThisLetter .= "<tr> ";
 					$AllUsersWithThisLetter .= "<th>" . "<a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
-					$AllUsersWithThisLetter .= '<th> <input type="checkbox" name="deleteUser[]" value="'. $user["benutzername"] . '"</th>';
+					$AllUsersWithThisLetter .= '<th> <input type="checkbox" name="deleteUser[]" value="'. $user["benutzername"] . '"></th>';
 					$AllUsersWithThisLetter .= "</tr>";
 				}
 				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_ShowUsers.html");
@@ -73,7 +73,7 @@
 			{
 				$lockedUsers .= "<tr> ";
 				$lockedUsers .= "<th> <a href='/de/profile.php?username=" .$user["benutzername"] . "'>".$user["benutzername"] . "</a> </th> ";
-				$lockedUsers .= '<th> <input type="checkbox" name="UsersToUnlock[]" value="'. $user["benutzername"] . '"</th>';
+				$lockedUsers .= '<th> <input type="checkbox" name="UsersToUnlock[]" value="'. $user["benutzername"] . '"></th>';
 				$lockedUsers .= "</tr>";
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_unlockUsers.html");
