@@ -43,7 +43,7 @@
     <p id="databargb"></p>
 
 	<script type="text/javascript" src="/js/topguestbook.js"></script>	
-	<div class="basic-wrapper-bottom">link zu großem GB ? </div>
+	<div class="basic-wrapper-bottom"><a href="/de/gaestebuch.php">G&auml;stebuch</a></div>
 </div> <!-- left -->
 
     
