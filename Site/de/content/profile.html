@@ -1,16 +1,17 @@
-<h1>Profil bearbeiten</h1>
+<!--author Florian Laufenboeck -->
+<h1>Profil <?php if($fl_username == $_SESSION['user']) echo "bearbeiten";?> </h1>
 
-<form name="Formular"method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user']?>">
-	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["benutzername"]?>" id="benutzername" name="benutzername"required readonly></div>
-	<div><label for ="nachname">Name(nicht ändern):</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["nachname"] ?>" name="nachname" id="nachname" readonly></div>
-	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["vorname"] ?>"name="vorname" id="vorname" readonly></div>
-	<div><label for ="email">E-Mail:</label><input type="email" size="45" maxlength = "45" value="<?php echo $result["email"] ?>" id="email" name="email"required  <?php if($fl_username != $_SESSION['user']) echo "readonly"?> ></div>
-	<div><label for ="gebdatum">Geburtsdatum:</label><input type="date" value="<?php echo $result["geburtsdatum"]?>" name ="geburtsdatum" id="geburtsdatum" readonly></div>
-	<div><label for ="plz">Postleitzahl:</label><input type="text" size="45" value="<?php echo $result["plz"]?>" id="plz" name="plz" required <?php if($fl_username != $_SESSION['user']) echo "readonly"?>></div>
-	<div><label for ="wohnort">Wohnort:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["wohnort"]?>" id="wohnort" name="wohnort" required <?php if($fl_username != $_SESSION['user']) echo "readonly"?>></div>
-	<div><label for ="strasse">Stra&szlig;e:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["strasse"]?>"id="strasse" name="strasse" required <?php if($fl_username != $_SESSION['user']) echo "readonly"?>></div>
-	<div><label for ="hausnummer">Hausnummer:</label><input type="text" size="45" value="<?php echo $result["hausnummer"]?>" id="hausnummer" name="hausnummer" required <?php if($fl_username != $_SESSION['user']) echo "readonly"?>></div>
-	<div><label for ="telefon">Telefon:</label><input type="tel" size="45" value="<?php echo $result["telefon"]?>"id="telefon" name="telefon" required <?php if($fl_username != $_SESSION['user']) echo "readonly"?>></div>
+<form name="Formular"method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user'];?>">
+	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["benutzername"];?>" id="benutzername" name="benutzername" required readonly></div>
+	<div><label for ="nachname">Name(nicht ändern):</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["nachname"];?>" name="nachname" id="nachname" readonly></div>
+	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["vorname"];?>" name="vorname" id="vorname" readonly></div>
+	<div><label for ="email">E-Mail:</label><input type="email" size="45" maxlength = "45" value="<?php echo $result["email"];?>" id="email" name="email" required  <?php if($fl_username != $_SESSION['user']) echo "readonly";?> ></div>
+	<div><label for ="gebdatum">Geburtsdatum:</label><input type="date" value="<?php echo $result["geburtsdatum"];?>" name ="geburtsdatum" id="geburtsdatum" readonly></div>
+	<div><label for ="plz">Postleitzahl:</label><input type="text" size="45" value="<?php echo $result["plz"];?>" id="plz" name="plz" required <?php if($fl_username != $_SESSION['user']) echo "readonly";?>></div>
+	<div><label for ="wohnort">Wohnort:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["wohnort"];?>" id="wohnort" name="wohnort" required <?php if($fl_username != $_SESSION['user']) echo "readonly";?>></div>
+	<div><label for ="strasse">Stra&szlig;e:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["strasse"]?>"id="strasse" name="strasse" required <?php if($fl_username != $_SESSION['user']) echo "readonly";?>></div>
+	<div><label for ="hausnummer">Hausnummer:</label><input type="text" size="45" value="<?php echo $result["hausnummer"];?>" id="hausnummer" name="hausnummer" required <?php if($fl_username != $_SESSION['user']) echo "readonly";?>></div>
+	<div><label for ="telefon">Telefon:</label><input type="tel" size="45" value="<?php echo $result["telefon"];?>"id="telefon" name="telefon" required <?php if($fl_username != $_SESSION['user']) echo "readonly";?>></div>
 	<?php if($fl_username == $_SESSION['user']) echo '<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>' ?>
 </form> 
 <?php if($result["benutzername"] != $_SESSION['user']) echo '<a href="mailto:' . $result["email"] . '"><img src="/images/mail.png" alt="mail"> </a>' ?>
