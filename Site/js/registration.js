@@ -3,9 +3,9 @@
 $(document).ready(function()
 {
 
-    $.post("/scripts/GetLang.php", function(lang) {
-        if (lang.length > 2) {
-            $.validator.addMethod('phone', function(value) {
+    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script für Sprachauswahl*/
+        if (lang.length > 2) {  /*If Abfrage für Sprache, zuerst English*/
+            $.validator.addMethod('phone', function(value) { /*Selbst geschriebene Validation Klasse für Telefonnummer */
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
             }, 'Please enter a valid phone number');
@@ -13,7 +13,7 @@ $(document).ready(function()
             {
                 e.preventDefault();
                 $('[name="Formular"]').validate({
-                    rules: {
+                    rules: {    /*Regeln für die Validation*/
                         plz:{
                             number: true,
                             minlength: 5,
@@ -36,7 +36,7 @@ $(document).ready(function()
                         }
 
                     },
-                    messages: {
+                    messages: { /*Spezielle Mitteilungen für bestimmte Fehleingaben*/
                         plz:{
                             number: "A Postcode can only contain numbers",
                             minlength: jQuery.validator.format("A Postcode has only 5 digits."),
@@ -59,7 +59,7 @@ $(document).ready(function()
                         }
                     },
                     invalidHandler: function(event, validator) {
-// 'this' refers to the form
+                    // 'this' refers to the form
                         var errors = validator.numberOfInvalids();
                         if (errors) {
                             var message = errors == 1
@@ -113,7 +113,7 @@ $(document).ready(function()
             });
 
         }
-        else {
+        else {/*Deutsche Texte*/
             $.validator.addMethod('phone', function(value) {
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
