@@ -315,8 +315,17 @@
 
 
     <noscript>
-       <div id="noscript">
-		Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!
+        <div id="noscript">
+        <?php
+            if ( $_SESSION['sprache'] == "en" )
+            {
+                echo 'You have disabled Javascript. Activate Javascript to use all features on our site!';
+            }
+            else
+            {
+                echo 'Sie haben Javascript nicht aktiviert. Aktivieren sie Javascript um unsere Seite im vollen Umfang nutzen zu k&ouml;nnen!';
+            }
+        ?>
 		</div>
 	</noscript>
 	
