@@ -15,10 +15,9 @@ $(document).ready(function()
             {
                 
                 e.preventDefault();
+                errorLabelContainer: $("#Formular div.errorh"),
                 $('[name="Formular"]').validate({
-                    errorPlacement: function(error,element){
-                        error.insertBefore(element);
-                    },
+                    
                     
                     
                     
@@ -42,6 +41,9 @@ $(document).ready(function()
                         },
                         telefon: {
                             phone: true
+                        },
+                        hausnummer:{
+                            number: true
                         }
 
                     },
@@ -133,9 +135,9 @@ $(document).ready(function()
             {
                 e.preventDefault();
                 $('[name="Formular"]').validate({
-                    errorPlacement: function(error,element){
-                        element.prev("label").replaceWith(error);
-                    },
+                    errorLabelContainer: $("#Formular div.errorh"),
+                    
+                    
                     rules: {
                         plz:{
                             number: true,
@@ -156,7 +158,11 @@ $(document).ready(function()
                         },
                         telefon: {
                             phone: true
+                        },
+                        hausnummer:{
+                            number: true
                         }
+                       
 
                     },
                     messages: {

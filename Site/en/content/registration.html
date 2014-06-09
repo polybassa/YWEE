@@ -6,25 +6,25 @@
 Here you can register for our tutoring website. Please fill in all information to ensure full functionality of our homepage. You can decide later whether you're in the role of a tutor or a student.
 
 <form name="Formular" method="post" action="#" id="registerform">
-    <div><label class="zeile" for ="geschlecht">Gender:</label><select name="geschlecht" id="geschlecht"><option value="-1">--</option><option value="0">Female</option><option value="1">Male</option></select></div>
+    <div><label class="zeile" for ="geschlecht"> </label>Gender:<select name="geschlecht" id="geschlecht"><option value="-1">--</option><option value="0">Female</option><option value="1">Male</option></select></div>
 	<div><label class="zeile" for ="nachname">Surname:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder ="Surname" name="nachname" id="nachname" required></div>
 	<div><label class="zeile" for ="vorname">Forename:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder ="Forename" name="vorname" id="vorname" required></div>
 	<div><label class="zeile" for ="email">E-Mail:</label><input type="email" class="eingabe" size="45" maxlength ="45" placeholder ="beispiel@email.de" id="email" name="email" required></div>
 	<div><label for="tag" class="zeile">Birthday:</label>
-	<select name="tag" id="tag" style="width:50"><option value="0">Day</option>
+	<select name="tag" id="tag" style="width:50"><option value="-1">Day</option>
 	<?php
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
 	<select name="monat" id="month">
-	<option value="0">Month</option>
+	<option value="-1">Month</option>
 	<?php
 	$i = 0;
 	while ( $i++ < 12)
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
 	<select name="jahr" id="jahr">
-	<option value="0">Year</option>
+	<option value="-1">Year</option>
 	<?php
     $i = date("Y");
     while ( $i-- > 1900)

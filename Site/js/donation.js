@@ -8,6 +8,10 @@ $(document).ready(function()
             $("#paymentform").submit(function(e)
             {
                 e.preventDefault();
+                $.validator.addMethod('positiveNumber',
+                        function(value) {
+                            return Number(value) > 0;
+                        }, 'Enter a positive value.');
                 $('[name="Formular"]').validate({
                     rules: {
                         kreditkartennummer: {
@@ -19,7 +23,8 @@ $(document).ready(function()
                             number: true
                         },
                         betrag: {
-                            min: 0
+                            min: 0,
+                            positiveNumber: true
                         },
                         jahr: {
                             min: 1
@@ -59,12 +64,11 @@ $(document).ready(function()
                         alert("We thank you for your donation.");
                         location.replace('index.php');
                     }
-                
-                    });
+
+                });
             });
 
             jQuery.extend(jQuery.validator.messages, {
-                
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
                 email: "Please enter a valid email address.",
@@ -90,9 +94,12 @@ $(document).ready(function()
             $("#payment").submit(function(e)
             {
                 e.preventDefault();
+                $.validator.addMethod('positiveNumber',
+                        function(value) {
+                            return Number(value) > 0;
+                        }, 'Nur positive Beträge.');
                 $('[name="Formular"]').validate({
                     rules: {
-                        
                         kreditkartennummer: {
                             creditcard: true
                         },
@@ -102,7 +109,8 @@ $(document).ready(function()
                             number: true
                         },
                         betrag: {
-                            min: 0
+                            min: 0,
+                            positiveNumber: true
                         },
                         jahr: {
                             min: 1
@@ -139,8 +147,8 @@ $(document).ready(function()
                         alert("Wir bedanken uns für Ihre Spende");
                         location.replace('index.php');
                     }
-                
-                    });
+
+                });
             });
 
             jQuery.extend(jQuery.validator.messages, {
