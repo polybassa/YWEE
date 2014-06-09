@@ -29,7 +29,7 @@ try {
 }
 
 /**
- * Create SQL
+ * Create SQL. Use different querys depending on what parameter is transmitt via get
  */
 if ($typ === 'location')
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%')";
@@ -40,7 +40,9 @@ else
 
 $sth = $conn->prepare($sql);
 $sth->execute();
-
+/*
+ * Fill data to an json object
+ */
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     if (stristr($row['Wohnort'], $value)) {
         $a_json_row["value"] = $row['Wohnort'];
@@ -63,13 +65,15 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 }
 $a_json = array_unique($a_json, SORT_REGULAR);
 $json = json_encode($a_json);
-
+/*
+ * Here is some intelligence. If the query generates only one result, the script redirects immediatly to the right page.
+ * For example if the result contains only one user, PHP is redirecting the browser to the show profile page.
+ */
 if (count($a_json) === 1) {
     if ($a_json[0]['typ'] == "Ort") {
         $id = $a_json[0]['value'];
         header("Location: http://ebenezer-kunatse.net/de/location.php?term=$id");
         exit;
-        //include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/search.html");// Inkludiert den Inhalt
     } else if ($a_json[0]['typ'] == "Fach") {
         $id = $a_json[0]['value'];
         header("Location: http://ebenezer-kunatse.net/de/subject.php?term=$id");
@@ -91,6 +95,9 @@ if (count($a_json) === 1) {
     include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
     ?>
     <script type="text/javascript">
+        /*
+         * print out all search results in an json object to use it later in an other script
+         */
         var searchresults = <?php echo $json; ?>;
     </script>
     <?php
