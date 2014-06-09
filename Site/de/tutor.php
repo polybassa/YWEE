@@ -20,6 +20,7 @@
 		{
 			// wenn man gerade zum neuen tutor geworden ist mit einem fach
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/AddNewTutor.php");
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/tutoryes.html");	// bestätigungsseite, das man gerade tutor geworden ist
 		}
 		else if(isset($_GET['newfach']) and $_GET['newfach'] == true)
 		{

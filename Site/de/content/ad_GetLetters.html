@@ -1,11 +1,5 @@
-<!-- Inhalt von Alexander Strobl  -->
-<select name="letter" id="Please Choose..." method="post">
-	<option value="0">Buchstabe w&auml;hlen</option>
-	<?php
-		foreach(range('A', 'Z') as $letter) 
-		{
-			echo '<option value="'.$letter.'">'.$letter.'</option>';
-		}
-	?>
-	<input type="submit" value="select">
-</select>
+<!-- author Florian Laufenboeck -->
+<?php
+	foreach(range('a','z') as $letter)
+		echo '<a href="/de/admin.php?deleteUser=true&letter=' . $letter . '">' . $letter . '</a>' . '  ';
+?>
