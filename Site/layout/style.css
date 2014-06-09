@@ -145,10 +145,10 @@ width: 100%;
     width:56.8%;
     height:750px;
     overflow:hidden;
-    /*
-    min-height:750px;
-height:expression(this.scrollHeight > 750 ? "auto":"750px"); 
-    */
+  
+	/*fixes IE <9*/
+	float:none\9;
+	margin:0 auto\9;
 }
 
 /*wird gebraucht da ohne js kein Inhalt in leftbar und sonst pos verschoben wäre*/
