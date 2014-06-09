@@ -21,7 +21,6 @@
 	}
 	// hier ist ein " or " zum Schluss zuviel angefügt worden, dies wird jetzt wieder entfernt
 	$query = substr($query, 0, strripos($query," or"));
-	print_r($query);
 	$que = $dbConnection->prepare($query);
 	$que->execute();
 	
