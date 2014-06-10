@@ -19,7 +19,7 @@
 <h1>Spende</h1>
 <script src="/js/donation.js" type="text/javascript"></script>
 Wir akzeptieren nur Visa Karten!<br>
-<form name="Formular" method="post" action="/scripts/CreditCardInfo.php" id="paymentform">
+<form name="Formular" method="post" action="#" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">Kreditkartennummer:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="month">Ablaufdatum:</label>

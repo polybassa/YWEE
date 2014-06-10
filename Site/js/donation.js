@@ -55,8 +55,18 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {
-                    alert("We thank you for your donation.");
-                    location.replace('index.php');
+                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),
+                            function(msg) {
+                                /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                if (msg.length > 2) {
+                                    alert(msg.toString());
+                                }
+                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                if (msg.length < 5) {
+                                    alert("We thank you for your donation.");
+                                    location.replace('index.php');
+                                }
+                            });
                 }
             });
             jQuery.extend(jQuery.validator.messages, {
@@ -130,8 +140,18 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {
-                    alert("Wir bedanken uns f&uuml;r Ihre Spende");
-                    location.replace('index.php');
+                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),
+                            function(msg) {
+                                /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                if (msg.length > 2) {
+                                    alert(msg.toString());
+                                }
+                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                if (msg.length < 5) {
+                                    alert("Wir bedanken uns f&uuml;r Ihre Spende");
+                                    location.replace('index.php');
+                                }
+                            });
                 }
             });
             jQuery.extend(jQuery.validator.messages, {
