@@ -24,14 +24,14 @@ Wir akzeptieren nur Visa Karten!<br>
 	<div><label class="zeile" for ="kreditkartennummer">Kreditkartennummer:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="month">Ablaufdatum:</label>
 	<select name="monat" id="month">
-	<option value="0">Monat</option>
+	<option value="-1">Monat</option>
 	<?php
 	$i = 0;
 	while ( $i++ < 12)
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
 	<select name="jahr" id="jahr">
-	<option value="0">Jahr</option>
+	<option value="-1">Jahr</option>
 	<?php
     $i = (date("Y")-1);
     while ( $i++ < (date("Y")+20))
