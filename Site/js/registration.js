@@ -2,18 +2,31 @@
 /* Ruft das PHP Register Script auf und Ã¼bergibt die Daten via POST */
 $(document).ready(function()
 {
+    
 
-    $.post("/scripts/GetLang.php", function(lang) {
-        if (lang.length > 2) {
-            $.validator.addMethod('phone', function(value) {
+    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script für Sprachauswahl*/
+        if (lang.length > 2) {  /*If Abfrage für Sprache, zuerst English*/
+            $.validator.addMethod('phone', function(value) { /*Selbst geschriebene Validation Klasse für Telefonnummer */
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
             }, 'Please enter a valid phone number');
+            
             $("#registerform").submit(function(e)
             {
+                
                 e.preventDefault();
+                errorLabelContainer: $("#Formular div.errorh"),
                 $('[name="Formular"]').validate({
-                    rules: {
+                    
+                    
+                    
+                    
+                    rules: {    /*Regeln für die Validation*/
+                        plz:{
+                            number: true,
+                            minlength: 5,
+                            maxlength: 5
+                        },
                         geschlecht: {
                             min: 0
                         },
@@ -28,10 +41,18 @@ $(document).ready(function()
                         },
                         telefon: {
                             phone: true
+                        },
+                        hausnummer:{
+                            number: true
                         }
 
                     },
-                    messages: {
+                    messages: { /*Spezielle Mitteilungen für bestimmte Fehleingaben*/
+                        plz:{
+                            number: "A Postcode can only contain numbers",
+                            minlength: jQuery.validator.format("A Postcode has only 5 digits."),
+                            maxlength: jQuery.validator.format("A Postcode has only 5 digits.")
+                        },
                         tag: {
                             min: jQuery.validator.format("Please enter a valid Date.")
                         },
@@ -49,7 +70,7 @@ $(document).ready(function()
                         }
                     },
                     invalidHandler: function(event, validator) {
-// 'this' refers to the form
+                    // 'this' refers to the form
                         var errors = validator.numberOfInvalids();
                         if (errors) {
                             var message = errors == 1
@@ -81,7 +102,8 @@ $(document).ready(function()
                     }
                 });
             });
-
+            
+            
             jQuery.extend(jQuery.validator.messages, {
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
@@ -103,7 +125,7 @@ $(document).ready(function()
             });
 
         }
-        else {
+        else {/*Deutsche Texte*/
             $.validator.addMethod('phone', function(value) {
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
@@ -113,7 +135,15 @@ $(document).ready(function()
             {
                 e.preventDefault();
                 $('[name="Formular"]').validate({
+                    errorLabelContainer: $("#Formular div.errorh"),
+                    
+                    
                     rules: {
+                        plz:{
+                            number: true,
+                            minlength: 5,
+                            maxlength: 5
+                        },
                         geschlecht: {
                             min: 0
                         },
@@ -128,28 +158,37 @@ $(document).ready(function()
                         },
                         telefon: {
                             phone: true
+                        },
+                        hausnummer:{
+                            number: true
                         }
+                       
 
                     },
                     messages: {
+                        plz:{
+                            number: "Eine Postleitzahl besteht nur aus Zahlen.",
+                            minlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen."),
+                            maxlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen.")
+                        },
                         tag: {
-                            min: jQuery.validator.format("Bitte ein g&ouml;ltiges Datum eingeben.")
+                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                         },
                         month: {
-                            min: jQuery.validator.format("Bitte ein g&ouml;ltiges Datum eingeben.")
+                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                         },
                         telefon: {
                             phoneUS: "Bitte eine Telefonnummer eingeben"
                         },
                         jahr: {
-                            min: jQuery.validator.format("Bitte ein g&ouml;ltiges Datum eingeben.")
+                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                         },
                         geschlecht: {
                             min: jQuery.validator.format("Bitte ein Geschlecht w&auml;hlen.")
                         }
                     },
                     invalidHandler: function(event, validator) {
-// 'this' refers to the form
+                    // 'this' refers to the form
                         var errors = validator.numberOfInvalids();
                         if (errors) {
                             var message = errors == 1
@@ -183,15 +222,15 @@ $(document).ready(function()
             });
 
             jQuery.extend(jQuery.validator.messages, {
-                required: "Wir ben&uuml;tigen dieses Feld.",
+                required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
-                email: "Bitte eine g&ouml;ltige Email Addresse angeben.",
-                url: "Bitte eine g&ouml;tltige URL angeben.",
-                date: "Bitte ein g&ouml;ltiges Datum angeben.",
-                dateISO: "Bitte ein g&ouml;ltiges Datum angeben (ISO).",
-                number: "Bitte eine g&ouml;ltige Zahl eingeben.",
-                digits: "Bitte nur Ziffern eingeben.",
-                creditcard: "Bitte eine g&ouml;ltige Kreditkartennummer eingeben.",
+                email: "Bitte eine g&uuml;ltige Email Addresse angeben.",
+                url: "Bitte eine g&uuml;tltige URL angeben.",
+                date: "Bitte ein g&uuml;ltiges Datum angeben.",
+                dateISO: "Bitte ein g&uuml;ltiges Datum angeben (ISO).",
+                number: "Bitte eine g&uuml;ltige Zahl eingeben.",
+                digits: "Bitte nur Zahlen eingeben.",
+                creditcard: "Bitte eine g&uuml;ltige Kreditkartennummer eingeben.",
                 equalTo: "Bitte das selbe nochmal eingeben.",
                 accept: "Please enter a value with a valid extension.",
                 maxlength: jQuery.validator.format("Bitte nicht mehr als {0} Zeichen."),
