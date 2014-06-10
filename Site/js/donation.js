@@ -16,7 +16,7 @@ $(document).ready(function()
                     },
                     pruefziffer: {
                         maxlength: 4,
-                        minlength: 4,
+                        minlength: 3,
                         number: true
                     },
                     betrag: {
@@ -101,7 +101,7 @@ $(document).ready(function()
                     },
                     pruefziffer: {
                         maxlength: 4,
-                        minlength: 4,
+                        minlength: 3,
                         number: true
                     },
                     betrag: {
