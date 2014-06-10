@@ -8,7 +8,7 @@
 			// Admin-Menu by Alexander Strobl
             echo '<div class="basic-wrapper-top"> Admin-Menu </div>';
             echo '<div class="basic-wrapper-bottom">';
-			echo '<li><a href="/de/admin.php"><span>Admin-Verwaltung</span></a></li>';
+			echo '<a href="/de/admin.php"><span>Admin-Verwaltung</span></a>';
             
             echo '</div>';
             if ( $_SESSION['sprache'] == "en" )
