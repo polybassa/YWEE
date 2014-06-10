@@ -14,6 +14,38 @@
         <link rel="stylesheet" href="/layout/normalize.css">
         <link rel="stylesheet" href="/layout/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+		
+		<script>
+		/*Browserweiche für das Video*/
+		function BrowserDetection() {
+                
+                //Check if browser is IE or not
+                if (navigator.userAgent.search("rv:11.0") >= 0) {
+                    document.write('<link rel="Stylesheet" href="/layout/video_ie.css" type="text/css" />');
+                }
+                //Check if browser is Chrome or not
+                else if (navigator.userAgent.search("Chrome") >= 0) {
+                    document.write('<link rel="Stylesheet" href="/layout/video_gc.css" type="text/css" />');
+                }
+                //Check if browser is Firefox or not
+                else if (navigator.userAgent.search("Firefox") >= 0) {
+                    document.write('<link rel="Stylesheet" href="/layout/video_mf.css" type="text/css" />');
+                }
+				/*
+                //Check if browser is Safari or not
+                else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+                    document.write('<link rel="Stylesheet" href="/layout/video_sa.css" type="text/css" />');
+                }
+                //Check if browser is Opera or not
+                else if (navigator.userAgent.search("Opera") >= 0) {
+                    document.write('<link rel="Stylesheet" href="/layout/video_op.css" type="text/css" />');
+                }*/
+				else
+					document.write('<link rel="Stylesheet" href="/layout/video_mf.css" type="text/css" />');
+				
+            }
+		BrowserDetection();
+		</script>
 
         <meta charset="utf-8">
         <?php header('X-UA-Compatible: IE=edge'); ?>
