@@ -1,7 +1,7 @@
 <!--author Florian Laufenboeck -->
 <h1>Profil <?php if($fl_username == $_SESSION['user']) echo "bearbeiten";?> </h1>
 
-<form name="Formular"method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user'];?>">
+<form name="Formular" method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user'];?>">
 	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["benutzername"];?>" id="benutzername" name="benutzername" required readonly></div>
 	<div><label for ="nachname">Name(nicht ändern):</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["nachname"];?>" name="nachname" id="nachname" readonly></div>
 	<div><label for ="vorname">Vorname:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["vorname"];?>" name="vorname" id="vorname" readonly></div>
