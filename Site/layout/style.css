@@ -470,10 +470,18 @@ input[type='range']::-webkit-slider-thumb {
 /*----------------------------------------------------------------------*/
 
 
-.scrollablecontentbox{
-    height:750px; 
+.scrollablecontentbox75{
+	height:75%;
     overflow:auto;
+	overflow-y:scroll;
 }
+
+.scrollablecontentbox{
+	height:750px;
+    overflow:auto;
+
+}
+
 
 @media screen and (max-width:1000px)
 {
