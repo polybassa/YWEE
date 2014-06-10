@@ -347,7 +347,9 @@ font-size: 90%;
 
 .Newsdate:before
 {
-content: " veröffentlichte am "
+
+content: " ver\0000f6ffentlichte am ";
+
 }
 .Newstopic
 {
@@ -448,9 +450,10 @@ form .line.submit {text-align:left;}
 
 
 .scrollablecontentbox75{
-	height:75%;
+	height:100%;
     overflow:auto;
 	overflow-y:scroll;
+
 }
 
 .scrollablecontentbox{
