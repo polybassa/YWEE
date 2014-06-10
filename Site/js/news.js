@@ -13,7 +13,7 @@ $(document).ready(function myFunction() {
 			
 			for(var i = 0; i < data.length; i++)
 			{
-				SingleEntry.push("<div class='NewsEntry'><div class='Newsauthor'>" +  data[i]['benutzername'] + "</div><br><div class='Newsdate'>" + data[i]['zeit'] + "</div><br><div class='Newstopic'>" + data[i]['betreff'] +"</div><br><div class='Newsmessage'>" + data[i]['nachricht'] + "</div></div>");
+				SingleEntry.push("<div class='basic-wrapper'><div class='Newsauthor'>" +  data[i]['benutzername'] + "</div><div class='Newsdate'>" + data[i]['zeit'] + "</div><br><div class='Newstopic'>" + data[i]['betreff'] +"</div><div class='Newsmessage'>" + data[i]['nachricht'] + "</div></div>");
 			}
 			
 			var AllEntries = SingleEntry.join('');
