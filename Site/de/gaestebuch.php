@@ -19,7 +19,7 @@
 		<div>
 			<label for ="nachrichtentext"></label>
 			<p>
-				<textarea name="eintrag" cols="33" rows="5" maxlength="300" placeholder ="Schreiben Sie hier ihren Gästebucheintrag..." required></textarea>
+				<textarea name="eintrag" cols="33" rows="5" maxlength="300" id="nachrichtentext" placeholder ="Schreiben Sie hier ihren Gästebucheintrag..." required></textarea>
 			</p>
 		</div>
 		<div class="line submit">
