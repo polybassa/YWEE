@@ -1,5 +1,6 @@
 <?php
 	//Autor: Tobias Schwindl
+     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 	 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
     // Baue Verbindung auf
     try 
@@ -15,7 +16,7 @@
     if ( preg_match("/[^\040\pL\pN_-]/u", $_POST['kreditkartennummer']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['pruefziffer']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['betrag'])) {
         exit;
     }
-    $_SESSION['user'] = admin;
+
     // replace multiple spaces with one
     $check_digits = preg_replace('/\s+/', ' ', $_POST['pruefziffer']);
 	$creditcardNumber = preg_replace('/\s+/', ' ', $_POST['kreditkartennummer']);
@@ -37,6 +38,5 @@
     $query->execute();
 	
 	//print_r($_POST);
-	header("Location: http://ebenezer-kunatse.net/");
 	$dbConnection = null;
 ?>
