@@ -12,9 +12,9 @@ $.widget("custom.catcomplete", $.ui.autocomplete, {
         var that = this,
                 currentCategory = "";
         $.each(items, function(index, item) {
-/*
- * render custom menue to enable categorys
-*/
+            /*
+             * render custom menue to enable categorys
+             */
             if (item.typ != currentCategory) {
                 var temptyp;
                 if (item.typ === "user") {
@@ -51,16 +51,16 @@ $(function() {
     $('[name="search"]').catcomplete({
         source: "/scripts/autocomplete.php",
         minLength: 2,
-        open: function(event, ui) {
-            $(".ui-autocomplete").mCustomScrollbar({
-                scrollButtons: {
-                    enable: true,
-                    scrollInertia: 600,
-                    autoDraggerLength: false
-                }
-            });
-            $(".ui-autocomplete").autocomplete("enable");
-        },
+        /* open: function(event, ui) {
+         $(".ui-autocomplete").mCustomScrollbar({
+         scrollButtons: {
+         enable: true,
+         scrollInertia: 600,
+         autoDraggerLength: false
+         }
+         });
+         $(".ui-autocomplete").autocomplete("enable");
+         },*/
         select: function(event, ui) {
             var url = ui.item.id;
             var value = ui.item.value;
