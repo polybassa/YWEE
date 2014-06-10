@@ -1,54 +1,56 @@
 <!-- Inhalt von: Maxi Schröter; Text von Alexander Strobl -->
-<script src="/js/registration.js" type="text/javascript"></script>
+<div class="scrollablecontentbox">
+  <script src="/js/registration.js" type="text/javascript"></script>
 
-<h1>Registrierung</h1>
+  <h1>Registrierung</h1>
 
-Hier k&#246;nnen Sie sich f&#252;r unsere Tutorenwebseite registrieren. Bitte f&#252;llen Sie alle Felder aus, um alle Funktionen der Webseite zur Verf&#252;gung stellen zu k&#246;nnen.
-Sie k&#246;nnen sp&#228;ter entscheiden, ob Sie die Rolle des Tutors oder des Sch&#252;lers einnehmen wollen.
+  Hier k&#246;nnen Sie sich f&#252;r unsere Tutorenwebseite registrieren. Bitte f&#252;llen Sie alle Felder aus, um alle Funktionen der Webseite zur Verf&#252;gung stellen zu k&#246;nnen.
+  Sie k&#246;nnen sp&#228;ter entscheiden, ob Sie die Rolle des Tutors oder des Sch&#252;lers einnehmen wollen.
 
-<form name="Formular" method="post" action="#" id="registerform">
+  <form name="Formular" method="post" action="#" id="registerform">
 
 
 
-  <div><label class="zeile" for ="geschlecht">Geschlecht:</label><select name="geschlecht" id="geschlecht">
-      <option value="-1">--</option>
-      <option value="0">Frau</option>
-      <option value="1">Mann</option>
-    </select>
-  </div>
-  <div><label class="zeile" for ="nachname">Name:</label><input type="text" size="45" maxlength ="45" class="eingabe" placeholder ="Name" name="nachname" id="nachname" required></div>
-  <div><label class="zeile" for ="vorname">Vorname:</label><input type="text" size="45" maxlength ="45" class="eingabe"  placeholder ="Vorname" name="vorname" id="vorname" required></div>
-  <div><label class="zeile" for ="email">E-Mail:</label><input type="email" size="45" maxlength ="45" class="eingabe" placeholder ="beispiel@email.de" id="email" name="email" required></div>
-  <div><label class="zeile" for ="day">Geburtsdatum:</label>
-    <select name="tag" id="day"><option value="-1">Tag</option>
-      <?php 
-      $i = 0;
-      while ( $i++ < 31)
-      echo '<option value="'.$i.'">'.$i.'</option>'; ?></select>
-    <select name="monat" id="month">
-      <option value="-1">Monat</option>
-      <?php
-      $i = 0;
-      while ( $i++ < 12)
-      echo '<option value="'.$i.'">'.$i.'</option>';?>
-    </select>
-    <select name="jahr" id="jahr">
-      <option value="-1">Jahr</option>
-      <?php
-      $i = date("Y");
-      while ( $i-- > 1900)
-      echo '<option value="'.$i.'">'.$i.'</option>';?>
-    </select>
-  </div>
-  <div><label class="zeile" for ="plz">Postleitzahl:</label><input type="text" class="eingabe" size="45" placeholder ="00000" maxlength ="5" id="plz" name="plz" required></div>
-  <div><label class="zeile" for ="wohnort">Wohnort:</label><input type="text" size="45" class="eingabe" maxlength ="45" placeholder ="Wohnort" id="wohnort" name="wohnort" required></div>
-  <div><label class="zeile" for ="strasse">Stra&szlig;e:</label><input type="text" size="45" class="eingabe" maxlength ="45" placeholder ="Stra&#223;e" id="strasse" name="strasse" required></div>
-  <div><label class="zeile" for ="hausnummer">Hausnummer:</label><input type="text" size="45" class="eingabe" placeholder ="45" id="hausnummer" name="hausnummer" required></div>
-  <div><label class="zeile" for ="hausnummerzusatz">Hausnummerzusatz:</label><input type="text" size="45" class="eingabe" maxlength ="20" placeholder ="45" id="hausnummerzusatz" name="hausnummerzusatz"></div>
-  <div><label class="zeile" for ="telefon">Telefon:</label><input type="tel" size="45" placeholder ="0190666666" class="eingabe" maxlength ="15" id="telefon" name="telefon" required></div>
-  <div><label class="zeile" for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength ="20" class="eingabe" placeholder="Benutzername" id="benutzername" name="benutzername" required></div>
-  <div><label class="zeile" for ="pw1">Passwort:</label><input type="password" size="45" maxlength ="45" name="passwort" class="eingabe" placeholder="Passwort" id="pw1" required></div>
-  <div><label class="zeile" for ="pw2">Passwort best&uuml;tigen:</label><input type="password" maxlength ="45" size="45" class="eingabe" name="passwortcheck" placeholder="Passwort" id ="pw2" required></div>
-  <div class="line submit"><input type="submit" value="Absenden"></div>
+    <div><label class="zeile" for ="geschlecht">Geschlecht:</label><select name="geschlecht" id="geschlecht">
+        <option value="-1">--</option>
+        <option value="0">Frau</option>
+        <option value="1">Mann</option>
+      </select>
+    </div>
+    <div><label class="zeile" for ="nachname">Name:</label><input type="text" size="45" maxlength ="45" class="eingabe" placeholder ="Name" name="nachname" id="nachname" required></div>
+    <div><label class="zeile" for ="vorname">Vorname:</label><input type="text" size="45" maxlength ="45" class="eingabe"  placeholder ="Vorname" name="vorname" id="vorname" required></div>
+    <div><label class="zeile" for ="email">E-Mail:</label><input type="email" size="45" maxlength ="45" class="eingabe" placeholder ="beispiel@email.de" id="email" name="email" required></div>
+    <div><label class="zeile" for ="day">Geburtsdatum:</label>
+      <select name="tag" id="day"><option value="-1">Tag</option>
+        <?php 
+        $i = 0;
+        while ( $i++ < 31)
+        echo '<option value="'.$i.'">'.$i.'</option>'; ?></select>
+      <select name="monat" id="month">
+        <option value="-1">Monat</option>
+        <?php
+        $i = 0;
+        while ( $i++ < 12)
+        echo '<option value="'.$i.'">'.$i.'</option>';?>
+      </select>
+      <select name="jahr" id="jahr">
+        <option value="-1">Jahr</option>
+        <?php
+        $i = date("Y");
+        while ( $i-- > 1900)
+        echo '<option value="'.$i.'">'.$i.'</option>';?>
+      </select>
+    </div>
+    <div><label class="zeile" for ="plz">Postleitzahl:</label><input type="text" class="eingabe" size="45" placeholder ="00000" maxlength ="5" id="plz" name="plz" required></div>
+    <div><label class="zeile" for ="wohnort">Wohnort:</label><input type="text" size="45" class="eingabe" maxlength ="45" placeholder ="Wohnort" id="wohnort" name="wohnort" required></div>
+    <div><label class="zeile" for ="strasse">Stra&szlig;e:</label><input type="text" size="45" class="eingabe" maxlength ="45" placeholder ="Stra&#223;e" id="strasse" name="strasse" required></div>
+    <div><label class="zeile" for ="hausnummer">Hausnummer:</label><input type="text" size="45" class="eingabe" placeholder ="45" id="hausnummer" name="hausnummer" required></div>
+    <div><label class="zeile" for ="hausnummerzusatz">Hausnummerzusatz:</label><input type="text" size="45" class="eingabe" maxlength ="20" placeholder ="45" id="hausnummerzusatz" name="hausnummerzusatz"></div>
+    <div><label class="zeile" for ="telefon">Telefon:</label><input type="tel" size="45" placeholder ="0190666666" class="eingabe" maxlength ="15" id="telefon" name="telefon" required></div>
+    <div><label class="zeile" for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength ="20" class="eingabe" placeholder="Benutzername" id="benutzername" name="benutzername" required></div>
+    <div><label class="zeile" for ="pw1">Passwort:</label><input type="password" size="45" maxlength ="45" name="passwort" class="eingabe" placeholder="Passwort" id="pw1" required></div>
+    <div><label class="zeile" for ="pw2">Passwort best&auml;tigen:</label><input type="password" maxlength ="45" size="45" class="eingabe" name="passwortcheck" placeholder="Passwort" id ="pw2" required></div>
+    <div class="line submit"><input type="submit" value="Absenden"></div>
 
-</form>
+  </form>
+</div>

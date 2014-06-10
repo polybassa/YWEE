@@ -2,108 +2,89 @@
 /* Ruft das PHP Register Script auf und Ã¼bergibt die Daten via POST */
 $(document).ready(function()
 {
-    
 
-    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script für Sprachauswahl*/
-        if (lang.length > 2) {  /*If Abfrage für Sprache, zuerst English*/
-            $.validator.addMethod('phone', function(value) { /*Selbst geschriebene Validation Klasse für Telefonnummer */
+
+    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script fï¿½r Sprachauswahl*/
+        if (lang.length > 2) {  /*If Abfrage fï¿½r Sprache, zuerst English*/
+            $.validator.addMethod('phone', function(value) { /*Selbst geschriebene Validation Klasse fï¿½r Telefonnummer */
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
             }, 'Please enter a valid phone number');
-            
-            $("#registerform").submit(function(e)
-            {
-                
-                e.preventDefault();
-                errorLabelContainer: $("#Formular div.errorh"),
-                $('[name="Formular"]').validate({
-                    
-                    
-                    
-                    
-                    rules: {    /*Regeln für die Validation*/
-                        plz:{
-                            number: true,
-                            minlength: 5,
-                            maxlength: 5
-                        },
-                        geschlecht: {
-                            min: 0
-                        },
-                        tag: {
-                            min: 1
-                        },
-                        jahr: {
-                            min: 1
-                        },
-                        month: {
-                            min: 1
-                        },
-                        telefon: {
-                            phone: true
-                        },
-                        hausnummer:{
-                            number: true
-                        }
 
+            $("#registerform").validate({
+                rules: {/*Regeln fï¿½r die Validation*/
+                    plz: {
+                        number: true,
+                        minlength: 5,
+                        maxlength: 5
                     },
-                    messages: { /*Spezielle Mitteilungen für bestimmte Fehleingaben*/
-                        plz:{
-                            number: "A Postcode can only contain numbers",
-                            minlength: jQuery.validator.format("A Postcode has only 5 digits."),
-                            maxlength: jQuery.validator.format("A Postcode has only 5 digits.")
-                        },
-                        tag: {
-                            min: jQuery.validator.format("Please enter a valid Date.")
-                        },
-                        month: {
-                            min: jQuery.validator.format("Please enter a valid Date.")
-                        },
-                        telefon: {
-                            phoneUS: "Please enter a valid phone number"
-                        },
-                        jahr: {
-                            min: jQuery.validator.format("Please enter a valid Date.")
-                        },
-                        geschlecht: {
-                            min: jQuery.validator.format("Please select a gender.")
-                        }
+                    geschlecht: {
+                        min: 0
                     },
-                    invalidHandler: function(event, validator) {
-                    // 'this' refers to the form
-                        var errors = validator.numberOfInvalids();
-                        if (errors) {
-                            var message = errors == 1
-                                    ? 'You missed 1 field. It has been highlighted'
-                                    : 'You missed ' + errors + ' fields. They have been highlighted';
-                            $("div.error span").html(message);
-                            $("div.error").show();
-                        } else {
-                            $("div.error").hide();
-                        }
+                    tag: {
+                        min: 1
                     },
-                    submitHandler: function(form) {
-                        $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
-                                function(msg) {
-                                    /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
-                                    if (msg.length > 2) {
-                                        alert(msg);
-                                    }
-                                    /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
-                                    if (msg.length < 5) {
-
-                                        alert("The registration was successful, please wait till you get unlocked.");
-                                        location.replace('index.php');
-
-
-                                    }
-                                });
-                        //form.submit();
+                    jahr: {
+                        min: 1
+                    },
+                    month: {
+                        min: 1
+                    },
+                    telefon: {
+                        phone: true
+                    },
+                    hausnummer: {
+                        number: true
                     }
-                });
+                },
+                messages: {/*Spezielle Mitteilungen fï¿½r bestimmte Fehleingaben*/
+                    plz: {
+                        number: "A Postcode can only contain numbers",
+                        minlength: jQuery.validator.format("A Postcode has only 5 digits."),
+                        maxlength: jQuery.validator.format("A Postcode has only 5 digits.")
+                    },
+                    tag: {
+                        min: jQuery.validator.format("Please enter a valid Date.")
+                    },
+                    month: {
+                        min: jQuery.validator.format("Please enter a valid Date.")
+                    },
+                    telefon: {
+                        phoneUS: "Please enter a valid phone number"
+                    },
+                    jahr: {
+                        min: jQuery.validator.format("Please enter a valid Date.")
+                    },
+                    geschlecht: {
+                        min: jQuery.validator.format("Please select a gender.")
+                    }
+                },
+                invalidHandler: function(event, validator) {
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        var message = (errors === 1) ? 'You missed 1 field. It has been highlighted' : 'You missed ' + errors + ' fields. They have been highlighted';
+                        $("div.error span").html(message);
+                        $("div.error").show();
+                        alert(message.toString());
+                    } else {
+                        $("div.error").hide();
+                    }
+                },
+                submitHandler: function(form) {
+                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
+                            function(msg) {
+                                /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                if (msg.length > 2) {
+                                    alert(msg.toString());
+                                }
+                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                if (msg.length < 5) {
+                                    alert("The registration was successful, please wait till you get unlocked.");
+                                    location.replace('index.php');
+                                }
+                            });
+                }
             });
-            
-            
             jQuery.extend(jQuery.validator.messages, {
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
@@ -123,7 +104,6 @@ $(document).ready(function()
                 max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
                 min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
             });
-
         }
         else {/*Deutsche Texte*/
             $.validator.addMethod('phone', function(value) {
@@ -131,94 +111,79 @@ $(document).ready(function()
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
             }, 'Bitte eine g&uuml;ltige Telefonnummer angeben.');
 
-            $("#registerform").submit(function(e)
-            {
-                e.preventDefault();
-                $('[name="Formular"]').validate({
-                    errorLabelContainer: $("#Formular div.errorh"),
-                    
-                    
-                    rules: {
-                        plz:{
-                            number: true,
-                            minlength: 5,
-                            maxlength: 5
-                        },
-                        geschlecht: {
-                            min: 0
-                        },
-                        tag: {
-                            min: 1
-                        },
-                        jahr: {
-                            min: 1
-                        },
-                        month: {
-                            min: 1
-                        },
-                        telefon: {
-                            phone: true
-                        },
-                        hausnummer:{
-                            number: true
-                        }
-                       
-
+            $("#registerform").validate({
+                rules: {
+                    plz: {
+                        number: true,
+                        minlength: 5,
+                        maxlength: 5
                     },
-                    messages: {
-                        plz:{
-                            number: "Eine Postleitzahl besteht nur aus Zahlen.",
-                            minlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen."),
-                            maxlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen.")
-                        },
-                        tag: {
-                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                        },
-                        month: {
-                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                        },
-                        telefon: {
-                            phoneUS: "Bitte eine Telefonnummer eingeben"
-                        },
-                        jahr: {
-                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                        },
-                        geschlecht: {
-                            min: jQuery.validator.format("Bitte ein Geschlecht w&auml;hlen.")
-                        }
+                    geschlecht: {
+                        min: 0
                     },
-                    invalidHandler: function(event, validator) {
-                    // 'this' refers to the form
-                        var errors = validator.numberOfInvalids();
-                        if (errors) {
-                            var message = errors == 1
-                                    ? 'Du hast ein Feld vergessen es wurde hervorgehoben'
-                                    : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
-                            $("div.error span").html(message);
-                            $("div.error").show();
-                        } else {
-                            $("div.error").hide();
-                        }
+                    tag: {
+                        min: 1
                     },
-                    submitHandler: function(form) {
-                        $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
-                                function(msg) {
-                                    /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
-                                    if (msg.length > 2) {
-                                        alert(msg);
-                                    }
-                                    /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
-                                    if (msg.length < 5) {
-
-                                        alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");
-                                        location.replace('index.php');
-
-
-                                    }
-                                });
-                        //form.submit();
+                    jahr: {
+                        min: 1
+                    },
+                    month: {
+                        min: 1
+                    },
+                    telefon: {
+                        phone: true
+                    },
+                    hausnummer: {
+                        number: true
                     }
-                });
+                },
+                messages: {
+                    plz: {
+                        number: "Eine Postleitzahl besteht nur aus Zahlen.",
+                        minlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen."),
+                        maxlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen.")
+                    },
+                    tag: {
+                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                    },
+                    month: {
+                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                    },
+                    telefon: {
+                        phoneUS: "Bitte eine Telefonnummer eingeben"
+                    },
+                    jahr: {
+                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                    },
+                    geschlecht: {
+                        min: jQuery.validator.format("Bitte ein Geschlecht w&auml;hlen.")
+                    }
+                },
+                invalidHandler: function(event, validator) {
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        var message = (errors == 1) ? 'Du hast ein Feld vergessen es wurde hervorgehoben' : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
+                        alert(message.toString());
+                        $("div.error span").html(message);
+                        $("div.error").show();
+                    } else {
+                        $("div.error").hide();
+                    }
+                },
+                submitHandler: function(form) {
+                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
+                            function(msg) {
+                                /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                if (msg.length > 2) {
+                                    alert(msg.toString());
+                                }
+                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                if (msg.length < 5) {
+                                    alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");
+                                    location.replace('index.php');
+                                }
+                            });
+                }
             });
 
             jQuery.extend(jQuery.validator.messages, {
@@ -242,7 +207,6 @@ $(document).ready(function()
             });
         }
     });
-
 });
 
 
