@@ -144,7 +144,9 @@ width: auto;
     margin: 0 0.8%;
     width:56.8%;
     height:750px;
-    overflow:hidden;
+	overflow:hidden;
+	
+   
   
 	/*fixes IE <9*/
 	float:none\9;
@@ -444,17 +446,39 @@ form .line {clear:both;}
 form .line.submit {text-align:left;}
 
 
-/*------------style for vido by Matthias Götz und Freunde----------------*/
-/*--------------------------jetzt in video.css---------------------------*/
-/*-----------------------------------------------------------------------*/
 
 
-.scrollablecontentbox75{
+#scrollablecontentboxguestebuch_en{
 	height:100%;
-    overflow:auto;
+    overflow:hidden;
 	overflow-y:scroll;
 
 }
+
+#scrollablecontentboxnews_en{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+
+}
+
+
+#scrollablecontentboxguestebuch_de{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+}
+
+#scrollablecontentboxnews_de{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+
+}
+
 
 .scrollablecontentbox{
 	height:750px;
