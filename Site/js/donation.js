@@ -1,73 +1,64 @@
-/* Autor Maxi Schröter */
+/* Autor Maxi Schrï¿½ter */
 /* Ruft das PHP Register Script auf und Ã¼bergibt die Daten via POST */
 $(document).ready(function()
 {
 
     $.post("/scripts/GetLang.php", function(lang) {
         if (lang.length > 2) {
-            $("#paymentform").submit(function(e)
-            {
-                e.preventDefault();
-                $.validator.addMethod('positiveNumber',
-                        function(value) {
-                            return Number(value) > 0;
-                        }, 'Enter a positive value.');
-                $('[name="Formular"]').validate({
-                    rules: {
-                        kreditkartennummer: {
-                            creditcard: true
-                        },
-                        pruefziffer: {
-                            maxlength: 4,
-                            minlength: 4,
-                            number: true
-                        },
-                        betrag: {
-                            min: 0,
-                            positiveNumber: true
-                        },
-                        jahr: {
-                            min: 1
-                        },
-                        month: {
-                            min: 1
-                        }
-
-
+            $.validator.addMethod('positiveNumber',
+                    function(value) {
+                        return Number(value) > 0;
+                    }, 'Enter a positive value.');
+            $("#paymentform").validate({
+                rules: {
+                    kreditkartennummer: {
+                        creditcard: true
                     },
-                    messages: {
-                        betrag: {
-                            min: jQuery.validator.format("You cannot spend 0 &euro;.")
-                        },
-                        month: {
-                            min: jQuery.validator.format("Please enter a valid Date.")
-                        },
-                        jahr: {
-                            min: jQuery.validator.format("Please enter a valid Date.")
-                        }
-
+                    pruefziffer: {
+                        maxlength: 4,
+                        minlength: 4,
+                        number: true
                     },
-                    invalidHandler: function(event, validator) {
-                        // 'this' refers to the form
-                        var errors = validator.numberOfInvalids();
-                        if (errors) {
-                            var message = errors == 1
-                                    ? 'You missed 1 field. It has been highlighted'
-                                    : 'You missed ' + errors + ' fields. They have been highlighted';
-                            $("div.error span").html(message);
-                            $("div.error").show();
-                        } else {
-                            $("div.error").hide();
-                        }
+                    betrag: {
+                        min: 0,
+                        positiveNumber: true
                     },
-                    submitHandler: function(form) {
-                        alert("We thank you for your donation.");
-                        location.replace('index.php');
+                    jahr: {
+                        min: 1
+                    },
+                    month: {
+                        min: 1
                     }
-
-                });
+                },
+                messages: {
+                    betrag: {
+                        min: jQuery.validator.format("You cannot spend 0 &euro;.")
+                    },
+                    month: {
+                        min: jQuery.validator.format("Please enter a valid Date.")
+                    },
+                    jahr: {
+                        min: jQuery.validator.format("Please enter a valid Date.")
+                    }
+                },
+                invalidHandler: function(event, validator) {
+                    // 'this' refers to the form
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        var message = errors == 1
+                                ? 'You missed 1 field. It has been highlighted'
+                                : 'You missed ' + errors + ' fields. They have been highlighted';
+                        $("div.error span").html(message);
+                        $("div.error").show();
+                    } else {
+                        $("div.error").hide();
+                    }
+                },
+                submitHandler: function(form) {
+                    alert("We thank you for your donation.");
+                    location.replace('index.php');
+                }
             });
-
             jQuery.extend(jQuery.validator.messages, {
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
@@ -87,70 +78,62 @@ $(document).ready(function()
                 max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
                 min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
             });
-
         }
         else {
-
-            $("#payment").submit(function(e)
-            {
-                e.preventDefault();
-                $.validator.addMethod('positiveNumber',
-                        function(value) {
-                            return Number(value) > 0;
-                        }, 'Nur positive Beträge.');
-                $('[name="Formular"]').validate({
-                    rules: {
-                        kreditkartennummer: {
-                            creditcard: true
-                        },
-                        pruefziffer: {
-                            maxlength: 4,
-                            minlength: 4,
-                            number: true
-                        },
-                        betrag: {
-                            min: 0,
-                            positiveNumber: true
-                        },
-                        jahr: {
-                            min: 1
-                        },
-                        month: {
-                            min: 1
-                        }
+            $.validator.addMethod('positiveNumber',
+                    function(value) {
+                        return Number(value) > 0;
+                    }, 'Nur positive Betr&auml;ge.');
+            $("#paymentform").validate({
+                rules: {
+                    kreditkartennummer: {
+                        creditcard: true
                     },
-                    messages: {
-                        betrag: {
-                            min: jQuery.validator.format("Du kannst keine 0 &euro; spenden.")
-                        },
-                        month: {
-                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                        },
-                        jahr: {
-                            min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                        }
+                    pruefziffer: {
+                        maxlength: 4,
+                        minlength: 4,
+                        number: true
                     },
-                    invalidHandler: function(event, validator) {
-// 'this' refers to the form
-                        var errors = validator.numberOfInvalids();
-                        if (errors) {
-                            var message = errors == 1
-                                    ? 'Du hast ein Feld vergessen es wurde hervorgehoben'
-                                    : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
-                            $("div.error span").html(message);
-                            $("div.error").show();
-                        } else {
-                            $("div.error").hide();
-                        }
+                    betrag: {
+                        min: 0,
+                        positiveNumber: true
                     },
-                    submitHandler: function(form) {
-                        alert("Wir bedanken uns für Ihre Spende");
-                        location.replace('index.php');
+                    jahr: {
+                        min: 1
+                    },
+                    month: {
+                        min: 1
                     }
-
-                });
+                },
+                messages: {
+                    betrag: {
+                        min: jQuery.validator.format("Du kannst keine 0 &euro; spenden.")
+                    },
+                    month: {
+                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                    },
+                    jahr: {
+                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                    }
+                },
+                invalidHandler: function(event, validator) {
+// 'this' refers to the form
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        var message = errors == 1
+                                ? 'Du hast ein Feld vergessen es wurde hervorgehoben'
+                                : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
+                        $("div.error span").html(message);
+                        $("div.error").show();
+                    } else {
+                        $("div.error").hide();
+                    }
+                },
+                submitHandler: function(form) {
+                    alert("Wir bedanken uns f&uuml;r Ihre Spende");
+                    location.replace('index.php');
+                }
             });
-
             jQuery.extend(jQuery.validator.messages, {
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
