@@ -51,16 +51,6 @@ $(function() {
     $('[name="search"]').catcomplete({
         source: "/scripts/autocomplete.php",
         minLength: 2,
-        /* open: function(event, ui) {
-         $(".ui-autocomplete").mCustomScrollbar({
-         scrollButtons: {
-         enable: true,
-         scrollInertia: 600,
-         autoDraggerLength: false
-         }
-         });
-         $(".ui-autocomplete").autocomplete("enable");
-         },*/
         select: function(event, ui) {
             var url = ui.item.id;
             var value = ui.item.value;
