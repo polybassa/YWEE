@@ -23,9 +23,10 @@
 	$sum = preg_replace('/\s+/', ' ', $_POST['betrag']);
     // Set the case in which to return column_names.
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
-	
-	$real_date = $_POST['jahr'] . "-" . $_POST['monat'] ."-31";	
-	//print($real_date);
+
+    
+	$real_date = $_POST['jahr'] . "-" . $_POST['monat'] ."-1";	
+    //print($real_date);
     $query = $dbConnection->prepare("insert into abrechnungen (benutzername, kreditkartennummer, ablaufdatum, pruefziffer, betrag) VALUES ( :user, :number, :date, :check, :sum)");
 
 	$query->bindParam( ":user", $_SESSION['user'] );
