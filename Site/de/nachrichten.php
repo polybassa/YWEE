@@ -18,7 +18,7 @@
 	<form name="News" method="post" action="/scripts/WriteNews.php" id="newsform">
 	<input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
-		<div><label for ="betreff"></label><input type="text" size="44" maxlength = "60" placeholder = "Betreff" name="subject" id="betreff"required></div>
+		<div><label for ="betreff"></label><input type="text" size="44" maxlength = "60" placeholder = "Betreff" name="subject" id="betreff" required></div>
 		<div><label for ="nachrichtentext"></label>
 		<p><textarea name="nachricht" cols="33" rows="5" maxlength="300" placeholder ="Schreiben Sie hier ihre Nachricht..." required></textarea>
 		</p>
