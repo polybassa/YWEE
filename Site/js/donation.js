@@ -148,7 +148,7 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("Wir bedanken uns f&uuml;r Ihre Spende");
+                                    alert("Wir bedanken uns fuer Ihre Spende");
                                     location.replace('index.php');
                                 }
                             });
