@@ -9,11 +9,11 @@
         if ( $_SESSION['sprache'] == "en" )
         { ?> 	
 				<ul>
-					<li class="responsive has-sub"><a><span>Menu</span></a></li>
-					
+				
+	
 					<li><a href="/en/index.php"><span>Home</span></a></li>
 					<li><a href="/en/news.php"><span>News</span></a></li>
-					<li class="has-sub"><a><span>Corporate</span></a>
+					<li><a><span>Corporate</span></a>
 						<ul>
                             <li><a href="/en/corporate.php"><span>The Tutoren AG</span></a>
 							<li><a href="/en/contact.php"><span>Contact</span></a></li>
@@ -39,7 +39,7 @@
         else
         { ?>
 				<ul>
-					<li class="responsive has-sub"><a><span>Menü</span></a></li>
+				
 					
 					<li><a href="/de/index.php"><span>Home</span></a></li>
 					<li><a href="/de/nachrichten.php"><span>Nachrichten</span></a></li>
@@ -47,7 +47,7 @@
 						<ul>
                             <li><a href="/de/unternehmen.php"><span>Die Tutoren AG</span></a>
 							<li><a href="/de/kontakt.php"><span>Kontakt</span></a></li>
-							<li class="last"><a href="/de/gaestebuch.php"><span>Gästebuch</span></a></li>
+							<li><a href="/de/gaestebuch.php"><span>Gästebuch</span></a></li>
 						</ul>
 					</li>
 					<li><a href="/de/spenden.php"><span>Spenden</span></a></li>
