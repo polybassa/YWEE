@@ -38,7 +38,7 @@ We only accept Visa Cards!<br>
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></div>
 	<div><label class="zeile" for ="pruefziffer">Check Digits</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
-	<div><label class="zeile" for ="betrag">Amount:</label><input type="text" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
+	<div><label class="zeile" for ="betrag">Amount:</label><input type="text" size="45" maxlength ="20" class="eingabe" id="betrag" name="betrag" required></div>
 	<div class="line submit"><input type="submit" value="Submit"></div>
 </form>
 <?php

@@ -8,7 +8,7 @@ $(document).ready(function()
             $.validator.addMethod('positiveNumber',
                     function(value) {
                         return Number(value) > 0;
-                    }, 'Enter a positive value.');
+                    }, 'Enter a positive value or more than 0.');
             $("#paymentform").validate({
                 errorPlacement: function(error, element) {
                     if (element.attr("name") === "jahr") {
@@ -27,7 +27,8 @@ $(document).ready(function()
                         number: true
                     },
                     betrag: {
-                        min: 0,
+                        number: true,
+                        
                         positiveNumber: true
                     },
                     jahr: {
@@ -38,9 +39,7 @@ $(document).ready(function()
                     }
                 },
                 messages: {
-                    betrag: {
-                        min: jQuery.validator.format("You cannot spend 0 &euro;.")
-                    },
+                    
                     monat: {
                         min: jQuery.validator.format("Please enter a valid Date.")
                     },
@@ -100,7 +99,7 @@ $(document).ready(function()
             $.validator.addMethod('positiveNumber',
                     function(value) {
                         return Number(value) > 0;
-                    }, 'Nur positive Betr&auml;ge.');
+                    }, 'Nur positive Betr&auml;ge oder mehr als Null.');
             $("#paymentform").validate({
                 errorPlacement: function(error, element) {
 
@@ -121,7 +120,7 @@ $(document).ready(function()
                         number: true
                     },
                     betrag: {
-                        min: 0,
+                        number: true,
                         positiveNumber: true
                     },
                     jahr: {
@@ -132,9 +131,7 @@ $(document).ready(function()
                     }
                 },
                 messages: {
-                    betrag: {
-                        min: jQuery.validator.format("Du kannst keine 0 &euro; spenden.")
-                    },
+                    
                     monat: {
                         min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                     },
