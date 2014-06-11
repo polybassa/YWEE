@@ -144,7 +144,9 @@ width: auto;
     margin: 0 0.8%;
     width:56.8%;
     height:750px;
-    overflow:hidden;
+	overflow:hidden;
+	
+   
   
 	/*fixes IE <9*/
 	float:none\9;
@@ -333,6 +335,58 @@ p#databargb
     margin:0 auto;
 }
 
+.Newsauthor
+{
+font-size: 90%;
+
+}
+
+.Newsdate
+{
+font-size: 90%;
+
+}
+
+.Newsdate:before
+{
+
+content: " ver\0000f6ffentlichte am ";
+
+}
+.Newstopic
+{
+font-family:'Berkshire Swash' cursive;
+font-size: 130%;
+background-color:#EEEEEE;
+padding:5px;
+border-left: solid 1px #DE8642;
+border-right: solid 1px #DE8642;
+border-top: solid 1px #DE8642;
+-webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.Newsmessage
+{
+font-family:'Berkshire Swash' cursive;
+font-size: 110%;
+background-color:#EEEEEE;
+padding:5px;
+border-left: solid 1px #DE8642;
+border-right: solid 1px #DE8642;
+border-bottom: solid 1px #DE8642;
+ -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
 .button
 {
 width: auto;
@@ -392,15 +446,46 @@ form .line {clear:both;}
 form .line.submit {text-align:left;}
 
 
-/*------------style for vido by Matthias Götz und Freunde----------------*/
-/*--------------------------jetzt in video.css---------------------------*/
-/*-----------------------------------------------------------------------*/
+
+
+#scrollablecontentboxguestebuch_en{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+}
+
+#scrollablecontentboxnews_en{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+
+}
+
+
+#scrollablecontentboxguestebuch_de{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+}
+
+#scrollablecontentboxnews_de{
+	height:100%;
+    overflow:hidden;
+	overflow-y:scroll;
+
+
+}
 
 
 .scrollablecontentbox{
-    height:750px; 
+	height:750px;
     overflow:auto;
+
 }
+
 
 @media screen and (max-width:1000px)
 {

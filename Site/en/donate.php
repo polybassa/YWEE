@@ -39,7 +39,7 @@ We only accept Visa Cards!<br>
 	</select></div>
 	<div><label class="zeile" for ="pruefziffer">Check Digits</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
 	<div><label class="zeile" for ="betrag">Amount:</label><input type="number" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
-	<div class="line submit"><input type="submit" value="Best&#228;tigen"></div>
+	<div class="line submit"><input type="submit" value="Submit"></div>
 </form>
 <?php
 	}
