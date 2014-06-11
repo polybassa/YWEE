@@ -1,6 +1,6 @@
 <!-- Inhalt von: Maxi Schröter -->
 <script src="/js/registration.js" type="text/javascript"></script>
-
+<div class="scrollablecontentbox">
 <h1>Registration</h1>
 
 Here you can register for our tutoring website. Please fill in all information to ensure full functionality of our homepage. You can decide later whether you're in the role of a tutor or a student.
@@ -16,7 +16,7 @@ Here you can register for our tutoring website. Please fill in all information t
     $i = 0;
     while ( $i++ < 31)
     echo '<option value="'.$i.'">'.$i.'</option>';?></select>
-	<select name="monat" id="month">
+	<select name="monat" id="monat">
 	<option value="-1">Month</option>
 	<?php
 	$i = 0;
@@ -41,3 +41,4 @@ Here you can register for our tutoring website. Please fill in all information t
 	<div><label class="zeile" for ="pw2">Confirm password:</label><input type="password" class="eingabe" maxlength ="45" size="45" name="passwortcheck" placeholder="Password" id ="pw2" required></div>
 	<div class="line submit"><input type="submit" value="Submit"></div>
 </form>
+</div>

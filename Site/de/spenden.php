@@ -23,7 +23,7 @@ Wir akzeptieren nur Visa Karten!<br>
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">Kreditkartennummer:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="month">Ablaufdatum:</label>
-	<select name="monat" id="month">
+	<select name="monat" id="monat">
 	<option value="-1">Monat</option>
 	<?php
 	$i = 0;
