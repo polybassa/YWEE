@@ -82,7 +82,6 @@
         <!-- Inlclude for jquery validate -->
         <script src="/js/jquery.validate.min.js"></script>
         <!-- Includes for Menu responsive -->
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" src="/js/menu_jquery.js"></script>
 		
 		
