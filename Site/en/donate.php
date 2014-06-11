@@ -23,7 +23,7 @@ We only accept Visa Cards!<br>
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
 	<div><label class="zeile" for ="month">Expire Date:</label>
-	<select name="monat" id="month">
+	<select name="monat" id="monat">
 	<option value="0">Month</option>
 	<?php
 	$i = 0;
@@ -38,7 +38,7 @@ We only accept Visa Cards!<br>
     echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select></div>
 	<div><label class="zeile" for ="pruefziffer">Check Digits</label><input type="text" size="45" maxlength ="4" class="eingabe" placeholder="0000" id="pruefziffer" name="pruefziffer" required></div>
-	<div><label class="zeile" for ="betrag">Amount:</label><input type="number" size="45" maxlength ="4" class="eingabe" id="betrag" name="betrag" required></div>
+	<div><label class="zeile" for ="betrag">Amount:</label><input type="text" size="45" maxlength ="20" class="eingabe" id="betrag" name="betrag" required></div>
 	<div class="line submit"><input type="submit" value="Submit"></div>
 </form>
 <?php

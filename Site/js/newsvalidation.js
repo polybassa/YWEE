@@ -6,67 +6,16 @@ $(document).ready(function()
 
     $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script f�r Sprachauswahl*/
         if (lang.length > 2) {  /*If Abfrage f�r Sprache, zuerst English*/
-            $.validator.addMethod('phone', function(value) { /*Selbst geschriebene Validation Klasse f�r Telefonnummer */
-                var numbers = value.split(/\d/).length - 1;
-                return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
-            }, 'Please enter a valid phone number');
-
-            $("#registerform").validate({
+            $("#newsform").validate({
                 errorPlacement: function(error, element) {
-                    if (element.attr("name") === "jahr") {
-                        element.prev('label').replaceWith(error);
-                    }
-                    else if (element.attr("name") === "monat") {
-                        element.prev('label').replaceWith(error);
-                    }else {
-                        error.insertBefore(element);
-                    }
+                    error.insertBefore(element);
                 },
                 rules: {/*Regeln fuer die Validation*/
-                    plz: {
-                        number: true,
-                        minlength: 5,
-                        maxlength: 5
+                    betreff: {
+                        requierd: true
                     },
-                    geschlecht: {
-                        min: 0
-                    },
-                    tag: {
-                        min: 1
-                    },
-                    jahr: {
-                        min: 1
-                    },
-                    monat: {
-                        min: 1
-                    },
-                    telefon: {
-                        phone: true
-                    },
-                    hausnummer: {
-                        number: true
-                    }
-                },
-                messages: {/*Spezielle Mitteilungen f�r bestimmte Fehleingaben*/
-                    plz: {
-                        number: "A Postcode can only contain numbers",
-                        minlength: jQuery.validator.format("A Postcode has only 5 digits."),
-                        maxlength: jQuery.validator.format("A Postcode has only 5 digits.")
-                    },
-                    tag: {
-                        min: jQuery.validator.format("Please enter a valid Date.")
-                    },
-                    monat: {
-                        min: jQuery.validator.format("Please enter a valid Date.")
-                    },
-                    telefon: {
-                        phoneUS: "Please enter a valid phone number"
-                    },
-                    jahr: {
-                        min: jQuery.validator.format("Please enter a valid Date.")
-                    },
-                    geschlecht: {
-                        min: jQuery.validator.format("Please select a gender.")
+                    nachrichtentext: {
+                        requierd: true
                     }
                 },
                 invalidHandler: function(event, validator) {
@@ -81,7 +30,7 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {
-                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),
                             function(msg) {
                                 /* msg ist leer, außer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
@@ -89,7 +38,7 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("The registration was successful, please wait till you get unlocked.");
+                                    alert("Your news were submitted.");
                                     location.replace('index.php');
                                 }
                             });
@@ -116,67 +65,18 @@ $(document).ready(function()
             });
         }
         else {/*Deutsche Texte*/
-            $.validator.addMethod('phone', function(value) {
-                var numbers = value.split(/\d/).length - 1;
-                return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
-            }, 'Bitte eine g&uuml;ltige Telefonnummer angeben.');
 
-            $("#registerform").validate({
+            $("#newsform").validate({
                 errorPlacement: function(error, element) {
-                    if (element.attr("name") === "monat") {
-                        element.prev('label').replaceWith(error);
-                    }
-                    else if (element.attr("name") === "jahr") {
-                        element.prev('label').replaceWith(error);
-                    }else {
-                        error.insertBefore(element);
-                    }
+
+                    error.insertBefore(element);
                 },
                 rules: {
-                    plz: {
-                        number: true,
-                        minlength: 5,
-                        maxlength: 5
+                    betreff: {
+                        requierd: true
                     },
-                    geschlecht: {
-                        min: 0
-                    },
-                    tag: {
-                        min: 1
-                    },
-                    jahr: {
-                        min: 1
-                    },
-                    monat: {
-                        min: 1
-                    },
-                    telefon: {
-                        phone: true
-                    },
-                    hausnummer: {
-                        number: true
-                    }
-                },
-                messages: {
-                    plz: {
-                        number: "Eine Postleitzahl besteht nur aus Zahlen.",
-                        minlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen."),
-                        maxlength: jQuery.validator.format("Eine Postleitzahl hat nur 5 Stellen.")
-                    },
-                    tag: {
-                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                    },
-                    monat: {
-                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                    },
-                    telefon: {
-                        phoneUS: "Bitte eine Telefonnummer eingeben"
-                    },
-                    jahr: {
-                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                    },
-                    geschlecht: {
-                        min: jQuery.validator.format("Bitte ein Geschlecht w&auml;hlen.")
+                    nachrichtentext: {
+                        requierd: true
                     }
                 },
                 invalidHandler: function(event, validator) {
@@ -191,7 +91,7 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {
-                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(),
+                    $.post("/scripts/WriteNews.php", $("#registerform").serialize(),
                             function(msg) {
                                 /* msg ist leer, außer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
@@ -199,13 +99,12 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");
+                                    alert("Ihre Nachricht wurde versandt.");
                                     location.replace('index.php');
                                 }
                             });
                 }
             });
-
             jQuery.extend(jQuery.validator.messages, {
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
