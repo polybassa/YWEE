@@ -9,7 +9,6 @@
 	$titel = "Profil bearbeiten";
 	
 	$_SESSION['sprache'] = "de";
-	$_SESSION['user'] = "admin";
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
 	if(isset($_GET['username']))
