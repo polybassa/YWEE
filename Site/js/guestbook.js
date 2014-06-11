@@ -7,6 +7,7 @@ $(document).ready(function myFunction() {
 		type : 'post',
 		url : url,
 		dataType : 'json',
+                cache:false,
 		success : function(data)
 		{
 			var SingleEntry = new Array(data.length);

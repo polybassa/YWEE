@@ -91,16 +91,14 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {
-                    $.post("/scripts/WriteNews.php", $("#registerform").serialize(),
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),
                             function(msg) {
-                                /* msg ist leer, außer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
-                                if (msg.length > 2) {
-                                    alert(msg.toString());
-                                }
-                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                /* Bei Fehler, Nachicht vom Server ausgeben */
                                 if (msg.length < 5) {
                                     alert("Ihre Nachricht wurde versandt.");
                                     location.replace('index.php');
+                                } else {
+                                    alert(msg.toString());
                                 }
                             });
                 }
