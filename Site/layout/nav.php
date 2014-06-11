@@ -10,7 +10,7 @@
 	
 					<li><a href="/en/index.php"><span>Home</span></a></li>
 					<li><a href="/en/news.php"><span>News</span></a></li>
-					<li><a><span>Corporate</span></a>
+					<li class="has-sub"><a><span>Corporate</span></a>
 						<ul>
                             <li><a href="/en/corporate.php"><span>The Tutoren AG</span></a>
 							<li><a href="/en/contact.php"><span>Contact</span></a></li>
