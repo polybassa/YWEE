@@ -36,8 +36,14 @@ if (isset($_SESSION['logged-in'])) {
     <?php
 } else {
     ?>
-    Only logged-in users can add entries!
-    <br>
+    <div style="height:40px;">
+        Only logged-in users can add entries!
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#scrollablecontentboxguestebuch_en").height(710);
+        });
+    </script>
     <?php
 }
 

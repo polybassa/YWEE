@@ -36,8 +36,14 @@ if (isset($_SESSION['logged-in'])) {
     <?php
 } else {
     ?>
-    Nur eingeloggte User k&ouml;nnen G&auml;stebucheintr&auml;ge verfassen!
-    <br>
+    <div style="height:40px;">
+        Nur eingeloggte User k&ouml;nnen G&auml;stebucheintr&auml;ge verfassen!
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#scrollablecontentboxguestebuch_de").height(710);
+        });
+    </script>
     <?php
 }
 // Inkludiert den Inhalt    
