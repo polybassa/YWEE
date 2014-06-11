@@ -46,7 +46,7 @@ Tobias Schwindl
 	\hline
 	1.1 & 10.05.2014 & AS & Verbesserung & Missing Data added:  \newline Sequencediagram, Annahmen \\
 	\hline
-	1.2 & xx.06.2014 & Alle & Anpassung & \\
+	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
 	\hline
 	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
 	\hline
@@ -87,7 +87,7 @@ Tobias Schwindl
 \newpage
 \subsection{ER-Diagramm}
 \begin{figure}[!htbp]
-\fbox{\includegraphics[width=0.9\textwidth,page=1]{../../DB/ER-Diagramm.pdf}} \caption{Entity-Relation Diagramm der Datenbank}
+\fbox{\includegraphics[width=0.9\textwidth,page=1]{./Source/ER-Diagramm.pdf}} \caption{Entity-Relation Diagramm der Datenbank}
 \end{figure}
 \newpage
 \subsection{Activitydiagramm}
@@ -173,7 +173,7 @@ Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des T
 
 Jeder Besucher bekommt eine \underline{Serverseitige Sessionvariable}, in der die Sprache gespeichert wird. Im Kopf einer jeden Seite wird diese Variable mit der Sprache der aktuellen Seite definiert. Diese Variable wird im weiteren Verlauf der Seite genutzt um in den entsprechenden Bereichen wie in der "`Navigation"' genutzt um die Inhalte der entsprechenden Sprache zu laden. Dies wird nur f\"ur die Elemente genutzt, die auf jeder Seite eingebunden werden. Jede Seite besitzt eine "`Dummy-Datei"' in der der entsprechende Inhalt geladen wird. Diese "`Dummy-Datei"' wird f\"ur entsprechende \"Uberpr\"ufungen und f\"ur das ausf\"uhren von Scripten benutzt.
 
-Wechselt ein Benutzer die Sprache, dann wird er mithilfe von RewriteRules in einer htaccess Datei auf die entsprechende Seite der jeweils anderen Sprache geleitet. Es befindet sich eine htaccess Datei mit entsprechenden RewriteRules in den jeweiligen Ordner f\"ur die Sprachen.  \underline{PHP} pr\"uft zur Laufzeit welche Sprache gesetzt ist und l\"adt die entsprechende Sprache f\"ur das Template.
+Wechselt ein Benutzer die Sprache, dann wird er mithilfe von RewriteRules in einer htaccess Datei auf die entsprechende Seite der jeweils anderen Sprache geleitet. \underline{PHP} pr\"uft zur Laufzeit welche Sprache gesetzt ist und l\"adt die entsprechende Sprache f\"ur das Template.
 
 \subsubsection*{F17: Support und Kontaktdaten}
 
