@@ -191,12 +191,50 @@ footer
 {
     border-top: solid 3px #DE8642;
     background-color:#EEEEEE;
-    height:44px;
+    height:37px;
     clear: both;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+
 }
+
+.footer_link
+{
+	position: relative;
+	height: 14px;
+	margin:10px auto; 
+	margin-left:5%;
+	background: #EEEEEE;
+	width:95%;
+}
+.footer_link ul 
+{
+
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+
+}
+.footer_link ul li 
+{
+display:block;
+display: inline;
+padding:left 3%;
+}
+
+.footer_link ul li a
+{
+color:#000000;
+font-size:14px;
+}
+
+.footer_link ul li:hover  a 
+{
+color: #DE8642;
+
+}
+
 
 
 
