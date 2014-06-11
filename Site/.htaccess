@@ -1,4 +1,5 @@
 # Autor: Daniel Tatzel
+# Haupt htaccess
 
 ExpiresActive On
 ExpiresDefault "access plus 1 day"

@@ -3,9 +3,6 @@
         <?php
         $forwardto = basename( $_SERVER['PHP_SELF'] );
 
-        $deflag = "/images/de.png";
-        $enflag = "/images/en.png";
-
         if ( $_SESSION['sprache'] == "en" )
         { ?> 	
 				<ul>
@@ -32,7 +29,7 @@
                             echo '<li><a href="/en/profile.php"><span>Profile</span></a></li>';
                         }
                     ?>
-					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="'.$deflag.'" class="flag_img" alt="DE-Flagge"></a>'; ?> </li>		
+					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="/images/de.png" class="flag_img" alt="DE-Flagge"></a>'; ?> </li>		
 				</ul>
 		<?php
         }
@@ -62,7 +59,7 @@
                             echo '<li><a href="/de/profile.php"><span>Profil</span></a></li>';
                         }
                     ?>
-					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="'.$enflag.'" class="flag_img" alt="GB-Flagge"></a>'; ?> </li>
+					<li><?php echo'<a href="/en/'.$forwardto.'"><img src="/images/en.png" class="flag_img" alt="GB-Flagge"></a>'; ?> </li>
 				</ul>
 		<?php
         }
