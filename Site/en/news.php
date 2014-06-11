@@ -16,6 +16,7 @@
 		//$lang = $_SESSION['sprache'];
 ?>
 	<form name="News" method="post" action="/scripts/WriteNews.php" id="newsform">
+	<script src="/js/newsvalidation.js" type="text/javascript"></script>
 	<input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 		<div><label for ="betreff"></label><input type="text" size="44" maxlength = "60" placeholder = "Subject" name="subject" id="betreff" required></div>
