@@ -14,7 +14,7 @@
 	
 	if(isset($_SESSION['user']))
 	{
-		$theUserName = $_SESSION['user'];
+		$fl_username = $_SESSION['user'];
 		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/beeingTutor.php");
 		if(isset($_GET['newtutor']) and $_GET['newtutor'] == true)
 		{

@@ -12,7 +12,7 @@ body
     font-size: 11px;
     font-family: Verdana, Arial, SunSans-Regular, Sans-Serif 'Yesteryear''Berkshire Swash''Changa One''Lobster';
 
-	padding:0;
+    padding:0;
     margin:0;
     width: 100%;
 
@@ -71,8 +71,8 @@ img.download {vertical-align:middle;}
 }
 .logo_img
 {
-	width:300px; 
-	height:300px;
+    width:300px; 
+    height:300px;
 }
 
 
@@ -115,8 +115,8 @@ nav
 }
 .flag_img
 {
-height: 14px;
-width: auto;
+    height: 14px;
+    width: auto;
 
 }
 
@@ -144,20 +144,20 @@ width: auto;
     margin: 0 0.8%;
     width:56.8%;
     height:750px;
-	overflow:hidden;
-	
-   
-  
-	/*fixes IE <9*/
-	float:none\9;
-	margin:0 auto\9;
+    overflow:hidden;
+
+
+
+    /*fixes IE <9*/
+    float:none\9;
+    margin:0 auto\9;
 }
 
 /*wird gebraucht da ohne js kein Inhalt in leftbar und sonst die Positionen verschoben wären*/
 .no-js #content
 {
-	float:none;
-	margin: 0 auto;
+    float:none;
+    margin: 0 auto;
 }
 
 
@@ -191,12 +191,50 @@ footer
 {
     border-top: solid 3px #DE8642;
     background-color:#EEEEEE;
-    height:44px;
+    height:37px;
     clear: both;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
 }
+
+.footer_link
+{
+    position: relative;
+    height: 14px;
+    margin:10px auto; 
+    margin-left:5%;
+    background: #EEEEEE;
+    width:95%;
+}
+.footer_link ul 
+{
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+
+}
+.footer_link ul li 
+{
+    display:block;
+    display: inline;
+    padding:left 3%;
+}
+
+.footer_link ul li a
+{
+    color:#000000;
+    font-size:14px;
+}
+
+.footer_link ul li:hover  a 
+{
+    color: #DE8642;
+
+}
+
 
 
 
@@ -226,9 +264,9 @@ footer
     background-color:#DE8642;
     text-align:center;
     font-family: 'Changa One', cursive;
-	font-size:120%;
-	text-transform: uppercase;
-	margin: 0px 10px;
+    font-size:120%;
+    text-transform: uppercase;
+    margin: 0px 10px;
     padding:3px;
     overflow:hidden;
     border: solid 1px #c3c5c9;
@@ -254,8 +292,8 @@ footer
 {
     background-color: #ffffff;
     padding:10px 10px 10px 10px;
-    
-	overflow:hidden;
+
+    overflow:hidden;
     margin: 0px 10px 10px;
     border-left: solid 1px #c3c5c9;
     border-right: solid 1px #c3c5c9;
@@ -272,7 +310,7 @@ footer
 }
 .center
 {
-text-align: center;
+    text-align: center;
 }
 
 .orange
@@ -284,8 +322,8 @@ text-align: center;
 {
     width:75%;
     margin:0px auto;
-	margin-top: 20px;
-	
+    margin-top: 20px;
+
 }
 
 #loginform
@@ -300,7 +338,7 @@ text-align: center;
 #searchform
 .suchen_field
 {
-	width:80%;
+    width:80%;
 }
 
 
@@ -318,7 +356,7 @@ text-align: center;
 {
 
     font-family:'Berkshire Swash' cursive;
-	font-size: 110%;
+    font-size: 110%;
 }
 .GBauthor::first-letter
 {
@@ -337,32 +375,32 @@ p#databargb
 
 .Newsauthor
 {
-font-size: 90%;
+    font-size: 90%;
 
 }
 
 .Newsdate
 {
-font-size: 90%;
+    font-size: 90%;
 
 }
 
 .Newsdate:before
 {
 
-content: " ver\0000f6ffentlichte am ";
+    content: " ver\0000f6ffentlichte am ";
 
 }
 .Newstopic
 {
-font-family:'Berkshire Swash' cursive;
-font-size: 130%;
-background-color:#EEEEEE;
-padding:5px;
-border-left: solid 1px #DE8642;
-border-right: solid 1px #DE8642;
-border-top: solid 1px #DE8642;
--webkit-border-top-left-radius: 4px;
+    font-family:'Berkshire Swash' cursive;
+    font-size: 130%;
+    background-color:#EEEEEE;
+    padding:5px;
+    border-left: solid 1px #DE8642;
+    border-right: solid 1px #DE8642;
+    border-top: solid 1px #DE8642;
+    -webkit-border-top-left-radius: 4px;
     -webkit-border-top-right-radius: 4px;
     -moz-border-radius-topleft: 4px;
     -moz-border-radius-topright: 4px;
@@ -372,14 +410,12 @@ border-top: solid 1px #DE8642;
 
 .Newsmessage
 {
-font-family:'Berkshire Swash' cursive;
-font-size: 110%;
-background-color:#EEEEEE;
-padding:5px;
-border-left: solid 1px #DE8642;
-border-right: solid 1px #DE8642;
-border-bottom: solid 1px #DE8642;
- -webkit-border-bottom-right-radius: 4px;
+    background-color:#EEEEEE;
+    padding:5px;
+    border-left: solid 1px #DE8642;
+    border-right: solid 1px #DE8642;
+    border-bottom: solid 1px #DE8642;
+    -webkit-border-bottom-right-radius: 4px;
     -webkit-border-bottom-left-radius: 4px;
     -moz-border-radius-bottomright: 4px;
     -moz-border-radius-bottomleft: 4px;
@@ -387,52 +423,63 @@ border-bottom: solid 1px #DE8642;
     border-bottom-left-radius: 4px;
 }
 
+.Newsshow
+{
+
+}
+
+.Newsinner
+{
+    font-family:'Berkshire Swash' cursive;
+    font-size: 110%;
+}
+
 .button
 {
-width: auto;
-margin:  0 auto; 
-padding: 5px;
-border: solid 1px #DE8642;
-background-color: #eeeeee;
-text-align: center;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
+    width: auto;
+    margin:  0 auto; 
+    padding: 5px;
+    border: solid 1px #DE8642;
+    background-color: #eeeeee;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 
 }
 
 .button  a 
 {
-display: block;
-width: auto;
-font-size: 14px;
-text-decoration: none;
-color: #000000;
-text-transform: uppercase;
-font-weight: bold;
-list-style: none;
-font-family: Helvetica, sans-serif;
+    display: block;
+    width: auto;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    list-style: none;
+    font-family: Helvetica, sans-serif;
 
 }
 
 .button:hover  a 
 {
-color: #DE8642;
+    color: #DE8642;
 
 }
 
 
 #noscript
 {
-	background-color: #ffffff;
+    background-color: #ffffff;
     padding:10px;
     margin: 0px 10px 10px;
     border: solid 3px #FF0000;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-	font-size:175%;
-	color:#FF0000;
+    font-size:175%;
+    color:#FF0000;
 }
 
 
@@ -449,39 +496,39 @@ form .line.submit {text-align:left;}
 
 
 #scrollablecontentboxguestebuch_en{
-	height:100%;
+    height:100%;
     overflow:hidden;
-	overflow-y:scroll;
+    overflow-y:scroll;
 
 }
 
 #scrollablecontentboxnews_en{
-	height:100%;
+    height:100%;
     overflow:hidden;
-	overflow-y:scroll;
+    overflow-y:scroll;
 
 
 }
 
 
 #scrollablecontentboxguestebuch_de{
-	height:100%;
+    height:100%;
     overflow:hidden;
-	overflow-y:scroll;
+    overflow-y:scroll;
 
 }
 
 #scrollablecontentboxnews_de{
-	height:100%;
+    height:100%;
     overflow:hidden;
-	overflow-y:scroll;
+    overflow-y:scroll;
 
 
 }
 
 
 .scrollablecontentbox{
-	height:750px;
+    height:750px;
     overflow:auto;
 
 }
@@ -499,16 +546,16 @@ form .line.submit {text-align:left;}
         height:200px;
     }
     .slider_img 
-	{
+    {
         width:100%;
         height:200px;
     }
-	
-	.logo_img
-	{
-	width:200px; 
-	height:200px;
-	}
+
+    .logo_img
+    {
+        width:200px; 
+        height:200px;
+    }
 
 }
 
@@ -518,75 +565,75 @@ form .line.submit {text-align:left;}
 
 @media screen and (max-width:800px)
 {
-	
-	
+
+
     #wrapper
-	{
+    {
         min-height:1600px;
-		position: relative;
-	}
+        position: relative;
+    }
     #content
-	{
-		position: absolute;
+    {
+        position: absolute;
         top:0;
-		width:96.4%;
+        width:96.4%;
         margin-top: 10px;
-		margin-right: 0.8%;
-		margin-left:0.8%;
-	}
+        margin-right: 0.8%;
+        margin-left:0.8%;
+    }
     #left
-	{
-		position: absolute;
-		top:790px;
+    {
+        position: absolute;
+        top:790px;
         margin-left:-0.8%;
         width:50%;
-	}
+    }
     #right
-	{
-		position: absolute;
+    {
+        position: absolute;
         top:790px;
-		right: 0;
-		margin-right:-0.8%;
+        right: 0;
+        margin-right:-0.8%;
         width:50%;
-	}
+    }
     #banner 
-	{
+    {
         height:150px;
-	}
+    }
     #show 
-	{
+    {
         width:100%;
         height:150px;
-	}
+    }
     .slider_img 
-	{
+    {
         width:100%;
         height:150px;
-	}
-	
-	.logo_img
-	{
-		width:150px; 
-		height:150px;
-	}
+    }
 
-	
+    .logo_img
+    {
+        width:150px; 
+        height:150px;
+    }
+
+
 }
 
 
 @media screen and (max-width: 400px)
 {
-	#wrapper
-	{
-	min-height:2200px;
-	height:auto;
-	}
+    #wrapper
+    {
+        min-height:2200px;
+        height:auto;
+    }
 
 
     #left
     {
         top:1570px;
-		float:left;
+        float:left;
         width:100%;
         margin-bottom: 1.6%;;
     }
@@ -611,12 +658,12 @@ form .line.submit {text-align:left;}
         width:100%;
         height:100px;
     }
-	.logo_img
-	{
-	width:100px; 
-	height:100px;
-	}
+    .logo_img
+    {
+        width:100px; 
+        height:100px;
+    }
 
-	
+
 }
 

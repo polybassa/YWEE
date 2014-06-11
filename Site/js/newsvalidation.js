@@ -1,75 +1,44 @@
-/* Autor Maxi Schr�ter */
+/* Autor: Daniel Tatzel */
 /* Ruft das PHP Register Script auf und übergibt die Daten via POST */
 $(document).ready(function()
 {
 
-    $.post("/scripts/GetLang.php", function(lang) {
-        if (lang.length > 2) {
-            $.validator.addMethod('positiveNumber',
-                    function(value) {
-                        return Number(value) > 0;
-                    }, 'Enter a positive value or more than 0.');
-            $("#paymentform").validate({
+
+    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script f�r Sprachauswahl*/
+        if (lang.length > 2) {  /*If Abfrage f�r Sprache, zuerst English*/
+            $("#newsform").validate({
                 errorPlacement: function(error, element) {
-                    if (element.attr("name") === "jahr") {
-                        element.prev('label').replaceWith(error);
-                    } else {
-                        error.insertBefore(element);
-                    }
+                    error.insertBefore(element);
                 },
-                rules: {
-                    kreditkartennummer: {
-                        creditcard: true
+                rules: {/*Regeln fuer die Validation*/
+                    betreff: {
+                        requierd: true
                     },
-                    pruefziffer: {
-                        maxlength: 4,
-                        minlength: 3,
-                        number: true
-                    },
-                    betrag: {
-                        number: true,
-                        
-                        positiveNumber: true
-                    },
-                    jahr: {
-                        min: 1
-                    },
-                    monat: {
-                        min: 1
-                    }
-                },
-                messages: {
-                    
-                    monat: {
-                        min: jQuery.validator.format("Please enter a valid Date.")
-                    },
-                    jahr: {
-                        min: jQuery.validator.format("Please enter a valid Date.")
+                    nachrichtentext: {
+                        requierd: true
                     }
                 },
                 invalidHandler: function(event, validator) {
-                    // 'this' refers to the form
                     var errors = validator.numberOfInvalids();
                     if (errors) {
-                        var message = errors == 1
-                                ? 'You missed 1 field. It has been highlighted'
-                                : 'You missed ' + errors + ' fields. They have been highlighted';
+                        var message = (errors === 1) ? 'You missed 1 field. It has been highlighted' : 'You missed ' + errors + ' fields. They have been highlighted';
                         $("div.error span").html(message);
                         $("div.error").show();
+                        alert(message.toString());
                     } else {
                         $("div.error").hide();
                     }
                 },
                 submitHandler: function(form) {
-                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),
                             function(msg) {
-                                /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                /* msg ist leer, außer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
                                     alert(msg.toString());
                                 }
                                 /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("We thank you for your donation.");
+                                    alert("Your news were submitted.");
                                     location.replace('index.php');
                                 }
                             });
@@ -95,57 +64,26 @@ $(document).ready(function()
                 min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
             });
         }
-        else {
-            $.validator.addMethod('positiveNumber',
-                    function(value) {
-                        return Number(value) > 0;
-                    }, 'Nur positive Betr&auml;ge oder mehr als Null.');
-            $("#paymentform").validate({
+        else {/*Deutsche Texte*/
+
+            $("#newsform").validate({
                 errorPlacement: function(error, element) {
 
-
-                    if (element.attr("name") === "jahr") {
-                        element.prev('label').replaceWith(error);
-                    } else {
-                        error.insertBefore(element);
-                    }
+                    error.insertBefore(element);
                 },
                 rules: {
-                    kreditkartennummer: {
-                        creditcard: true
+                    betreff: {
+                        requierd: true
                     },
-                    pruefziffer: {
-                        maxlength: 4,
-                        minlength: 3,
-                        number: true
-                    },
-                    betrag: {
-                        number: true,
-                        positiveNumber: true
-                    },
-                    jahr: {
-                        min: 1
-                    },
-                    monat: {
-                        min: 1
-                    }
-                },
-                messages: {
-                    
-                    monat: {
-                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
-                    },
-                    jahr: {
-                        min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
+                    nachrichtentext: {
+                        requierd: true
                     }
                 },
                 invalidHandler: function(event, validator) {
-// 'this' refers to the form
                     var errors = validator.numberOfInvalids();
                     if (errors) {
-                        var message = errors == 1
-                                ? 'Du hast ein Feld vergessen es wurde hervorgehoben'
-                                : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
+                        var message = (errors == 1) ? 'Du hast ein Feld vergessen es wurde hervorgehoben' : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
+                        alert(message.toString());
                         $("div.error span").html(message);
                         $("div.error").show();
                     } else {
@@ -153,16 +91,14 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {
-                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),
                             function(msg) {
-                                /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
-                                if (msg.length > 2) {
-                                    alert(msg.toString());
-                                }
-                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                /* Bei Fehler, Nachicht vom Server ausgeben */
                                 if (msg.length < 5) {
-                                    alert("Wir bedanken uns fuer Ihre Spende");
+                                    alert("Ihre Nachricht wurde versandt.");
                                     location.replace('index.php');
+                                } else {
+                                    alert(msg.toString());
                                 }
                             });
                 }
@@ -175,7 +111,7 @@ $(document).ready(function()
                 date: "Bitte ein g&uuml;ltiges Datum angeben.",
                 dateISO: "Bitte ein g&uuml;ltiges Datum angeben (ISO).",
                 number: "Bitte eine g&uuml;ltige Zahl eingeben.",
-                digits: "Bitte nur Ziffern eingeben.",
+                digits: "Bitte nur Zahlen eingeben.",
                 creditcard: "Bitte eine g&uuml;ltige Kreditkartennummer eingeben.",
                 equalTo: "Bitte das selbe nochmal eingeben.",
                 accept: "Please enter a value with a valid extension.",
@@ -188,7 +124,6 @@ $(document).ready(function()
             });
         }
     });
-
 });
 
 

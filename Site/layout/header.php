@@ -81,7 +81,10 @@
         
         <!-- Inlclude for jquery validate -->
         <script src="/js/jquery.validate.min.js"></script>
-        
+        <!-- Includes for Menu responsive -->
+		<script type="text/javascript" src="/js/menu_jquery.js"></script>
+		
+		
 		<!-- font -->
 		<link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
@@ -145,8 +148,9 @@
                              </div>
 					</div>
 			</div><!-- Banner div fix-->
-                <?php
+
+            <?php
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/leftbar.php");  // Inkludiert den linken Balken
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/rightbar.php"); // Inkludiert den rechten Balken
-                ?>
+            ?>

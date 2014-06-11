@@ -19,3 +19,13 @@
 <?php if((!$tutor_result) and ($fl_username == $_SESSION['user'])) echo '<a class="btn" href="/de/tutor.php?new=true">Sie wollen Tutor werden</a>'; ?>
 <?php if(($tutor_result) and ($fl_username == $_SESSION['user'])) echo '<a href="/de/tutor.php"><input type="button" name="Tutorseite" value="Tutorverwaltung"></a>'; ?>
 <?php if($fl_username == $_SESSION['user']) echo '<a class="btn" href="/de/profile.php?DeleteProfile=true">Profil löschen</a>'; ?>
+<?php if(($tutor_result) and ($fl_username != $_SESSION['user']))
+	  {
+		// dieser part wird nur angezeigt, wenn der user tutor ist und ein anderer benutzer auf sein profil geht
+		echo "<br><h1>Tutorinformationen</h1> <br>";
+		echo "<h4>Dieser Tutor bietet folgende F&auml;cher an:</h4>";
+		// alle Fächer als tabelle anzeigen
+		echo '	<table border="1" rules="groups"><thead><tr><th>Fach</th><th>Stufe</th></tr></thead><tbody> ' .$allfach . '</tbody></table>';
+		echo "<h4>Dieser Tutor arbeitet im Umkreis von " . $umkreis ." km</h4>";
+	  }
+?>

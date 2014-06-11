@@ -12,7 +12,17 @@ $(document).ready(function()
             }, 'Please enter a valid phone number');
 
             $("#registerform").validate({
-                rules: {/*Regeln f�r die Validation*/
+                errorPlacement: function(error, element) {
+                    if (element.attr("name") === "jahr") {
+                        element.prev('label').replaceWith(error);
+                    }
+                    else if (element.attr("name") === "monat") {
+                        element.prev('label').replaceWith(error);
+                    }else {
+                        error.insertBefore(element);
+                    }
+                },
+                rules: {/*Regeln fuer die Validation*/
                     plz: {
                         number: true,
                         minlength: 5,
@@ -27,7 +37,7 @@ $(document).ready(function()
                     jahr: {
                         min: 1
                     },
-                    month: {
+                    monat: {
                         min: 1
                     },
                     telefon: {
@@ -46,7 +56,7 @@ $(document).ready(function()
                     tag: {
                         min: jQuery.validator.format("Please enter a valid Date.")
                     },
-                    month: {
+                    monat: {
                         min: jQuery.validator.format("Please enter a valid Date.")
                     },
                     telefon: {
@@ -112,6 +122,16 @@ $(document).ready(function()
             }, 'Bitte eine g&uuml;ltige Telefonnummer angeben.');
 
             $("#registerform").validate({
+                errorPlacement: function(error, element) {
+                    if (element.attr("name") === "monat") {
+                        element.prev('label').replaceWith(error);
+                    }
+                    else if (element.attr("name") === "jahr") {
+                        element.prev('label').replaceWith(error);
+                    }else {
+                        error.insertBefore(element);
+                    }
+                },
                 rules: {
                     plz: {
                         number: true,
@@ -127,7 +147,7 @@ $(document).ready(function()
                     jahr: {
                         min: 1
                     },
-                    month: {
+                    monat: {
                         min: 1
                     },
                     telefon: {
@@ -146,7 +166,7 @@ $(document).ready(function()
                     tag: {
                         min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                     },
-                    month: {
+                    monat: {
                         min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                     },
                     telefon: {
