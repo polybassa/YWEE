@@ -11,9 +11,14 @@
 	width: auto;
 }
 /*blendet den menu Punkt aus, da er nur für responsive benörigt wird */
-.cssmenu ul li.responsive
-{
-display:none;
+.cssmenu #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
 }
 
 /*-----stlyes the list-----*/
@@ -35,6 +40,11 @@ display:none;
 	width: 100%;
 	z-index:10;
 }
+
+.cssmenu #menu-button {
+  display: none;
+}
+
 /*-----styles the drop - down menu points*/
 .cssmenu > ul > li 
 {
@@ -141,118 +151,93 @@ display:none;
 }
 
 
-
-
-
-@media screen and (max-width: 800px) 
+@media screen and (max-width: 850px) 
 {
-	
-	.cssmenu ul 
-	{
-		width: auto;
-	}
+ .cssmenu {
+    background: #eeeeee;
+  }
+  .cssmenu > ul {
+    display: none;
+  }
+  .cssmenu > ul.open {
+    display: block;
 
+  }
+  .cssmenu > ul > li {
+    float: none;
+  }
+  .cssmenu > ul > li > a {
+    padding: 18px 25px 18px 25px;
+    border-right: 0;
+  }
+ 
+  .cssmenu #menu-button {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    padding: 18px 25px 18px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+ 
+    cursor: pointer;
+  }
+  .cssmenu ul ul,
+  .cssmenu ul li:hover > ul,
+  .cssmenu > ul > li > ul,
+  .cssmenu ul ul ul,
+  .cssmenu ul ul li:hover > ul {
+    left: 0;
+    top: auto;
+    opacity: 1;
+    width: 100%;
+    padding: 0;
+    position: relative;
+	z-index:9999;
+  }
+  .cssmenu ul.open li a 
+	{
+	background:#eeeeee;
+	}
+  
+  .cssmenu ul ul li {
+    width: 100%;
+  }
+  .cssmenu ul ul li a {
+    width: 100%;
+    padding-left: 35px;
+  }
+  .cssmenu ul ul ul li a {
+    padding-left: 45px;
+  }
+ }
+  .cssmenu #menu-button::after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    right: 25px;
+    top: 18px;
+  }
+  .cssmenu #menu-button::before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    border-top: 2px solid #000000;
+    right: 25px;
+    top: 28px;
+  }
+  .cssmenu > ul > li.has-sub > a::after,
+  .cssmenu ul ul li.has-sub > a::after {
+    display: none;
+  }	
 
-	.cssmenu > ul 
-	{
-		height: auto;
-		display: block;
-	}
-	/*kein "Zusammenschieben" */
-	.cssmenu > ul > li 
-	{
-		float: none;
-	}
-
-	/*zeigt den menupunkt für responsive an*/
-	.cssmenu ul li.responsive
-	{
-		display:block;
-	}
-	/*skaliert die Breite auf 100%*/
-	.cssmenu 
-	{
-		width:100%;
-		text-align: center;
-	}
-	/*style für erste Menüpunkte*/
-	.cssmenu ul li
-	{
-		width:100%;
-		list-style: none;
-		border-top:1px solid #000000;
-	}
-	/*Positon der "Menüschift"*/
-	.cssmenu > ul > li > a
-	{
-		text-align: left;
-	}
-
-	.cssmenu  ul  li
-	{
-	display: none;
-	}
-	/*----showes the menu on hover*/
-	.cssmenu  ul:hover li
-	{
-	display: block;
-	}
-
-	/*-----arrow for top down ----*/
-	.cssmenu > ul > li.has-sub::after {
-	
-	left: 130px;
-	top: 20px;
-	}
-	/*----restyle the 2th level menu for responsive*/
-	.cssmenu ul ul 
-	{
-	position: relative;
-	width:100%;
-	border:none;
-	top: 0px;
-	opacity: 1;
-	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
-	transition: none;
-	z-index:5;
-	}
-	/*showes the the menu when open*/
-	.cssmenu > ul > li> ul 
-	{
-	left: auto;
-	top: 0px;
-	opacity: 1;
-	}
-	
-	.cssmenu ul ul li
-	{
-	width:100%;
-	padding:0;
-	margin:0;
-	}
-	.cssmenu ul > li:hover > ul 
-	{
-	left: auto;
-	top: 0px;
-	opacity: 1;
-	}
-
-	
-	/*styles the text for 2th level menu */
-	.cssmenu ul ul li a
-	{
-	text-align:left;
-	width:90%;
-	padding-top:10px;
-	padding-bottom:10px;
-	padding-left:10%;
-	padding-right:0;
-	border:0;
-	margin:0;
-	}
 
 	
 	
