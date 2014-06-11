@@ -9,7 +9,7 @@
 	$titel = "Profil bearbeiten";
 	
 	$_SESSION['sprache'] = "de";
-	
+	$_SESSION['user'] = "admin";
 	include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
 	
 	if(isset($_GET['username']))
@@ -64,6 +64,15 @@
 			if(isset($result[0]))
 			{
 				$result = $result[0];
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/getAllTutorData.php");
+				$umkreis = $AllTutorData[0]['umkreis'];
+				foreach($AllFachfromTutor as $fach)
+				{
+					$allfach .= "<tr>";
+					$allfach .= "<th> " . $fach['fach'] ."</th>";
+					$allfach .= "<th> " . $fach['stufen'] ."</th>";
+   				    $allfach .= "</tr>";	
+				}
 				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/profile.html");   // Inkludiert static things
 			}
 			else  // this user doesn't exist
