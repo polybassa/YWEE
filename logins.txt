@@ -1,0 +1,28 @@
+Benutzername  -- Passwort
+
+Admins:
+
+admin       -- geheim
+batman      -- geheim
+superman    -- geheim
+
+Normale Benutzer:
+
+heisenberg  -- geheim
+Robin       -- geheim
+Brain       -- geheim
+Pinky       -- geheim
+kitty       -- geheim
+Anita       -- geheim
+Alucard     -- geheim
+humus       -- geheim
+IQ0         -- geheim
+Rambo       -- geheim
+Angie       -- geheim
+Catwoman    -- geheim
+Kurzschluss -- geheim
+Snowball    -- geheim
+Schafkopf   -- geheim
+Superwoman  -- geheim
+Ratiopharm  -- geheim
+h4x0r       -- geheim
