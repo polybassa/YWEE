@@ -1,50 +1,50 @@
 /* Autor: Daniel Tatzel */
 /* Ruft das PHP Register Script auf und übergibt die Daten via POST */
-$(document).ready(function()
+$(document).ready(function()/*Bei Aufruf der Seite ausfuehren*/
 {
 
 
-    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script f�r Sprachauswahl*/
-        if (lang.length > 2) {  /*If Abfrage f�r Sprache, zuerst English*/
-            $("#newsform").validate({
-                errorPlacement: function(error, element) {
-                    error.insertBefore(element);
+    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script um vom Nutzer gewaehlte Sprache zuerkennen*/
+        if (lang.length > 2) {  /*Wenn Englisch wird dieser Teil genutzt*/
+            $("#newsform").validate({/*Beginn der Validation */
+                errorPlacement: function(error, element) {/*Manuelle Postionierung der Fehlermeldungen */
+                    error.insertBefore(element);/*Position vor dem Fehlerhaften Element*/
                 },
                 rules: {/*Regeln fuer die Validation*/
                     betreff: {
-                        requierd: true
+                        requierd: true/*ben�oetigt*/
                     },
                     nachrichtentext: {
-                        requierd: true
+                        requierd: true/*Benoetigt*/
                     }
                 },
-                invalidHandler: function(event, validator) {
-                    var errors = validator.numberOfInvalids();
+                invalidHandler: function(event, validator) {/*Ausgabe der Fehler*/
+                    var errors = validator.numberOfInvalids();/*Anzahl der Fehler*/
                     if (errors) {
                         var message = (errors === 1) ? 'You missed 1 field. It has been highlighted' : 'You missed ' + errors + ' fields. They have been highlighted';
                         $("div.error span").html(message);
                         $("div.error").show();
-                        alert(message.toString());
+                        alert(message.toString());/*Alert mit Anzahl der Fehler*/
                     } else {
                         $("div.error").hide();
                     }
                 },
-                submitHandler: function(form) {
-                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),
+                submitHandler: function(form) {/*Wenn Fehlerfrei*/
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),/*Daten an PHP Script uebergeben*/
                             function(msg) {
-                                /* msg ist leer, außer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                /* msg ist leer, ausser fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
                                     alert(msg.toString());
                                 }
-                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                /* Nur bei erfolgreicher Uebertragung wird die Seite neu geladen */
                                 if (msg.length < 5) {
                                     alert("Your news were submitted.");
-                                    location.replace('index.php');
+                                    location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {
+            jQuery.extend(jQuery.validator.messages, {/*Veraenderungen an den Standartfehlermeldungen Englisch*/
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
                 email: "Please enter a valid email address.",
@@ -64,24 +64,24 @@ $(document).ready(function()
                 min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
             });
         }
-        else {/*Deutsche Texte*/
+        else {/*ab hier der deutsche Teil*/
 
             $("#newsform").validate({
-                errorPlacement: function(error, element) {
+                errorPlacement: function(error, element) {/*Manuelle Postionierung der Fehlermeldungen */
 
-                    error.insertBefore(element);
+                    error.insertBefore(element);/*Manuelle Postionierung der Fehlermeldungen */
                 },
-                rules: {
+                rules: {/*Regeln fuer die Validation*/
                     betreff: {
-                        requierd: true
+                        requierd: true/*Benoetigt*/
                     },
                     nachrichtentext: {
-                        requierd: true
+                        requierd: true/*Benoetigt*/
                     }
                 },
-                invalidHandler: function(event, validator) {
-                    var errors = validator.numberOfInvalids();
-                    if (errors) {
+                invalidHandler: function(event, validator) {/*Ausgabe der Fehler*/
+                    var errors = validator.numberOfInvalids();/*Anzahl der Fehler*/
+                    if (errors) {/*Anzahl der Fehler*/
                         var message = (errors == 1) ? 'Du hast ein Feld vergessen es wurde hervorgehoben' : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
                         alert(message.toString());
                         $("div.error span").html(message);
@@ -90,20 +90,23 @@ $(document).ready(function()
                         $("div.error").hide();
                     }
                 },
-                submitHandler: function(form) {
-                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),
-                            function(msg) {
+                submitHandler: function(form) {/*Wenn Fehlerfrei*/
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),/*Daten an PHP Script uebergeben*/
+                       /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */      
+                        function(msg) {
                                 /* Bei Fehler, Nachicht vom Server ausgeben */
                                 if (msg.length < 5) {
                                     alert("Ihre Nachricht wurde versandt.");
                                     location.replace('index.php');
+                                /* Nur bei erfolgreicher Uebertragung wird die Seite neu geladen */
+                                
                                 } else {
                                     alert(msg.toString());
                                 }
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {
+            jQuery.extend(jQuery.validator.messages, {/*Veraenderungen an den Standartfehlermeldungen Deutsch*/
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
                 email: "Bitte eine g&uuml;ltige Email Addresse angeben.",

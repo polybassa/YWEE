@@ -11,11 +11,11 @@ Here you can register for our tutoring website. Please fill in all information t
 	<div><label class="zeile" for ="vorname">Forename:</label><input type="text" class="eingabe" size="45" maxlength ="45" placeholder ="Forename" name="vorname" id="vorname" required></div>
 	<div><label class="zeile" for ="email">E-Mail:</label><input type="email" class="eingabe" size="45" maxlength ="45" placeholder ="beispiel@email.de" id="email" name="email" required></div>
 	<div><label for="tag" class="zeile">Birthday:</label>
-	<select name="tag" id="tag" style="width:50"><option value="-1">Day</option>
+	<select name="tag" id="tag" style="width:50"><option value="-1">Day</option><!--PHP Script mit Zaehler fuer Tag, zaehlt von 1 bis 31 und erstellt mit diesen Zahlen eine Option im select-->
 	<?php
     $i = 0;
     while ( $i++ < 31)
-    echo '<option value="'.$i.'">'.$i.'</option>';?></select>
+    echo '<option value="'.$i.'">'.$i.'</option>';?></select><!--PHP Script mit Zaehler fuer Monat, zaehlt von 1 bis 12 und erstellt mit diesen Zahlen eine Option im select-->
 	<select name="monat" id="monat">
 	<option value="-1">Month</option>
 	<?php
@@ -24,7 +24,7 @@ Here you can register for our tutoring website. Please fill in all information t
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
 	<select name="jahr" id="jahr">
-	<option value="-1">Year</option>
+	<option value="-1">Year</option><!--PHP Script mit Zaehler fuer Jahr, zaehlt von 1990 bis derzeitiges Jahr und erstellt mit diesen Zahlen eine Option im select-->
 	<?php
     $i = date("Y");
     while ( $i-- > 1900)

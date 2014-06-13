@@ -22,7 +22,7 @@ We only accept Visa Cards!<br>
 <form name="Formular" method="post" action="/scripts/CreditCardInfo.php" id="paymentform">
 	<input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
 	<div><label class="zeile" for ="kreditkartennummer">Credit card number:</label><input pattern="[0-9]{16}" size="45" maxlength="16" class="eingabe" id="kreditkartennummer" name="kreditkartennummer" required></div>
-	<div><label class="zeile" for ="month">Expire Date:</label>
+	<div><label class="zeile" for ="month">Expire Date:</label><!--PHP Script mit Zaehler fuer Monat, zaehlt von 1 bis 12 und erstellt mit diesen Zahlen eine Option im select-->
 	<select name="monat" id="monat">
 	<option value="0">Month</option>
 	<?php
@@ -30,7 +30,7 @@ We only accept Visa Cards!<br>
 	while ( $i++ < 12)
 	echo '<option value="'.$i.'">'.$i.'</option>';?>
 	</select>
-	<select name="jahr" id="jahr">
+	<select name="jahr" id="jahr"><!--PHP Script mit Zaehler fuer Jahr, zaehlt vom derzeitgem Jahr bis 20 Jahre in die Zukunft und erstellt mit diesen Zahlen eine Option im select-->
 	<option value="0">Year</option>
 	<?php
     $i = (date("Y")-1);
