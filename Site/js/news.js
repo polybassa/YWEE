@@ -1,12 +1,15 @@
 
 $(document).ready(function myFunction() {
+    $.ajaxSetup({cache: false});
+
+
     var url = "/scripts/ReadNews.php";
 
     $.ajax({
         type: 'post',
         url: url,
         dataType: 'json',
-        cache:false,
+        cache: false,
         success: function(data)
         {
             var SingleEntry = new Array(data.length);
