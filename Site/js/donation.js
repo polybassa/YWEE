@@ -32,10 +32,10 @@ $(document).ready(function()
                         positiveNumber: true/*muss postiv sein*/
                     },
                     jahr: {
-                        min: 1/*Überprüfung des Datums - Jahr wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Jahr wenn nichts gewaehlt -1, sonst >=1*/
                     },
                     monat: {
-                        min: 1/*Überprüfung des Datums - Monat wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Monat wenn nichts gewaehlt -1, sonst >=1*/
                     }
                 },
                 messages: {/*Spezielle Texte fuer bestimmte Fehleingaben*/
@@ -62,7 +62,7 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {/*Wenn Fehlerfrei*/
-                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),/*Daten an PHP Script übergeben*/
+                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),/*Daten an PHP Script uebergeben*/
                             function(msg) {
                                 /* msg ist leer, ausser bei fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
@@ -70,7 +70,7 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreichem Spenden wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("We thank you for your donation.");/*Mitteilung über Erfolg der Spende*/
+                                    alert("We thank you for your donation.");/*Mitteilung ueber Erfolg der Spende*/
                                     location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
@@ -125,10 +125,10 @@ $(document).ready(function()
                         positiveNumber: true/*muss postiv sein*/
                     },
                     jahr: {
-                        min: 1/*Überprüfung des Datums - Jahr wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Jahr wenn nichts gewhlt -1, sonst >=1*/
                     },
                     monat: {
-                        min: 1/*Überprüfung des Datums - Monat wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Monat wenn nichts gewaehlt -1, sonst >=1*/
                     }
                 },
                 messages: {/*Spezielle Texte fuer bestimmte Fehleingaben*/
@@ -163,13 +163,13 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreichem Spenden wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("Wir bedanken uns fuer Ihre Spende");/*Mitteilung über Erfolg der Spende*/
+                                    alert("Wir bedanken uns fuer Ihre Spende");/*Mitteilung ueber Erfolg der Spende*/
                                     location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {/*Überschreiben der Standartmeldungen Deutsch*/
+            jQuery.extend(jQuery.validator.messages, {/*Ueberschreiben der Standartmeldungen Deutsch*/
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
                 email: "Bitte eine g&uuml;ltige Email Addresse angeben.",

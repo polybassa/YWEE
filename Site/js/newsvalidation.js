@@ -1,6 +1,6 @@
 /* Autor: Daniel Tatzel */
 /* Ruft das PHP Register Script auf und Ã¼bergibt die Daten via POST */
-$(document).ready(function()/*Bei Aufruf der Seite ausführen*/
+$(document).ready(function()/*Bei Aufruf der Seite ausfuehren*/
 {
 
 
@@ -12,10 +12,10 @@ $(document).ready(function()/*Bei Aufruf der Seite ausführen*/
                 },
                 rules: {/*Regeln fuer die Validation*/
                     betreff: {
-                        requierd: true/*benötigt*/
+                        requierd: true/*benöoetigt*/
                     },
                     nachrichtentext: {
-                        requierd: true/*Benötigt*/
+                        requierd: true/*Benoetigt*/
                     }
                 },
                 invalidHandler: function(event, validator) {/*Ausgabe der Fehler*/
@@ -30,13 +30,13 @@ $(document).ready(function()/*Bei Aufruf der Seite ausführen*/
                     }
                 },
                 submitHandler: function(form) {/*Wenn Fehlerfrei*/
-                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),/*Daten an PHP Script übergeben*/
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),/*Daten an PHP Script uebergeben*/
                             function(msg) {
-                                /* msg ist leer, auÃŸer fehlgeschlag, dann wird der Fehler ausgegeben */
+                                /* msg ist leer, ausser fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
                                     alert(msg.toString());
                                 }
-                                /* Nur bei erfolgreicher Übertragung wird die Seite neu geladen */
+                                /* Nur bei erfolgreicher Uebertragung wird die Seite neu geladen */
                                 if (msg.length < 5) {
                                     alert("Your news were submitted.");
                                     location.replace('index.php');/*Weiterleitung auf der Seite*/
@@ -44,7 +44,7 @@ $(document).ready(function()/*Bei Aufruf der Seite ausführen*/
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {/*Veränderungen an den Standartfehlermeldungen Englisch*/
+            jQuery.extend(jQuery.validator.messages, {/*Veraenderungen an den Standartfehlermeldungen Englisch*/
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
                 email: "Please enter a valid email address.",
@@ -73,10 +73,10 @@ $(document).ready(function()/*Bei Aufruf der Seite ausführen*/
                 },
                 rules: {/*Regeln fuer die Validation*/
                     betreff: {
-                        requierd: true/*Benötigt*/
+                        requierd: true/*Benoetigt*/
                     },
                     nachrichtentext: {
-                        requierd: true/*Benötigt*/
+                        requierd: true/*Benoetigt*/
                     }
                 },
                 invalidHandler: function(event, validator) {/*Ausgabe der Fehler*/
@@ -91,14 +91,14 @@ $(document).ready(function()/*Bei Aufruf der Seite ausführen*/
                     }
                 },
                 submitHandler: function(form) {/*Wenn Fehlerfrei*/
-                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),/*Daten an PHP Script übergeben*/
-                       /* msg ist leer, auÃŸer der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */      
+                    $.post("/scripts/WriteNews.php", $("#newsform").serialize(),/*Daten an PHP Script uebergeben*/
+                       /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */      
                         function(msg) {
                                 /* Bei Fehler, Nachicht vom Server ausgeben */
                                 if (msg.length < 5) {
                                     alert("Ihre Nachricht wurde versandt.");
                                     location.replace('index.php');
-                                /* Nur bei erfolgreicher Übertragung wird die Seite neu geladen */
+                                /* Nur bei erfolgreicher Uebertragung wird die Seite neu geladen */
                                 
                                 } else {
                                     alert(msg.toString());
@@ -106,7 +106,7 @@ $(document).ready(function()/*Bei Aufruf der Seite ausführen*/
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {/*Veränderungen an den Standartfehlermeldungen Deutsch*/
+            jQuery.extend(jQuery.validator.messages, {/*Veraenderungen an den Standartfehlermeldungen Deutsch*/
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
                 email: "Bitte eine g&uuml;ltige Email Addresse angeben.",

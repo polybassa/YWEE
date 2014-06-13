@@ -6,7 +6,7 @@ $(document).ready(function()
 
     $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script um vom Nutzer gewaehlte Sprache zuerkennen*/
         if (lang.length > 2) {  /*Wenn Englisch wird dieser Teil genutzt*/
-            $.validator.addMethod('phone', function(value) { /*Veränderung an der PhoneUS Methode für deutsche Nummern */
+            $.validator.addMethod('phone', function(value) { /*Veruenderung an der PhoneUS Methode fuer deutsche Nummern */
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));/*minimal 2 und maximal 15 Ziffern erlaubt, nur Zahlen*/
             }, 'Please enter a valid phone number');/*Fehlermeldungstext*/
@@ -29,16 +29,16 @@ $(document).ready(function()
                         maxlength: 5/*Maximale Laenge 5*/
                     },
                     geschlecht: {
-                        min: 0 /*Geschlechtüberprüfung Wenn nichts ausgewählt =-1, m/w > 0*/
+                        min: 0 /*Geschlechtsueberpruefung Wenn nichts ausgewaehlt =-1, m/w > 0*/
                     },
                     tag: {
-                        min: 1 /*Überprüfung des Datums - Tag wenn nichts gewählt -1, sonst >=1*/
+                        min: 1 /*Ueberpruefung des Datums - Tag wenn nichts gewaehlt -1, sonst >=1*/
                     },
                     jahr: {
-                        min: 1/*Überprüfung des Datums - Jagr wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Jagr wenn nichts gewzehlt -1, sonst >=1*/
                     },
                     monat: {
-                        min: 1/*Überprüfung des Datums - Monat wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Monat wenn nichts gewaehlt -1, sonst >=1*/
                     },
                     telefon: {
                         phone: true/*Muss Telefonnummer sein*/
@@ -81,7 +81,7 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {/*Wenn Fehlerfrei*/
-                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(), /*Daten an PHP Script übergeben*/
+                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(), /*Daten an PHP Script uebergeben*/
                             function(msg) {
                                 /* msg ist leer, auÃŸer fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
@@ -89,13 +89,13 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreicher Registrierung wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("The registration was successful, please wait till you get unlocked.");/*Mitteilung über den Erfolg der Registrierung*/
+                                    alert("The registration was successful, please wait till you get unlocked.");/*Mitteilung ueber den Erfolg der Registrierung*/
                                     location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {/*Veränderungen an den Standartfehlermeldungen Englisch*/
+            jQuery.extend(jQuery.validator.messages, {/*Veraenderungen an den Standartfehlermeldungen Englisch*/
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
                 email: "Please enter a valid email address.",
@@ -116,7 +116,7 @@ $(document).ready(function()
             });
         }
         else {/*ab hier der deutsche Teil*/
-            $.validator.addMethod('phone', function(value) {/*Veränderung an der PhoneUS Methode für deutsche Nummern */
+            $.validator.addMethod('phone', function(value) {/*Veraenderung an der PhoneUS Methode fuer deutsche Nummern */
                 var numbers = value.split(/\d/).length - 1;
                 return (2 <= numbers && numbers <= 15 && value.match(/^(\+){0,1}(\d|\s|\(|\)){2,15}$/));
             }, 'Bitte eine g&uuml;ltige Telefonnummer angeben.');/*Fehlermeldungstext*/
@@ -139,16 +139,16 @@ $(document).ready(function()
                         maxlength: 5/*Maximale Laenge 5*/
                     },
                     geschlecht: {
-                        min: 0/*Geschlechtüberprüfung Wenn nichts ausgewählt =-1, m/w > 0*/
+                        min: 0/*Geschlechtueberpruefung Wenn nichts ausgewaehlt =-1, m/w > 0*/
                     },
                     tag: {
-                        min: 1/*Überprüfung des Datums - Tag wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*ueberpruefung des Datums - Tag wenn nichts gewaehlt -1, sonst >=1*/
                     },
                     jahr: {
-                        min: 1/*Überprüfung des Datums - Jagr wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Jagr wenn nichts gewaehlt -1, sonst >=1*/
                     },
                     monat: {
-                        min: 1/*Überprüfung des Datums - Monat wenn nichts gewählt -1, sonst >=1*/
+                        min: 1/*Ueberpruefung des Datums - Monat wenn nichts gewaehlt -1, sonst >=1*/
                     },
                     telefon: {
                         phone: true/*Muss Telefonnummer sein*/
@@ -191,7 +191,7 @@ $(document).ready(function()
                     }
                 },
                 submitHandler: function(form) {/*Wenn Fehlerfrei*/
-                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(), /*Daten an PHP Script übergeben*/
+                    $.post("/scripts/CreateUser.php", $("#registerform").serialize(), /*Daten an PHP Script uebergeben*/
                             function(msg) {
                                 /* msg ist leer, auÃŸer fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
@@ -199,13 +199,13 @@ $(document).ready(function()
                                 }
                                 /* Nur bei erfolgreicher Registrierung wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");/*Mitteilung über den Erfolg der Registrierung*/
+                                    alert("Die Registrierung war erfolgreich, haben Sie Geduld bis Sie freigeschaltet wurden");/*Mitteilung ueber den Erfolg der Registrierung*/
                                     location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
                 }
             });
-                /*Veränderungen an den Standartfehlermeldungen Deutsch*/
+                /*Veraenderungen an den Standartfehlermeldungen Deutsch*/
             jQuery.extend(jQuery.validator.messages, {
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
