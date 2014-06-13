@@ -9,11 +9,19 @@ ExpiresDefault "access plus 1 day"
     deny from all
 </FilesMatch>
 
+DirectoryIndex index.html index.php
+
+AddHandler server-parsed .shtml
+AddHandler server-parsed .html
+Options Indexes FollowSymLinks Includes
+
 RewriteEngine On
 RewriteBase /
 
 RewriteCond %{HTTP_HOST} ^www\.ebenezer-kunatse\.net$
     RewriteRule ^(.*)$ http://ebenezer-kunatse.net/$1 [L,R=301]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ http://ebenezer-kunatse.net/de/ [R=301,L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)$ http://ebenezer-kunatse.net/ [R=301,L]
+
+ErrorDocument 404 /index.html

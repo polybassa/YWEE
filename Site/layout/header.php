@@ -21,7 +21,7 @@
         </noscript>
 		<link rel="stylesheet" type="text/css" media="all" href="/layout/cssmenu.css" />
         
-		<!-- test von Daniel mit HTML5 Boilerplate -->
+		<!-- HTML5 Boilerplate -->
         <link rel="stylesheet" href="/layout/normalize.css">
         <link rel="stylesheet" href="/layout/main.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -118,38 +118,12 @@
 
             ga('create', 'UA-51517596-1', 'ebenezer-kunatse.net');
             ga('send', 'pageview');
-
         </script>
 
         <div id="container">
 
-            <div id="banner" >
-                <!--Div Box für logo img-->
-                <div id= "logo">
-                    <img src="/images/logo.png" class="logo_img" alt="logo">
-                </div>
-
-                
-                <div id="show">
-                             <div class="img1 slide">
-                                     <img src="/images/slider_img1.jpg" class="slider_img" alt="slider_img1" />         
-                             </div>
-                             <div class="img2 slide">
-                                     <img src="/images/slider_img2.jpg" class="slider_img" alt="slider_img2"/>                       
-                             </div>
-                             <div class="img3 slide">
-                                     <img src="/images/slider_img3.jpg" class="slider_img" alt="slider_img3"/>                            
-                             </div>
-                             <div class="img4 slide">
-                                     <img src="/images/slider_img4.jpg" class="slider_img" alt="slider_img4"/>               
-                             </div>
-                             <div class="img5 slide">
-                                     <img src="/images/slider_img5.jpg" class="slider_img" alt="slider_img5">                                   
-                             </div>
-					</div>
-			</div><!-- Banner div fix-->
-
             <?php
+                include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/banner.html");  // Inkludiert den Banner
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/nav.php");      // Inkludiert die Navigationsleist
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/leftbar.php");  // Inkludiert den linken Balken
                 include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/rightbar.php"); // Inkludiert den rechten Balken
