@@ -1,24 +1,54 @@
 <!-- Inhalt von: Daniel Tatzel -->
-        
+
+<script language="javascript">
+    function show(selector)
+    {
+        var sel = selector;
+
+        if ( sel == 0 )
+            sel = "passwd";
+        else
+            sel = "file"
+
+        if(document.getElementById( sel ).style.display == 'block')
+        {
+            document.getElementById( sel ).style.display = 'none';
+        }
+        else
+        {
+            document.getElementById( sel ).style.display = 'block';
+        }
+    }
+</script>
+
 <h2>Privater Ordner</h2>
 
-Passwort &auml;ndern:<br>
+<br> <hr> <br>
+
+<input type="button" onclick="show(0)" value="Passwort &auml;ndern"> <br><br>
+
+<div id="passwd" style='display: none;'>
 <form action="scripts/ChangePasswd.php" method="post" id="privpasswd">
 <input type="password" maxlength ="20" size="30" name="passwd" placeholder="Passwort" required>
 <input type="submit" name="send" value="Absenden">
 </form>
+</div>
 
-<br><br>
 
-Datei hochladen:<br>
-<form action="#" method="post"
-enctype="multipart/form-data">
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file">
-<input type="submit" name="upload" value="Submit">
-</form>
+<br> <hr> <br>
 
-<br><br>
+<input type="button" onclick="show(1)" value="Datei hochladen"> <br><br>
+
+<div id="file" style='display: none;'>
+    <form action="#" method="post"
+    enctype="multipart/form-data">
+    <input type="file" name="file" id="file"><br>
+    <input type="submit" name="upload" value="Submit">
+    </form>
+</div>
+
+
+<br> <hr> <br>
 
 <h3>Files:</h3>
 <?php
