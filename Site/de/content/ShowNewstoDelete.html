@@ -1,0 +1,18 @@
+<h2>Newseinträge</h2>
+<!-- author: Alexander Strobl -->
+<form name="formular" method="post" action="/de/admin.php?deleteNews=true&fired=true">
+	<table border="1" rules="groups">
+		<thead>
+			<tr>
+				<th><div class='UnauthNewsEntryHeader'>Newseintrag</div></th>
+				<th><div class='UnauthNewsTopicHeader'>Betreff</div></th>
+				<th><div class='UnauthNewsAuthorHeader'>User</div></th>
+				<th><div class="UnauthNewsCheckboxHeader">l&ouml;schen</div></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php echo $news_print;?>
+		</tbody>
+	</table>
+	<div class="line submit"><input type="submit" value="Absenden"><input type="reset" value="Zuruecksetzen"></div>
+</form>
