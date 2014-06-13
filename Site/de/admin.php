@@ -60,6 +60,28 @@
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_GetLetters.html");
 		}
+		if(isset($_GET['deleteNews']) and $_GET['deleteNews'] == true)
+		{
+			// Delete News by Alexander Strobl
+			if(isset($_GET['fired']) and $_GET['fired'] == true and isset($_POST["NewsID"]))
+			{
+				$deleteNews = $_POST["NewsID"];
+				include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteNewsfromAdmin.php");
+			}
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ReadNewsDelete.php");
+			$newsresults = $result;
+			$news_print = "";
+			foreach($newsresults as $eintrag)
+			{
+				$news_print .= "<tr> ";
+				$news_print .= "<th><div class='NewsDelEntry'> " . $eintrag["nachricht"] . "</div></th>";
+				$news_print .= "<th><div class='NewsDelTopic'> " . $eintrag["betreff"] . "</div></th>";
+				$news_print .= "<th><div class='NewsDelAuthor'> ". $eintrag["benutzername"] . "</div></th> ";
+				$news_print .= '<th><div class="NewsCheckbox"><input type="checkbox" name="NewsID[]" value="'. $eintrag["id"] . '"></div></th>';
+				$news_print .= "</tr>";
+			}
+			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ShowNewstoDelete.html");
+		}
 		if(isset($_GET['unlockUser']) and $_GET['unlockUser'] == true)
 		{
 			if(isset($_GET['fired']) and ($_GET['fired'] == true) and isset($_POST["UsersToUnlock"]))
@@ -78,11 +100,7 @@
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_unlockUsers.html");
 		}
-		else
-		{
-			//auf der landing page
-			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/AdminLanding.html");
-		}
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/AdminLanding.html");
 	}
 	else
 		echo "<h2>Fehler! Die aufgerufene Seite existiert nicht oder Sie m&uuml;ssen sich erst einloggen</h2>";

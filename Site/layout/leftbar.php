@@ -1,7 +1,6 @@
 <div id="wrapper"> <!--ehemals wrapper--> 
 
 <div id="left">
-
     <?php
         if ( $_SESSION['admin'] == true )
         {
