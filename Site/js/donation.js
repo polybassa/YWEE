@@ -3,42 +3,42 @@
 $(document).ready(function()
 {
 
-    $.post("/scripts/GetLang.php", function(lang) {
-        if (lang.length > 2) {
-            $.validator.addMethod('positiveNumber',
+    $.post("/scripts/GetLang.php", function(lang) {/*Aufruf PHP Script um vom Nutzer gewaehlte Sprache zuerkennen*/
+        if (lang.length > 2) {/*Wenn Englisch wird dieser Teil genutzt*/
+            $.validator.addMethod('positiveNumber',/*Methode um Negative Zahlen zu verhindern*/
                     function(value) {
-                        return Number(value) > 0;
-                    }, 'Enter a positive value or more than 0.');
+                        return Number(value) > 0;/*True wenn Wert > 0*/
+                    }, 'Enter a positive value or more than 0.');/*Fehlermeldungstext*/
             $("#paymentform").validate({
                 errorPlacement: function(error, element) {
-                    if (element.attr("name") === "jahr") {
+                    if (element.attr("name") === "jahr") {/*Wenn Fehler bei Jahr Fehler im vorheriges Label schreiben*/
                         element.prev('label').replaceWith(error);
                     } else {
-                        error.insertBefore(element);
+                        error.insertBefore(element);/*Fehlerlabel vor das Fehlerhafte Element schreiben*/
                     }
                 },
-                rules: {
+                rules: {/*Regeln fuer die Validation*/
                     kreditkartennummer: {
-                        creditcard: true
+                        creditcard: true/*Muss Kreditkarte sein*/
                     },
                     pruefziffer: {
-                        maxlength: 4,
-                        minlength: 3,
-                        number: true
+                        maxlength: 4,/*Maximal 4 Ziffern*/
+                        minlength: 3,/*minimal 3 Ziffern*/
+                        number: true/*muss Zahl sein*/
                     },
                     betrag: {
-                        number: true,
+                        number: true,/*Muss Zahl sein*/
                         
-                        positiveNumber: true
+                        positiveNumber: true/*muss postiv sein*/
                     },
                     jahr: {
-                        min: 1
+                        min: 1/*Überprüfung des Datums - Jahr wenn nichts gewählt -1, sonst >=1*/
                     },
                     monat: {
-                        min: 1
+                        min: 1/*Überprüfung des Datums - Monat wenn nichts gewählt -1, sonst >=1*/
                     }
                 },
-                messages: {
+                messages: {/*Spezielle Texte fuer bestimmte Fehleingaben*/
                     
                     monat: {
                         min: jQuery.validator.format("Please enter a valid Date.")
@@ -47,35 +47,36 @@ $(document).ready(function()
                         min: jQuery.validator.format("Please enter a valid Date.")
                     }
                 },
-                invalidHandler: function(event, validator) {
+                invalidHandler: function(event, validator) {/*Ausgabe der Fehler*/
                     // 'this' refers to the form
-                    var errors = validator.numberOfInvalids();
-                    if (errors) {
+                    var errors = validator.numberOfInvalids();/*Anzahl der Fehler*/
+                    if (errors) {/*Wenn Fehler vorhanden Alert mit Anzahl*/
                         var message = errors == 1
                                 ? 'You missed 1 field. It has been highlighted'
                                 : 'You missed ' + errors + ' fields. They have been highlighted';
                         $("div.error span").html(message);
                         $("div.error").show();
+                        alert(message.toString());/*Alert mit Anzahl der Fehler*/
                     } else {
                         $("div.error").hide();
                     }
                 },
-                submitHandler: function(form) {
-                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),
+                submitHandler: function(form) {/*Wenn Fehlerfrei*/
+                    $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),/*Daten an PHP Script übergeben*/
                             function(msg) {
-                                /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                /* msg ist leer, ausser bei fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
                                     alert(msg.toString());
                                 }
-                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                /* Nur bei erfolgreichem Spenden wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("We thank you for your donation.");
-                                    location.replace('index.php');
+                                    alert("We thank you for your donation.");/*Mitteilung über Erfolg der Spende*/
+                                    location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {
+            jQuery.extend(jQuery.validator.messages, {/*Ueberschreiben der Standartmeldungen Englisch*/
                 required: "This field is required by us!.",
                 remote: "Please fix this field.",
                 email: "Please enter a valid email address.",
@@ -95,42 +96,42 @@ $(document).ready(function()
                 min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
             });
         }
-        else {
-            $.validator.addMethod('positiveNumber',
+        else {/*Wenn Deutsch wird dieser Teil genutzt*/
+            $.validator.addMethod('positiveNumber',/*Methode um Negative Zahlen zu verhindern*/
                     function(value) {
-                        return Number(value) > 0;
-                    }, 'Nur positive Betr&auml;ge oder mehr als Null.');
+                        return Number(value) > 0;/*True wenn Wert > 0*/
+                    }, 'Nur positive Betr&auml;ge oder mehr als Null.');/*Fehlermeldungstext*/
             $("#paymentform").validate({
                 errorPlacement: function(error, element) {
 
 
                     if (element.attr("name") === "jahr") {
-                        element.prev('label').replaceWith(error);
+                        element.prev('label').replaceWith(error);/*Wenn Fehler bei Jahr Fehler im vorheriges Label schreiben*/
                     } else {
-                        error.insertBefore(element);
+                        error.insertBefore(element);/*Fehlerlabel vor das Fehlerhafte Element schreiben*/
                     }
                 },
                 rules: {
                     kreditkartennummer: {
-                        creditcard: true
+                        creditcard: true/*Muss Kreditkarte sein*/
                     },
                     pruefziffer: {
-                        maxlength: 4,
-                        minlength: 3,
-                        number: true
+                        maxlength: 4,/*Maximal 4 Ziffern*/
+                        minlength: 3,/*minimal 3 Ziffern*/
+                        number: true/*muss Zahl sein*/
                     },
                     betrag: {
-                        number: true,
-                        positiveNumber: true
+                        number: true,/*Muss Zahl sein*/
+                        positiveNumber: true/*muss postiv sein*/
                     },
                     jahr: {
-                        min: 1
+                        min: 1/*Überprüfung des Datums - Jahr wenn nichts gewählt -1, sonst >=1*/
                     },
                     monat: {
-                        min: 1
+                        min: 1/*Überprüfung des Datums - Monat wenn nichts gewählt -1, sonst >=1*/
                     }
                 },
-                messages: {
+                messages: {/*Spezielle Texte fuer bestimmte Fehleingaben*/
                     
                     monat: {
                         min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
@@ -139,15 +140,16 @@ $(document).ready(function()
                         min: jQuery.validator.format("Bitte ein g&uuml;ltiges Datum eingeben.")
                     }
                 },
-                invalidHandler: function(event, validator) {
+                invalidHandler: function(event, validator) {/*Ausgabe der Fehler*/
 // 'this' refers to the form
-                    var errors = validator.numberOfInvalids();
-                    if (errors) {
+                    var errors = validator.numberOfInvalids();/*Anzahl der Fehler*/
+                    if (errors) {/*Wenn Fehler vorhanden Alert mit Anzahl*/
                         var message = errors == 1
                                 ? 'Du hast ein Feld vergessen es wurde hervorgehoben'
                                 : 'Du hast ' + errors + ' Felder vergessen. Diese wurden hervorgehoben';
                         $("div.error span").html(message);
                         $("div.error").show();
+                        alert(message.toString());/*Alert mit Anzahl der Fehler*/
                     } else {
                         $("div.error").hide();
                     }
@@ -155,19 +157,19 @@ $(document).ready(function()
                 submitHandler: function(form) {
                     $.post("/scripts/CreditCardInfo.php", $("#paymentform").serialize(),
                             function(msg) {
-                                /* msg ist leer, ausser der Login ist fehlgeschlagen, dann wird der Fehler ausgegeben */
+                                /* msg ist leer, ausser fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
                                     alert(msg.toString());
                                 }
-                                /* Nur bei erfolgreichem Login oder Logout wird die Seite neu geladen */
+                                /* Nur bei erfolgreichem Spenden wird die Seite neu geladen */
                                 if (msg.length < 5) {
-                                    alert("Wir bedanken uns fuer Ihre Spende");
-                                    location.replace('index.php');
+                                    alert("Wir bedanken uns fuer Ihre Spende");/*Mitteilung über Erfolg der Spende*/
+                                    location.replace('index.php');/*Weiterleitung auf der Seite*/
                                 }
                             });
                 }
             });
-            jQuery.extend(jQuery.validator.messages, {
+            jQuery.extend(jQuery.validator.messages, {/*Überschreiben der Standartmeldungen Deutsch*/
                 required: "Wir ben&ouml;tigen dieses Feld.",
                 remote: "Bitte richtigen Wert eingeben.",
                 email: "Bitte eine g&uuml;ltige Email Addresse angeben.",
