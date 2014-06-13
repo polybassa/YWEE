@@ -100,11 +100,7 @@
 			}
 			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ad_unlockUsers.html");
 		}
-		else
-		{
-			//auf der landing page
-			include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/AdminLanding.html");
-		}
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/AdminLanding.html");
 	}
 	else
 		echo "<h2>Fehler! Die aufgerufene Seite existiert nicht oder Sie m&uuml;ssen sich erst einloggen</h2>";
