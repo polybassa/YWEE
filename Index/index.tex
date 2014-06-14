@@ -1,0 +1,86 @@
+\documentclass[a4paper,10pt]{scrreprt}
+\usepackage{url}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{ifpdf}
+\usepackage[pdftex]{color}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{ifsym}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{scrhack}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{geometry}
+\geometry{a4paper,left=20mm,right=20mm, top=2cm, bottom=2cm}
+
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}\fi
+
+ \newcommand{\format}{\textbf}
+
+ \setcounter{tocdepth}{4}
+
+\begin{document}
+
+\section*{Index}
+
+\subsection*{Hauptverzeichnis}
+
+Pfade ausgehend vom Hauptverzeichnis.
+
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{p{7cm}|p{8.5cm}}
+  Was & Wo \\
+  \hline
+  ER-Diagramm & /DB/ER-Diagramm.pdf  \\
+  SQL-Script für die DB & /DB/SQL\_final.sql \\
+  MySQL Workbench DB File & /DB/YWEE.mwb  \\
+  SRA & /Dokumente/SRA/SRA.pdf  \\
+  SAD & /Dokumente/SAD/SAD.pdf  \\
+  Suchfunktion-Mockup & /Dokumente/Entwuerfe/Searchfunction\_Mockup.pdf \\
+  Liste implementierter Features & /Feature-List/Features\_list.pdf  \\
+  Index aller Dateien & /Index/index.pdf und /index.pdf  \\
+  Protokolle & /Protokolle/*  \\
+  Projektarbeit & /Site/* \\
+  Readme & /Read-me.txt  \\
+  Git Readme (leer) & /README.md  \\
+  Logins für die Seite & /logins.txt \\
+ \end{tabular}
+\end{table}
+
+\subsection*{Projektarbeit}
+
+Pfade ausgehend von /Site/.
+
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{p{7cm}|p{8.5cm}}
+  Was & Wo \\
+  \hline
+  Deutsche Seiten & /de/*  \\
+  Englische Seiten & /en/* \\
+  HTML5 Boilerplate Dokumentation & /doc/* \\
+  Bilder und Videos & /images/* \\
+  Javascript Scripten & /js/* \\
+  CSS und Layout & /layout/* \\
+  PHPMyAdmin & /phpmyadmin/* \\
+  Privater Ordner & /private/* \\
+  PHP Scripten & /scripts/* \\
+  htaccess Dateien & /.htaccess, /de/.htaccess und /en/.htaccess \\
+  Favicon& /apple-touch-icon.png \\
+  Apple-Touch-Icon & /favicon.ico \\
+  HTML5 Boilerplate Lizenz & /LICENSE.md \\
+  Robots Datei & /robots.txt \\
+
+ \end{tabular}
+\end{table}
+
+\end{document}

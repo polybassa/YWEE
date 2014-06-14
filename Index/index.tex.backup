@@ -1,0 +1,73 @@
+\documentclass[a4paper,10pt]{scrreprt}
+\usepackage{url}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{ifpdf}
+\usepackage[pdftex]{color}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{ifsym}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{scrhack}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{geometry}
+\geometry{a4paper,left=20mm,right=20mm, top=2cm, bottom=2cm}
+
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}\fi
+
+ \newcommand{\format}{\textbf}
+
+ \setcounter{tocdepth}{4}
+
+\begin{document}
+
+
+
+\section*{Index}
+
+Pfade ausgehend vom Hauptverzeichnis.
+
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{p{9cm}|p{6.5cm}}
+  Was & Wo \\
+  \hline
+  ER-Diagramm & /DB/  \\
+  SQL-Script für die DB & /DB/ \\
+  MySQL Workbench DB File & /DB/  \\
+  SRA / SAD & /Documents/  \\
+  Liste implementierter Features & /Feature-List/  \\
+  Index aller Dateien & /Index/ und /  \\
+  Protokolle & /Protokolle/  \\
+  Read-me.txt & /  \\
+  Git Readme (leer) & /  \\
+  Projektarbeit & /Site/ \\
+ \end{tabular}
+\end{table}
+
+\section*{Projektarbeit}
+
+Pfade ausgehend von /Site/.
+
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{p{9cm}|p{6.5cm}}
+  Was & Wo \\
+  \hline
+  Deutsche Seiten & /de/  \\
+  Englische Seiten & /en/ \\
+  HTML5 Boilerplate Dokumentation & /doc/ \\
+  Bilder, Logos und Videos & /images/ \\
+
+ \end{tabular}
+\end{table}
+
+\end{document}
