@@ -5,6 +5,7 @@
 
         if ( $_SESSION['sprache'] == "en" )
         { ?> 	
+				
 				<ul>
 				
 	
@@ -35,6 +36,7 @@
         }
         else
         { ?>
+				
 				<ul>
 				
 					
