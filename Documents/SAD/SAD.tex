@@ -44,7 +44,7 @@ Tobias Schwindl
 	\hline
 	1.1 & 10.05.2014 & AS & Verbesserung & Missing Data added:  \newline Sequencediagram, Annahmen \\
 	\hline
-	1.2 & xx.06.2014 & Alle & Anpassung & \\
+	1.2 & xx.06.2014 & Alle & Anpassung & Final Release\\
 	\hline
 	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
 	\hline
@@ -113,7 +113,7 @@ Geschäftszweige erschliessen lassen.
 \subsection{F1: Öffentlicher Bereich}
 \subsubsection*{F11: Startseite}
 %Matthias G. und Sven
-Informiert den Besucher über das Auswahlkonzept bzw. $-$kriterien der Tutoren. Ebenfalls wird eine Karte mit den Standorten von Tutoren in Deutschland implementiert. Ein Teaser über das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse fördern. Durch die Anzeige von Top Gästebucheinträgen wird dem Gast das Gefühl der Vertrauenswürdigkeit und der Kompetenz übermittelt.
+Informiert den Besucher �ber Funktion und Zweck der Webseite. Ebenfalls wird eine Karte mit der Route zum Hauptsitz der Tutoren AG in Deutschland implementiert. Ein Teaser über das Motto und der Angebote der Website soll den Besucher ansprechen und so sein Interesse fördern. Durch die Anzeige von Top Gästebucheinträgen wird dem Gast das Gefühl der Vertrauenswürdigkeit und der Kompetenz übermittelt.
 \newline \newline
 \textbf{Karte}\newline
 Es wird eine Karte von Google-Maps eingebettet. Dies funktioniert mit Hilfe des bereitgestellten Iframes von Google.
@@ -125,11 +125,11 @@ Die Bilder der Slideshow werden mit HTML5 zur Verfügung gestellt. Mittels CSS3 
 Das Video wird mit HTML5 implementiert und ist dadurch ohne Flash abspielbar. Die Kontrollfunktionen werden ebenfalls mit HTML5 zur Verfügung gestellt. Gesteuert wird der HTML5 Videoplayer mit JavaScript.
 \newline \newline
 \textbf{Top Gästebucheinträge}\newline
-Nach dem Laden der Seite wird eine Javascript-Funktion ausgeführt, welche die Top-Gästebucheinträge über ein Json-Objekt erhält. Diese Einträge werden über JQuery eingeblendet und über CSS3 formatiert.
+Nach dem Laden der Seite wird eine Javascript-Funktion ausgeführt, welche die Top-Gästebucheinträge über ein Json-Objekt erhält. Diese Einträge werden über AJAX eingeblendet und über CSS3 formatiert.
 
 \subsubsection*{F12: Gästebuch}
 
-Das Gästebuch ermöglicht den Nutzern eigene Kommentare abzugeben. Diese werden in einer SQL - Datenbank abgespeichert. Zusätzlich wird dazu der Autor abgespeichert und eine Variable, welche erfasst, ob ein Gästebuch eintragt bereits von einem Administrator autorisiert wurde, oder nicht. Mittels PHP, im speziellen mit dem PDO werden die Gästebucheinträge zum Frontend der Website weitergeleitet und dort angezeigt. Einträge, die sehr gute Bewertungen erhalten werden zur Werbung für die Website eingesetzt.
+Das Gästebuch ermöglicht den Nutzern eigene Kommentare abzugeben. Diese werden in einer SQL - Datenbank abgespeichert. Zusätzlich wird dazu der Autor abgespeichert und eine Variable, welche erfasst, ob ein Gästebuch eintragt bereits von einem Administrator autorisiert wurde, oder nicht. Mittels eines JSON-Objektes werden die Gästebucheinträge zum Frontend der Website weitergeleitet und dort �ber eine JavaScript-Funktion angezeigt. Besonders positive Eintr�ge werden zur Werbung für die Website eingesetzt.
 
 \subsubsection*{F13: Anzeige von verfügbaren Tutoren an einem bestimmten Ort}
 
@@ -158,7 +158,7 @@ Die Registrierung erfolgt über ein Formular, in der alle Daten, die unbedingt n
 \newline
 Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Nutzers zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Sesseion-Variablen, die angeben, dass der Benutzer angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Das Script zum Anmelden wird ebenfalls per JQuery aufgerufen.
 
-\subsubsection*{F15: About us (Impressum)}
+\subsubsection*{F15: Impressum}
 
 %Alex
 Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
@@ -227,7 +227,8 @@ Die Validierung der Daten wird über HTML5 und gegebenenfalls mit einer PHP-Funk
 
 \subsubsection*{F24: Freischaltung von Gästebucheinträge}
 
-Der Administrator ruft das Gästebuch auf und sieht alle nicht autorisierten Einträge. Diese kann er autorisieren. Dann werden diese in der Datenbank aktualisiert.
+%Der Administrator ruft das Gästebuch auf und sieht alle nicht autorisierten Einträge. Diese kann er autorisieren. Dann werden diese in der Datenbank aktualisiert.
+Der Administrator kann �ber die Administrator-Verwaltung alle nicht autorisierten Eintr�ge sehen und gegebenenfalls autorisieren. Diese werden daraufhin in der Datenbank aktualisiert.
 
 \subsubsection*{F25: Abmelden}
 
@@ -268,10 +269,9 @@ Es besteht die Option seinen Account zu löschen.
 Der Schüler kann durch Ausfüllen von HTML5 Formularen seine Profildaten bearbeiten. Die Eingabe des Users wird mittels HTML5 und JavaScript überprüft. Die Daten in der Datenbank werden über ein PHP Skript geändert.
 
 
-\subsubsection*{F32: Tutorenprofil}
+%\subsubsection*{F32: Tutorenprofil}
 
-
-Der angemeldete Benutzer ist in der Lage die Profile von anderen einzusehen.
+%Der angemeldete Benutzer ist in der Lage die Profile von anderen einzusehen.
 
 % \subsubsection*{F34: Zugriff auf Nachrichtensystem}
 %
@@ -337,6 +337,10 @@ Der Tutor kann durch Ausfüllen von HTML5 Formularen seine Profildaten bearbeite
 \subsubsection*{F51: Spenden per Kreditkarten}
 
 Ein registrierter Benutzer kann per Kreditkarte Spenden. Dazu gibt er seine Kreditkarteninformationen in ein HTML5 Formular Kreditkartennummer, Ablaufdatum der Karte, die Prüfziffer und den zu zahlenden Betrag. Diese werden mit Javascript auf Richtigkeit der Informationen geprüft (HTML5 Formular) und dann für die weitere Verwendung in der MySQL Datenbank gespeichert.
+
+\subsubsection*{F52: Fremde Profile}
+
+Der angemeldete Benutzer ist in der Lage die Profile von anderen Benutzern einzusehen.
 
 \section{Annahmen und Beschränkungen}
 \subsection{Annahmen}
