@@ -10,8 +10,9 @@ body
 {
     background-color:#ffffff;
     font-size: 11px;
-    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif 'Yesteryear''Berkshire Swash''Changa One''Lobster';
-
+    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif 'Yesteryear''Berkshire Swash''Changa One''Lobster''Kaushan Script';
+	
+	
     padding:0;
     margin:0;
     width: 100%;
@@ -354,8 +355,8 @@ footer
 /*Guestbook*/
 .GBauthor
 {
-
-    font-family:'Berkshire Swash' cursive;
+	font-family: 'Kaushan Script', cursive;
+    /*font-family:'Berkshire Swash' cursive;*/
     font-size: 110%;
 }
 .GBauthor::first-letter
@@ -393,7 +394,8 @@ p#databargb
 }
 .Newstopic
 {
-    font-family:'Berkshire Swash' cursive;
+	font-family: 'Kaushan Script', cursive;
+    /*font-family:'Berkshire Swash' cursive;*/
     font-size: 130%;
     background-color:#EEEEEE;
     padding:5px;
@@ -425,13 +427,24 @@ p#databargb
 
 .Newsshow
 {
+font-size:110%;
+font-weight: bold;
+cursor: pointer;
+}
+
+.Newsshow:hover
+{
+color:#DE8642;
 
 }
 
+
 .Newsinner
 {
-    font-family:'Berkshire Swash' cursive;
+	font-family: 'Kaushan Script', cursive;
+    /*font-family:'Berkshire Swash' cursive;*/
     font-size: 110%;
+	
 }
 
 .button
@@ -465,7 +478,7 @@ p#databargb
 .button:hover  a 
 {
     color: #DE8642;
-
+	
 }
 
 

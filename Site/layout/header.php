@@ -82,14 +82,23 @@
         <!-- Inlclude for jquery validate -->
         <script src="/js/jquery.validate.min.js"></script>
         <!-- Includes for Menu responsive -->
-		<script type="text/javascript" src="/js/menu_jquery.js"></script>
-		
-		
+		<?php
+		if ( $_SESSION['sprache'] == "en" )
+		{
+            echo '<script type="text/javascript" src="/js/menu_jquery_en.js"></script>';
+		}
+		else
+		{
+            echo '<script type="text/javascript" src="/js/menu_jquery_de.js"></script>';
+		}
+		?>
+			
 		<!-- font -->
 		<link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		
 		<!-- Slideshow CSS/JS Modernizr Abfrage -->
 		<script>
