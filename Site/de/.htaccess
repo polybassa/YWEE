@@ -9,6 +9,8 @@ ExpiresDefault "access plus 1 day"
     deny from all
 </FilesMatch>
 
+DirectoryIndex index.php
+
 RewriteEngine On
 RewriteBase /
 
