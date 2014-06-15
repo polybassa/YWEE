@@ -128,7 +128,7 @@
 				<script>
 				
 				<!-- Karte: Routenplaner -->
-					(function () {
+					function create_route() {
 						var directionsService = new google.maps.DirectionsService(),
 							directionsDisplay = new google.maps.DirectionsRenderer(),
 							createMap = function (start) {
@@ -192,8 +192,9 @@
 									lng : longitude
 								});
 							}
-					})();
+					};
 				</script>
+		<button id="routebtn" onclick="create_route();">Route berechnen</button>
 	
 	</div>
 	</div>
