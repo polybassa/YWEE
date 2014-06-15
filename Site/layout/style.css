@@ -302,6 +302,15 @@ footer
 {
     text-align: center;
 }
+/*max_höhe*/
+.max_hoehe
+{
+max-height:140px;
+height:auto;
+overflow:hidden;
+}
+
+
 /*färbt orange*/
 .orange
 {
