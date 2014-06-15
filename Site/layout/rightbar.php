@@ -75,7 +75,7 @@
     ?>
 	</div>
     
-     <br>
+     
 	
     <!-- Suchformular --><!--Sprachabfrage nicht nötig, da Button-->
     <div class="basic-wrapper orange">
@@ -98,7 +98,7 @@
     </form>
     </div>
 	
-	 <br>
+	
 	
 	
 	
@@ -198,7 +198,7 @@
 	
 	</div>
 	</div>
-	 <br>
+	 
 	
 	
 	<!--Block for Film by Matthias Birnthaler-->
@@ -307,7 +307,7 @@
 	
 	
 	
-	 <br>
+	 
 	
 	
 </div><!--right-->
