@@ -2,7 +2,7 @@
 /* css released under Creative Commons License -  http://creativecommons.org/licenses/by/2.0/deed.en  */
 
 /* Angepasst und verändert von: Daniel Tatzel, ..... */
-/*  geändert Matthias Birnthaler*/
+/* geändert, ergänzt und erweitert Matthias Birnthaler*/
 
 
 
@@ -10,7 +10,7 @@ body
 {
     background-color:#ffffff;
     font-size: 11px;
-    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif 'Yesteryear''Berkshire Swash''Changa One''Lobster''Kaushan Script';
+    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif ,'Yesteryear','Berkshire Swash','Changa One','Lobster','Kaushan Script';
 	
 	
     padding:0;
@@ -65,30 +65,26 @@ img.download {vertical-align:middle;}
     z-index: 0;
     border-bottom: solid 2px #DE8642;
 }
+/*logo div*/
 #logo
 {
     position: absolute;
     z-index: 1;
 }
+/*logo size*/
 .logo_img
 {
     width:300px; 
     height:300px;
 }
 
-
-
-
-
-/*----------slider_img class defines img size ----------------*/
+/*slider_img class defines img size*/
 .slider_img
 {
     max-width:100%;
     height:300px;
 }
-
-
-/*---------basic div-box ---------------------------------------*/
+/*show div-box*/
 #show 
 {
     max-width:100%;
@@ -98,44 +94,41 @@ img.download {vertical-align:middle;}
     overflow:hidden;
     margin: 0 auto;
 }
-
+/*class slide  see also slider.css*/
 #show .slide {
 
     position: absolute;		
     overflow: hidden;
-    text-align: center;
+    
 }
 
 
-/* --------------------Nav-------------- */
+/* -------------------------------Nav---------------------------- */
 nav
 {
     height:44px;
     padding: 0px;
     margin: 0px;
 }
+/*flag_img für flags im Menu*/
 .flag_img
 {
     height: 14px;
     width: auto;
-
 }
 
-/*----------------wrapper-(left+right+content)*/
+/*----------------wrapper beinhaltet leftbar content und rightbar----*/
 #wrapper
 {
-
     padding:0.8%;
     background-color:#f6f8f9;
     border-left: solid 1px #e1e5e7;
     border-right: solid 1px #e1e5e7;
     min-height: 800px;
-
-
 }
 
 
-/* -----------------Inhalt--------------------- */
+/* ---------------------------Inhalt-------------------------------- */
 #content
 { 
     padding-left:0.8%;
@@ -153,18 +146,13 @@ nav
     float:none\9;
     margin:0 auto\9;
 }
-
-/*wird gebraucht da ohne js kein Inhalt in leftbar und sonst die Positionen verschoben wären*/
+/*fixes für kein js*/
 .no-js #content
 {
     float:none;
     margin: 0 auto;
 }
-
-
-
-
-/* --------------Balken------------- */
+/* ----------------------------Spalte links-------------------------- */
 #left
 {
     float: left;
@@ -174,8 +162,7 @@ nav
 
 
 }
-
-
+/* ----------------------------Spalte rechts-------------------------- */
 #right
 {
 
@@ -187,7 +174,7 @@ nav
 
 }
 
-/* -----------Footer--------------------------- */
+/* --------------------------------Footer---------------------------------- */
 footer
 {
     border-top: solid 3px #DE8642;
@@ -196,49 +183,45 @@ footer
     clear: both;
     text-transform: uppercase;
     text-decoration: none;
-
 }
-
+/*styles für links im footer*/
 .footer_link
 {
     position: relative;
     height: 14px;
-    margin:10px auto; 
+    margin:10px auto;
     margin-left:5%;
     background: #EEEEEE;
-    width:95%;
+    width:90%;
 }
+/*ul-Listenpunkte styling*/
 .footer_link ul 
 {
-
     list-style: none;
     padding: 0;
     margin: 0;
     line-height: 1;
-
 }
+/*li listenpunkte styling*/
 .footer_link ul li 
 {
     display:block;
     display: inline;
-    padding:left 3%;
+    padding:left 5%;
 }
-
+/*"Linkschrift" styling*/
 .footer_link ul li a
 {
     color:#000000;
     font-size:14px;
 }
-
+/*"Linkschrift" hover styling*/
 .footer_link ul li:hover  a 
 {
     color: #DE8642;
-
 }
 
-
-
-
+/*---------------------------------Karte-----------------------------*/
 #map 
 {
     float: left;
@@ -246,7 +229,7 @@ footer
     height: 300px;
 
 }
-
+/*Button für Kartenroute*/
 #routebtn
 {
 	margin-top: 5px;
@@ -254,9 +237,7 @@ footer
 	width: 60%;
 	margin-left: 20%;
 }
-
-
-
+/*styles für Basic-Box*/
 .basic-wrapper
 {
     background-color: #ffffff;
@@ -267,8 +248,8 @@ footer
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-
-.basic-wrapper-top/*use for box headlines*/
+/*use for box headlines*/
+.basic-wrapper-top
 {
     background-color:#DE8642;
     text-align:center;
@@ -286,8 +267,8 @@ footer
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
-
-.basic-wrapper-middle/*use for box middle part*/
+/*use for box middle part*/
+.basic-wrapper-middle
 {
     background-color: #ffffff;
     padding:0 10px;
@@ -296,12 +277,11 @@ footer
     border-right: solid 1px #c3c5c9;
     margin: 0px 10px auto;
 }
-
-.basic-wrapper-bottom/*use for box bottom part*/
+/*use for box bottom part*/
+.basic-wrapper-bottom
 {
     background-color: #ffffff;
     padding:10px 10px 10px 10px;
-
     overflow:hidden;
     margin: 0px 10px 15px;
     border-left: solid 1px #c3c5c9;
@@ -317,16 +297,17 @@ footer
 
 
 }
+/*wird für Textausrichtungen verwendet*/
 .center
 {
     text-align: center;
 }
-
+/*färbt orange*/
 .orange
 {
     background-color:#DE8642;
 }
-
+/*styles für Line im Gästebuch leftbar*/
 .lane 
 {
     width:75%;
@@ -334,22 +315,24 @@ footer
     margin-top: 20px;
 
 }
-
+/*Größe für Loginform*/
 #loginform
 {
     width:98.4%;
 }
+/*Größe für loginfeld*/
 .login_field
 {
     width:98.4%;	
 }
-
+/*größe für Suchfeld*/
 #searchform
 .suchen_field
 {
     width:80%;
 
 }
+/*styles für Lupe für Suche*/
 .lupe_img
 {
 width: 20px;
@@ -357,57 +340,60 @@ height:20px;
 margin-left:3px;
 vertical-align: middle
 }
-
-
+/*boxshadow für content*/
 .boxshadow #content
 {
     -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* WebKit */
     -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Firefox */
     box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* Standard */
-    /*Rahmen wird entfernt*/
+    /*Rahmen wird entfernt für content wird class "basic-wrapper" verwendet die einen Rahmen definiert*/
     border:0;
 }
-
-/*Guestbook*/
+/*---------------------------------Gästebuch-----------------------------------*/
+/*styles für Autor*/
 .GBauthor
 {
 	font-family: 'Kaushan Script', cursive;
     /*font-family:'Berkshire Swash' cursive;*/
     font-size: 110%;
 }
+/*styles für ersten Buchstaben Autor*/
 .GBauthor::first-letter
 {
     font-size: 175%;
 }
-
+/*content schrieb nach Autor*/
 .GBauthor::after
 {
     content:" schrieb:"
 }
+/*reset databargb wird für topguestbook.js gebraucht*/
 p#databargb
 {
     padding:0 auto;
     margin:0 auto;
 }
-
+/*---------------------------------Nachrichten-----------------------------------*/
+/*styles für Autor*/
 .Newsauthor
 {
     font-size: 90%;
 
 }
-
+/*styles für Nachrichtendatum*/
 .Newsdate
 {
     font-size: 90%;
 
 }
-
+/*content "veröffentlichte am" vor Nachrichtendatum*/
 .Newsdate:before
 {
 
     content: " ver\0000f6ffentlichte am ";
 
 }
+/*Nachrichtenüberschrift*/
 .Newstopic
 {
 	font-family: 'Kaushan Script', cursive;
@@ -425,7 +411,7 @@ p#databargb
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
-
+/*Nachricht*/
 .Newsmessage
 {
     background-color:#EEEEEE;
@@ -440,29 +426,28 @@ p#databargb
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 }
-
+/*styles für Nachrichten Ein und Ausblenden*/
 .Newsshow
 {
 font-size:110%;
 font-weight: bold;
 cursor: pointer;
 }
-
+/*styles für hover für Nachrichten Ein und Ausblenden*/
 .Newsshow:hover
 {
 color:#DE8642;
 
 }
-
-
+/*Nachricht*/
 .Newsinner
 {
 	font-family: 'Kaushan Script', cursive;
     /*font-family:'Berkshire Swash' cursive;*/
     font-size: 110%;
-	
 }
 
+/*Button für Gästebuch leftbar*/
 .button
 {
     width: auto;
@@ -476,7 +461,7 @@ color:#DE8642;
     border-radius: 4px;
 
 }
-
+/*Linkschirft für Gästebuch leftbar*/
 .button  a 
 {
     display: block;
@@ -488,16 +473,13 @@ color:#DE8642;
     font-weight: bold;
     list-style: none;
     font-family: Helvetica, sans-serif;
-
 }
-
+/*hover für Linkschirft für Gästebuch leftbar*/
 .button:hover  a 
 {
     color: #DE8642;
-	
 }
-
-
+/*styles für kein Javascript Meldung*/
 #noscript
 {
     background-color: #ffffff;
@@ -510,8 +492,7 @@ color:#DE8642;
     font-size:175%;
     color:#FF0000;
 }
-
-
+/*form styles für Anmeldung*/
 form label {display:inline-block; width:100%;}  
 form input[type="text"],
 form input[type="password"],
@@ -523,14 +504,14 @@ form .line.submit {text-align:left;}
 
 
 
-
+/*EN Gästebuch-scrollbalken*/
 #scrollablecontentboxguestebuch_en{
     height:100%;
     overflow:hidden;
     overflow-y:scroll;
 
 }
-
+/*EN Nachrichten-scrollbalken*/
 #scrollablecontentboxnews_en{
     height:100%;
     overflow:hidden;
@@ -538,15 +519,14 @@ form .line.submit {text-align:left;}
 
 
 }
-
-
+/*DE Gästebuch-scrollbalken*/
 #scrollablecontentboxguestebuch_de{
     height:100%;
     overflow:hidden;
     overflow-y:scroll;
 
 }
-
+/*DE Nachrichten-scrollbalken*/
 #scrollablecontentboxnews_de{
     height:100%;
     overflow:hidden;
@@ -554,8 +534,7 @@ form .line.submit {text-align:left;}
 
 
 }
-
-
+/*Scrollbalken für content der die Größe content überschreiten*/
 .scrollablecontentbox{
     height:750px;
     overflow:auto;
@@ -563,26 +542,31 @@ form .line.submit {text-align:left;}
 }
 
 
+
+/*für Bildschirmgrößen mit weniger als 1000 px*/
 @media screen and (max-width:1000px)
 {
+	/*neue Größe für Banner*/
     #banner 
-    {
-        height:200px;
-    }
+	{
+		height:200px;
+	}
+	/*neue Größe für Show - Slideshow*/
     #show 
-    {
+	{
         width:100%;
         height:200px;
     }
+	/*neue Größe für Slideshow imgs*/
     .slider_img 
 	{
         width:100%;
         min-height:200px;
 		height:100%;
 	}
-
+	/*neue Größe für Logo*/
     .logo_img
-    {
+	{
         width:200px; 
         height:200px;
     }
@@ -592,22 +576,24 @@ form .line.submit {text-align:left;}
 
 
 
-
+/*für Bildschirmgrößen mit weniger als 800px*/
 @media screen and (max-width:800px)
 {
+	/*neue Größe für Container*/
 	#container
-	 {
-	 width:100%;
-	 }
-
+	{
+		width:100%;
+	}
+	/*Größenanpassung für Wrapper "umschließt" leftbar rightbar und content*/
     #wrapper
-    {
+	{
         min-height:1600px;
         position: relative;
 		
 	}
+	/*Größenanpassung für content*/
     #content
-    {
+	{
         position: absolute;
         top:0;
         width:94.8%;
@@ -615,91 +601,100 @@ form .line.submit {text-align:left;}
 		margin-top: 10px;
        
     }
+	/*Größenanpassung für leftbar - linker Balken*/
     #left
-    {
+	{
         position: absolute;
         top:795px;
         margin-left:-0.8%;
         width:50%;
     }
+	/*Größenanpassung für rightbar - rechter Balken*/
     #right
-    {
+	{
         position: absolute;
         top:795px;
         right: 0;
         margin-left:-0.8%;
         width:50%;
     }
+	/*Größenanpassung für Banner*/
     #banner 
-    {
+	{
         height:150px;
     }
+	/*Größenanpassung für Slideshow*/
     #show 
-    {
+	{
         width:100%;
         height:150px;
     }
+	/*neue Größe für Slider-Bilder*/
     .slider_img 
-    {
+	{
         width:100%;
         min-height:150px;
 		height:100%;
 	}
-
+	/*neue Größe für Logo*/
     .logo_img
-    {
+	{
         width:150px; 
         height:150px;
     }
 
-
 }
 
 
+/*für Bildschirmgrößen mit weniger als 400px*/
 @media screen and (max-width: 400px)
 {
+	/*Größenanpassung für Wrapper - umschließt leftbar rightbar und content*/
     #wrapper
-    {
+	{
         min-height:2230px;
         height:auto;
     }
 
-
+	/*Größenanpassung für leftbar - linker Balken*/
     #left
-    {
+	{
         top:1560px;
         float:left;
         width:100%;
         margin-bottom: 1.6%;;
     }
+	/*Größenanpassung für rightbar - rechter Balken*/
     #right
-    {
+	{
         float:left;
         width:100%;
         margin-bottom: 1.6%;
     }
-
+	/*neue Größe für Banner*/
     #banner 
-    {
+	{
         height:100px;
     }
+	/*neue Größe für Slideshow*/
     #show 
-    {
+	{
         width:100%; 
         height:100px;
     }
+	/*neue Größe für Slider-Bilder*/
     .slider_img 
-    {
+	{
         width:100%;
         height:100px;
     }
+	/*neue Größe für Logo-img*/
     .logo_img
-    {
+	{
         width:100px; 
         min-height:100px;
 		height:100%;
 	}
-
-
+	
+	
 }
-
