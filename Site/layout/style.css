@@ -652,14 +652,14 @@ form .line.submit {text-align:left;}
 	/*Größenanpassung für Wrapper - umschließt leftbar rightbar und content*/
     #wrapper
 	{
-        min-height:2230px;
+        min-height:2210px;
         height:auto;
     }
 
 	/*Größenanpassung für leftbar - linker Balken*/
     #left
 	{
-        top:1560px;
+        top:1510px;
         float:left;
         width:100%;
         margin-bottom: 1.6%;;
