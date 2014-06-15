@@ -261,7 +261,7 @@ footer
 {
     background-color: #ffffff;
     padding:10px;
-    margin: 0px 10px 10px;
+    margin: 0px 10px 15px;
     border: solid 1px #c3c5c9;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -303,7 +303,7 @@ footer
     padding:10px 10px 10px 10px;
 
     overflow:hidden;
-    margin: 0px 10px 10px;
+    margin: 0px 10px 15px;
     border-left: solid 1px #c3c5c9;
     border-right: solid 1px #c3c5c9;
     border-bottom: solid 1px #c3c5c9;
@@ -610,14 +610,14 @@ form .line.submit {text-align:left;}
     #left
     {
         position: absolute;
-        top:790px;
+        top:795px;
         margin-left:-0.8%;
         width:50%;
     }
     #right
     {
         position: absolute;
-        top:790px;
+        top:795px;
         right: 0;
         margin-left:-0.8%;
         width:50%;
@@ -652,14 +652,14 @@ form .line.submit {text-align:left;}
 {
     #wrapper
     {
-        min-height:2200px;
+        min-height:2230px;
         height:auto;
     }
 
 
     #left
     {
-        top:1570px;
+        top:1560px;
         float:left;
         width:100%;
         margin-bottom: 1.6%;;
