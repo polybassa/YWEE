@@ -127,6 +127,15 @@
 				<script type="text/javascript" src="/js/jquery.cookie.js"></script>
 				<script>
 				
+				<!-- Karte vor Geolocation -->
+				var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
+				function gmegInitializeMap(){gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
+				gmegMap = new google.maps.Map(document.getElementById("map"),{zoom:14,center:gmegLatLng,mapTypeId:google.maps.MapTypeId.ROADMAP});
+				gmegMarker = new google.maps.Marker({map:gmegMap,position:gmegLatLng});
+				gmegInfoWindow = new google.maps.InfoWindow({content:'<b>Hochschule</b><br>Seybothstra0e<br>Regensburg'});
+				gmegInfoWindow.open(gmegMap,gmegMarker);}google.maps.event.addDomListener(window,"load",gmegInitializeMap);
+				
+				
 				<!-- Karte: Routenplaner -->
 					function create_route() {
 						var directionsService = new google.maps.DirectionsService(),
@@ -140,7 +149,7 @@
 									},
 									mapOptions = {
 										zoom: 10,
-										// Default view: downtown Stockholm
+										// Default View: Regensburg
 										center : new google.maps.LatLng(49.0145423, 12.100855899999942),
 										mapTypeId: google.maps.MapTypeId.ROADMAP
 									};
@@ -194,9 +203,10 @@
 							}
 					};
 				</script>
-		<button id="routebtn" onclick="create_route();">Route berechnen</button>
+		
 	
 	</div>
+	<button id="routebtn" onclick="create_route();">Route berechnen</button>
 	</div>
 	 <br>
 	
