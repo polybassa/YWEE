@@ -39,11 +39,11 @@
                     document.write('<link rel="Stylesheet" href="/layout/video_ie.css" type="text/css" />');
                 }
                 //Check if browser is Chrome or not
-                else if (navigator.userAgent.search("Chrome") >= 0) {
+                if (navigator.userAgent.search("Chrome") >= 0) {
                     document.write('<link rel="Stylesheet" href="/layout/video_gc.css" type="text/css" />');
                 }
                 //Check if browser is Firefox or not
-                else if (navigator.userAgent.search("Firefox") >= 0) {
+                if (navigator.userAgent.search("Firefox") >= 0) {
                     document.write('<link rel="Stylesheet" href="/layout/video_mf.css" type="text/css" />');
                 }
                 /*
@@ -55,9 +55,9 @@
                  else if (navigator.userAgent.search("Opera") >= 0) {
                  document.write('<link rel="Stylesheet" href="/layout/video_op.css" type="text/css" />');
                  }*/
-                else
+                else{
                     document.write('<link rel="Stylesheet" href="/layout/video_mf.css" type="text/css" />');
-
+				}
             }
             BrowserDetection();
         </script>
