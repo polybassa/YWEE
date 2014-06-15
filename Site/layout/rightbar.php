@@ -77,7 +77,7 @@
     
      
 	
-    <!-- Suchformular --><!--Sprachabfrage nicht nötig, da Button-->
+    <!-- Suchformular -->
     <div class="basic-wrapper orange">
     <form method="POST" action="/de/search.php" id="searchform">
 
@@ -94,7 +94,7 @@
                 echo '<input type="text" name="search" placeholder="Suche" class="suchen_field">';
             }
     ?>
-    <input type="image" src="/images/lupe.png" alt="Lupe">
+    <input type="image" src="/images/lupe.png" class="lupe_img" alt="Lupe">
     </form>
     </div>
 	
