@@ -567,10 +567,11 @@ form .line.submit {text-align:left;}
         height:200px;
     }
     .slider_img 
-    {
+	{
         width:100%;
-        height:200px;
-    }
+        min-height:200px;
+		height:100%;
+	}
 
     .logo_img
     {
@@ -586,21 +587,25 @@ form .line.submit {text-align:left;}
 
 @media screen and (max-width:800px)
 {
-
+	#container
+	 {
+	 width:100%;
+	 }
 
     #wrapper
     {
         min-height:1600px;
         position: relative;
-    }
+		
+	}
     #content
     {
         position: absolute;
         top:0;
-        width:96.4%;
-        margin-top: 10px;
-        margin-right: 0.8%;
-        margin-left:0.8%;
+        width:94.8%;
+		margin-left:0.8%; 
+		margin-top: 10px;
+       
     }
     #left
     {
@@ -614,7 +619,7 @@ form .line.submit {text-align:left;}
         position: absolute;
         top:790px;
         right: 0;
-        margin-right:-0.8%;
+        margin-left:-0.8%;
         width:50%;
     }
     #banner 
@@ -629,8 +634,9 @@ form .line.submit {text-align:left;}
     .slider_img 
     {
         width:100%;
-        height:150px;
-    }
+        min-height:150px;
+		height:100%;
+	}
 
     .logo_img
     {
@@ -682,8 +688,9 @@ form .line.submit {text-align:left;}
     .logo_img
     {
         width:100px; 
-        height:100px;
-    }
+        min-height:100px;
+		height:100%;
+	}
 
 
 }
