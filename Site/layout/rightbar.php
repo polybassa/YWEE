@@ -227,7 +227,7 @@
 	?>	
 	 
 
-	<div class="basic-wrapper-bottom">
+	<div class="basic-wrapper-bottom max_hoehe">
 	
 	<script> var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn; 
 	function intializePlayer(){ // Set object references 

@@ -302,6 +302,15 @@ footer
 {
     text-align: center;
 }
+/*max_höhe*/
+.max_hoehe
+{
+max-height:140px;
+height:auto;
+overflow:hidden;
+}
+
+
 /*färbt orange*/
 .orange
 {
@@ -652,14 +661,17 @@ form .line.submit {text-align:left;}
 	/*Größenanpassung für Wrapper - umschließt leftbar rightbar und content*/
     #wrapper
 	{
-        min-height:2230px;
+
+        min-height:2240px;
+
         height:auto;
     }
 
 	/*Größenanpassung für leftbar - linker Balken*/
     #left
 	{
-        top:1560px;
+
+        top:1570px;
         float:left;
         width:100%;
         margin-bottom: 1.6%;;
