@@ -1,4 +1,29 @@
 /*------------style for vido by Matthias Götz und Freunde----------------*/
+div#video_player_box{
+	width: 100%; 
+	height: auto;
+	background:#000; 
+	margin:0px auto;
+} 
+
+	
+	
+div#video_controls_bar{ 
+	width:100%; 
+	background: #FFFFFF;  
+	color:#000000; 
+}
+ 
+button#playpausebtn{ 
+    background:url(/images/pause.png); 
+    border:none; 
+    width:25px; 
+    height:25px; 
+    cursor:pointer; 
+    opacity:0.5; } 
+
+
+/*------------style for vido by Matthias Götz und Freunde----------------*/
 input[type=range]{
     -webkit-appearance: none;
 }
