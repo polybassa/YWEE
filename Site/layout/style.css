@@ -305,8 +305,7 @@ footer
 /*max_höhe*/
 .max_hoehe
 {
-max-height:140px;
-height:auto;
+height:160px;
 overflow:hidden;
 }
 
@@ -549,12 +548,21 @@ form .line.submit {text-align:left;}
     overflow:auto;
 
 }
-
-
+/*für Bildschirmgrößen mit weniger als 1100 px*/
+@media screen and (max-width:1100px)
+{
+/*Größenanpassung für Wrapper - umschließt leftbar rightbar und content*/
+    #wrapper
+	{
+        min-height:830px;
+        height:auto;
+    }
+}
 
 /*für Bildschirmgrößen mit weniger als 1000 px*/
 @media screen and (max-width:1000px)
 {
+	
 	/*neue Größe für Banner*/
     #banner 
 	{
@@ -596,7 +604,7 @@ form .line.submit {text-align:left;}
 	/*Größenanpassung für Wrapper "umschließt" leftbar rightbar und content*/
     #wrapper
 	{
-        min-height:1600px;
+        min-height:1615px;
         position: relative;
 		
 	}
@@ -605,8 +613,8 @@ form .line.submit {text-align:left;}
 	{
         position: absolute;
         top:0;
-        width:94.8%;
-		margin-left:0.8%; 
+        width:95.2%;
+		margin-left:0 0.8%; 
 		margin-top: 10px;
        
     }
@@ -661,17 +669,22 @@ form .line.submit {text-align:left;}
 	/*Größenanpassung für Wrapper - umschließt leftbar rightbar und content*/
     #wrapper
 	{
-
-        min-height:2240px;
-
+        min-height:2245px;
         height:auto;
     }
-
+	/*Größenanpassung für content*/
+    #content
+	{
+		width:92.8%;
+		margin: 0 1.6%;
+		margin-top:10px;
+	}
+	
 	/*Größenanpassung für leftbar - linker Balken*/
     #left
 	{
 
-        top:1570px;
+        top:1575px;
         float:left;
         width:100%;
         margin-bottom: 1.6%;;
