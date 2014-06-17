@@ -28,10 +28,10 @@
 <input type="button" onclick="show(0)" value="Passwort &auml;ndern"> <br><br>
 
 <div id="passwd" style='display: none;'>
-<form action="scripts/ChangePasswd.php" method="post" id="privpasswd">
-<input type="password" maxlength ="20" size="30" name="passwd" placeholder="Passwort" required>
-<input type="submit" name="send" value="Absenden">
-</form>
+    <form action="scripts/ChangePasswd.php" method="post" id="privpasswd">
+    <input type="password" maxlength ="20" size="30" name="passwd" placeholder="Passwort" required>
+    <input type="submit" name="send" value="Absenden">
+    </form>
 </div>
 
 
@@ -57,14 +57,13 @@
     
     if ( isset( $_POST['delete'] ) )
         include_once("scripts/delete.php");
-
-    // Auflistung aus Files erstellen
 ?>
 <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="/js/filesTable.js"></script>
-    <script type="text/javascript">
-        var files = <?php include_once("scripts/ListDir.php"); ?>;
-    </script>
+
+<script type="text/javascript">
+    var files = <?php include_once("scripts/ListDir.php"); ?>;
+</script>
     
 <table id="filesTable" class="display" cellspacing="0" width="100%" align="left">
   <thead>

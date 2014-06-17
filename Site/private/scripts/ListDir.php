@@ -2,12 +2,13 @@
     // Autor von ListDir.php: Daniel Tatzel
     // Liest alle Dateien aus und berechnet dazu die Groesse in KB und erzeugt ein JSON objekt
 
-    //$Dir = '/users/private/'.$ID;
+    // Zielordner
     $Dir = "./files/";
 
     // Kann dann mit JSON in Javascript umgewandelt werden zur Verarbeitung ( Array )
     $FileListing = array_diff(scandir($Dir), array('..', '.'));
 
+    // Wird nur ausgefuehrt falls Daten vorhanden sind
     if ( count( $FileListing ) > 0 )
     {
         $file_arr = array();

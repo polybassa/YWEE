@@ -1,21 +1,32 @@
-/*------------style for vido by Matthias Götz und Freunde----------------*/
-div#video_player_box{ width:200px; background:#000; margin:0px auto;} 
-div#video_controls_bar{ width:200px; height: auto; background: #FFFFFF;  color:#000000; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;} 
+/*------------style for video by Matthias Götz----------------*/
+div#video_player_box{
+	width: 100%; 
+	background:#000; 
+	margin:0px auto;
+} 
+
+	
+	
+div#video_controls_bar{ 
+	width:100%; 
+	height: auto; 
+	background: #FFFFFF;  
+	color:#000000; 
+}
+ 
 button#playpausebtn{ 
     background:url(/images/pause.png); 
     border:none; 
     width:25px; 
-    height:25px; 
+    height:21px; 
     cursor:pointer; 
-    opacity:0.5; } 
-/*
-input#seekslider{ width:70px; } 
-input#volumeslider{ width: 80px;} 
-*/
+    opacity:0.5; 
+} 
+
 input[type=range]{
     /* fix for FF unable to apply focus style bug  */
     border: 1px solid white; 
-
+	padding:0;
     /*required for proper track sizing in FF*/
     width: 90px;
 }

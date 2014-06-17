@@ -75,9 +75,9 @@
     ?>
 	</div>
     
-     <br>
+     
 	
-    <!-- Suchformular --><!--Sprachabfrage nicht nötig, da Button-->
+    <!-- Suchformular -->
     <div class="basic-wrapper orange">
     <form method="POST" action="/de/search.php" id="searchform">
 
@@ -94,11 +94,11 @@
                 echo '<input type="text" name="search" placeholder="Suche" class="suchen_field">';
             }
     ?>
-    <input type="image" src="/images/lupe.png" alt="Lupe">
+    <input type="image" src="/images/lupe.png" class="lupe_img" alt="Lupe">
     </form>
     </div>
 	
-	 <br>
+	
 	
 	
 	
@@ -127,8 +127,17 @@
 				<script type="text/javascript" src="/js/jquery.cookie.js"></script>
 				<script>
 				
+				<!-- Karte vor Geolocation -->
+				var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
+				function gmegInitializeMap(){gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
+				gmegMap = new google.maps.Map(document.getElementById("map"),{zoom:14,center:gmegLatLng,mapTypeId:google.maps.MapTypeId.ROADMAP});
+				gmegMarker = new google.maps.Marker({map:gmegMap,position:gmegLatLng});
+				gmegInfoWindow = new google.maps.InfoWindow({content:'<b>Hochschule</b><br>Seybothstra0e<br>Regensburg'});
+				gmegInfoWindow.open(gmegMap,gmegMarker);}google.maps.event.addDomListener(window,"load",gmegInitializeMap);
+				
+				
 				<!-- Karte: Routenplaner -->
-					(function () {
+					function create_route() {
 						var directionsService = new google.maps.DirectionsService(),
 							directionsDisplay = new google.maps.DirectionsRenderer(),
 							createMap = function (start) {
@@ -140,7 +149,7 @@
 									},
 									mapOptions = {
 										zoom: 10,
-										// Default view: downtown Stockholm
+										// Default View: Regensburg
 										center : new google.maps.LatLng(49.0145423, 12.100855899999942),
 										mapTypeId: google.maps.MapTypeId.ROADMAP
 									};
@@ -192,12 +201,14 @@
 									lng : longitude
 								});
 							}
-					})();
+					};
 				</script>
+		
 	
 	</div>
+	<button id="routebtn" onclick="create_route();">Route berechnen</button>
 	</div>
-	 <br>
+	 
 	
 	
 	<!--Block for Film by Matthias Birnthaler-->
@@ -216,7 +227,7 @@
 	?>	
 	 
 
-	<div class="basic-wrapper-bottom">
+	<div class="basic-wrapper-bottom max_hoehe">
 	
 	<script> var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn; 
 	function intializePlayer(){ // Set object references 
@@ -306,7 +317,7 @@
 	
 	
 	
-	 <br>
+	 
 	
 	
 </div><!--right-->

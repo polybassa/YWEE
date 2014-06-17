@@ -1,9 +1,10 @@
 <?php
     // Autor von delete.php: Daniel Tatzel
-    // L&oescht eine Datei
+    // Loescht eine Datei
 
     $path = realpath('files/'.$_POST['file']);
 
+    // Wenn vorhanden, dann l&oeschen
     if( is_file($path) )
         unlink( $path );
 ?> 
