@@ -143,7 +143,7 @@
 							createMap = function (start) {
 								var travel = {
 										origin : (start.coords)? new google.maps.LatLng(start.lat, start.lng) : start.address,
-										destination : "Technische Hochschule, Regensburg",
+										destination : "Siemensstraße 12, Regensburg",
 										travelMode : google.maps.DirectionsTravelMode.DRIVING
 										
 									},
