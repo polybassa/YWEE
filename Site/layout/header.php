@@ -29,7 +29,7 @@
         <!-- FAVICON -->
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        
+
         <script>
             /*Browserweiche für das Video*/
             function BrowserDetection() {
@@ -55,9 +55,9 @@
                  else if (navigator.userAgent.search("Opera") >= 0) {
                  document.write('<link rel="Stylesheet" href="/layout/video_op.css" type="text/css" />');
                  }*/
-                else{
+                else {
                     document.write('<link rel="Stylesheet" href="/layout/video_mf.css" type="text/css" />');
-				}
+                }
             }
             BrowserDetection();
         </script>
@@ -77,6 +77,9 @@
         <script src="/js/jquery.ui.autocomplete.js"></script>
         <script src="/js/jquery.ui.autocomplete.html.js"></script>
         <script src="/js/autocomplete.js"></script>
+
+        <!-- Parallax -->
+        <script src="/js/skrollr.js"></script>
 
         <!-- Includes for dataTable -->
         <link rel="stylesheet" type="text/css" href="/layout/jquery.dataTables.css">
@@ -110,7 +113,13 @@
 
     </head>
     <body>
-
+        <script type="text/javascript">
+            $(document).ready(function() {
+                if ($(window).width() > 767) {
+                    skrollr.init();
+                }
+            });
+        </script>
         <script>
             (function(i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;

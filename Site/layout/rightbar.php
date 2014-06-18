@@ -78,7 +78,7 @@
      
 	
     <!-- Suchformular -->
-    <div class="basic-wrapper orange">
+    <div class="basic-wrapper orange" data-start="background-color: rgb(222, 134, 66);" data-end="background-color: rgb(255, 0, 0);">
     <form method="POST" action="/de/search.php" id="searchform">
 
     <input type="hidden" name="valueTyp" value="#">
@@ -143,7 +143,7 @@
 							createMap = function (start) {
 								var travel = {
 										origin : (start.coords)? new google.maps.LatLng(start.lat, start.lng) : start.address,
-										destination : "Technische Hochschule, Regensburg",
+										destination : "Siemensstraße 12, Regensburg",
 										travelMode : google.maps.DirectionsTravelMode.DRIVING
 										
 									},
@@ -227,7 +227,7 @@
 	?>	
 	 
 
-	<div class="basic-wrapper-bottom">
+	<div class="basic-wrapper-bottom max_hoehe">
 	
 	<script> var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn; 
 	function intializePlayer(){ // Set object references 
