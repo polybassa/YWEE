@@ -1,0 +1,98 @@
+\documentclass[10pt,a4paper]{scrartcl}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=2cm, top=2cm,right=2cm,bottom=2cm]{geometry}
+
+%opening
+\title{Testbericht für Gruppe 4 - ASC-Profis}
+\author{von Gruppe 2}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieser Testbericht wurde von der Gruppe 2 verfasst und beschreibt die Funktionalität der Webseite der Gruppe 4 - ASC Profis auf der Webseite \url{http://www.ebenezer-kunatse.org/}.
+\end{abstract}
+
+\section{Testbericht für Gruppe 4 - ASC-Profis}
+\begin{enumerate}
+\subsection{Allgemeine Fehler}
+
+\subsubsection{Internet Explorer}
+\item IE11 - Registrierung funktioniert nicht
+\item IE11 - Karte liegt über Menü (schneidet Menü ab)
+
+\subsubsection{Chrome / Webkit-basiert}
+\item Chromium (Chrome) - Admin kann Benutzerdaten beim Editieren nicht ansehen
+\item Chromium (Chrome) - Anmeldung im Backend führt zu Logout in Frontend
+\item Android - Ständiger Logout auf mobiler Seite
+\item Chrome/Opera - Slideshow funktioniert ohne Javascript nicht
+
+\subsubsection{Safari}
+\item Safari 7 - Gästebucheinträge können nicht erstellt werden
+\item Safari 7 - Karte liegt über Menü (schneidet Menü ab) vgl. IE11
+
+\subsubsection{Sonstiges}
+\item Validierung - Fehler bei Registrierung - es kann eine ungültige eMail-Adresse (z.B. ff@ff) bei Registrierung eingegeben werden. Fehlermeldung erst bei Klick auf Registrierung
+\item Die Validierung funktioniert nur auf Englisch
+\item Bei der Registrierung sind einige Buttons auf Englisch
+\item Keine Umlaute in News möglich
+\item Admin kann Passwörter vom User neu vergeben
+\item Vermieter können eigene Unterkünfte bewerten
+\item Validierung der Preise nicht korrekt - zehntel-Cent-Beträge möglich
+\item Beim Absenden des Registrierungsformulars wird ein Download gestartet
+\item News sind nicht verfügbar
+
+\subsection{Fehler nach SRA}
+
+\subsubsection{Anwendungsfalldiagramm}
+\item Keine Angebotsverwaltung im Admin-Bereich
+\item Keine "Passwort vergessen"-Funktion für User
+\item Persönliche Daten einsehen und bearbeiten funktioniert nicht
+
+\subsubsection{Systemanforderungen}
+\item zu F5.2.1.4.5 - Mindestalter wird nicht geprüft - keine Alterseingabe
+\item zu F5.2.1.5 - nicht implementiert
+\item zu F5.2.4.2 - Suche funktioniert ab Eingabe von nur einem Zeichen
+\item zu F5.2.13.1 - Privater Ordner nicht implementiert / auffindbar
+
+\subsubsection{Nicht-Funktionale Anforderungen}
+\item zu Q5.3.1.4 Lokale Schriftart nicht vorhanden
+
+\subsubsection{Test-Plan}
+\item zu 6.3.3 - nicht W3C-Konform
+
+\subsubsection{Voraussetzungen und Einschränkungen}
+\item zu 7.1 - Mindestalter nicht umgesetzt
+
+\end{enumerate}
+
+\section{Testszenarien}
+
+Hier wird beschrieben, wie wir die einzelnen Usertypen getestet haben. 
+\newline Getestet wurde mit folgenden Browsern:
+IE11, IE10 mobile, Chromium, Chrome, Safari 7, Opera 19, Firefox 29
+\newline\newline Die Gruppe der Tester, bestehend aus den Mitgliedern der Gruppe 2, hat folgende Testszenarien unter den oben beschrieben Bedingungen (Browser, OS) getestet und ist zu folgendem Ergebnis gekommen:
+
+\subsection{Besucher}
+Als Besucher hat man die Möglichkeit News zu lesen, in Kontakt mit den Betreibern zu treten und Unterkünfte zu betrachten. Des Weiteren kann der Besucher ein Imagevideo ansehen und Bewertungen über die Seite einsehen. Für weiterführende Funktionen, z.B. Unterkünfte buchen, kann sich der Besucher registrieren.
+
+\subsection{Eingeloggter User}
+Als eingeloggter User besteht außerdem die Möglichkeit Unterkünfte selbst anzulegen, Unterkünfte zu buchen sowie zu verwalten und Gästebucheinträge zu verfassen. Zusätzlich kann der User Unterkünfte bewerten. 
+
+\subsection{Administrator}
+Die Adminfunktionen sind unterteilt in ein extra zu erreichendes Admininterface und Adminfunktionen, die in der Hauptseite eingebunden sind. Im Admininterface hat man als Administrator die Möglichkeit Userdaten einzusehen, neue User hinzuzufügen und Benutzerdaten zu ändern. Das Formular zum Ändern der Benutzerdaten, welche in der Datenbank bereits hinterlegt sind, zeigt diese Daten nicht an, so dass es für den Administrator so gut wie unmöglich ist, Benutzerdaten erfolgreich zu ändern. Der Administrator muss Bewertungen, sowie Gästebucheinträge vor Veröffentlichung freischalten. 
+
+
+
+
+\end{document}
