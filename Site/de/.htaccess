@@ -26,3 +26,5 @@ Redirect /de/termsandconditions.php /de/agb.php
 Redirect /de/corporate.php /de/unternehmen.php
 
 ErrorDocument 404 /de/404.php
+ErrorDocument 401 /de/401.php
+

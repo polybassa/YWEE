@@ -33,3 +33,5 @@ Redirect /en/location.php /en/index.php
 Redirect /en/subject.php /en/index.php
 
 ErrorDocument 404 /en/404.php
+ErrorDocument 401 /en/401.php
+
