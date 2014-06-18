@@ -1,4 +1,7 @@
 # Autor: Daniel Tatzel
+
+DirectoryIndex index.php
+
 RewriteEngine On
 RewriteBase /
 
@@ -7,3 +10,6 @@ AuthName "Privater Ordner"
 AuthUserFile /home/strato/www/eb/www.ebenezer-kunatse.net/htdocs/test_02/private/.htpasswd
 AuthGroupFile /dev/null
 require user admin
+
+ErrorDocument 401 /de/401.php
+ErrorDocument 404 /de/404.php

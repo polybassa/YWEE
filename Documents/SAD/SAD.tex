@@ -242,6 +242,13 @@ Jeder Aufruf der Startseite wird Ã¼ber eine enstprechende ZÃ¤hlvariable, die in 
 $^1$ Kundenkonten: Tutorenkonten und SchÃ¼lerkonten\\
 $^2$ Kundeninformationen: PersÃ¶nliche Informationen der Kundenkonten
 
+\subsubsection*{F27: Nachrichten schreiben}
+Der Administrator hat die Möglichkeit auf der News Seite neue Nachrichten zu schreiben. Dazu gibt er den Betreff und die Nachricht in ein HTML 5 Formular ein. Diese werden in der Datenbank gespeichert und für alle sichtbar (auch für nicht angemeldete User). Der Admin hat außerdem die Möglichkeit per Adminverwaltung nicht mehr benötigte Nachrichten zu löschen.
+
+\subsubsection*{F28: Privater Ordner}
+
+Der Administrator ist in der Lage \"uber das Men\"u auf den Privaten Ordner zu zugreifen. Nach Aufruf der Seite kommt eine Login-Maske, in der sich der Administrator Authentifizieren muss. Diese Authentifizierung geschieht \"uber eine .htaccess, in der die entsprechenden Optionen zum Schutz eines Verzeichnisses gesetzt sind und eine .htpasswd Datei, in der sich die Zugangsdaten befinden. Auf der Seite des Privaten Ordners hat der Admin die M\"oglichkeit das Passwort f\"ur den Ordner zu \"andern sowie neue Dateien hochzuladen oder zu l\"oschen. Diese M\"oglichkeiten werden mithilfe von HTML5 Formularen und PHP Scripten gel\"ost. Zur \"Ubersichtlichkeit werden die Bereichen zum \"andern des Passworts und zum hochladen von Dateien mittels CSS verborgen. Zum Anzeigen der Bereiche ist ein Button vorhanden, der mithilfe von Javascript die Bereiche sichtbar macht.
+
 \subsection{F3: SchÃ¼ler}
 Jeder Besucher hat die MÃ¶glichkeit ein Profil anzulegen und sich mit den erhaltenen Zugangsdaten einzuloggen.
 Dadurch erhÃ¤lt er Zugriff auf seinen Privaten Bereich, in dem er seine bei der Registrierung hinterlegten persÃ¶nlichen Daten Ã¤ndern kann.

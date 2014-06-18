@@ -78,7 +78,7 @@
      
 	
     <!-- Suchformular -->
-    <div class="basic-wrapper orange" data-start="background-color: rgb(222, 134, 66);" data-end="background-color: rgb(255, 0, 0);">
+    <div class="basic-wrapper orange" data-start="background-color: rgb(222, 134, 66);" data-end="background-color: rgb(139, 0, 0);">
     <form method="POST" action="/de/search.php" id="searchform">
 
     <input type="hidden" name="valueTyp" value="#">
