@@ -1,69 +1,4 @@
-\documentclass[12pt]{beamer}
-
-\usetheme{Air}
-\usepackage{thumbpdf}
-\usepackage{wasysym}
-\usepackage{ucs}
-\usepackage[utf8]{inputenc}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-\usepackage{verbatim}
-
-\pdfinfo
-{
-  /Title       (Dr. LaTeX Beamer)
-  /Creator     (TeX)
-  /Author      (Konqi Konqueror)
-}
-
-
-\title{Dr. LaTeX Beamer}
-\subtitle{How I Learned to Stop Worrying and Love the Slide}
-\author{Konqi Konqueror}
-%\date{September 6th 2006}
-
-\begin{document}
-
-\frame{\titlepage}
-
-\section*{}
-\begin{frame}
-  \frametitle{Outline}
-  \tableofcontents[section=1,hidesubsections]
-\end{frame}
-
-\AtBeginSection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Outline}
-    \tableofcontents[currentsection,hideallsubsections]
-  }
-}
-
-\AtBeginSubsection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Outline}
-    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
-  }
-}
-
-\newcommand<>{\highlighton}[1]{%
-  \alt#2{\structure{#1}}{{#1}}
-}
-
-\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%% Content starts here %%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\section{Introduction}
+\section{Latex Introduction}
 
 \begin{frame}
   \frametitle{Prerequisites \& Goals}
@@ -259,5 +194,3 @@
     \structure{\footnotesize{konqi@kde.org}}
   \end{flushright}
 }
-
-\end{document}

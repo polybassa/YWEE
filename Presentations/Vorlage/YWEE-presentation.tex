@@ -1,26 +1,67 @@
-\documentclass[13pt]{beamer}
-\let\Tiny=\tiny
+\documentclass[12pt]{beamer}
+
+\usetheme{Air}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{multicol}
-\usetheme{Warsaw}  %% Themenwahl
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
 
-\title{YWEE -- Personal Tutoring Service}
-% Euren Namen hier her
-\author{Daniel Tatzel -- Gruppe 2}
+\pdfinfo
+{
+  /Title       (YWEE -- Personal Tutoring Service)
+  /Creator     (TeX)
+  /Author      (Nils Weiß -- Gruppe 2)
+}
+
+
+\title{YWEE}
+\subtitle{Personal Tutoring Service}
+\author{Nils Weiß}
 \date{\today}
 
+\begin{document}
+
+\frame{\titlepage}
+
+\section*{}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[section=1,hidesubsections]
+\end{frame}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
 \newcommand{\preview}{\AtBeginSection[]{ \begin{frame} \tableofcontents[currentsection] \end{frame} }}
 
-\begin{document}
-\maketitle
-\frame{\tableofcontents}
 
-\preview
 
-% Includes
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% YWEE content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Einleitung
 \include{./chapters/1_Einleitung}
 
@@ -36,5 +77,13 @@
 
 % Implementierung
 \include{./chapters/4_Implementierung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Latex Tutorial Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Check out this source code to learn latex beamer class !!!!!
+\include{./chapters/0_Latex_Beamer_Tutorial}
 
 \end{document}

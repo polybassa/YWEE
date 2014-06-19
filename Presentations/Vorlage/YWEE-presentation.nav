@@ -1,59 +1,106 @@
-\beamer@endinputifotherversion {3.33pt}
+\beamer@endinputifotherversion {3.26pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\slideentry {1}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {1}{Einleitung}{3}{Einleitung}{0}}
-\headcommand {\beamer@sectionpages {1}{2}}
-\headcommand {\beamer@subsectionpages {1}{2}}
-\headcommand {\slideentry {1}{0}{3}{3/3}{}{0}}
+\headcommand {\sectionentry {2}{Einleitung}{3}{Einleitung}{0}}
+\headcommand {\beamer@sectionpages {2}{2}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\slideentry {2}{0}{3}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Die Aufgabe}}\headcommand {\beamer@subsectionpages {3}{3}}
-\headcommand {\slideentry {1}{1}{1}{4/4}{Die Aufgabe}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{4}{Die Aufgabe}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {2}{1}{1}{4/4}{Die Aufgabe}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\sectionentry {2}{SRA}{5}{SRA}{0}}
-\headcommand {\beamer@sectionpages {3}{4}}
-\headcommand {\beamer@subsectionpages {4}{4}}
-\headcommand {\slideentry {2}{0}{2}{5/5}{}{0}}
+\headcommand {\slideentry {2}{1}{2}{5/5}{Die Aufgabe}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{Die Vorgabe}}\headcommand {\beamer@subsectionpages {5}{5}}
-\headcommand {\slideentry {2}{1}{1}{6/6}{Die Vorgabe}{0}}
+\headcommand {\sectionentry {3}{SRA}{6}{SRA}{0}}
+\headcommand {\beamer@sectionpages {3}{5}}
+\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\slideentry {3}{0}{3}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Die Formulierung}}\headcommand {\beamer@subsectionpages {6}{6}}
-\headcommand {\slideentry {2}{2}{1}{7/7}{Die Formulierung}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{7}{Die Vorgabe}}\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\slideentry {3}{1}{1}{7/7}{Die Vorgabe}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\sectionentry {3}{SAD}{8}{SAD}{0}}
-\headcommand {\beamer@sectionpages {5}{7}}
-\headcommand {\beamer@subsectionpages {7}{7}}
-\headcommand {\slideentry {3}{0}{2}{8/8}{}{0}}
+\headcommand {\slideentry {3}{1}{2}{8/8}{Die Vorgabe}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{9}{Analysephase}}\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\slideentry {3}{1}{1}{9/9}{Analysephase}{0}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{9}{Die Formulierung}}\headcommand {\beamer@subsectionpages {7}{8}}
+\headcommand {\slideentry {3}{2}{1}{9/9}{Die Formulierung}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {3}{1}{2}{10/10}{Analysephase}{0}}
+\headcommand {\slideentry {3}{2}{2}{10/10}{Die Formulierung}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {3}{1}{3}{11/11}{Analysephase}{0}}
+\headcommand {\sectionentry {4}{SAD}{11}{SAD}{0}}
+\headcommand {\beamer@sectionpages {6}{10}}
+\headcommand {\beamer@subsectionpages {9}{10}}
+\headcommand {\slideentry {4}{0}{3}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {3}{1}{4}{12/12}{Analysephase}{0}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{12}{Analysephase}}\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\slideentry {4}{1}{1}{12/12}{Analysephase}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {3}{1}{5}{13/13}{Analysephase}{0}}
+\headcommand {\slideentry {4}{1}{2}{13/13}{Analysephase}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{14}{Die Formulierung}}\headcommand {\beamer@subsectionpages {9}{13}}
-\headcommand {\slideentry {3}{2}{1}{14/14}{Die Formulierung}{0}}
+\headcommand {\slideentry {4}{1}{3}{14/14}{Analysephase}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\sectionentry {4}{Implementierung}{15}{Implementierung}{0}}
-\headcommand {\beamer@sectionpages {8}{14}}
-\headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\slideentry {4}{0}{2}{15/15}{}{0}}
+\headcommand {\slideentry {4}{1}{4}{15/15}{Analysephase}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{16}{blabla}}\headcommand {\beamer@subsectionpages {15}{15}}
-\headcommand {\slideentry {4}{1}{1}{16/16}{blabla}{0}}
+\headcommand {\slideentry {4}{1}{5}{16/16}{Analysephase}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{17}{Demonstration}}\headcommand {\beamer@subsectionpages {16}{16}}
-\headcommand {\slideentry {4}{2}{1}{17/17}{Demonstration}{0}}
+\headcommand {\slideentry {4}{1}{6}{17/17}{Analysephase}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@partpages {1}{17}}
-\headcommand {\beamer@subsectionpages {17}{17}}
-\headcommand {\beamer@sectionpages {15}{17}}
-\headcommand {\beamer@documentpages {17}}
-\headcommand {\def \inserttotalframenumber {17}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{18}{Die Formulierung}}\headcommand {\beamer@subsectionpages {12}{17}}
+\headcommand {\slideentry {4}{2}{1}{18/18}{Die Formulierung}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {4}{2}{2}{19/19}{Die Formulierung}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\sectionentry {5}{Implementierung}{20}{Implementierung}{0}}
+\headcommand {\beamer@sectionpages {11}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\slideentry {5}{0}{3}{20/20}{}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{21}{blabla}}\headcommand {\beamer@subsectionpages {20}{20}}
+\headcommand {\slideentry {5}{1}{1}{21/21}{blabla}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {5}{1}{2}{22/22}{blabla}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{23}{Demonstration}}\headcommand {\beamer@subsectionpages {21}{22}}
+\headcommand {\slideentry {5}{2}{1}{23/23}{Demonstration}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {5}{2}{2}{24/24}{Demonstration}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\sectionentry {6}{Latex Introduction}{25}{Latex Introduction}{0}}
+\headcommand {\beamer@sectionpages {20}{24}}
+\headcommand {\beamer@subsectionpages {23}{24}}
+\headcommand {\slideentry {6}{0}{3}{25/25}{}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {6}{0}{4}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\sectionentry {7}{Basic structuring}{27}{Basic structuring}{0}}
+\headcommand {\beamer@sectionpages {25}{26}}
+\headcommand {\beamer@subsectionpages {25}{26}}
+\headcommand {\slideentry {7}{0}{5}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {7}{0}{6}{28/28}{}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {7}{0}{7}{29/29}{}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\sectionentry {8}{Fancy features}{30}{Fancy features}{0}}
+\headcommand {\beamer@sectionpages {27}{29}}
+\headcommand {\beamer@subsectionpages {27}{29}}
+\headcommand {\slideentry {8}{0}{8}{30/30}{}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {8}{0}{9}{31/31}{}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {8}{0}{10}{32/41}{}{0}}
+\headcommand {\beamer@framepages {32}{41}}
+\headcommand {\slideentry {9}{0}{11}{42/42}{}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {9}{0}{12}{43/43}{}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {9}{0}{13}{44/44}{}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {9}{0}{14}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\beamer@partpages {1}{45}}
+\headcommand {\beamer@subsectionpages {42}{45}}
+\headcommand {\beamer@sectionpages {42}{45}}
+\headcommand {\beamer@documentpages {45}}
+\headcommand {\def \inserttotalframenumber {36}}
