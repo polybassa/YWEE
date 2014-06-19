@@ -1,0 +1,42 @@
+\documentclass[13pt]{beamer}
+\let\Tiny=\tiny
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+%\usetheme{Warsaw}  %% Themenwahl
+\usepackage{beamerthemesplit}
+\usetheme{lankton-keynote}
+
+\title{YWEE -- Personal Tutoring Service}
+% Euren Namen hier her
+\author{Daniel Tatzel -- Gruppe 2}
+\date{\today}
+
+\newcommand{\preview}{\AtBeginSection[]{ \begin{frame} \tableofcontents[currentsection] \end{frame} }}
+
+\begin{document}
+\maketitle
+\frame{\tableofcontents}
+
+\preview
+
+% Includes
+
+% Einleitung
+\include{./chapters/1_Einleitung}
+
+\preview
+
+% SRA
+\include{./chapters/2_SRA}
+
+\preview
+
+% SAD
+\include{./chapters/3_SAD}
+
+% Implementierung
+\include{./chapters/4_Implementierung}
+
+\end{document}
