@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {ngerman}
+\beamer@sectionintoc {2}{Projektleitung}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Teambildung}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{Werkzeuge}{7}{0}{1}
+\beamer@subsubsectionintoc {2}{2}{1}{Git / Git-Hub}{8}{0}{1}
+\beamer@subsubsectionintoc {2}{2}{2}{Dropbox}{9}{0}{1}
+\beamer@subsubsectionintoc {2}{2}{3}{Kanban}{10}{0}{1}
+\beamer@subsectionintoc {2}{3}{Teamleitung}{11}{0}{1}
+\beamer@sectionintoc {3}{Latex Introduction}{13}{0}{2}
+\beamer@sectionintoc {4}{Basic structuring}{15}{0}{3}
+\beamer@sectionintoc {5}{Fancy features}{18}{0}{4}
