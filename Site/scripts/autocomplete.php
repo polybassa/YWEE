@@ -45,7 +45,11 @@ try {
 /**
  * Create SQL
  */
-$sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
+if (isset($_SESSION['logged-in'])) {
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
+} else {
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
+}
 
 $sth = $conn->prepare($sql);
 $sth->execute();

@@ -35,9 +35,13 @@ if ($typ === 'location')
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%')";
 else if ($typ === 'subject')
     $sql = "SELECT * FROM suche WHERE (fach LIKE '" . $value . "%')";
-else
-    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%') or (fach LIKE '" . $value . "%') or (benutzername LIKE '" . $value . "%')";
-
+else {
+    if (isset($_SESSION['logged-in'])) {
+        $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
+    } else {
+        $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
+    }
+}
 $sth = $conn->prepare($sql);
 $sth->execute();
 /*
