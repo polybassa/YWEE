@@ -1,0 +1,16 @@
+\pdfinfo{%
+  /Title    ()
+  /Author   ()
+  /Creator  ()
+  /Producer ()
+  /Subject  ()
+  /Keywords ()
+}
+
+\section{Benutzerprofile löschen}
+\subsection{Schnellauswahl der Profile}
+Hat man den Menüpunkt ``Profile löschen'' ausgewählt, kommt man auf eine Seite, auf der man durch auswählen von Anfangsbuchstaben sich die Benutzer anzeigen lassen kann. Der ausgewählte Buchstabe gilt dabei nur 
+als Anfangsbuchstabe für die Benutzer.\\
+\includegraphics[width=1\textwidth]{../Screenshots/de/admin/admin_delprofile_select}
+\subsection{Profilübersicht und löschen von Profilen}
+Hat man die gewünschten Benutzer ausgewählt, erscheinen diese als Tabelle aufgelistet.
