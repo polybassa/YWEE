@@ -5,6 +5,7 @@
  * script for json Object of autocomplete values 
  * 
  */
+include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 // Inkludiert die Funktion zur Anmeldung
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
@@ -45,7 +46,11 @@ try {
 /**
  * Create SQL
  */
-$sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
+if (isset($_SESSION['logged-in'])) {
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
+} else {
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
+}
 
 $sth = $conn->prepare($sql);
 $sth->execute();
@@ -57,7 +62,8 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $a_json_row["typ"] = "location";
         array_push($a_json, $a_json_row);
     }
-    if (stristr($row['benutzername'], $term)) {
+
+    if (stristr($row['benutzername'], $term) && isset($_SESSION['logged-in'])) {
         $a_json_row["id"] = "/de/profile.php?username=" . $row['benutzername'];
         $a_json_row["value"] = $row['benutzername'];
         $a_json_row["typ"] = "user";

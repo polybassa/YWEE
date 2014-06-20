@@ -1,40 +1,70 @@
-\documentclass[13pt]{beamer}
+\documentclass[12pt]{beamer}
 \let\Tiny=\tiny
+\usetheme{Air}
+\usepackage{wasysym}
+\usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{multicol}
-\usetheme{Warsaw}  %% Themenwahl
+\usepackage{verbatim}
+\pdfinfo
+{
+  /Title       (YWEE -- Personal Tutoring Service)
+  /Creator     (TeX)
+  /Author      (Daniel Tatzel -- Gruppe 2)
+}
 
-\title{YWEE -- Personal Tutoring Service}
-% Euren Namen hier her
-\author{Daniel Tatzel -- Gruppe 2}
+\title{YWEE}
+\subtitle{Personal Tutoring Service \\ Gruppe 2}
+\author{Daniel Tatzel}
 \date{\today}
 
-\newcommand{\preview}{\AtBeginSection[]{ \begin{frame} \tableofcontents[currentsection] \end{frame} }}
-
 \begin{document}
-\maketitle
-\frame{\tableofcontents}
 
-\preview
+\frame{\titlepage}
 
-% Includes
+\section*{}
+\begin{frame}
+  \frametitle{Agenda}
+  \tableofcontents[hidesubsections]
+\end{frame}
 
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Agenda}
+    \tableofcontents[currentsection, currentsubsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide, subsubsectionstyle=show/show]
+  }
+}
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% YWEE content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Einleitung
 \include{./chapters/1_Einleitung}
 
-\preview
-
 % SRA
 \include{./chapters/2_SRA}
-
-\preview
 
 % SAD
 \include{./chapters/3_SAD}
 
 % Implementierung
 \include{./chapters/4_Implementierung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Latex Tutorial Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Beispiele, auskommentieren
+\include{./chapters/0_Latex_Beamer_Tutorial}
 
 \end{document}

@@ -4,6 +4,7 @@
  * script for intelligent searchfunction 
  * 
  */
+
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
 $typ = trim($_POST['valueTyp']);
@@ -35,9 +36,9 @@ if ($typ === 'location')
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%')";
 else if ($typ === 'subject')
     $sql = "SELECT * FROM suche WHERE (fach LIKE '" . $value . "%')";
-else
-    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%') or (fach LIKE '" . $value . "%') or (benutzername LIKE '" . $value . "%')";
-
+else {
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
+}
 $sth = $conn->prepare($sql);
 $sth->execute();
 /*
