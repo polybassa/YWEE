@@ -1,25 +1,22 @@
 \documentclass[12pt]{beamer}
-
+\let\Tiny=\tiny
 \usetheme{Air}
-\usepackage{thumbpdf}
 \usepackage{wasysym}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{verbatim}
-
 \pdfinfo
 {
   /Title       (YWEE -- Personal Tutoring Service)
   /Creator     (TeX)
-  /Author      (Nils Weiß -- Gruppe 2)
+  /Author      (Daniel Tatzel -- Gruppe 2)
 }
 
 
 \title{YWEE}
 \subtitle{Personal Tutoring Service}
-\author{Nils Weiß}
+\author{Daniel Tatzel}
 \date{\today}
 
 \begin{document}
@@ -29,7 +26,7 @@
 \section*{}
 \begin{frame}
   \frametitle{Agenda}
-  \tableofcontents[section=1,hidesubsections]
+  \tableofcontents[hidesubsections]
 \end{frame}
 
 \AtBeginSection[]
@@ -37,7 +34,7 @@
   \frame<handout:0>
   {
     \frametitle{Agenda}
-    \tableofcontents[currentsection,hideallsubsections, hideallsubsubsections]
+    \tableofcontents[currentsection,hideallsubsections]
   }
 }
 
