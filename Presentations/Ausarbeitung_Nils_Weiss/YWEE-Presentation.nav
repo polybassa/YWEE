@@ -67,14 +67,16 @@
 \headcommand {\beamer@subsectionentry {0}{5}{3}{22}{Serverseitige Implementierung}}\headcommand {\beamer@subsectionpages {21}{21}}
 \headcommand {\slideentry {5}{3}{1}{22/22}{Serverseitige Implementierung}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@subsectionentry {0}{5}{4}{23}{Serverseitige Implementierung}}\headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\slideentry {5}{4}{1}{23/23}{Serverseitige Implementierung}{0}}
+\headcommand {\beamer@subsectionentry {0}{5}{4}{23}{Intelligente Weiterleitung}}\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\slideentry {5}{4}{1}{23/23}{Intelligente Weiterleitung}{0}}
 \headcommand {\beamer@framepages {23}{23}}
 \headcommand {\beamer@subsectionentry {0}{5}{5}{24}{Demonstration}}\headcommand {\beamer@subsectionpages {23}{23}}
 \headcommand {\slideentry {5}{5}{1}{24/24}{Demonstration}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@partpages {1}{24}}
-\headcommand {\beamer@subsectionpages {24}{24}}
-\headcommand {\beamer@sectionpages {19}{24}}
-\headcommand {\beamer@documentpages {24}}
-\headcommand {\def \inserttotalframenumber {24}}
+\headcommand {\slideentry {5}{5}{2}{25/25}{Demonstration}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@partpages {1}{25}}
+\headcommand {\beamer@subsectionpages {24}{25}}
+\headcommand {\beamer@sectionpages {19}{25}}
+\headcommand {\beamer@documentpages {25}}
+\headcommand {\def \inserttotalframenumber {25}}

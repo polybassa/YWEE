@@ -16,5 +16,5 @@
 \beamer@subsectionintoc {5}{1}{Suchfunktion \IeC {\"U}berblick}{20}{0}{4}
 \beamer@subsectionintoc {5}{2}{Clientseitige Implementierung}{21}{0}{4}
 \beamer@subsectionintoc {5}{3}{Serverseitige Implementierung}{22}{0}{4}
-\beamer@subsectionintoc {5}{4}{Serverseitige Implementierung}{23}{0}{4}
+\beamer@subsectionintoc {5}{4}{Intelligente Weiterleitung}{23}{0}{4}
 \beamer@subsectionintoc {5}{5}{Demonstration}{24}{0}{4}
