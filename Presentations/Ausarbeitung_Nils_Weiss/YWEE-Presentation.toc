@@ -11,9 +11,10 @@
 \beamer@sectionintoc {4}{SAD}{12}{0}{3}
 \beamer@subsectionintoc {4}{1}{Analysephase}{13}{0}{3}
 \beamer@subsectionintoc {4}{2}{Systemkontext}{14}{0}{3}
+\beamer@subsectionintoc {4}{3}{Planungsphase}{17}{0}{3}
 \beamer@sectionintoc {5}{Implementierung}{19}{0}{4}
-\beamer@subsectionintoc {5}{1}{Implementierungsumfang}{20}{0}{4}
-\beamer@subsectionintoc {5}{2}{Demonstration}{21}{0}{4}
-\beamer@sectionintoc {6}{Latex Introduction}{22}{0}{5}
-\beamer@sectionintoc {7}{Basic structuring}{24}{0}{6}
-\beamer@sectionintoc {8}{Fancy features}{27}{0}{7}
+\beamer@subsectionintoc {5}{1}{Suchfunktion \IeC {\"U}berblick}{20}{0}{4}
+\beamer@subsectionintoc {5}{2}{Clientseitige Implementierung}{21}{0}{4}
+\beamer@subsectionintoc {5}{3}{Serverseitige Implementierung}{22}{0}{4}
+\beamer@subsectionintoc {5}{4}{Serverseitige Implementierung}{23}{0}{4}
+\beamer@subsectionintoc {5}{5}{Demonstration}{24}{0}{4}
