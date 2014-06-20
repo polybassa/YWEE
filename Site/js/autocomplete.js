@@ -61,8 +61,7 @@ $(function() {
                 $('#searchform').attr('action', url);
                 $('#searchform').submit();
             }
-        },
-        html: true // optional (jquery.ui.autocomplete.html.js required)
+        }
     });
 });
 
