@@ -1,3 +1,4 @@
+<!-- Inhalt von: Nils Weiss -->
 <?php
     // Anpassung und Aufteilung des Layouts: Daniel Tatzel
     // Muss in der Reihenfolge bleiben
