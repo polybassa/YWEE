@@ -1,0 +1,29 @@
+% Autor: Daniel Tatzel
+
+\section{Privater Ordner}
+
+Der Private Ordner ist für Administratoren direkt über den Link \url{http://ebenezer-kunatse.net/private/} erreichbar. Alternativ hat der Administrator die Möglichkeit den Privaten Ordner über das Menü aufzurufen, wenn er angemeldet ist, dies geschieht über den Menü-Punkt "`Privater Ordner"'
+
+\bigskip
+
+Auf Oberfläche des Privaten Ordners kann der Administrator Dateien hochladen, löschen und er kann zusätzlich noch sein Passwort ändern. Die Bereiche 1. und 2. können über die Buttons a. und b. ein- und ausgeblendet werden. Standardmäßig sind diese ausgeblendet.
+
+\subsection{Funktionen}
+
+Funktionen:
+
+\begin{itemize}
+ \item Im Bereich 1. kann durch Eingabe eines Passwortes und durch Absenden das Passwort für den Zugangsschutz ändern.
+ \item Im Bereich 2. kann durch drücken des Buttons "`Browse"'eine Datei auf dem Computer ausgewählt werden. Durch drücken des "`Submit"' Buttons wird die Datei auf den Server geladen und ist in Bereich 3. sichtbar.
+ \item In Bereich 3. ist eine Auflistung aller vorhandenen Dateien mit Namen (d) und Größe (e).
+\end{itemize}
+
+
+
+\begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=1\textwidth]{../Screenshots/de/admin/Privater Ordner_passwd_upload}
+ \label{fig:privatedir}
+ \caption{Die Oberfläche des Privater Ordners}
+\end{figure}
+

@@ -1,8 +1,0 @@
-\contentsline {section}{\numberline {1}Einleitung}{2}
-\contentsline {subsection}{\numberline {1.1}Landing-Page}{2}
-\contentsline {section}{\numberline {2}G\IeC {\"a}stebucheintr\IeC {\"a}ge freischalten}{4}
-\contentsline {section}{\numberline {3}Benutzerprofile l\IeC {\"o}schen}{5}
-\contentsline {subsection}{\numberline {3.1}Schnellauswahl der Profile}{5}
-\contentsline {subsection}{\numberline {3.2}Profil\IeC {\"u}bersicht und l\IeC {\"o}schen von Profilen}{6}
-\contentsline {section}{\numberline {4}Benutzer freischalten}{7}
-\contentsline {section}{\numberline {5}Newseintr\IeC {\"a}ge l\IeC {\"o}schen}{8}
