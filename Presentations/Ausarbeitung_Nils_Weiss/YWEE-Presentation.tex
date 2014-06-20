@@ -1,21 +1,19 @@
 \documentclass[12pt]{beamer}
-
+\let\Tiny=\tiny
 \usetheme{Air}
 \usepackage{wasysym}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{verbatim}
-
 \pdfinfo{
   /Title       (YWEE --- Personal Tutoring Service)
   /Creator     (TeX)
   /Author      (Nils Weiß --- Gruppe 2)
 }
 
-
 \title{YWEE}
-\subtitle{Personal Tutoring Service}
+\subtitle{Personal Tutoring Service \\ Gruppe 2}
 \author{Nils Weiß}
 \date{\today}
 
@@ -28,24 +26,35 @@
   \frametitle{Agenda}
   \tableofcontents[hidesubsections]
 \end{frame}
+%
+%\AtBeginSection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Agenda}
+%    \tableofcontents[currentsection,hideallsubsections, hideallsubsubsections]
+%  }
+%}
+%
+%\AtBeginSubsection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Agenda}
+%    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide, subsubsectionstyle=show/shaded]
+%  }
+%}
 
 \AtBeginSection[]
 {
   \frame<handout:0>
   {
     \frametitle{Agenda}
-    \tableofcontents[currentsection,hideallsubsections, hideallsubsubsections]
+%     \tableofcontents[currentsection,hideallsubsections]
+    \tableofcontents[currentsection, currentsubsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide, subsubsectionstyle=show/shaded]
   }
 }
 
-\AtBeginSubsection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Agenda}
-    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide, subsubsectionstyle=show/shaded]
-  }
-}
 
 \newcommand<>{\highlighton}[1]{%
   \alt#2{\structure{#1}}{{#1}}

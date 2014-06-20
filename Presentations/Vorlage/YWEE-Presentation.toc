@@ -2,15 +2,15 @@
 \select@language {ngerman}
 \beamer@sectionintoc {2}{Einleitung}{3}{0}{1}
 \beamer@subsectionintoc {2}{1}{Die Aufgabe}{4}{0}{1}
-\beamer@sectionintoc {3}{SRA}{6}{0}{2}
-\beamer@subsectionintoc {3}{1}{Die Vorgabe}{7}{0}{2}
-\beamer@subsectionintoc {3}{2}{Die Formulierung}{9}{0}{2}
-\beamer@sectionintoc {4}{SAD}{11}{0}{3}
-\beamer@subsectionintoc {4}{1}{Analysephase}{12}{0}{3}
-\beamer@subsectionintoc {4}{2}{Die Formulierung}{18}{0}{3}
-\beamer@sectionintoc {5}{Implementierung}{20}{0}{4}
-\beamer@subsectionintoc {5}{1}{blabla}{21}{0}{4}
-\beamer@subsectionintoc {5}{2}{Demonstration}{23}{0}{4}
-\beamer@sectionintoc {6}{Latex Introduction}{25}{0}{5}
-\beamer@sectionintoc {7}{Basic structuring}{27}{0}{6}
-\beamer@sectionintoc {8}{Fancy features}{30}{0}{7}
+\beamer@sectionintoc {3}{SRA}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{Die Vorgabe}{6}{0}{2}
+\beamer@subsectionintoc {3}{2}{Die Formulierung}{7}{0}{2}
+\beamer@sectionintoc {4}{SAD}{8}{0}{3}
+\beamer@subsectionintoc {4}{1}{Analysephase}{9}{0}{3}
+\beamer@subsectionintoc {4}{2}{Die Formulierung}{14}{0}{3}
+\beamer@sectionintoc {5}{Implementierung}{15}{0}{4}
+\beamer@subsectionintoc {5}{1}{blabla}{16}{0}{4}
+\beamer@subsectionintoc {5}{2}{Demonstration}{17}{0}{4}
+\beamer@sectionintoc {6}{Latex Introduction}{18}{0}{5}
+\beamer@sectionintoc {7}{Basic structuring}{20}{0}{6}
+\beamer@sectionintoc {8}{Fancy features}{23}{0}{7}
