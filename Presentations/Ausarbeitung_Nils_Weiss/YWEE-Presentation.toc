@@ -8,6 +8,11 @@
 \beamer@subsubsectionintoc {2}{2}{3}{Kanban}{10}{0}{1}
 \beamer@subsectionintoc {2}{3}{Teamleitung}{11}{0}{1}
 \beamer@sectionintoc {3}{SRA}{13}{0}{2}
-\beamer@sectionintoc {4}{Latex Introduction}{15}{0}{3}
-\beamer@sectionintoc {5}{Basic structuring}{17}{0}{4}
-\beamer@sectionintoc {6}{Fancy features}{20}{0}{5}
+\beamer@sectionintoc {4}{SAD}{15}{0}{3}
+\beamer@subsectionintoc {4}{1}{Analysephase}{16}{0}{3}
+\beamer@sectionintoc {5}{Implementierung}{23}{0}{4}
+\beamer@subsectionintoc {5}{1}{Implementierungsumfang}{24}{0}{4}
+\beamer@subsectionintoc {5}{2}{Demonstration}{26}{0}{4}
+\beamer@sectionintoc {6}{Latex Introduction}{28}{0}{5}
+\beamer@sectionintoc {7}{Basic structuring}{30}{0}{6}
+\beamer@sectionintoc {8}{Fancy features}{33}{0}{7}

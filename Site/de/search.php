@@ -4,7 +4,6 @@
  * script for intelligent searchfunction 
  * 
  */
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
@@ -38,11 +37,7 @@ if ($typ === 'location')
 else if ($typ === 'subject')
     $sql = "SELECT * FROM suche WHERE (fach LIKE '" . $value . "%')";
 else {
-    if (isset($_SESSION['logged-in'])) {
-        $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
-    } else {
-        $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
-    }
+    $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
 }
 $sth = $conn->prepare($sql);
 $sth->execute();
@@ -56,7 +51,7 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $a_json_row["url"] = "/de/location.php?term=" . $row['Wohnort'];
         array_push($a_json, $a_json_row);
     }
-    if (stristr($row['benutzername'], $value) && isset($_SESSION['logged-in'])) {
+    if (stristr($row['benutzername'], $value)) {
         $a_json_row["value"] = $row['benutzername'];
         $a_json_row["typ"] = "Tutor";
         $a_json_row["url"] = "/de/profile.php?username=" . $row['benutzername'];

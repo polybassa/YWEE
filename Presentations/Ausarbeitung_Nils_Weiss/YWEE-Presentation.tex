@@ -1,12 +1,10 @@
 \documentclass[12pt]{beamer}
 
 \usetheme{Air}
-\usepackage{thumbpdf}
 \usepackage{wasysym}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{verbatim}
 
 \pdfinfo{
@@ -28,7 +26,7 @@
 \section*{}
 \begin{frame}
   \frametitle{Agenda}
-  \tableofcontents[section=1,hidesubsections]
+  \tableofcontents[hidesubsections]
 \end{frame}
 
 \AtBeginSection[]
@@ -55,7 +53,6 @@
 
 \newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% YWEE content starts here %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,10 +63,10 @@
 \include{./chapters/2_SRA}
 
 % SAD
-%\include{./chapters/3_SAD}
+\include{./chapters/3_SAD}
 
 % Implementierung
-%\include{./chapters/4_Implementierung}
+\include{./chapters/4_Implementierung}
 
 \include{./chapters/0_Latex_Beamer_Tutorial}
 

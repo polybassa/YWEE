@@ -2,102 +2,81 @@
 \subsection{Analysephase}
 \begin{frame} 
   \frametitle{Analyse} 
-  Um die Anforderung ``Suchfunktion" umsetzen zu können, müssen im Vorfeld einigen Fragen geklärt werden. 
+  Um die Anforderung \textbf{``Suchfunktion''} umsetzen zu können, müssen im Vorfeld einigen Fragen geklärt werden. 
    \begin{enumerate}
    \item Wie kann auf die Daten zugegriffen werden?
-   \item Welche Techniken können verwendet werden?
    \item Wie kann eine Autovervollständigung performant implementiert werden?
+   \item Welche Technologien können verwendet werden?
    \item Welche Daten müssen geschützt werden?
+   \item Wie kann die Suchfunktion intelligent gestaltet werden um die User 
+   Experience zu erhöhen?
   \end{enumerate}
 \end{frame}
 
 \begin{frame} 
   \frametitle{Systemkontext}
-  
-   \begin{itemize}
-    \item Man muss das Passwort ändern können
-    \item Man muss Dateien auswählen, hochladen und löschen können
-    \item Die Dateien müssen Optisch angemessen aufgelistet werden
-   \end{itemize}
-
+  \begin{figure}[htbp]
+\centering
+\includegraphics[width=1.0\textwidth]{./chapters/SAD_dynAccess.png}
+\caption{Ablauf eines dynamischen Zugriffs}
+\label{fig:SAD_dynAccess}
+\end{figure}
 \end{frame}
 
-\begin{frame} %%Eine Folie
-  \frametitle{Webserver} %%Folientitel
-% Aufzählung
-  \begin{enumerate}
-   \item Webserver
-   \begin{itemize}
-    \item Auf dem Zielsystem ist ein \textbf{Apache} Webserver in der Version 2 vorinstalliert.
-   \end{itemize}
-
-   \item Bietet der Webserver Lösungen für das Problem?
-   \begin{itemize}
-    \item htaccess: Unterstützt die Zugriffskontrolle per Passwortschutz
-   \end{itemize}
-
-  \end{enumerate}
-
-
-\end{frame}
-
-\begin{frame} %%Eine Folie
-  \frametitle{Umsetzung} %%Folientitel
-
-  Zur Umsetzung stehen zwei Möglichkeiten zur Verfügung:
-%   Auflsitung mit Punkt davor
-  \begin{itemize}
-   \item Verzeichnisschutz mittels htaccess Dateien
-   \item Eigene Implementierung
-  \end{itemize}
-
-  \bigskip
-
-  Da eine geeignete Implementierung vorhanden ist und der Aufwand für eine eigene zu hoch ist, wurde sich für die Umsetzung mittels htaccess Dateien entschieden.
-\end{frame}
-
-\begin{frame} %%Eine Folie
-  \frametitle{Sprachen} %%Folientitel
-
-%   Geschachtelte Auflsitung mit Punkt davor
-   \begin{itemize}
-    \item Passwort ändern
-    \begin{itemize}
-     \item HTML5 für die Formulare
-     \item PHP zum aktualisieren des Passworts
-    \end{itemize}
-
-    \item Dateien auswählen, hochladen und löschen
-    \begin{itemize}
-     \item HTML5 zum Auswählen
-     \item PHP zum Hochladen und zum Löschen
-    \end{itemize}
-
-    \item Darstellung der Dateien
-    \begin{itemize}
-     \item HTML5 für die Definition der Tabelle
-     \item PHP zum Ermitteln der Dateien
-     \item JQuery zur Generierung der Tabelle
-    \end{itemize}
-
-    \item Sonstiges
-    \begin{itemize}
-     \item Javascript für das Design
-    \end{itemize}
-
-   \end{itemize}
-
-\end{frame}
-
-\subsection{Die Formulierung}
-\begin{frame} %%Eine Folie
-  \frametitle{Text für die SAD} %%Folientitel
-
-  Aus den Ergebnissen der Analysephase wurde der folgende Text formuliert und in die SAD eingebaut:
-
-% Definitionsblock
-  \begin{block}{}
-	Blablablba muss ich noch formulieren
+\begin{frame} 
+  \frametitle{Verwendbare Technologien}
+  \begin{block}{Java Script}
+    Ausführen dynamischer Aktionen im Browser des Nutzers
   \end{block}
-
+  \begin{block}{jQuery und Ajax}
+    Umfangreiche Bibliothek für Java Script
+  \end{block}
+  \begin{block}{PHP}
+    Serverseitige Datenverarbeitung sowie Datenbankzugriff
+  \end{block}
+  \begin{block}{PDO}
+    Abstraktionsebene für Datenbankzugriffe
+  \end{block}
 \end{frame}
+
+\begin{frame} 
+  \frametitle{Performance und Datenschutz}
+  \highlighton{Performance}
+  \begin{itemize}
+    \item Dynamische Anfragen über Ajax
+    \item Wenig Datenbankzugriffe
+    \item Datenbankoptimierung
+  \end{itemize} 
+  \highlighton{Datenschutz}
+  \begin{itemize}
+    \item Request frühzeitig in Java Script und PHP validieren 
+    \item Datenbankabfragen auf SQL-Injection prüfen
+    \item Vertrauliche Daten über Nutzerrechte der Datenbank schützen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{User Experience}
+  \textbf{Die Suchfunktion} soll den Nutzer der Seite unterstützen und intelligent die 
+  gewünschten Ergebnisse präsentieren. \newline \newline
+  \highlighton{Features:}
+  \begin{itemize}
+    \item Automatische Vorschläge bei einer Eingabe
+    \item Mögliche Ausgaben:
+    \begin{itemize}
+      \item Wohnort eines Tutors
+      \item Benutzername eines Tutors (wenn Nutzer eingeloggt ist)
+      \item Unterrichtsfach
+    \end{itemize}
+    \item Automatische Weiterleitung des Nutzers auf passende Seite
+  \end{itemize} 
+ \end{frame}
+ 
+ \begin{frame}
+   \frametitle{Suchfunktion}
+    \textbf{Beispiele:} \newline
+  \highlighton{Auswahl:} Wohnort $\rightarrow$ Anzeige aller Tutoren an diesem Ort \newline
+   \highlighton{Auswahl:} Tutor $\rightarrow$ Anzeige des Tutorprofils \newline
+   \highlighton{Auswahl:} Fach $\rightarrow$ Anzeige aller Tutoren die dieses Fach unterrichten \newline
+ \end{frame}
+ 
