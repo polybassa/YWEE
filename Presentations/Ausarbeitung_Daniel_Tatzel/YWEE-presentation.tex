@@ -1,0 +1,139 @@
+\documentclass[12pt]{beamer}
+\let\Tiny=\tiny
+\usetheme{Air}
+\usepackage{wasysym}
+% \usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{multicol}
+
+\pdfinfo
+{
+  /Title       (YWEE -- Personal Tutoring Service)
+  /Creator     (TeX)
+  /Author      (Daniel Tatzel -- Gruppe 2)
+}
+
+\title{YWEE}
+\subtitle{Personal Tutoring Service \\ Gruppe 2}
+\author{Daniel Tatzel}
+\date{\today}
+
+      \definecolor{dkgreen}{rgb}{0,.6,0}
+      \definecolor{dkblue}{rgb}{0,0,.6}
+      \definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
+      %%%%%%%%%%%%%%%%%%% JAVA SCRIPT SUPPORT %%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lightgray}{rgb}{.9, .9, .9}
+\definecolor{darkgray}{rgb}{.4, .4, .4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+        keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+        keywordstyle=\color{blue}\bfseries,
+        ndkeywords={class, export, boolean, throw, implements, import, this},
+        ndkeywordstyle=\color{darkgray}\bfseries,
+        identifierstyle=\color{black},
+        sensitive=false,
+        comment=[l]{//},
+        morecomment=[s]{/*}{*/},
+        commentstyle=\color{purple}\ttfamily,
+        stringstyle=\color{red}\ttfamily,
+        morestring=[b]',
+        morestring=[b]"
+        }
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section*{}
+\begin{frame}
+  \frametitle{Agenda}
+  \tableofcontents[hidesubsections]
+\end{frame}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Agenda}
+    \tableofcontents[currentsection, currentsubsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide, subsubsectionstyle=show/show]
+  }
+}
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
+
+\newcommand{\phpcode}{
+      \lstset{
+	language        = php,
+	backgroundcolor=\color{lightgray},
+	extendedchars=true,
+	basicstyle=\tiny\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\tiny\ttfamily,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	frame=leftline,
+	keywordstyle    = \color{dkblue},
+	stringstyle     = \color{red},
+	identifierstyle = \color{dkgreen},
+	commentstyle    = \color{gray},
+	emph            =[1]{php},
+	emphstyle       =[1]\color{black},
+	emph            =[2]{if,and,or,else},
+	emphstyle       =[2]\color{dkyellow}
+	}
+  }
+
+  \newcommand{\jscode}{
+      \lstset{
+        language=JavaScript,
+        backgroundcolor=\color{lightgray},
+        extendedchars=true,
+        basicstyle=\tiny\ttfamily,
+        showstringspaces=false,
+        showspaces=false,
+        numbers=left,
+        numberstyle=\tiny\ttfamily,
+        numbersep=9pt,
+        tabsize=2,
+        breaklines=true,
+        showtabs=false,
+        frame=leftline,
+        literate={\$}{{\textcolor{blue}{\$}}}1,
+        mathescape=false
+        }
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% YWEE content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Einleitung
+\include{./chapters/1_Einleitung}
+
+% SRA
+\include{./chapters/2_SRA}
+
+% SAD
+\include{./chapters/3_SAD}
+
+% Implementierung
+\include{./chapters/4_Implementierung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Latex Tutorial Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
