@@ -12,8 +12,8 @@
     }
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 		
-	$query_fach = $dbConnection->prepare("select * from leistung where benutzername='" . $_SESSION['user'] . "'");
-	$query_tut = $dbConnection->prepare("select * from tutoren where benutzername='" . $_SESSION['user'] . "'");
+	$query_fach = $dbConnection->prepare("select * from leistung where benutzername='" . $fl_username . "'");
+	$query_tut = $dbConnection->prepare("select * from tutoren where benutzername='" . $fl_username . "'");
 	
 	if($query_fach->execute())
     {	
