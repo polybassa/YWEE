@@ -15,14 +15,14 @@ $.widget("custom.catcomplete", $.ui.autocomplete, {
             /*
              * render custom menue to enable categorys
              */
-            if (item.typ != currentCategory) {
+            if (item.typ !== currentCategory) {
                 var temptyp;
                 if (item.typ === "user") {
                     temptyp = "Tutor";
                 } else if (item.typ === "location") {
                     temptyp = "Wohnort";
                 } else {
-                    temptyp = "Fach"
+                    temptyp = "Fach";
                 }
                 ul.append("<li class='ui-autocomplete-category'>" + temptyp + "</li>");
                 currentCategory = item.typ;
@@ -55,14 +55,14 @@ $(function() {
             var url = ui.item.id;
             var value = ui.item.value;
             var typ = ui.item.typ;
-            if (url != '#') {
+            if (url !== '#') {
                 $('[name="search"]').val(value);
                 $('[name="valueTyp"]').val(typ);
                 $('#searchform').attr('action', url);
                 $('#searchform').submit();
             }
         },
-        html: true, // optional (jquery.ui.autocomplete.html.js required)
+        html: true // optional (jquery.ui.autocomplete.html.js required)
     });
 });
 

@@ -7,20 +7,21 @@
 
 // Anpassung und Aufteilung des Layouts: Daniel Tatzel
 // Muss in der Reihenfolge bleiben
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
+// Inkludiert die Session
+include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");
+// Inkludiert die Verbindung zur Datenbank
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
+//Hole Übergabeparameter
 $value = trim($_GET['term']);
 
-$titel = 'Tutoren in ' . $value; // Name der Seite die im Browser angezeigt werden soll
+// Name der Seite die im Browser angezeigt werden soll
+$titel = 'Tutoren in ' . $value;
 
-include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
+// Inkludiert den Header
+include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");
 
 $_SESSION['sprache'] = "de";
-
-//print_r($_POST); // Debug Ausgabe fuer den Inhalt von $_POST
-//echo nl2br(print_r($_SESSION,true));  // Debug Ausgabe fuer Session
-// get what user typed in autocomplete input
 
 $a_json = array();
 $a_json_row = array();
@@ -34,21 +35,21 @@ if (preg_match("/[^\040\pL\pN_-]/u", $value)) {
     exit;
 }
 // *****************************************************************************
-// database connection
+// establish database connection
 try {
     $conn = ConnectToDB();
 } catch (Exception $e) {
     die("keine Verbindung möglich: " . $e->getMessage());
 }
 
-/**
- * Create SQL
- */
+// create sql query
 $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "')";
 
+// execute sql query
 $sth = $conn->prepare($sql);
 $sth->execute();
 
+//iterate throw results and fill output array
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     $a_json_row["value"] = $row['benutzername'];
     $a_json_row["typ"] = $row['fach'];
@@ -56,17 +57,17 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 
     array_push($a_json, $a_json_row);
 }
+// remove multiple entries
 $a_json = array_unique($a_json, SORT_REGULAR);
 $json = json_encode($a_json);
 ?>
 <script type="text/javascript">
-    /*
-     * print out all search results in an json object to use it later in an other script
-     */
+    // print out all search results in an json object to use it later in an other script
     var searchresults = <?php echo $json; ?>;
 </script>
-
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/location.html");       // Inkludiert den Inhalt
-include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
+// Inkludiert den Inhalt
+include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/location.html");
+// Inkludiert den Footer
+include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php");
 ?>
