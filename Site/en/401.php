@@ -3,7 +3,7 @@
     // Muss in der Reihenfolge bleiben
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
 
-    $titel = "Site could not be found"; // Name der Seite die im Browser angezeigt werden soll
+    $titel = "Unauthorized"; // Name der Seite die im Browser angezeigt werden soll
 
     $_SESSION['sprache'] = "en";
     
