@@ -13,9 +13,11 @@
   /Author      (Daniel Tatzel -- Gruppe 2)
 }
 
+\setbeamerfont{frametitle}{size=\Huge}
+\setbeamercolor{frametitle}{fg=airorange,bg=airorange}
 
 \title{YWEE}
-\subtitle{Personal Tutoring Service}
+\subtitle{Personal Tutoring Service \\ Gruppe 2}
 \author{Daniel Tatzel}
 \date{\today}
 
@@ -34,18 +36,19 @@
   \frame<handout:0>
   {
     \frametitle{Agenda}
-    \tableofcontents[currentsection,hideallsubsections]
+%     \tableofcontents[currentsection,hideallsubsections]
+    \tableofcontents[currentsection, currentsubsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide, subsubsectionstyle=show/shaded]
   }
 }
 
-\AtBeginSubsection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Agenda}
-    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide, subsubsectionstyle=show/shaded]
-  }
-}
+% \AtBeginSubsection[]
+% {
+%   \frame<handout:0>
+%   {
+%     \frametitle{Agenda}
+%     \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide, subsubsectionstyle=show/shaded]
+%   }
+% }
 
 \newcommand<>{\highlighton}[1]{%
   \alt#2{\structure{#1}}{{#1}}
@@ -73,7 +76,8 @@
 %%%%%%%%%% Latex Tutorial Content starts here %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Check out this source code to learn latex beamer class !!!!!
+
+% Beispiele, auskommentieren
 \include{./chapters/0_Latex_Beamer_Tutorial}
 
 \end{document}
