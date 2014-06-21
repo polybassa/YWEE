@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Sprachauswahl}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Startseite}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Folgeseiten}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}An- und Abmelden}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Anmelden}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Abmelden}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Fehlerseite}{6}{section.3}
+\contentsline {section}{\numberline {4}Nachrichten}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1}Nachrichtenseite}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Als Admin}{8}{subsection.4.2}
