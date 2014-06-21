@@ -1,0 +1,212 @@
+\section{Implementierung}
+\subsection{Code}
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+
+      \begin{lstlisting}[name=upload.php]
+<?php
+/* Passwortaenderung fuer den Privaten Ordner -- Daniel Tatzel */
+
+/* create_htpasswd: Generiert eine .htpasswd Datei mit Benutzername und Passwort fuer den Login zum Privaten Ordner */
+    $DIR = $_SERVER["DOCUMENT_ROOT"] . "/test_02/private/";
+    if ( file_exists($DIR . '.htpasswd') )
+        unlink($DIR.'.htpasswd');
+
+    $passwd = crypt($_POST['passwd']);
+    $htpasswd = 'admin:' . $passwd . "\n";
+
+    $stream = "# Autor: Daniel Tatzel\n\n".$htpasswd;
+
+    $handle = fopen($DIR . '.htpasswd',"a");
+    fputs($handle,$stream);
+    fclose($handle);
+
+    header("Location: http://www.ebenezer-kunatse.net/private/");
+?>
+      \end{lstlisting}
+}
+
+\begin{frame}
+  \frametitle{Passwort ändern}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+
+      \begin{lstlisting}[name=delete.php]
+<?php
+    // Autor von delete.php: Daniel Tatzel
+    // Loescht eine Datei
+
+    $path = realpath('files/'.$_POST['file']);
+
+    // Wenn vorhanden, dann l&oeschen
+    if( is_file($path) )
+        unlink( $path );
+?>
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Löschen einer Datei}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+
+      \begin{lstlisting}[name=ListDir.php]
+<?php
+    // Autor von ListDir.php: Daniel Tatzel
+    // Liest alle Dateien aus, berechnet die Groesse in KB und erzeugt ein JSON objekt
+
+    $Dir = "./files/";	// Zielordner
+
+    // Kann dann mit JSON in Javascript umgewandelt werden zur Verarbeitung ( Array )
+    $FileListing = array_diff(scandir($Dir), array('..', '.'));
+
+    // Wird nur ausgefuehrt falls Daten vorhanden sind
+    if ( count( $FileListing ) > 0 )
+    {
+        $file_arr = array();
+
+        foreach ( $FileListing as $File )
+        {
+            $size = number_format( filesize($Dir.$File)/1024, 2, ",", "." );
+
+            // Array fuer JSON Objekt
+            $file_arr[] = array("name" => $File, "size" => $size);
+        }
+
+        echo json_encode( $file_arr );	// JSON Ausgabe
+    }
+?>
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Verzeichnis Inhalt holen}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+
+      \begin{lstlisting}[name=upload.php]
+<?php
+    // Autor von upload.php: Daniel Tatzel
+    // Laedt eine ausgewaehlte Datei auf den Server hoch
+
+    $temp = explode(".", $_FILES["file"]["name"]);
+    $extension = end($temp);
+
+    // Gibt eine Meldung aus, falls ein Fehler aufgetreten ist
+    if ($_FILES["file"]["error"] > 0)
+    {
+        echo "Fehler Code: " . $_FILES["file"]["error"] . "<br>";
+    }
+    else
+    {
+        // Prueft ob Datei schon vorhanden ist und gibt eine Meldung aus, ansonsten wird die Datei hochgeladen
+        if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/test_02/private/files/" . $_FILES["file"]["name"])) {
+          echo $_FILES["file"]["name"] . " bereits vorhanden. ";
+        }
+        else {
+          move_uploaded_file($_FILES["file"]["tmp_name"],
+          $_SERVER["DOCUMENT_ROOT"] . "/test_02/private/files/" . $_FILES["file"]["name"]);
+        }
+    }
+?>
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Datei hochladen}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=hide.js]
+<script language="javascript">
+    function show(selector)
+    {
+        var sel = selector;
+
+        if ( sel == 0 )
+            sel = "passwd";
+        else
+            sel = "file"
+
+        if(document.getElementById( sel ).style.display == 'block')
+        {
+            document.getElementById( sel ).style.display = 'none';
+        }
+        else
+        {
+            document.getElementById( sel ).style.display = 'block';
+        }
+    }
+</script>
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Ausblenden von Bereichen}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=table.js]
+$(document).ready(function() {
+    var mTable = $('#filesTable').dataTable({
+        "oLanguage": {
+            "sSearch": "Dateien filtern:",
+            "oPaginate": {
+                "sNext": "Naechste Seite",
+                "sPrevious": "Vorherige Seite"
+            },
+            "sInfo": "Es wurden _TOTAL_ Dateien gefunden. Aktuelle Anzeige (_START_ bis _END_)",
+            "sLengthMenu": "Zeige _MENU_ Dateien"
+        }
+    });
+    mTable.fnClearTable();
+    jQuery.each(files, function() {
+        mTable.fnAddData(['<a href="files/' + this.name + '" > ' + this.name + '</a>', this.size, '<form method="POST" action=""><input type="hidden" name="file" value="'+ this.name +'"><input type="submit" name="delete" value="L&ouml;schen"></form>']);
+    });
+    mTable.draw();
+  });
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Erstellen der Tabelle}
+  \makeset
+\end{frame}
+
+\subsection{Demonstration}
+\begin{frame} %%Eine Folie
+  \frametitle{Demonstration} %%Folientitel
+
+% Fettgedruckt
+  \center
+  \textbf{Es folgt eine Demonstration ...}
+\end{frame}
+
+\subsection{Ende}
+\begin{frame}
+  \frametitle{Ende}
+  \center
+ \textbf{\highlighton{Vielen Dank für Ihre Aufmerksamkeit}}
+\end{frame}

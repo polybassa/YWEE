@@ -5,8 +5,10 @@
  * 
  */
 
+// Inkludiert die Verbindung zur Datenbank
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
+//Hole Übergabeparameter
 $typ = trim($_POST['valueTyp']);
 $value = trim($_POST['search']);
 
@@ -22,16 +24,14 @@ if (preg_match("/[^\040\pL\pN_-]/u", $value)) {
     exit;
 }
 // *****************************************************************************
-// database connection
+// establish database connection
 try {
     $conn = ConnectToDB();
 } catch (Exception $e) {
     die("keine Verbindung möglich: " . $e->getMessage());
 }
 
-/**
- * Create SQL. Use different querys depending on what parameter is transmitt via get
- */
+// Create SQL. Use different querys depending on what parameter is transmitt via get
 if ($typ === 'location')
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $value . "%')";
 else if ($typ === 'subject')
@@ -39,11 +39,11 @@ else if ($typ === 'subject')
 else {
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
 }
+// execute sql query
 $sth = $conn->prepare($sql);
 $sth->execute();
-/*
- * Fill data to an json object
- */
+
+//iterate throw results and fill output array
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     if (stristr($row['Wohnort'], $value)) {
         $a_json_row["value"] = $row['Wohnort'];
@@ -64,12 +64,12 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         array_push($a_json, $a_json_row);
     }
 }
+// remove multiple entries
 $a_json = array_unique($a_json, SORT_REGULAR);
 $json = json_encode($a_json);
-/*
- * Here is some intelligence. If the query generates only one result, the script redirects immediatly to the right page.
- * For example if the result contains only one user, PHP is redirecting the browser to the show profile page.
- */
+
+// Here is some intelligence. If the query generates only one result, the script redirects immediatly to the right page.
+// For example if the result contains only one user, PHP is redirecting the browser to the show profile page.
 if (count($a_json) === 1) {
     if ($a_json[0]['typ'] == "Ort") {
         $id = $a_json[0]['value'];
@@ -87,22 +87,23 @@ if (count($a_json) === 1) {
 } else {
     // Anpassung und Aufteilung des Layouts: Daniel Tatzel
     // Muss in der Reihenfolge bleiben
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
-
-    $titel = "Suchergebnisse"; // Name der Seite die im Browser angezeigt werden soll
+    // Inkludiert die Session
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");
+    // Name der Seite die im Browser angezeigt werden soll
+    $titel = "Suchergebnisse";
 
     $_SESSION['sprache'] = "de";
-
-    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");   // Inkludiert den Header
+    // Inkludiert den Header
+    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/header.php");
     ?>
     <script type="text/javascript">
-        /*
-         * print out all search results in an json object to use it later in an other script
-         */
+        // print out all search results in an json object to use it later in an other script
         var searchresults = <?php echo $json; ?>;
     </script>
     <?php
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/search.html");       // Inkludiert den Inhalt
+    // Inkludiert den Inhalt
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/search.html");
+    // Inkludiert den Footer
+    include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php");
 }
-include($_SERVER["DOCUMENT_ROOT"] . "/test_02/layout/footer.php"); // Inkludiert den Footer
 ?>

@@ -22,6 +22,7 @@
 \setbeamercolor*{block body}{bg=airlightgray,fg=airgray}
 \setbeamercolor*{normal text}{bg=white,fg=airgray}
 \setbeamercolor*{section in head/foot}{bg=airblue,fg=airorange}
+\setbeamercolor*{subsection in head/foot}{bg=airblue,fg=airorange}
 
 
 \usecolortheme[named=airorange]{structure}
@@ -50,6 +51,12 @@
   \begin{beamercolorbox}[wd=\paperwidth,ht=0.37\beamer@headheight]{Title bar}
     \usebeamerfont{section in head/foot}%
     \insertsectionnavigationhorizontal{0pt}{\hskip 1.60cm}{}%
+  \end{beamercolorbox}}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.1\beamer@headheight]{Title bar}
+    \usebeamerfont{subsection in head/foot}%
+    \insertsubsectionnavigationhorizontal{0pt}{\hskip 1.60cm}{}%
   \end{beamercolorbox}}
 
   \framelatex{

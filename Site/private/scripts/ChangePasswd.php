@@ -16,5 +16,4 @@
     fclose($handle);
 
     header("Location: http://www.ebenezer-kunatse.net/private/");
-
 ?>

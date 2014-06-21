@@ -1,0 +1,26 @@
+\section{An- und Abmelden}
+
+\subsection{Anmelden}
+
+Über das Formular im rechten Balken, siehe Grafik \ref{fig:login}, kann man sich anmelden.
+
+\begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=1\textwidth]{../Screenshots/de/login}
+ \label{fig:login}
+ \caption{Das Anmeldeformular}
+\end{figure}
+
+\newpage
+
+\subsection{Abmelden}
+
+Hat man sich bei der Sprachauswahl vertan oder möchte die Inhalte in der jeweils anderen Sprache lesen, so kann durch ein Click auf die Flagge im Menü die Sprache gewechselt werde, siehe
+Auf der Startseite kann die gewünschte Sprache über die entsprechende Flagge ausgewählt werden, siehe Grafik \ref{fig:startseite}.
+
+\begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=1\textwidth]{../Screenshots/de/logout}
+ \label{fig:logout}
+ \caption{Sprachauswahl auf den Folgeseiten}
+\end{figure}

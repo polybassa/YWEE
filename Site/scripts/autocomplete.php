@@ -1,11 +1,11 @@
 <?php
-
 /*
  * author: Nils Weiss
  * script for json Object of autocomplete values 
  * 
  */
-include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       // Inkludiert die Session
+// Inkludiert die Session
+include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/session.php");       
 // Inkludiert die Funktion zur Anmeldung
 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");
 
@@ -16,7 +16,6 @@ if (!$isAjax) {
     $user_error = 'Access denied - not an AJAX request...';
     trigger_error($user_error, E_USER_ERROR);
 }
-//echo "ajax<br>";
 // get what user typed in autocomplete input
 $term = trim($_GET['term']);
 
@@ -43,18 +42,17 @@ try {
     die("keine Verbindung möglich: " . $e->getMessage());
 }
 
-/**
- * Create SQL
- */
+// Create SQL Query
 if (isset($_SESSION['logged-in'])) {
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%') or (benutzername LIKE '" . $term . "%')";
 } else {
     $sql = "SELECT * FROM suche WHERE (Wohnort LIKE '" . $term . "%') or (fach LIKE '" . $term . "%')";
 }
-
+// Execute SQL Query
 $sth = $conn->prepare($sql);
 $sth->execute();
 
+// iterate throw results and fill output array
 while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
     if (stristr($row['Wohnort'], $term)) {
         $a_json_row["id"] = "/de/search.php";
@@ -62,7 +60,6 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         $a_json_row["typ"] = "location";
         array_push($a_json, $a_json_row);
     }
-
     if (stristr($row['benutzername'], $term) && isset($_SESSION['logged-in'])) {
         $a_json_row["id"] = "/de/profile.php?username=" . $row['benutzername'];
         $a_json_row["value"] = $row['benutzername'];
@@ -76,8 +73,9 @@ while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         array_push($a_json, $a_json_row);
     }
 }
+// remove multiple entries
 $a_json = array_unique($a_json, SORT_REGULAR);
 $json = json_encode($a_json);
-
+//return results as json object
 print $json;
 ?>

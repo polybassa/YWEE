@@ -1,0 +1,167 @@
+\section{SAD}
+% \subsection{Analysephase}
+\begin{frame} %%Eine Folie
+  \frametitle{Analyse} %%Folientitel
+
+  Um einen besseren Überblick zu Erhalten wurden die folgenden Fragen gestellt:
+  \bigskip
+% Aufzählung
+  \begin{enumerate}
+   \item Welche Grundanforderungen sind nötig?
+   \item Welcher Webserver steht zur Verfügung?
+   \item Welche Möglichkeiten gibt es zur Umsetzung?
+   \item Welche Sprachen werden benötigt?
+  \end{enumerate}
+
+\end{frame}
+% \addtocounter{enumi}{4}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Grundanforderungen} %%Folientitel
+
+   Um den "`Privaten Ordner"' effektiv nutzen zu können sind folgende Grundmerkmale nötig:
+   \bigskip
+%   Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Man muss das Passwort ändern können
+    \item Man muss Dateien auswählen, hochladen und löschen können
+    \item Die Dateien müssen optisch angemessen aufgelistet werden
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Webserver} %%Folientitel
+% Aufzählung
+  \begin{enumerate}
+   \item Webserver
+   \begin{itemize}
+    \item Auf dem Zielsystem ist ein \textbf{Apache} Webserver in der Version 2 vorinstalliert.
+   \end{itemize}
+   \bigskip
+   \item Bietet der Webserver Lösungen für das Problem?
+   \begin{itemize}
+    \item \textbf{htaccess}: Unterstützt die Zugriffskontrolle per Passwortschutz
+   \end{itemize}
+
+  \end{enumerate}
+
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Umsetzung} %%Folientitel
+
+  Zur Umsetzung standen zwei Möglichkeiten zur Verfügung:
+  \bigskip
+%   Auflsitung mit Punkt davor
+  \begin{enumerate}
+   \item Verzeichnisschutz mittels htaccess Dateien
+   \item Eigene Implementierung
+  \end{enumerate}
+
+  \bigskip
+
+  Da eine geeignete Implementierung vorhanden ist und der Aufwand für eine eigene zu hoch ist, wurde sich für die Umsetzung mittels htaccess Dateien entschieden.
+\end{frame}
+
+% \begin{frame} %%Eine Folie
+%   \frametitle{Sprachen} %%Folientitel
+%
+% %   Geschachtelte Auflsitung mit Punkt davor
+%    \begin{itemize}
+%     \item Passwort ändern
+%     \begin{itemize}
+%      \item HTML5 für die Formulare
+%      \item PHP zum aktualisieren des Passworts
+%     \end{itemize}
+%
+%     \item Dateien auswählen, hochladen und löschen
+%     \begin{itemize}
+%      \item HTML5 zum Auswählen
+%      \item PHP zum Hochladen und zum Löschen
+%     \end{itemize}
+%
+%     \item Darstellung der Dateien
+%     \begin{itemize}
+%      \item HTML5 für die Definition der Tabelle
+%      \item PHP zum Ermitteln der Dateien
+%      \item JQuery zur Generierung der Tabelle
+%     \end{itemize}
+%
+%     \item Sonstiges
+%     \begin{itemize}
+%      \item Javascript für das Design
+%     \end{itemize}
+%
+%    \end{itemize}
+%
+% \end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Sprachen} %%Folientitel
+
+%   Geschachtelte Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Passwort ändern
+\bigskip
+    \begin{itemize}
+     \item HTML5 für die Formulare
+     \item PHP zum aktualisieren des Passworts
+    \end{itemize}
+\bigskip
+    \item Dateien auswählen, hochladen und löschen
+\bigskip
+    \begin{itemize}
+     \item HTML5 zum Auswählen
+     \item PHP zum Hochladen und zum Löschen
+    \end{itemize}
+
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Sprachen} %%Folientitel
+
+%   Geschachtelte Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Darstellung der Dateien
+\bigskip
+    \begin{itemize}
+     \item HTML5 für die Definition der Tabelle
+     \item PHP zum Ermitteln der Dateien
+     \item JQuery zur Generierung der Tabelle
+    \end{itemize}
+\bigskip
+    \item Sonstiges
+\bigskip
+    \begin{itemize}
+     \item Javascript für das Design
+    \end{itemize}
+
+   \end{itemize}
+
+\end{frame}
+% \subsection{Die Formulierung}
+% \begin{frame} %%Eine Folie
+%   \frametitle{Text für die SAD} %%Folientitel
+%
+%   Aus den Ergebnissen der Analysephase wurde der folgende Text formuliert und in die SAD eingebaut:
+%   \bigskip
+% % Definitionsblock
+%   \begin{block}{}
+% Der Administrator ist in der Lage \"uber das Men\"u auf den Privaten Ordner zu zugreifen. Nach Aufruf der Seite kommt eine Login-Maske, in der sich der Administrator Authentifizieren muss. Diese Authentifizierung geschieht \"uber eine .htaccess, in der die entsprechenden Optionen zum Schutz eines Verzeichnisses gesetzt sind und eine .htpasswd Datei, in der sich die Zugangsdaten befinden. Auf der Seite des Privaten Ordners hat der Admin die M\"oglichkeit das Passwort f\"ur den Ordner zu \"andern sowie neue Dateien hochzuladen oder zu l\"oschen. ...
+%   \end{block}
+%
+% \end{frame}
+%
+% \begin{frame} %%Eine Folie
+%   \frametitle{Fortsetzung} %%Folientitel
+%
+% % Definitionsblock
+%   \begin{block}{}
+% ... Diese M\"oglichkeiten werden mithilfe von HTML5 Formularen und PHP Scripten gel\"ost. Zur \"Ubersichtlichkeit werden die Bereichen zum \"andern des Passworts und zum hochladen von Dateien mittels CSS verborgen. Zum Anzeigen der Bereiche ist ein Button vorhanden, der mithilfe von Javascript die Bereiche sichtbar macht.
+%   \end{block}
+%
+% \end{frame}
