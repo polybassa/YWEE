@@ -1,0 +1,30 @@
+\section{Einleitung} % "Sowas wie Kapitel"
+\subsection{Rolle} % Unter Kapitel
+
+\begin{frame} %%Eine Folie
+%   \frametitle{Tutoren Agentur} %%Folientitel
+
+\end{frame}
+
+\subsubsection{Aufgaben}
+\begin{frame} %%Eine Folie
+%   \frametitle{Tutoren Agentur} %%Folientitel
+
+
+
+  \begin{itemize}
+    \begin{multicols}{2}
+      \item Datenbank
+      \item Besucherzähler
+      \item Login
+      \item Registrierung
+      \item Gästebuch
+      \item Privater Ordner
+      \item Sprachauswahl
+      \item 404 Error
+      \item URL Rewriting
+      \item ...
+    \end{multicols}
+  \end{itemize}
+
+\end{frame}

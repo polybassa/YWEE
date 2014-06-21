@@ -53,10 +53,10 @@ Mode=LaTeX
 
 [item:YWEE-presentation.tex]
 archive=true
-column=33
+column=40
 encoding=UTF-8
 highlight=LaTeX
-line=122
+line=23
 mode=LaTeX
 open=false
 order=0
@@ -83,10 +83,10 @@ order=2
 
 [item:chapters/3_SAD.tex]
 archive=true
-column=8
+column=27
 encoding=UTF-8
 highlight=LaTeX
-line=137
+line=1
 mode=LaTeX
 open=false
 order=3
@@ -112,10 +112,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:YWEE-presentation.tex]
-CursorColumn=33
-CursorLine=122
+CursorColumn=40
+CursorLine=23
 JumpList=
-ViMarks=.,122,0,[,122,0,],122,0
+ViMarks=.,9,21,[,10,0,],-1,-1
 
 [view-settings,view=0,item:chapters/1_Einleitung.tex]
 CursorColumn=32
@@ -130,10 +130,10 @@ JumpList=
 ViMarks=.,1,0,[,1,0,],1,1
 
 [view-settings,view=0,item:chapters/3_SAD.tex]
-CursorColumn=8
-CursorLine=137
+CursorColumn=27
+CursorLine=1
 JumpList=
-ViMarks=.,137,8,[,137,8,],137,8
+ViMarks=.,1,0,[,1,0,],1,1
 
 [view-settings,view=0,item:chapters/4_Implementierung.tex]
 CursorColumn=16
