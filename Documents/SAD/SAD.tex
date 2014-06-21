@@ -152,7 +152,7 @@ Suchvorschläge erhält der Nutzer unmittelbar während der Suche, sobald mehr als
 
 \subsubsection*{F14: Registrierungs- und Anmeldefenster}
 
-Die Registrierung erfolgt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen. Das Onlineformular ist im \underline{HTML5}-standard geschrieben, um gleich Validierungen der Eingaben durchführen zu können, ohne die Informationen erst zum Server schicken zu müssen. Zus\"atzlich werden die Eingaben per Javascript \"uberpr\"uft. Wenn alle Daten eingegeben wurden, die Validierungen erfolgreich waren, klickt der Benutzer auf einen Button und schickt die Daten damit zum Server. Dort wird der Benutzername \"uberpr\"uft und falls dieser noch nicht vorhanden ist, dann werden die Daten mittels \underline{PHP} zur \underline{Datenbank} geschickt, um dort gespeichert zu werden. Der Aufruf des Scripts zum Eintragen der Informationen in die Datenbank wird mittels JQuery ausgef\"uhrt.
+Die Registrierung erfolgt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen. Das Onlineformular ist im \underline{HTML5}-standard geschrieben, um gleich Validierungen der Eingaben durchführen zu können, ohne die Informationen erst zum Server schicken zu müssen. Zus\"atzlich werden die Eingaben per Javascript \"uberpr\"uft. Wenn alle Daten eingegeben wurden, die Validierungen erfolgreich waren, klickt der Benutzer auf einen Button und schickt die Daten damit zum Server. Dort wird der Benutzername \"uberpr\"uft und falls dieser noch nicht vorhanden ist, dann werden die Daten mittels \underline{POST} zur \underline{Datenbank} geschickt, um dort gespeichert zu werden. Der Aufruf des Scripts zum Eintragen der Informationen in die Datenbank wird mittels JQuery ausgef\"uhrt. Vor dem Eintragen der Daten in die Datenbank erfolgt eine Validierung dieser Daten durch JQuery-Validate.
 \bigskip \newline
 Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Nutzers zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Session-Variablen, die angeben, dass der Benutzer angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Das Script zum Anmelden wird ebenfalls per JQuery aufgerufen.
 
@@ -240,7 +240,7 @@ $^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
 $^2$ Kundeninformationen: Persönliche Informationen der Kundenkonten
 
 \subsubsection*{F27: Nachrichten schreiben}
-Der Administrator hat die Möglichkeit auf der News Seite neue Nachrichten zu schreiben. Dazu gibt er den Betreff und die Nachricht in ein HTML 5 Formular ein. Diese werden in der Datenbank gespeichert und für alle sichtbar (auch für nicht angemeldete User). Der Admin hat außerdem die Möglichkeit per Adminverwaltung nicht mehr benötigte Nachrichten zu löschen.
+Der Administrator hat die Möglichkeit auf der News Seite neue Nachrichten zu schreiben. Dazu gibt er den Betreff und die Nachricht in ein HTML 5 Formular ein. Nach Eingabe der Daten werden diese durch JQuery Validate auf ihre Richtigkeit geprüft. Anschließend werden diese in der Datenbank gespeichert und für alle sichtbar (auch für nicht angemeldete User). Der Admin hat außerdem die Möglichkeit per Adminverwaltung nicht mehr benötigte Nachrichten zu löschen.
 
 \subsubsection*{F28: Privater Ordner}
 
