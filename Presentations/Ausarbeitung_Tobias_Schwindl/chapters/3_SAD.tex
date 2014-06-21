@@ -1,0 +1,92 @@
+\section{SAD}
+\subsection{Analysephase}
+\begin{frame} %%Eine Folie
+  \frametitle{Analyse} %%Folientitel
+
+  Um einen besseren Überblick zu Erhalten wurden die folgenden Fragen gestellt:
+% Aufzählung
+  \begin{enumerate}
+   \item Welche Grundanforderungen sind nötig?
+   \item Welche Sprachen werden benötigt?
+  \end{enumerate}
+
+\end{frame}
+% \addtocounter{enumi}{4}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Grundanforderungen} %%Folientitel
+
+   Um eine Nachrichtenseite erfolgreich zu implementieren, ist folgendes von Nöten:
+%   Auflsitung mit Punkt davor
+   \begin{itemize}
+   	\item Alle User dürfen die Nachrichten lesen
+    \item Besucher und eingeloggte User ohne Adminstatus dürfen das Formular nicht sehen.
+    \item Der Admin muss Nachrichten schreiben können
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Sprachen} %%Folientitel
+
+%   Geschachtelte Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Für das Formular
+    \begin{itemize}
+     \item HTML5
+     \item JS um die Eingaben zu prüfen und die Nachrichten anzuzeigen
+    \end{itemize}
+
+    \item Verhindern dass andere als der Amdin das Formular sehen
+    \begin{itemize}
+     \item PHP Adminabfrage im Code beim Aufrufen der Seite
+    \end{itemize}
+
+    \item Skript für das Speichern/Löschen der Nachrichten
+    \begin{itemize}
+     \item PHP für die SQL Queries 
+    \end{itemize}
+    
+
+   \end{itemize}
+
+\end{frame}
+
+\subsection{Die Formulierung}
+\begin{frame} %%Eine Folie
+  \frametitle{Text für die SAD} %%Folientitel
+
+  Aus den Ergebnissen der Analysephase wurde der folgende Text formuliert und in die SAD eingebaut:
+
+% Definitionsblock
+  \begin{block}{}
+	Der Administrator hat die Möglichkeit auf der News Seite neue Nachrichten zu schreiben. Dazu gibt er den
+	Betreff und die Nachricht in ein HTML 5 Formular ein. Diese werden in der Datenbank gespeichert und für alle
+	sichtbar (auch für nicht angemeldete User). Der Admin hat außerdem die Möglichkeit per Adminverwaltung
+	nicht mehr benötigte Nachrichten zu löschen.
+  \end{block}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Spendenseite} %%Folientitel
+	Für die Spendenseite ergibt sich ein ähnliches Bild, nur das alle angemeldeten User spenden können. 
+  
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Text für die SAD} %%Folientitel
+
+  Aus den Ergebnissen der Analysephase wurde der folgende Text formuliert und in die SAD eingebaut:
+
+% Definitionsblock
+  \begin{block}{}
+	Ein registrierter Benutzer kann per Kreditkarte Spenden. Dazu gibt er seine Kreditkarteninformationen in ein
+	HTML5 Formular Kreditkartennummer, Ablaufdatum der Karte, die Prüfziffer und den zu zahlenden Betrag.
+	Diese werden mit Javascript auf Richtigkeit der Informationen geprüft (HTML5 Formular) und dann für die
+	weitere Verwendung in der MySQL Datenbank gespeichert.
+  \end{block}
+
+\end{frame}
+
+

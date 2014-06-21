@@ -1,0 +1,82 @@
+\section{Implementierung}
+\subsection{Code}
+
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+	\lstset{language=html}
+      \begin{lstlisting}
+<div style="height:200px;">
+        <form name="News" id="newsform">
+            <script src="/js/newsvalidation.js" type="text/javascript"></script>
+            <input type="hidden" name="sprache" value="<?php echo $_SESSION['sprache']; ?>">
+            <input type="hidden" name="user" value="<?php echo $_SESSION['user']; ?>">
+            <div><label for ="betreff"></label><input type="text" size="44" maxlength = "60" placeholder = "Betreff" name="subject" id="betreff" required></div>
+            <div><label for ="nachrichtentext"></label>
+                <p><textarea name="nachricht" cols="33" rows="5" maxlength="300" id="nachrichtentext" placeholder ="Schreiben Sie hier ihre Nachricht..." required></textarea>
+                </p>
+            </div>
+            <div class="line submit"><input type="submit" value="Absenden"></div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#scrollablecontentboxnews_de").height(550);
+        });
+    </script>
+
+    
+
+      \end{lstlisting}
+}
+
+\begin{frame}
+  \frametitle{Formular}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+      \begin{lstlisting}
+      <?php 
+      [...]
+		try {
+		    $dbConnection = ConnectToDB();
+		} catch (Exception $e) {
+		    die("keine Verbindung moeglich: " . $e->getMessage());
+		}
+		[...]
+		$dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
+		
+		$query = $dbConnection->prepare("insert into news (benutzername, zeit, nachricht, betreff) VALUES ( :user, CURRENT_DATE, :msg, :subject)");
+		
+		$query->bindParam(":msg", $msg);
+		$query->bindParam(":user", $_POST['user']);
+		$query->bindParam(":subject", $subject);
+		
+		$query->execute();
+		$dbConnection = null;
+      \end{lstlisting}
+}
+
+\begin{frame}
+  \frametitle{PHP Code}
+  \makeset
+\end{frame}
+
+
+
+\subsection{Demonstration}
+\begin{frame} %%Eine Folie
+%   \frametitle{Analyse} %%Folientitel
+
+% Fettgedruckt
+  \textbf{Es folgt eine Demonstration ...}
+\end{frame}
+
+\subsection{Ende}
+\begin{frame}
+\center
+ \textbf{Vielen Dank für Ihre Aufmerksamkeit!}
+\end{frame}
