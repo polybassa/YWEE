@@ -1,4 +1,5 @@
 <!--author Florian Laufenboeck -->
+<div class="scrollablecontentbox">
 <h1>Profil <?php if($fl_username == $_SESSION['user']) echo "bearbeiten";?> </h1>
 
 <form name="Formular" method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user'];?>">
@@ -29,3 +30,4 @@
 		echo "<h4>Dieser Tutor arbeitet im Umkreis von " . $umkreis ." km</h4>";
 	  }
 ?>
+</div>
