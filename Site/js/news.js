@@ -1,7 +1,6 @@
-
+// Content by Alexander Strobl 
 $(document).ready(function myFunction() {
     $.ajaxSetup({cache: false});
-
 
     var url = "/scripts/ReadNews.php";
 
