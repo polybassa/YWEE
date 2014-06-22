@@ -1,0 +1,104 @@
+\section{Profil}
+\subsection{SRA}
+\begin{frame}
+  \frametitle{Anforderungen}
+ Implementierung des Profils, das \underline{eingeloggten} Profil-Besuchern erlaubt:
+ \bigskip
+ \begin{itemize}
+  \item Persönliche Daten des Benutzers einzusehen
+  \item Den Benutzer zu kontaktieren(via Email)
+  \item Ist der Benutzer Tutor, wenn ja, was macht er?
+ \end{itemize}
+ 
+\end{frame}
+\begin{frame}
+\frametitle{Formulierung}
+ Daraus entstand für das SRA:
+ \bigskip
+  \begin{block}{F3:Schüler}
+  Jeder Nutzer hat die Möglichkeit [...] sich [...] einzuloggen.
+  Dadurch erhält er Zugriff auf seinen Privaten Bereich, in dem er seine [...] persönlichen Daten ändern kann.
+  Die persönlichen Daten setzen sich aus Vorname, Nachname, Alter, Anschrift, Passwort und Kontaktdaten zusammen.
+  Nutzername, Name, Vorname und Geburtsdatum sind von einer Bearbeitung ausgeschlossen.
+  Es besteht die Option seinen Account zu löschen.
+ \end{block}
+\end{frame}
+
+\subsection{SAD}
+\begin{frame}
+\frametitle{Überblick}
+ Für einen Überblick mussten folgende Fragen gestellt werden:
+ \begin{itemize}
+  \item Welche Grundanforderungen sind nötig?
+  \item Welche Technologien/Sprachen werden benötigt?
+ \end{itemize}
+\end{frame}
+\begin{frame}
+ \frametitle{Analyse}
+ Für das eigene \underline{und} andere Profil wurden folgende Umsetztung ausgearbeitet:
+ \begin{itemize}
+  \item Es soll \underline{eine}(*.php) Datei, für alles was mit dem Profil zu hat, geben. Dazu gehören folgende Unterscheidungen:
+    \begin{itemize}
+     \item In seinem Profil soll man Daten ändern können
+     \item andere Profile soll man anschauen können
+     \item Verweis zum Tutorprofil
+    \end{itemize}
+  \item Die eingegebenen Daten im eigenen Profil müssen validiert werden
+  \item Es soll eine Rückmeldung geben
+ \end{itemize}
+\end{frame}
+\begin{frame}
+ \frametitle{Technologien/Sprachen}
+ Formular:
+ \begin{itemize}
+  \item HTML5 zur Eingabevalidierung
+ \end{itemize}
+ Skript
+ \begin{itemize}
+  \item PHP5
+  \item einige Daten über Webaddresse übergeben
+  \item Formulardaten mit Hilfe der POST-Technologie
+ \end{itemize}
+\end{frame}
+\begin{frame}
+ \frametitle{Formulierung}
+  \begin{block}{F31}
+   Der Schüler kann durch ausfüllen von HTML5 Formularen seine Profildaten bearbeiten, diese werden durch HTML5 validiert. Die Daten werden in der Datenbank über ein PHP-Skript geändert.
+  \end{block}
+\end{frame}
+
+\subsection{Beispiel}
+\frametitle{Beispiel}
+\includegraphics[width=1\textwidth]{./pictures/Profil-bearbeiten}
+\subsection{Implementierung}
+\begin{frame}
+ \frametitle{profile.php}
+ \defverbatim[colored]
+  \makeset{
+    \phpcode
+
+      \begin{lstlisting}[name=upload.php]
+<?php
+/* Passwortaenderung fuer den Privaten Ordner -- Daniel Tatzel */
+
+/* create_htpasswd: Generiert eine .htpasswd Datei mit Benutzername und Passwort fuer den Login zum Privaten Ordner */
+    $DIR = $_SERVER["DOCUMENT_ROOT"] . "/test_02/private/";
+    if ( file_exists($DIR . '.htpasswd') )
+        unlink($DIR.'.htpasswd');
+
+    $passwd = crypt($_POST['passwd']);
+    $htpasswd = 'admin:' . $passwd . "\n";
+
+    $stream = "# Autor: Daniel Tatzel\n\n".$htpasswd;
+
+    $handle = fopen($DIR . '.htpasswd',"a");
+    fputs($handle,$stream);
+    fclose($handle);
+
+    header("Location: http://www.ebenezer-kunatse.net/private/");
+?>
+      \end{lstlisting}
+}
+\end{frame}
+
+

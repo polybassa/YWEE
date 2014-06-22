@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {ngerman}
+\beamer@sectionintoc {2}{Einleitung}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Zust\IeC {\"a}ndigkeiten}{4}{0}{1}
+\beamer@sectionintoc {3}{Profil}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{SRA}{6}{0}{2}
+\beamer@subsectionintoc {3}{2}{SAD}{8}{0}{2}
+\beamer@subsectionintoc {3}{3}{Beispiel}{12}{0}{2}
+\beamer@subsectionintoc {3}{4}{Implementierung}{13}{0}{2}
+\beamer@sectionintoc {4}{Adminverwaltung}{17}{0}{3}
+\beamer@subsectionintoc {4}{1}{SRA}{18}{0}{3}
+\beamer@subsectionintoc {4}{2}{SAD}{19}{0}{3}
+\beamer@subsectionintoc {4}{3}{Beispiel}{19}{0}{3}
+\beamer@subsectionintoc {4}{4}{Implementierung}{19}{0}{3}
+\beamer@sectionintoc {5}{Live-Demo}{19}{0}{4}
