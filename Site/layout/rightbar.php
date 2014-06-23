@@ -129,11 +129,35 @@
 				
 				<!-- Karte vor Geolocation -->
 				var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
-				function gmegInitializeMap(){gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
-				gmegMap = new google.maps.Map(document.getElementById("map"),{zoom:14,center:gmegLatLng,mapTypeId:google.maps.MapTypeId.ROADMAP});
-				gmegMarker = new google.maps.Marker({map:gmegMap,position:gmegLatLng});
-				gmegInfoWindow = new google.maps.InfoWindow({content:'<b>Hochschule</b><br>Seybothstra0e<br>Regensburg'});
-				gmegInfoWindow.open(gmegMap,gmegMarker);}google.maps.event.addDomListener(window,"load",gmegInitializeMap);
+				function gmegInitializeMap(){
+				
+				//Koordinaten werden auf Lat: 49.X / Lon: 12.X gesetzt (Hochschule)
+				gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
+				
+				//Karte mit den oben genannten Koordinaten wird erstellt 
+				gmegMap = new google.maps.Map(document.getElementById("map"),{
+					zoom:14,														//Zoomfaktor
+					center:gmegLatLng,												//Koordinaten Hochschule
+					mapTypeId:google.maps.MapTypeId.ROADMAP							//zeigt die Standard-Straßenkarte
+				});
+				
+				//Setzen des Markers
+				gmegMarker = new google.maps.Marker({
+					map:gmegMap,													//Marker in die oben erstellte Karte
+					position:gmegLatLng												//Koordinaten Hochschule
+				});
+				
+				//Erstellen eines Infofensters
+				gmegInfoWindow = new google.maps.InfoWindow({
+					content:'<b>Hochschule</b><br>Seybothstraße<br>Regensburg'		//Inhalt des Infofensters
+				});
+				
+				gmegInfoWindow.open(gmegMap,gmegMarker)
+				;}
+				
+				//Listener
+				google.maps.event.addDomListener(window,"load",gmegInitializeMap);	//Ruft Map auf sobald das Objekt "window" geladen ist
+																				
 				
 				
 				<!-- Karte: Routenplaner -->
@@ -149,13 +173,15 @@
 									},
 									mapOptions = {
 										zoom: 10,
-										// Default View: Regensburg
+										//Default View:
 										center : new google.maps.LatLng(49.0145423, 12.100855899999942),
 										mapTypeId: google.maps.MapTypeId.ROADMAP
 									};
 
 								map = new google.maps.Map(document.getElementById("map"), mapOptions);
 								directionsDisplay.setMap(map);
+								
+								//Callback abfragen
 								directionsService.route(travel, function(result, status) {
 									if (status === google.maps.DirectionsStatus.OK) {
 										directionsDisplay.setDirections(result);
@@ -164,40 +190,38 @@
 							};
 							
 							
-							// Check for geolocation support	
+							// Überprüft Geolocation
+							// Cookie noch nicht vorhanden
 							if (!$.cookie("posLat")) {
 								navigator.geolocation.getCurrentPosition(function (position) {
-										// Success!
+										
+										// Positon erfolgreich gefunden!
 										latitude = position.coords.latitude;
 										longitude = position.coords.longitude;
-										//write to cookie
+										
+										//schreibt Position in Cookie
 										$.cookie("posLat", latitude);
 										$.cookie("posLon", longitude);
+										
+										//erstellt die Map
 										createMap({
 											coords : true,
 											lat : latitude,
 											lng : longitude
 										});
-									}, 
+									},
 									
+									//Geolocation nicht verfügbar
 									alert('Ihr Standort konnte nicht bestimmt werden!')
-									/*function () {
-										// Fallback: Hochschule Amberg
-										createMap({
-										
-											coords : false,
-											address : "Hochschule, Amberg"
-										
-										});
-									}*/
+									
 								);
 								
 							}
+							//Cookie vorhanden
 							else {
-								//coords aus Datei
-								latitude = $.cookie("posLat");
-								longitude = $.cookie("posLon");
-								createMap({
+								latitude = $.cookie("posLat");					//in posLat ist "latitude" gespeichert
+								longitude = $.cookie("posLon");					//in posLon ist "longitude" gespeichert
+								createMap({										//createMap siehe oben
 									coords : true,
 									lat : latitude,
 									lng : longitude
@@ -232,7 +256,9 @@
 	<div class="basic-wrapper-bottom max_hoehe">
 	
 	<script> var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn; 
-	function intializePlayer(){ // Set object references 
+	function intializePlayer(){ 
+	
+		//Objekte 
 		vid = document.getElementById("my_video"); 
 		playbtn = document.getElementById("playpausebtn"); 
 		seekslider = document.getElementById("seekslider"); 
@@ -241,7 +267,8 @@
 		mutebtn = document.getElementById("mutebtn"); 
 		volumeslider = document.getElementById("volumeslider"); 
 		fullscreenbtn = document.getElementById("fullscreenbtn"); 
-		// Add event listeners 
+		
+		//Listener
 		playbtn.addEventListener("click",playPause,false); 
 		seekslider.addEventListener("change",vidSeek,false); 
 		vid.addEventListener("timeupdate",seektimeupdate,false); 
@@ -250,6 +277,8 @@
 		fullscreenbtn.addEventListener("click",toggleFullScreen,false); 
 	} 
 	window.onload = intializePlayer; 
+	
+	// Play / Stop
 	function playPause(){ 
 		if(vid.paused){ 
 			vid.play();
@@ -259,10 +288,14 @@
 			playbtn.style.background = "url(/images/play.png)"; 
 		} 
 	} 
+	
+	// Spuhlfunktion
 	function vidSeek(){ 
 		var seekto = vid.duration * (seekslider.value / 100); 
 		vid.currentTime = seekto; 
-	}	 
+	}	
+
+	// Zeitupdate
 	function seektimeupdate(){ 
 		var nt = vid.currentTime * (100 / vid.duration);
 		seekslider.value = nt; 
@@ -277,6 +310,8 @@
 		curtimetext.innerHTML = curmins+":"+cursecs; 
 		durtimetext.innerHTML = durmins+":"+dursecs; 
 	} 
+	
+	// Lautlos
 	function vidmute(){ 
 		if(vid.muted){ 
 			vid.muted = false; 
@@ -286,14 +321,19 @@
 			mutebtn.innerHTML = "Unmute"; 
 		} 
 	}	 
+	
+	// Lautstärke
 	function setvolume(){ 
 		vid.volume = volumeslider.value / 100; 
-	} function toggleFullScreen(){
-		if(vid.requestFullScreen){ 
+	} 
+	
+	// Vollbild
+	function toggleFullScreen(){
+		if(vid.requestFullScreen){ 					// Mozilla Proposal
 			vid.requestFullScreen(); 
-		} else if(vid.webkitRequestFullScreen){ 
+		} else if(vid.webkitRequestFullScreen){ 	// Chrome / Safari
 			vid.webkitRequestFullScreen(); 
-		} else if(vid.mozRequestFullScreen){ 
+		} else if(vid.mozRequestFullScreen){ 		// Firefox
 			vid.mozRequestFullScreen(); 
 		} 
 	} </script> 
