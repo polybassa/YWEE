@@ -179,7 +179,9 @@
 											lng : longitude
 										});
 									}, 
-									function () {
+									
+									alert('Ihr Standort konnte nicht bestimmt werden!')
+									/*function () {
 										// Fallback: Hochschule Amberg
 										createMap({
 										
@@ -187,7 +189,7 @@
 											address : "Hochschule, Amberg"
 										
 										});
-									}
+									}*/
 								);
 								
 							}

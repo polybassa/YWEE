@@ -10,13 +10,6 @@ try {
     die("keine Verbindung möglich: " . $e->getMessage());
 }
 
-// SECURITY HOLE ***************************************************************
-// allow space, any unicode letter and digit, underscore and dash
-if (preg_match("/[^\040\pL\pN_-]/u", $_POST['eintrag']) || preg_match("/[^\040\pL\pN_-]/u", $_POST['username'])) {
-    echo 'FUCK';
-    exit;
-}
-
 // replace multiple spaces with one
 $user = preg_replace('/\s+/', ' ', $_POST['username']);
 $msg = preg_replace('/\s+/', ' ', $_POST['eintrag']);

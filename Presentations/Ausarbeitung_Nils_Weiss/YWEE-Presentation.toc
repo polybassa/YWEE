@@ -14,8 +14,6 @@
 \beamer@subsectionintoc {5}{2}{Systemkontext}{16}{0}{4}
 \beamer@subsectionintoc {5}{3}{Planungsphase}{19}{0}{4}
 \beamer@sectionintoc {6}{Implementierung}{21}{0}{5}
-\beamer@subsectionintoc {6}{1}{Suchfunktion \IeC {\"U}berblick}{22}{0}{5}
 \beamer@subsectionintoc {6}{2}{Clientseitige Implementierung}{23}{0}{5}
 \beamer@subsectionintoc {6}{3}{Serverseitige Implementierung}{24}{0}{5}
 \beamer@subsectionintoc {6}{4}{Intelligente Weiterleitung}{25}{0}{5}
-\beamer@subsectionintoc {6}{5}{Demonstration}{26}{0}{5}
