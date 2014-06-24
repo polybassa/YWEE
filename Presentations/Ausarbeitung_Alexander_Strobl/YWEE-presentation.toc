@@ -1,0 +1,17 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {ngerman}
+\beamer@sectionintoc {2}{Einleitung}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Die Aufgabe}{4}{0}{1}
+\beamer@sectionintoc {3}{SRA}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{Aufgabe}{6}{0}{2}
+\beamer@subsectionintoc {3}{2}{Umsetzung}{7}{0}{2}
+\beamer@sectionintoc {4}{SAD}{9}{0}{3}
+\beamer@subsectionintoc {4}{1}{Aufgabe}{10}{0}{3}
+\beamer@subsectionintoc {4}{2}{Umsetzung}{11}{0}{3}
+\beamer@sectionintoc {5}{Implementierung}{17}{0}{4}
+\beamer@subsectionintoc {5}{1}{Umgesetzt}{18}{0}{4}
+\beamer@subsubsectionintoc {5}{1}{1}{G\IeC {\"a}stebuch}{19}{0}{4}
+\beamer@subsubsectionintoc {5}{1}{2}{Nachrichten}{21}{0}{4}
+\beamer@subsubsectionintoc {5}{1}{3}{Statische Inhalte}{23}{0}{4}
+\beamer@subsectionintoc {5}{2}{Nicht umgesetzt}{24}{0}{4}
+\beamer@subsectionintoc {5}{3}{Demonstration}{25}{0}{4}
