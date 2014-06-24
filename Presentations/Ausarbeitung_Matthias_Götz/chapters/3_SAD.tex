@@ -1,0 +1,168 @@
+\section{SAD}
+\subsection{Analysephase}
+\begin{frame} %%Eine Folie
+  \frametitle{Analyse} %%Folientitel
+
+  Um einen besseren Überblick zu Erhalten wurden die folgenden Fragen gestellt:
+% Aufzählung
+  \begin{enumerate}
+   \item Welche Grundanforderungen sind nötig?
+   \item Welche Sprachen werden benötigt?
+  \end{enumerate}
+
+\end{frame}
+% \addtocounter{enumi}{4}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Grundanforderungen - Karte} %%Folientitel
+
+	Für eine Karte sind folgende Funktionen wünschenswert:
+%   Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Anzeigen des Ziels
+    \item Standortabfrage
+    \item Routenplanung
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Sprachen - Karte} %%Folientitel
+
+%   Geschachtelte Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Geolocation
+    \begin{itemize}
+     \item Google Maps JavaScript API
+     \item JavaScript
+    \end{itemize}
+
+    \item Routen berechnen
+    \begin{itemize}
+     \item HTML5 zum Auswählen
+     \item JavaScript
+    \end{itemize}
+
+    \item Speichern der Standortdaten
+    \begin{itemize}
+     \item JQuery Cookie-Plugin
+     \item JavaScript
+    \end{itemize}
+
+    
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Grundanforderungen - Video} %%Folientitel
+
+   Um das "`Video"' adäquat nutzen zu können sind folgende Funktionen nötig:
+%   Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Starten und Anhalten des Videos
+    \item Lautstärkeregelung
+    \item Spulfunktion
+    \item Vollbild
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Sprachen - Video} %%Folientitel
+
+%   Geschachtelte Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Darstellung
+    \begin{itemize}
+     \item HTML5 für die verschiedenen Kontrollstrukturen
+     \item CSS3
+    \end{itemize}
+
+	\item Funktion
+	    \begin{itemize}
+	     \item JavaScript
+	    \end{itemize}
+    
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Grundanforderungen - Slideshow} %%Folientitel
+
+   Die "`Slideshow"' soll folgende Anforderungen erfüllen:
+%   Auflsitung mit Punkt davor
+   \begin{itemize}
+    \item Fallback Lösung
+    \item Dem Thema der Website entsprechend
+    
+   \end{itemize}
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Sprachen - Slideshow} %%Folientitel
+
+%   Geschachtelte Auflsitung mit Punkt davor
+   \begin{itemize}
+    
+    \item Bilder einfügen
+        \begin{itemize}
+         \item HTML5
+        \end{itemize}
+    
+    \item Fallback-Lösung
+    	\begin{itemize}
+     	\item Modernizr-Abfrage ob CSS3 möglich
+     	\item CSS3
+     	\item JavaScript
+    	\end{itemize}
+   
+    
+   \end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+\subsection{Die Formulierung}
+\begin{frame} %%Eine Folie
+  \frametitle{Text für die SAD} %%Folientitel
+
+  Aus den Ergebnissen der Analysephase wurde der folgende Text formuliert und in die SAD eingebaut:
+
+% Definitionsblock
+  \begin{block}{Karte}
+	Mit Hilfe der Google Maps JavaScript API wird eine Karte eingebettet. Außerdem besteht für den Besucher die
+	Möglichkeit, sich die Route von seinem jetzigen Standort bis in die Siemensstraße 12 in Regensburg anzeigen zu
+	lassen. Um nicht wiederholt die Standortdaten preisgeben zu müssen, werden nach erstmalig erlaubten Zugriff
+	diese in einem Cookie gespeichert. Dies geschieht mit Hilfe des jQuerry-Cookie-Plugins.
+  \end{block}
+  
+
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Text für die SAD} %%Folientitel
+
+
+% Definitionsblock
+ 
+  
+  \begin{block}{Video}
+  	Das Video wird mit HTML5 implementiert und ist dadurch ohne Flash abspielbar. Die Kontrollfunktionen
+  	werden ebenfalls mit HTML5 zur Verfügung gestellt. Gesteuert wird der HTML5 Videoplayer mit JavaScript.
+  \end{block}
+    
+  \begin{block}{Slideshow}
+    Die Bilder der Slideshow werden mit HTML5 zur Verfügung gestellt. Mittels CSS3 werden die Bilder formatiert.
+    JQuery sorgt für die Slideanimation. Eine Fallback Lösung, welche in JavaScript implementiert ist, wird durch
+    den Modernizr realisiert.
+  \end{block}
+
+\end{frame}
