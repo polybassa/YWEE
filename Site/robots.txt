@@ -4,13 +4,13 @@
 User-agent: *
 
 #Directories
+Disallow: /doc/
 Disallow: /images/
-Disallow: /private/
+Disallow: /js/
 Disallow: /layout/
 Disallow: /phpmyadmin/
+Disallow: /private/
 Disallow: /scripts/
-Disallow: /js/
-Disallow: /doc/
 
 #Files
-#Disallow: /file-name.php
+Disallow: /LICENSE.md
