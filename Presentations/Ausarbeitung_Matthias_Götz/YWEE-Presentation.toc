@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {ngerman}
+\beamer@sectionintoc {2}{Einleitung}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Aufgaben}{4}{0}{1}
+\beamer@sectionintoc {3}{SRA}{5}{0}{2}
+\beamer@subsectionintoc {3}{1}{Die Vorgabe}{6}{0}{2}
+\beamer@subsectionintoc {3}{2}{Die Formulierung}{9}{0}{2}
+\beamer@sectionintoc {4}{SAD}{10}{0}{3}
+\beamer@subsectionintoc {4}{1}{Analysephase}{11}{0}{3}
+\beamer@subsectionintoc {4}{2}{Die Formulierung}{18}{0}{3}
+\beamer@sectionintoc {5}{Implementierung}{20}{0}{4}
+\beamer@subsectionintoc {5}{1}{Code}{21}{0}{4}
+\beamer@subsectionintoc {5}{2}{Demonstration}{29}{0}{4}
