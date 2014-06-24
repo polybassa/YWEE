@@ -66,6 +66,32 @@
 \end{frame}
 
 
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+      \begin{lstlisting}
+     <?php
+     [...]
+     	$query = $dbConnection->prepare("SELECT * FROM news where 1 order by id desc");
+     	$query->execute();
+     	$results = $query->fetchAll(PDO::FETCH_ASSOC);
+     	
+     	//print_r($results);
+     	echo json_encode($results);
+     	
+     	$dbConnection = null;
+     ?>
+     
+      \end{lstlisting}
+}
+
+\begin{frame}
+  \frametitle{PHP Code}
+  \makeset
+\end{frame}
+
+
+
 
 \subsection{Demonstration}
 \begin{frame} %%Eine Folie
