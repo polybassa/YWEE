@@ -42,6 +42,14 @@ h2
     margin:0;
     text-shadow: #c0c0c0 3px 3px 5px;
 }
+/*text-shadow IE7 and IE8*/
+.lt-ie9 h2
+{
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000');	
+}
 
 img.download {vertical-align:middle;}
 /* ----------container to center the layout-------------- */
