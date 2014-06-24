@@ -1,0 +1,362 @@
+\section{Implementierung}
+\subsection{Code}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=karte.js]
+<script>		
+	<!-- Karte vor Geolocation -->
+	var gmegMap, gmegMarker, gmegInfoWindow, gmegLatLng;
+	function gmegInitializeMap(){
+	//Koordinaten werden auf Lat: 49.X / Lon: 12.X gesetzt (Hochschule)
+	gmegLatLng = new google.maps.LatLng(49.004065,12.095247);
+	//Karte mit den oben genannten Koordinaten wird erstellt 
+	gmegMap = new google.maps.Map(document.getElementById("map"),{
+		zoom:14,														//Zoomfaktor
+		center:gmegLatLng,												//Koordinaten Hochschule
+		mapTypeId:google.maps.MapTypeId.ROADMAP				
+	});
+	//Setzen des Markers
+	gmegMarker = new google.maps.Marker({
+		map:gmegMap,													//Marker in die oben erstellte Karte
+		position:gmegLatLng											//Koordinaten Hochschule
+	});
+	//Erstellen eines Infofensters
+	gmegInfoWindow = new google.maps.InfoWindow({
+		content:'<b>Hochschule</b><br>Seybothstrasse<br>Regensburg'		
+	});
+	
+	gmegInfoWindow.open(gmegMap,gmegMarker)
+	;}
+	
+	//Listener
+	google.maps.event.addDomListener(window,"load",gmegInitializeMap);
+																				
+</script>
+
+
+
+
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Standartkarte}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=karte.js]
+      
+	function create_route() {
+		var directionsService = new google.maps.DirectionsService(),
+			directionsDisplay = new google.maps.DirectionsRenderer(),
+			createMap = function (start) {
+				var travel = {
+						origin : (start.coords)? new google.maps.LatLng(start.lat, start.lng) : start.address,
+						destination : "Siemensstrasse 12, Regensburg",
+						travelMode : google.maps.DirectionsTravelMode.DRIVING
+						
+					},
+					mapOptions = {
+						zoom: 10,
+						//Default View:
+						center : new google.maps.LatLng(49.0145423, 12.100855899999942),
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+
+				map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				directionsDisplay.setMap(map);
+				
+				//Callback abfragen
+				directionsService.route(travel, function(result, status) {
+					if (status === google.maps.DirectionsStatus.OK) {
+						directionsDisplay.setDirections(result);
+					}
+				});
+			};
+			
+			
+			// Cookie noch nicht vorhanden
+			if (!$.cookie("posLat")) {
+				navigator.geolocation.getCurrentPosition(function (position) {
+						
+						// Positon erfolgreich gefunden!
+						latitude = position.coords.latitude;
+						longitude = position.coords.longitude;
+						
+						$.cookie("posLat", latitude);		//schreibt Position in Cookie
+						$.cookie("posLon", longitude);
+						
+						createMap({							//erstellt die Map
+							coords : true,
+							lat : latitude,
+							lng : longitude
+						});
+					},
+					//Geolocation nicht verfuegbar
+					alert('Ihr Standort konnte nicht bestimmt werden!')
+				);
+			}
+			//Cookie vorhanden
+			else {
+				latitude = $.cookie("posLat");					//in posLat ist "latitude" gespeichert
+				longitude = $.cookie("posLon");					//in posLon ist "longitude" gespeichert
+				createMap({										//createMap siehe oben
+					coords : true,
+					lat : latitude,
+					lng : longitude
+				});
+			}
+	};
+</script>
+
+
+
+
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Karte - Route}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=karte.js]
+      
+			// Cookie noch nicht vorhanden
+			if (!$.cookie("posLat")) {
+				navigator.geolocation.getCurrentPosition(function (position) {
+						
+						// Positon erfolgreich gefunden!
+						latitude = position.coords.latitude;
+						longitude = position.coords.longitude;
+						
+						$.cookie("posLat", latitude);		//schreibt Position in Cookie
+						$.cookie("posLon", longitude);
+						
+						createMap({							//erstellt die Map
+							coords : true,
+							lat : latitude,
+							lng : longitude
+						});
+					},
+					//Geolocation nicht verfuegbar
+					alert('Ihr Standort konnte nicht bestimmt werden!')
+				);
+			}
+			
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Route, wenn Cookie nicht vorhanden}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=karte.js]
+      
+		
+			//Cookie vorhanden
+			else {
+				latitude = $.cookie("posLat");					//in posLat ist "latitude" gespeichert
+				longitude = $.cookie("posLon");					//in posLon ist "longitude" gespeichert
+				createMap({										//createMap siehe oben
+					coords : true,
+					lat : latitude,
+					lng : longitude
+				});
+			}
+	};
+</script>
+
+
+
+
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Route, wenn Cookie vorhanden}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=karte.js]
+      
+			// Cookie noch nicht vorhanden
+			if (!$.cookie("posLat")) {
+				navigator.geolocation.getCurrentPosition(function (position) {
+						
+						// Positon erfolgreich gefunden!
+						latitude = position.coords.latitude;
+						longitude = position.coords.longitude;
+						
+						$.cookie("posLat", latitude);		//schreibt Position in Cookie
+						$.cookie("posLon", longitude);
+						
+						createMap({							//erstellt die Map
+							coords : true,
+							lat : latitude,
+							lng : longitude
+						});
+					},
+					//Geolocation nicht verfuegbar
+					alert('Ihr Standort konnte nicht bestimmt werden!')
+				);
+			}
+			
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Route, wenn Cookie nicht vorhanden}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=slide.js]
+      
+		
+$(document).ready(function() { 	// Wenn document bereit ist, 
+var slide=$('#show div');		// wird Variable erstellt, die auf den Div-Container verweist indem die Bilder gespeichert sind
+	slide.fadeOut(10);			
+
+fade(slide.first());			// Verweis auf erstes Bild
+
+function fade ($ele) {
+	$ele.fadeIn(300).delay(5000).fadeOut(300, function(){
+		var $next = $(this).next();		// naechstes Bild
+		
+		// Sozusagen die Schleife. Wenn alle Bilder gezeigt wurden, gehe zum ersten
+		fade($next.length>0 ? $next : $(this).parent().children().first()); 
+	});
+};
+
+});
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Slideshow}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=video.js]
+      
+		
+<script> var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn; 
+	function intializePlayer(){ 
+	
+		//Objekte 
+		vid = document.getElementById("my_video"); 
+		playbtn = document.getElementById("playpausebtn"); 
+		seekslider = document.getElementById("seekslider"); 
+		curtimetext = document.getElementById("curtimetext"); 
+		durtimetext = document.getElementById("durtimetext"); 
+		mutebtn = document.getElementById("mutebtn"); 
+		volumeslider = document.getElementById("volumeslider"); 
+		fullscreenbtn = document.getElementById("fullscreenbtn"); 
+		//Listener
+		playbtn.addEventListener("click",playPause,false); 
+		seekslider.addEventListener("change",vidSeek,false); 
+		vid.addEventListener("timeupdate",seektimeupdate,false); 
+		mutebtn.addEventListener("click",vidmute,false); 
+		volumeslider.addEventListener("change",setvolume,false); 
+		fullscreenbtn.addEventListener("click",toggleFullScreen,false); 
+	} 
+	window.onload = intializePlayer; 
+
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Video Initialisierung}
+  \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \jscode
+
+      \begin{lstlisting}[name=video.js]
+      	
+	// Zeitupdate
+	function seektimeupdate(){ 
+		var nt = vid.currentTime * (100 / vid.duration);
+		seekslider.value = nt; 
+		var curmins = Math.floor(vid.currentTime / 60); 
+		var cursecs = Math.floor(vid.currentTime - curmins * 60); 
+		var durmins = Math.floor(vid.duration / 60); 
+		var dursecs = Math.floor(vid.duration - durmins * 60); 
+		if(cursecs < 10){ cursecs = "0"+cursecs; } 
+		if(dursecs < 10){ dursecs = "0"+dursecs; } 
+		if(curmins < 10){ curmins = "0"+curmins; } 
+		if(durmins < 10){ durmins = "0"+durmins; } 
+		curtimetext.innerHTML = curmins+":"+cursecs; 
+		durtimetext.innerHTML = durmins+":"+dursecs; 
+	} 
+	
+	// Vollbild
+		function toggleFullScreen(){
+			if(vid.requestFullScreen){ 							// Mozilla Proposal
+				vid.requestFullScreen(); 
+			} else if(vid.webkitRequestFullScreen){ 	// Chrome / Safari
+				vid.webkitRequestFullScreen(); 
+			} else if(vid.mozRequestFullScreen){ 			// Firefox
+				vid.mozRequestFullScreen(); 
+			} 
+		} 
+	</script> 
+
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Video Initialisierung}
+  \makeset
+\end{frame}
+
+\subsection{Demonstration}
+\begin{frame} %%Eine Folie
+%   \frametitle{Analyse} %%Folientitel
+
+% Fettgedruckt
+  \textbf{Es folgt eine Demonstration ...}
+\end{frame}
