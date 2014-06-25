@@ -9,6 +9,7 @@
 \beamer@subsectionintoc {4}{1}{Analysephase}{10}{0}{3}
 \beamer@subsectionintoc {4}{2}{Die Formulierung}{13}{0}{3}
 \beamer@sectionintoc {5}{Implementierung}{16}{0}{4}
-\beamer@subsectionintoc {5}{1}{Code}{17}{0}{4}
-\beamer@subsectionintoc {5}{2}{Demonstration}{20}{0}{4}
-\beamer@subsectionintoc {5}{3}{Ende}{21}{0}{4}
+\beamer@subsectionintoc {5}{1}{Screenshots}{17}{0}{4}
+\beamer@subsectionintoc {5}{2}{Code}{19}{0}{4}
+\beamer@subsectionintoc {5}{3}{Demonstration}{22}{0}{4}
+\beamer@subsectionintoc {5}{4}{Ende}{23}{0}{4}
