@@ -1,19 +1,18 @@
 \beamer@endinputifotherversion {3.26pt}
 \select@language {ngerman}
-\beamer@sectionintoc {2}{Aufgabenstellung}{3}{0}{1}
-\beamer@sectionintoc {3}{Projektleitung}{5}{0}{2}
-\beamer@subsectionintoc {3}{1}{Teambildung}{6}{0}{2}
-\beamer@subsectionintoc {3}{2}{Werkzeuge}{8}{0}{2}
-\beamer@subsubsectionintoc {3}{2}{1}{Git / Git-Hub}{8}{0}{2}
-\beamer@subsubsectionintoc {3}{2}{2}{Dropbox}{9}{0}{2}
-\beamer@subsubsectionintoc {3}{2}{3}{Kanban}{10}{0}{2}
-\beamer@subsectionintoc {3}{3}{Teamleitung}{11}{0}{2}
-\beamer@sectionintoc {4}{SRA}{12}{0}{3}
-\beamer@sectionintoc {5}{SAD}{14}{0}{4}
-\beamer@subsectionintoc {5}{1}{Analysephase}{15}{0}{4}
-\beamer@subsectionintoc {5}{2}{Systemkontext}{16}{0}{4}
-\beamer@subsectionintoc {5}{3}{Planungsphase}{19}{0}{4}
-\beamer@sectionintoc {6}{Implementierung}{21}{0}{5}
-\beamer@subsectionintoc {6}{2}{Clientseitige Implementierung}{23}{0}{5}
-\beamer@subsectionintoc {6}{3}{Serverseitige Implementierung}{24}{0}{5}
-\beamer@subsectionintoc {6}{4}{Intelligente Weiterleitung}{25}{0}{5}
+\beamer@sectionintoc {2}{Projektleitung}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Teambildung}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{Werkzeuge}{6}{0}{1}
+\beamer@subsubsectionintoc {2}{2}{1}{Git / Git-Hub}{6}{0}{1}
+\beamer@subsubsectionintoc {2}{2}{2}{Dropbox}{7}{0}{1}
+\beamer@subsubsectionintoc {2}{2}{3}{Kanban}{8}{0}{1}
+\beamer@subsectionintoc {2}{3}{Teamleitung}{9}{0}{1}
+\beamer@sectionintoc {3}{SRA}{10}{0}{2}
+\beamer@sectionintoc {4}{SAD}{12}{0}{3}
+\beamer@subsectionintoc {4}{1}{Analysephase}{13}{0}{3}
+\beamer@subsectionintoc {4}{2}{Systemkontext}{14}{0}{3}
+\beamer@subsectionintoc {4}{3}{Planungsphase}{17}{0}{3}
+\beamer@sectionintoc {5}{Implementierung}{19}{0}{4}
+\beamer@subsectionintoc {5}{2}{Clientseitige Implementierung}{21}{0}{4}
+\beamer@subsectionintoc {5}{3}{Serverseitige Implementierung}{22}{0}{4}
+\beamer@subsectionintoc {5}{4}{Intelligente Weiterleitung}{23}{0}{4}
