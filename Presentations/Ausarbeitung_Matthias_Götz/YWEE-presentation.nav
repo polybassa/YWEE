@@ -76,8 +76,11 @@
 \headcommand {\beamer@subsectionentry {0}{5}{2}{29}{Demonstration}}\headcommand {\beamer@subsectionpages {21}{28}}
 \headcommand {\slideentry {5}{2}{1}{29/29}{Demonstration}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\beamer@partpages {1}{29}}
-\headcommand {\beamer@subsectionpages {29}{29}}
-\headcommand {\beamer@sectionpages {20}{29}}
-\headcommand {\beamer@documentpages {29}}
-\headcommand {\def \inserttotalframenumber {29}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{30}{Ende}}\headcommand {\beamer@subsectionpages {29}{29}}
+\headcommand {\slideentry {5}{3}{1}{30/30}{Ende}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@partpages {1}{30}}
+\headcommand {\beamer@subsectionpages {30}{30}}
+\headcommand {\beamer@sectionpages {20}{30}}
+\headcommand {\beamer@documentpages {30}}
+\headcommand {\def \inserttotalframenumber {30}}

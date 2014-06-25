@@ -37,7 +37,7 @@ Gliederung der Inhalte in Boxen
   \makeset{
     \jscode
 
-      \begin{lstlisting}[name=cssmenu.css]			
+      \begin{lstlisting}[name=cssmenu.css]
 
 .basic-wrapper{
     background-color: #ffffff;
@@ -81,7 +81,7 @@ Gliederung der Inhalte in Boxen
   \makeset{
     \jscode
 
-      \begin{lstlisting}[name=cssmenu.css]			
+      \begin{lstlisting}[name=cssmenu.css]
 
 .basic-wrapper-middle{
     background-color: #ffffff;
@@ -121,7 +121,7 @@ Gliederung der Inhalte in Boxen
 \begin{figure}[!htbp]
  \centering
 \frametitle{Umsetzung der Design-Idee}
-\includegraphics[width=0.9\linewidth]{./Source/Screenwrapper.png}
+\includegraphics[width=0.9\linewidth]{./Source/Screenwrapper.PNG}
  \caption{Screenshot Design}
 \end{figure}
 
@@ -132,7 +132,7 @@ Gliederung der Inhalte in Boxen
   \makeset{
     \jscode
 
-      \begin{lstlisting}[name=boxshadow.css]			
+      \begin{lstlisting}[name=boxshadow.css]
 .boxshadow #content
 {
     -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4); /* WebKit */
@@ -153,7 +153,7 @@ h2
 	/* For IE 8 */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000')";
 	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000');	
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000');
 }
 
 
@@ -171,7 +171,7 @@ h2
   \makeset{
     \phpcode
 
-      \begin{lstlisting}[name=font.php]			
+      \begin{lstlisting}[name=font.php]
  <!-- font -->
         <link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
@@ -192,7 +192,7 @@ h2
 \frametitle{Boxshadow, Textshadow, Font}
 \begin{figure}[!htbp]
  \centering
-\includegraphics[width=0.9\linewidth]{./Source/boxshadow.png}
+\includegraphics[width=0.9\linewidth]{./Source/boxshadow.PNG}
  \caption{Screenshot zum Box-und Textshadow}
 
 \end{figure}
@@ -204,7 +204,7 @@ h2
 \frametitle{Boxshadow, Textshadow, Font}
 \begin{figure}[!htbp]
  \centering
-\includegraphics[width=0.9\linewidth]{./Source/IE8textshadow.png}
+\includegraphics[width=0.9\linewidth]{./Source/IE8textshadow.PNG}
  \caption{Screenshot zum Box-und Textshadow IE8}
 
 \end{figure}
@@ -234,7 +234,7 @@ h2
   \makeset{
     \phpcode
 
-      \begin{lstlisting}[name=menu.php]			
+      \begin{lstlisting}[name=menu.php]
 				<ul>
 					<li><a href="/en/index.php"><span>Home</span></a></li>
 					<li><a href="/en/news.php"><span>News</span></a></li>
@@ -256,7 +256,7 @@ h2
                             echo '<li><a href="/en/profile.php"><span>Profile</span></a></li>';
                         }
                     ?>
-					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="/images/de.png" class="flag_img" alt="DE-Flagge"></a>'; ?> </li>		
+					<li><?php echo '<a href="/de/'.$forwardto.'"><img src="/images/de.png" class="flag_img" alt="DE-Flagge"></a>'; ?> </li>
 				</ul>
 		<?php
       \end{lstlisting}
@@ -273,9 +273,9 @@ h2
   \makeset{
     \jscode
 
-      \begin{lstlisting}[name=cssmenu.css]			
+      \begin{lstlisting}[name=cssmenu.css]
 
-.cssmenu > ul 
+.cssmenu > ul
 {
 	position: relative;
 	display: block;
@@ -285,7 +285,7 @@ h2
 	z-index:10;
 }
 
-.cssmenu ul ul 
+.cssmenu ul ul
 {
   position: absolute;
   top: 70px;
@@ -313,16 +313,16 @@ h2
   \makeset{
     \jscode
 
-      \begin{lstlisting}[name=cssmenu.css]			
+      \begin{lstlisting}[name=cssmenu.css]
 
-.cssmenu ul > li:hover > ul 
+.cssmenu ul > li:hover > ul
 {
   left: auto;
   top: 44px;
   opacity: 1;
 }
 
-.cssmenu ul ul li:hover > ul 
+.cssmenu ul ul li:hover > ul
 {
   left: 170px;
   top: 0;
@@ -363,7 +363,7 @@ h2
 	\item Prozentuale Größen für Breiten
 	\item ... aber maximale Gesamtbreite 1250px
 	\item Höhenanpassung für Slideshow und Logo über Css-Media-Queries
-	\item Neuanordnung der der Spalten für kleine Auflösungen
+	\item Neuanordnung der Spalten für kleine Auflösungen
 \end{itemize}
 
   \end{block}
@@ -374,7 +374,7 @@ h2
 \defverbatim[colored]
   \makeset{
     \jscode
-      \begin{lstlisting}[name=responsive.php]			
+      \begin{lstlisting}[name=responsive.php]
 
 @media screen and (max-width: 400px)
 {
@@ -414,9 +414,9 @@ h2
 \defverbatim[colored]
   \makeset{
     \jscode
-      \begin{lstlisting}[name=responsive.php]			
+      \begin{lstlisting}[name=responsive.php]
     #show {
-        width:100%; 
+        width:100%;
         height:100px;
     }
     .slider_img {
@@ -424,7 +424,7 @@ h2
         height:100px;
     }
     .logo_img{
-        width:100px; 
+        width:100px;
         min-height:100px;
 		height:100%;
 	}
@@ -442,7 +442,7 @@ h2
   \frametitle{Responsive Webdesign}
 \begin{figure}[!htbp]
  \centering
- \includegraphics[scale=.3]{./Source/Ipad.png}
+ \includegraphics[scale=.3]{./Source/Ipad.PNG}
  \caption{iPad erstellt mit www.http://deviceponsive.com/}
 
 \end{figure}
@@ -452,7 +452,7 @@ h2
   \frametitle{Responsive Webdesign}
 \begin{figure}[!htbp]
  \centering
- \includegraphics[scale=.3]{./Source/Ipad2.png}
+ \includegraphics[scale=.3]{./Source/Ipad2.PNG}
  \caption{iPad erstellt mit www.http://deviceponsive.com/}
 
 \end{figure}
@@ -462,7 +462,7 @@ h2
   \frametitle{Responsive Webdesign}
 \begin{figure}[!htbp]
  \centering
- \includegraphics[scale=0.5]{./Source/Iphone1.png}
+ \includegraphics[scale=0.5]{./Source/Iphone1.PNG}
  \caption{iPhone erstellt mit www.http://deviceponsive.com/}
 
 \end{figure}
@@ -472,7 +472,7 @@ h2
   \frametitle{Responsive Webdesign}
 \begin{figure}[!htbp]
  \centering
- \includegraphics[scale=0.5]{./Source/Iphone2.png}
+ \includegraphics[scale=0.5]{./Source/Iphone2.PNG}
  \caption{iPhone erstellt mit www.http://deviceponsive.com/}
 
 \end{figure}

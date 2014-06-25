@@ -1,0 +1,43 @@
+Benutzername  -- Passwort
+
+Admins:
+
+admin       -- secret
+batman      -- secret
+superman    -- secret
+
+Normale Benutzer:
+
+heisenberg  -- secret
+Robin       -- secret
+Brain       -- secret
+Pinky       -- secret
+kitty       -- secret
+Anita       -- secret
+Alucard     -- secret
+humus       -- secret
+IQ0         -- secret
+Rambo       -- secret
+Angie       -- secret
+Catwoman    -- secret
+Kurzschluss -- secret
+Snowball    -- secret
+Schafkopf   -- secret
+Superwoman  -- secret
+Ratiopharm  -- secret
+h4x0r       -- secret
+
+
+Privater Ordner:
+
+user: admin
+passwd: secret
+
+Link: http://ebenezer-kunatse.net/private/
+
+
+phpmyadmin:
+
+Link: http://ebenezer-kunatse.net/phpmyadmin/
+
+Zugangsdaten sind die gleichen wie für die DB.
