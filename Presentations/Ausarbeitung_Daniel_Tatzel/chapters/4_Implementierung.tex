@@ -36,29 +36,6 @@
   \makeset{
     \phpcode
 
-      \begin{lstlisting}[name=delete.php]
-<?php
-    // Autor von delete.php: Daniel Tatzel
-    // Loescht eine Datei
-
-    $path = realpath('files/'.$_POST['file']);
-
-    // Wenn vorhanden, dann l&oeschen
-    if( is_file($path) )
-        unlink( $path );
-?>
-      \end{lstlisting}
-  }
-
-\begin{frame}
-  \frametitle{Löschen einer Datei}
-  \makeset
-\end{frame}
-
-\defverbatim[colored]
-  \makeset{
-    \phpcode
-
       \begin{lstlisting}[name=ListDir.php]
 <?php
     // Autor von ListDir.php: Daniel Tatzel
@@ -193,6 +170,40 @@ $(document).ready(function() {
 \begin{frame}
   \frametitle{Erstellen der Tabelle}
   \makeset
+\end{frame}
+
+\defverbatim[colored]
+  \makeset{
+    \phpcode
+
+      \begin{lstlisting}[name=delete.php]
+<?php
+    // Autor von delete.php: Daniel Tatzel
+    // Loescht eine Datei
+
+    $path = realpath('files/'.$_POST['file']);
+
+    // Wenn vorhanden, dann l&oeschen
+    if( is_file($path) )
+        unlink( $path );
+?>
+      \end{lstlisting}
+  }
+
+\begin{frame}
+  \frametitle{Löschen einer Datei}
+  \makeset
+\end{frame}
+
+\subsection{Screenshot}
+\begin{frame}
+  \frametitle{Screenshot}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{./chapters/privdir}
+    \caption{Ansicht des Privaten Ordners}
+    \label{fig:privdir}
+  \end{figure}
 \end{frame}
 
 \subsection{Demonstration}
