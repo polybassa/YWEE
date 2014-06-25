@@ -1,5 +1,6 @@
-\section{Profil}
-\subsection{SRA}
+% \section{Profil}
+\section{SRA}
+\subsection{Anforderungen}
 \begin{frame}
   \frametitle{Anforderungen}
  Implementierung des Profils, das \underline{eingeloggten} Profil-Besuchern erlaubt:
@@ -9,8 +10,8 @@
   \item Den Benutzer zu kontaktieren(via Email)
   \item Ist der Benutzer Tutor, wenn ja, was macht er?
  \end{itemize}
- 
 \end{frame}
+\subsection{Ausarbeitung im SRA}
 \begin{frame}
 \frametitle{Formulierung}
  Daraus entstand für das SRA:
@@ -24,15 +25,17 @@
  \end{block}
 \end{frame}
 
-\subsection{SAD}
+\section{SAD}
+\subsection{Überblick}
 \begin{frame}
 \frametitle{Überblick}
- Für einen Überblick mussten folgende Fragen gestellt werden:
+ Für einen ersten Überblick mussten folgende Fragen gestellt werden:
  \begin{itemize}
   \item Welche Grundanforderungen sind nötig?
   \item Welche Technologien/Sprachen werden benötigt?
  \end{itemize}
 \end{frame}
+\subsection{Analyse}
 \begin{frame}
  \frametitle{Analyse}
  Für das eigene \underline{und} andere Profil wurden folgende Umsetztung ausgearbeitet:
@@ -47,11 +50,12 @@
   \item Es soll eine Rückmeldung geben
  \end{itemize}
 \end{frame}
+\subsection{Umsetzung}
 \begin{frame}
  \frametitle{Technologien/Sprachen}
  Formular:
  \begin{itemize}
-  \item HTML5 zur Eingabevalidierung
+  \item HTML5/CSS zur Eingabevalidierung
  \end{itemize}
  Skript
  \begin{itemize}
@@ -60,19 +64,25 @@
   \item Formulardaten mit Hilfe der POST-Technologie
  \end{itemize}
 \end{frame}
+\subsection{Umsetzung im SRA}
 \begin{frame}
  \frametitle{Formulierung}
   \begin{block}{F31}
    Der Schüler kann durch ausfüllen von HTML5 Formularen seine Profildaten bearbeiten, diese werden durch HTML5 validiert. Die Daten werden in der Datenbank über ein PHP-Skript geändert.
   \end{block}
 \end{frame}
-
 \subsection{Beispiel}
 \begin{frame}
- \frametitle{Blick aufs Profil}
+ \frametitle{Blick auf eigenes Profil}
 \includegraphics[width=1\textwidth]{./pictures/Profil-bearbeiten}
 \end{frame}
-\subsection{Implementierung}
+\begin{frame}
+ \frametitle{Blick auf fremdes Profil}
+ \includegraphics[width=1\textwidth]{./pictures/Profil_bearbeiten_fremdes}
+\end{frame}
+
+
+\section{Implementierung}
 
 \defverbatim[colored]
   \makeset{
@@ -100,9 +110,10 @@
        		}
   \end{lstlisting}
 }
+\subsection{profile.php}
   \begin{frame}
  \frametitle{Code}
- \begin{example}{profile.php}
+ \begin{example}
   \makeset
  \end{example}
 \end{frame}
@@ -125,7 +136,7 @@
 }
   \begin{frame}
  \frametitle{Code}
- \begin{example}{profile.php}
+ \begin{example}
   \makeset
  \end{example}
 \end{frame}
@@ -149,9 +160,10 @@
 ?>
       \end{lstlisting}
 }
+\subsection{GetProfile.php}
 \begin{frame}
  \frametitle{Code}
- \begin{example}{GetProfile.php}
+ \begin{example}
   \makeset
  \end{example}
 
@@ -178,10 +190,13 @@
 </div>
       \end{lstlisting}
 }
+\subsection{Profil-Formular}
 \begin{frame}
  \frametitle{Code}
- \begin{example}{Profil-Formular}
+ \begin{example}
   \makeset
  \end{example}
 
 \end{frame}
+
+\section{Live-Demo}
