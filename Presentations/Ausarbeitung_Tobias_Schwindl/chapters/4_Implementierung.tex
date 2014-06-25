@@ -39,30 +39,31 @@
   \makeset{
     \phpcode
       \begin{lstlisting}
-      <?php 
-      [...]
-		try {
-		    $dbConnection = ConnectToDB();
-		} catch (Exception $e) {
-		    die("keine Verbindung moeglich: " . $e->getMessage());
-		}
-		[...]
-		$dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
+<?php 
+	[...]
+	try {
+		$dbConnection = ConnectToDB();
+	} catch (Exception $e) {
+		die("keine Verbindung moeglich: " . $e->getMessage());
+	}
+	[...]
+	$dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
 		
-		$query = $dbConnection->prepare("insert into news (benutzername, zeit, nachricht, betreff) VALUES ( :user, CURRENT_DATE, :msg, :subject)");
+	$query = $dbConnection->prepare("insert into news (benutzername, zeit, nachricht, betreff) VALUES ( :user, CURRENT_DATE, :msg, :subject)");
 		
-		$query->bindParam(":msg", $msg);
-		$query->bindParam(":user", $_POST['user']);
-		$query->bindParam(":subject", $subject);
+	$query->bindParam(":msg", $msg);
+	$query->bindParam(":user", $_POST['user']);
+	$query->bindParam(":subject", $subject);
 		
-		$query->execute();
-		$dbConnection = null;
+	$query->execute();
+	$dbConnection = null;
+?>
       \end{lstlisting}
 }
 
 \begin{frame}
-  \frametitle{PHP Code}
-  \makeset
+  \frametitle{WriteNews.php}
+	\makeset
 \end{frame}
 
 
@@ -70,23 +71,23 @@
   \makeset{
     \phpcode
       \begin{lstlisting}
-     <?php
-     [...]
-     	$query = $dbConnection->prepare("SELECT * FROM news where 1 order by id desc");
-     	$query->execute();
-     	$results = $query->fetchAll(PDO::FETCH_ASSOC);
+<?php
+	[...]
+	
+    $query = $dbConnection->prepare("SELECT * FROM news where 1 order by id desc");
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
      	
-     	//print_r($results);
-     	echo json_encode($results);
+    echo json_encode($results);
      	
-     	$dbConnection = null;
-     ?>
+    $dbConnection = null;
+?>
      
       \end{lstlisting}
 }
 
 \begin{frame}
-  \frametitle{PHP Code}
+  \frametitle{ReadNews.php}
   \makeset
 \end{frame}
 
