@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.15)  25 JUN 2014 14:29
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.15)  25 JUN 2014 14:33
 entering extended mode
 **YWEE-presentation.tex
 
@@ -1452,22 +1452,6 @@ Overfull \vbox (1.99998pt too high) has occurred while \output is active []
 
 [22
 
-]
-Overfull \hbox (253.446pt too wide) has occurred while \output is active
-  [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (174.8454pt too wide) has occurred while \output is active
-[]   [] [] [] [] [] [] 
- []
-
-
-Overfull \vbox (1.99998pt too high) has occurred while \output is active []
-
-
-[23
-
 ])
 \tf@nav=\write6
 \tf@toc=\write7
@@ -1487,27 +1471,40 @@ ters\3_SAD.aux)
 ters\4_Implementierung.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
-Package rerunfilecheck Info: File `YWEE-presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 77D0AE84F0CE6FBA895355586CE56B1E;730.
+
+
+Package rerunfilecheck Warning: File `YWEE-presentation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `YWEE-presentation.out':
+(rerunfilecheck)             Before: 77D0AE84F0CE6FBA895355586CE56B1E;730
+(rerunfilecheck)             After:  2ABF84387647551130411F376FED04E7;674.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 21406 strings out of 493921
- 386135 string characters out of 3147279
+ 21405 strings out of 493921
+ 386128 string characters out of 3147279
  1075779 words of memory out of 3000000
  24153 multiletter control sequences out of 15000+200000
  6223 words of font info for 23 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,20n,64p,422b,3034s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmtt8.pfb>
-Output written on YWEE-presentation.pdf (23 pages, 1395406 bytes).
+pdfTeX warning (dest): name{Navigation23} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.5.4.23} has been referenced but does not e
+xist, replaced by a fixed one
+
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb>
+Output written on YWEE-presentation.pdf (22 pages, 1387096 bytes).
 PDF statistics:
- 906 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
+ 872 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

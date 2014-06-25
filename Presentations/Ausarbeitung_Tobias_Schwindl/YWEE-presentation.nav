@@ -63,11 +63,8 @@
 \headcommand {\beamer@subsectionentry {0}{5}{3}{22}{Demonstration}}\headcommand {\beamer@subsectionpages {19}{21}}
 \headcommand {\slideentry {5}{3}{1}{22/22}{Demonstration}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@subsectionentry {0}{5}{4}{23}{Ende}}\headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\slideentry {5}{4}{1}{23/23}{Ende}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\beamer@partpages {1}{23}}
-\headcommand {\beamer@subsectionpages {23}{23}}
-\headcommand {\beamer@sectionpages {16}{23}}
-\headcommand {\beamer@documentpages {23}}
-\headcommand {\def \inserttotalframenumber {23}}
+\headcommand {\beamer@partpages {1}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\beamer@sectionpages {16}{22}}
+\headcommand {\beamer@documentpages {22}}
+\headcommand {\def \inserttotalframenumber {22}}
