@@ -5,6 +5,7 @@
 \beamer@sectionintoc {3}{SRA}{5}{0}{2}
 \beamer@sectionintoc {4}{SAD}{7}{0}{3}
 \beamer@sectionintoc {5}{Implementierung}{11}{0}{4}
-\beamer@subsectionintoc {5}{1}{Code}{12}{0}{4}
-\beamer@subsectionintoc {5}{2}{Demonstration}{21}{0}{4}
-\beamer@subsectionintoc {5}{3}{Ende}{22}{0}{4}
+\beamer@subsectionintoc {5}{1}{Screenshot}{12}{0}{4}
+\beamer@subsectionintoc {5}{2}{Code}{12}{0}{4}
+\beamer@subsectionintoc {5}{3}{Demonstration}{22}{0}{4}
+\beamer@subsectionintoc {5}{4}{Ende}{23}{0}{4}
