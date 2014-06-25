@@ -24,6 +24,20 @@
 \end{frame}
 
 \subsubsection{Gästebuch}
+
+\begin{frame}
+\begin{figure}
+\frametitle{Ansicht - Gästebuch}
+\centering
+\includegraphics[width=0.85\linewidth]{./Source/Gaestebuch_logged_in}
+%\caption{Gästebuch + Top-Gästebuch}
+\label{fig:Gaestebuch}
+\end{figure}
+
+
+\end{frame}
+
+
 \defverbatim[colored]
 \makeset{
 %%%%%%%%%%%%%%%%%%% PHP SUPPORT %%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,125 +165,126 @@ $(document).ready(function myFunction() {
   \makeset
 \end{frame}
 
-\subsubsection{Nachrichten}
+%\subsubsection{Nachrichten}
+%
+%\defverbatim[colored]
+%\makeset{
+%%%%%%%%%%%%%%%%%%%% PHP SUPPORT %%%%%%%%%%%%%%%%%%%%%%%%
+%\definecolor{dkgreen}{rgb}{0,.6,0}
+%\definecolor{dkblue}{rgb}{0,0,.6}
+%\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+%
+%\lstset{
+%  language        = php,
+%  backgroundcolor=\color{lightgray},
+%  extendedchars=true,
+%  basicstyle=\tiny\ttfamily,
+%  showstringspaces=false,
+%  showspaces=false,
+%  numbers=left,
+%  numberstyle=\tiny\ttfamily,
+%  numbersep=9pt,
+%  tabsize=2,
+%  breaklines=true,
+%  showtabs=false,
+%  frame=leftline,
+%  keywordstyle    = \color{dkblue},
+%  stringstyle     = \color{red},
+%  identifierstyle = \color{dkgreen},
+%  commentstyle    = \color{gray},
+%  emph            =[1]{php},
+%  emphstyle       =[1]\color{black},
+%  emph            =[2]{if,and,or,else},
+%  emphstyle       =[2]\color{dkyellow}
+%  }
+%  
+%
+%ReadNewsDelete.php
+%\begin{lstlisting}[language=php]
+%<?php
+%	 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
+%    // Baue Verbindung auf
+%    try 
+%	{
+%        $dbConnection = ConnectToDB();
+%    } catch (Exception $e)
+%	{
+%        die("keine Verbindung moeglich: " . $e->getMessage());
+%    }
+%	$query = $dbConnection->prepare("SELECT * FROM news where 1 order by id desc");
+%	if($query->execute() )
+%		$result = $query->fetchAll(PDO::FETCH_ASSOC);
+%		
+%	$dbConnection = null;
+%?>
+%\end{lstlisting}
+%}
 
-\defverbatim[colored]
-\makeset{
-%%%%%%%%%%%%%%%%%%% PHP SUPPORT %%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{dkgreen}{rgb}{0,.6,0}
-\definecolor{dkblue}{rgb}{0,0,.6}
-\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
-
-\lstset{
-  language        = php,
-  backgroundcolor=\color{lightgray},
-  extendedchars=true,
-  basicstyle=\tiny\ttfamily,
-  showstringspaces=false,
-  showspaces=false,
-  numbers=left,
-  numberstyle=\tiny\ttfamily,
-  numbersep=9pt,
-  tabsize=2,
-  breaklines=true,
-  showtabs=false,
-  frame=leftline,
-  keywordstyle    = \color{dkblue},
-  stringstyle     = \color{red},
-  identifierstyle = \color{dkgreen},
-  commentstyle    = \color{gray},
-  emph            =[1]{php},
-  emphstyle       =[1]\color{black},
-  emph            =[2]{if,and,or,else},
-  emphstyle       =[2]\color{dkyellow}
-  }
-  
-
-ReadNewsDelete.php
-\begin{lstlisting}[language=php]
-<?php
-	 include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php");       // Inkludiert die Funktion zur Anmeldung an der DB
-    // Baue Verbindung auf
-    try 
-	{
-        $dbConnection = ConnectToDB();
-    } catch (Exception $e)
-	{
-        die("keine Verbindung moeglich: " . $e->getMessage());
-    }
-	$query = $dbConnection->prepare("SELECT * FROM news where 1 order by id desc");
-	if($query->execute() )
-		$result = $query->fetchAll(PDO::FETCH_ASSOC);
-		
-	$dbConnection = null;
-?>
-\end{lstlisting}
-}
-\begin{frame} %%Eine Folie
-  	\frametitle{Nachrichten - Teil 1} %%Folientitel
-	\makeset
-
-\end{frame}
-
-\defverbatim[colored]
-\makeset{
-%%%%%%%%%%%%%%%%%%% PHP SUPPORT %%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{dkgreen}{rgb}{0,.6,0}
-\definecolor{dkblue}{rgb}{0,0,.6}
-\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
-
-\lstset{
-  language        = php,
-  backgroundcolor=\color{lightgray},
-  extendedchars=true,
-  basicstyle=\tiny\ttfamily,
-  showstringspaces=false,
-  showspaces=false,
-  numbers=left,
-  numberstyle=\tiny\ttfamily,
-  numbersep=9pt,
-  tabsize=2,
-  breaklines=true,
-  showtabs=false,
-  frame=leftline,
-  keywordstyle    = \color{dkblue},
-  stringstyle     = \color{red},
-  identifierstyle = \color{dkgreen},
-  commentstyle    = \color{gray},
-  emph            =[1]{php},
-  emphstyle       =[1]\color{black},
-  emph            =[2]{if,and,or,else},
-  emphstyle       =[2]\color{dkyellow}
-  }
-  
-
-admin.php
-\begin{lstlisting}[language=php]
-if(isset($_GET['deleteNews']) and $_GET['deleteNews'] == true) {
-	if(isset($_GET['fired']) and $_GET['fired'] == true and isset($_POST["NewsID"])){
-		$deleteNews = $_POST["NewsID"];
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteNewsfromAdmin.php");
-	}
-	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ReadNewsDelete.php");
-	$newsresults = $result;
-	$news_print = "";
-	foreach($newsresults as $eintrag) {
-		$news_print .= "<tr> ";
-		$news_print .= "<th><div class='NewsDelEntry'> " . $eintrag["nachricht"] . "</div></th>";
-		$news_print .= "<th><div class='NewsDelTopic'> " . $eintrag["betreff"] . "</div></th>";
-		$news_print .= "<th><div class='NewsDelAuthor'> ". $eintrag["benutzername"] . "</div></th> ";
-		$news_print .= '<th><div class="NewsCheckbox"><input type="checkbox" name="NewsID[]" value="'. $eintrag["id"] . '"></div></th>';
-		$news_print .= "</tr>";
-	}
-	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ShowNewstoDelete.html");	
-}
-\end{lstlisting}
-}
-\begin{frame} %%Eine Folie
-  	\frametitle{Nachrichten - Teil 2} %%Folientitel
-	\makeset
-
-\end{frame}
+%\begin{frame} %%Eine Folie
+%  	\frametitle{Nachrichten - Teil 1} %%Folientitel
+%	\makeset
+%
+%\end{frame}
+%
+%\defverbatim[colored]
+%\makeset{
+%%%%%%%%%%%%%%%%%%%% PHP SUPPORT %%%%%%%%%%%%%%%%%%%%%%%%
+%\definecolor{dkgreen}{rgb}{0,.6,0}
+%\definecolor{dkblue}{rgb}{0,0,.6}
+%\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+%
+%\lstset{
+%  language        = php,
+%  backgroundcolor=\color{lightgray},
+%  extendedchars=true,
+%  basicstyle=\tiny\ttfamily,
+%  showstringspaces=false,
+%  showspaces=false,
+%  numbers=left,
+%  numberstyle=\tiny\ttfamily,
+%  numbersep=9pt,
+%  tabsize=2,
+%  breaklines=true,
+%  showtabs=false,
+%  frame=leftline,
+%  keywordstyle    = \color{dkblue},
+%  stringstyle     = \color{red},
+%  identifierstyle = \color{dkgreen},
+%  commentstyle    = \color{gray},
+%  emph            =[1]{php},
+%  emphstyle       =[1]\color{black},
+%  emph            =[2]{if,and,or,else},
+%  emphstyle       =[2]\color{dkyellow}
+%  }
+%  
+%
+%admin.php
+%\begin{lstlisting}[language=php]
+%if(isset($_GET['deleteNews']) and $_GET['deleteNews'] == true) {
+%	if(isset($_GET['fired']) and $_GET['fired'] == true and isset($_POST["NewsID"])){
+%		$deleteNews = $_POST["NewsID"];
+%		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/DeleteNewsfromAdmin.php");
+%	}
+%	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ReadNewsDelete.php");
+%	$newsresults = $result;
+%	$news_print = "";
+%	foreach($newsresults as $eintrag) {
+%		$news_print .= "<tr> ";
+%		$news_print .= "<th><div class='NewsDelEntry'> " . $eintrag["nachricht"] . "</div></th>";
+%		$news_print .= "<th><div class='NewsDelTopic'> " . $eintrag["betreff"] . "</div></th>";
+%		$news_print .= "<th><div class='NewsDelAuthor'> ". $eintrag["benutzername"] . "</div></th> ";
+%		$news_print .= '<th><div class="NewsCheckbox"><input type="checkbox" name="NewsID[]" value="'. $eintrag["id"] . '"></div></th>';
+%		$news_print .= "</tr>";
+%	}
+%	include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/ShowNewstoDelete.html");	
+%}
+%\end{lstlisting}
+%}
+%\begin{frame} %%Eine Folie
+%  	\frametitle{Nachrichten - Teil 2} %%Folientitel
+%	\makeset
+%
+%\end{frame}
 
 
 \subsubsection{Statische Inhalte}
@@ -339,6 +354,7 @@ Unser Support ist taeglich 24h zu erreichen.<br>
 		\newline Stattdessen wurde eine Spendenseite eingerichtet
 		\item Punkt F42: Eigenes Schwarzes Brett für Tutoren
 		\item Punkt F24/F34/F43: Zugriff aufs Nachrichtensystem
+		\item Beurteilungen schreiben
 	\end{enumerate}
 
 \end{frame}
@@ -349,8 +365,8 @@ Unser Support ist taeglich 24h zu erreichen.<br>
   \textbf{Es folgt eine Demonstration ...}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Ende}
-  \center
- \textbf{{Vielen Dank für Ihre Aufmerksamkeit}}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Ende}
+%  \center
+% \textbf{{Vielen Dank für Ihre Aufmerksamkeit}}
+%\end{frame}

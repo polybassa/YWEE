@@ -44,7 +44,7 @@ Tobias Schwindl
 	\hline
 	1.1 & 10.05.2014 & AS & Verbesserung & Missing Data added:  \newline Sequencediagram, Annahmen \\
 	\hline
-	1.2 & xx.06.2014 & Alle & Anpassung & Final Release\\
+	1.2 & 25.06.2014 & Alle & Anpassung & Final Release\\
 	\hline
 	\text{ } & \text{ } & \text{ } & \text{ } & \text{ } \\
 	\hline
@@ -118,7 +118,7 @@ Informiert den Besucher über Funktion und Zweck der Webseite. Ebenfalls wird ein
 Mit Hilfe der Google Maps JavaScript API wird eine Karte eingebettet. Außerdem besteht für den Besucher die Möglichkeit, sich die Route von seinem jetzigen Standort bis in die Siemensstraße 12 in Regensburg anzeigen zu lassen. Um nicht wiederholt die Standortdaten preisgeben zu müssen werden diese nach erstmalig erlaubten Zugriff in einem Cookie gespeichert. Dies geschieht mit Hilfe des jQuerry-Cookie-Plugins.
 \newline \newline
 \textbf{Slideshow}\newline
-Die Bilder der Slideshow werden mit HTML5 zur Verfügung gestellt. Mittels CSS3 werden die Bilder formatiert. JQuery sorgt für die Slideanimation. Eine Fallback L\"osung, welche in JavaScript implementiert ist, wird durch den Modernizr realisiert.
+Die Bilder der Slideshow werden mit HTML5 zur Verfügung gestellt. Mittels CSS3 werden die Bilder formatiert und animiert. Eine Fallback L\"osung, welche in JavaScript implementiert ist, wird durch den Modernizr realisiert.
 \newline \newline
 \textbf{Video}\newline
 Das Video wird mit HTML5 implementiert und ist dadurch ohne Flash abspielbar. Die Kontrollfunktionen werden ebenfalls mit HTML5 zur Verfügung gestellt. Gesteuert wird der HTML5 Videoplayer mit JavaScript.
@@ -130,7 +130,40 @@ Nach dem Laden der Seite wird eine Javascript-Funktion ausgeführt, welche die To
 
 Das Gästebuch ermöglicht den Nutzern eigene Kommentare abzugeben. Diese werden in einer SQL - Datenbank abgespeichert. Zusätzlich wird dazu der Autor abgespeichert und eine Variable, welche erfasst, ob ein Gästebuch eintragt bereits von einem Administrator autorisiert wurde, oder nicht. Mittels eines JSON-Objektes werden die Gästebucheinträge zum Frontend der Website weitergeleitet und dort über eine JavaScript-Funktion angezeigt. Besonders positive Einträge werden zur Werbung für die Website eingesetzt.
 
-\subsubsection*{F13: Anzeige von verfügbaren Tutoren an einem bestimmten Ort}
+
+
+\subsubsection*{F13: Registrierungs- und Anmeldefenster}
+
+Die Registrierung erfolgt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen. Das Onlineformular ist im \underline{HTML5}-standard geschrieben, um gleich Validierungen der Eingaben durchführen zu können, ohne die Informationen erst zum Server schicken zu müssen. Zus\"atzlich werden die Eingaben per Javascript \"uberpr\"uft. Wenn alle Daten eingegeben wurden, die Validierungen erfolgreich waren, klickt der Benutzer auf einen Button und schickt die Daten damit zum Server. Dort wird der Benutzername \"uberpr\"uft und falls dieser noch nicht vorhanden ist, dann werden die Daten mittels \underline{POST} zur \underline{Datenbank} geschickt, um dort gespeichert zu werden. Der Aufruf des Scripts zum Eintragen der Informationen in die Datenbank wird mittels JQuery ausgef\"uhrt. Vor dem Eintragen der Daten in die Datenbank erfolgt eine Validierung dieser Daten durch JQuery-Validate.
+\bigskip \newline
+Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Nutzers zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Session-Variablen, die angeben, dass der Benutzer angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Das Script zum Anmelden wird ebenfalls per JQuery aufgerufen.
+
+\subsubsection*{F14: Impressum}
+
+%Alex
+Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
+
+% \subsubsection*{F16: Preismodell und Zahlungsinfos}
+%
+% %Alex
+% Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist Preismodell und Zahlungsinfos über einen Link in der Navigationsleiste.
+
+\subsubsection*{F15: Auswahl der Sprache}
+
+Jeder Besucher bekommt eine \underline{Serverseitige Sessionvariable}, in der die Sprache gespeichert wird. Im Kopf einer jeden Seite wird diese Variable mit der Sprache der aktuellen Seite definiert. Diese Variable wird im weiteren Verlauf der Seite genutzt um in den entsprechenden Bereichen wie in der "`Navigation"' genutzt um die Inhalte der entsprechenden Sprache zu laden. Dies wird nur f\"ur die Elemente genutzt, die auf jeder Seite eingebunden werden. Jede Seite besitzt eine "`Dummy-Datei"' in der der entsprechende Inhalt geladen wird. Diese "`Dummy-Datei"' wird f\"ur entsprechende \"Uberpr\"ufungen und f\"ur das ausf\"uhren von Scripten benutzt.
+
+Wechselt ein Benutzer die Sprache, dann wird er mithilfe von RewriteRules in einer htaccess Datei auf die entsprechende Seite der jeweils anderen Sprache geleitet. Es befindet sich eine htaccess Datei mit entsprechenden RewriteRules in den jeweiligen Ordner f\"ur die Sprachen.  \underline{PHP} pr\"uft zur Laufzeit welche Sprache gesetzt ist und l\"adt die entsprechende Sprache f\"ur das Template.
+
+\subsubsection*{F16: Support und Kontaktdaten}
+
+%Alex
+Der Benutzer erfährt hier die Kontaktdaten des Supports, an den er sich bei Fragen und Problemfällen wenden kann. Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
+
+\subsubsection*{F17: Nachrichten}
+
+Die Nachrichten der Webseite sind für jedermann einsehbar. Diese werden von einem PHP-Skript per JSON-File vom Server übertragen und über Javascript mithilfe von AJAX angezeigt. Die Formatierung übernimmt CSS3.
+
+\subsubsection*{F18: Anzeige von verfügbaren Tutoren an einem bestimmten Ort}
 
 Die Wohnort-Tutorensuche wird mit Hilfe von JavaScript und MySQL umgesetzt. Benutzer gibt einen Ort oder ein Fach ein und die Datenbank wird nach Eintr\"agen von Tutoren mit identischem Ort oder Fach durchsucht und die Anzahl der Eintr\"age wird anschlie{\ss}end zur\"ukkgegeben.
 Suchvorschläge erhält der Nutzer unmittelbar während der Suche, sobald mehr als
@@ -150,33 +183,6 @@ Suchvorschläge erhält der Nutzer unmittelbar während der Suche, sobald mehr als
 %
 % Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben.
 
-\subsubsection*{F14: Registrierungs- und Anmeldefenster}
-
-Die Registrierung erfolgt über ein Formular, in der alle Daten, die unbedingt notwendig sind, ausgefüllt werden müssen. Das Onlineformular ist im \underline{HTML5}-standard geschrieben, um gleich Validierungen der Eingaben durchführen zu können, ohne die Informationen erst zum Server schicken zu müssen. Zus\"atzlich werden die Eingaben per Javascript \"uberpr\"uft. Wenn alle Daten eingegeben wurden, die Validierungen erfolgreich waren, klickt der Benutzer auf einen Button und schickt die Daten damit zum Server. Dort wird der Benutzername \"uberpr\"uft und falls dieser noch nicht vorhanden ist, dann werden die Daten mittels \underline{POST} zur \underline{Datenbank} geschickt, um dort gespeichert zu werden. Der Aufruf des Scripts zum Eintragen der Informationen in die Datenbank wird mittels JQuery ausgef\"uhrt. Vor dem Eintragen der Daten in die Datenbank erfolgt eine Validierung dieser Daten durch JQuery-Validate.
-\bigskip \newline
-Ist ein Nutzer registriert, so kann er sich über die Login-Maske, die auf jeder Seite eingebunden ist, anmelden. Hierfür wird eine Datenbank Abfrage mittels PHP und SQL über PDO generiert um die Identität des Nutzers zu prüfen. Bei erfolgreicher Authentifizierung der Benutzerdaten werden mehrere Session-Variablen, die angeben, dass der Benutzer angemeldet ist und um welchen Benutzer es sich handelt, initialisiert um immer entsprechende Informationen über den Benutzer zu haben. Das Script zum Anmelden wird ebenfalls per JQuery aufgerufen.
-
-\subsubsection*{F15: Impressum}
-
-%Alex
-Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
-
-% \subsubsection*{F16: Preismodell und Zahlungsinfos}
-%
-% %Alex
-% Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist Preismodell und Zahlungsinfos über einen Link in der Navigationsleiste.
-
-\subsubsection*{F16: Auswahl der Sprache}
-
-Jeder Besucher bekommt eine \underline{Serverseitige Sessionvariable}, in der die Sprache gespeichert wird. Im Kopf einer jeden Seite wird diese Variable mit der Sprache der aktuellen Seite definiert. Diese Variable wird im weiteren Verlauf der Seite genutzt um in den entsprechenden Bereichen wie in der "`Navigation"' genutzt um die Inhalte der entsprechenden Sprache zu laden. Dies wird nur f\"ur die Elemente genutzt, die auf jeder Seite eingebunden werden. Jede Seite besitzt eine "`Dummy-Datei"' in der der entsprechende Inhalt geladen wird. Diese "`Dummy-Datei"' wird f\"ur entsprechende \"Uberpr\"ufungen und f\"ur das ausf\"uhren von Scripten benutzt.
-
-Wechselt ein Benutzer die Sprache, dann wird er mithilfe von RewriteRules in einer htaccess Datei auf die entsprechende Seite der jeweils anderen Sprache geleitet. Es befindet sich eine htaccess Datei mit entsprechenden RewriteRules in den jeweiligen Ordner f\"ur die Sprachen.  \underline{PHP} pr\"uft zur Laufzeit welche Sprache gesetzt ist und l\"adt die entsprechende Sprache f\"ur das Template.
-
-\subsubsection*{F17: Support und Kontaktdaten}
-
-%Alex
-Der Benutzer erfährt hier die Kontaktdaten des Supports, an den er sich bei Fragen und Problemfällen wenden kann. Hierbei handelt es sich um statischen Inhalt für den HTML als Formatierung des Textes benutzt wird. Erreichbar ist das Impressum über einen Link in der Navigationsleiste.
-
 
 \subsection{F2: Administrator}
 \subsubsection*{F21: Anmelden}
@@ -188,44 +194,20 @@ Der Administrator kann sich über die Login-Maske, die auf jeder Seite eingebunde
 %Matthias G und Sven
 Der Admin kann durch Ausfüllen von HTML5 Formularen seine Profildaten bearbeiten. Die Eingabe des Users wird mittels HTML5 und JavaScript überprüft. Die Daten in der Datenbank werden über ein PHP Skript geändert.
 
-\subsubsection*{F23: Bearbeiten von Kundenkonten$^1$ und Kundeninformationen$^2$}
+\subsubsection*{F23: Adminverwaltung}
 
-Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht aller Kundenkonten anzeigen zu lassen. Diese Informationen werden in Form einer Tabelle auf
-einer separaten Seite angezeigt. Beim Aufruf der Seite werden alle notwendigen Informationen
-über Ajax aus der Datenbank geladen und über JSON an den Browser des Admins geliefert. Um
-bei einer grossen Datenbank die Wartezeit gering zu halten, werden die Daten nur teilweise
-aus der Datenbank geladen. So ist es beispielsweise nicht sinnvoll mehr wie 20 Datensätze
-gleichzeitig zu laden, da in der Regel nicht mehr angezeigt werden kann.
-\newline \newline
-Durch eine Tabellen-PlugIn für jQuery werden die Rohdaten übersichtlich dargestellt.
-Die Tabelle soll ausserdem die Möglichkeit bieten die Datensätze nach Spalten zu sortieren.
-\newline\newline
-Änderungen der Daten werden ebenfalls über jQuery an die Datenbank übergeben, wenn der Administrator einen "Speichern" Knopf drückt.
+Ist ein Nutzer als Administrator eingeloggt, hat dieser die Möglichkeit sich eine Übersicht aller Kundenkonten anzeigen, freischalten und über einen extra Menüpunkt auch löschen zu lassen. Diese Informationen werden in Form einer Tabelle auf einer separaten Seite angezeigt. Beim Aufruf der Seite werden alle notwendigen Informationen über ein PHP-Skript aus der Datenbank geladen und für die Darstellung im Browser vorbereitet. 
 \newline \newline
 Die Validierung der Daten wird über HTML5 und gegebenenfalls mit einer PHP-Funktion durchgeführt.
+\newline\newline
+Der Administrator kann über die Administrator-Verwaltung alle nicht autorisierten Gästebucheinträge sehen und gegebenenfalls autorisieren. Diese werden daraufhin in der Datenbank aktualisiert. Der Aufbau und Funktion dieser Tabelle entspricht im Wesentlichen dem Grundgerüst der Kundendaten.
+\newline\newline
+Der Administrator kann über die Administrator-Verwaltung alle nicht Newseinträge sehen und gegebenenfalls löschen. Diese werden daraufhin in der Datenbank aktualisiert. Der Aufbau und Funktion dieser Tabelle entspricht im Wesentlichen dem Grundgerüst der Gästebucheinträge.
 
-% \subsubsection*{F24: Zugriff auf Nachrichtensystem}
-%
-% In der Datenbank befinden sich eine grosse Tabelle in der alle Nachrichten als Rohdaten abgelegt werden.
-% Jeder Datensatz hat die Felder: Absender, Empfänger, Datum, Zeit, Nachricht, gelesen.
-% Ãœber SQL-Abfragen werden die jeweiligen Nachrichten aus der Datenbank geladen und über JSON an ein
-% jQuery-Script übergeben. Möchte ein Nutzer Beispielsweise alle gesendeten Nachrichten einsehen, wird
-% der aktuell angemeldete Nutzername in die \textit{"WHERE"}-Klausel der Datenbankabfrage eingefügt, um so nur
-% die relevanten Nachrichten abzufragen.
-% \newline \newline
-% Zum Abrufen der Nachrichten wird dem angemeldeten Nutzer eine spezielle Webseite zur Verfügung gestellt,
-% auf welcher er Nachrichten abrufen und erstellen kann. Die Anzeige wird in Form einer Tabelle über
-% ein jQuery-Plugin erstellt.
-% \newline \newline
-% Zum Versenden von Nachrichten muss ein Nutzer den Benutzernamen eines Empfängers in ein Textfeld eingeben.
-% Bevor eine Nachricht abgesendet werden kann, erfolgt eine Validierung des Benutzernamens des Empfängers.
-% Diese Validierung wird durch ein Javascript vorgenommen.
-% Für das Eingabefeld des Empfängers ist es denkbar eine Autovervollständigung über Ajax zur Verfügung zu stellen.
 
-\subsubsection*{F24: Freischaltung von Gästebucheinträge}
+\subsubsection*{F24: Nachrichten}
+Der Administrator hat die Möglichkeit auf der News-Seite neue Nachrichten zu schreiben. Dazu gibt er den Betreff und die Nachricht in ein HTML 5 Formular ein. Nach Eingabe der Daten werden diese durch JQuery Validate auf ihre Richtigkeit geprüft. Anschließend werden diese in der Datenbank gespeichert und für alle sichtbar (auch für nicht angemeldete User).
 
-%Der Administrator ruft das Gästebuch auf und sieht alle nicht autorisierten Einträge. Diese kann er autorisieren. Dann werden diese in der Datenbank aktualisiert.
-Der Administrator kann über die Administrator-Verwaltung alle nicht autorisierten Einträge sehen und gegebenenfalls autorisieren. Diese werden daraufhin in der Datenbank aktualisiert.
 
 \subsubsection*{F25: Abmelden}
 
@@ -239,12 +221,11 @@ Jeder Aufruf der Startseite wird über eine enstprechende Zählvariable, die in de
 $^1$ Kundenkonten: Tutorenkonten und Schülerkonten\\
 $^2$ Kundeninformationen: Persönliche Informationen der Kundenkonten
 
-\subsubsection*{F27: Nachrichten schreiben}
-Der Administrator hat die Möglichkeit auf der News Seite neue Nachrichten zu schreiben. Dazu gibt er den Betreff und die Nachricht in ein HTML 5 Formular ein. Nach Eingabe der Daten werden diese durch JQuery Validate auf ihre Richtigkeit geprüft. Anschließend werden diese in der Datenbank gespeichert und für alle sichtbar (auch für nicht angemeldete User). Der Admin hat außerdem die Möglichkeit per Adminverwaltung nicht mehr benötigte Nachrichten zu löschen.
 
-\subsubsection*{F28: Privater Ordner}
+\subsubsection*{F27: Privater Ordner}
 
 Der Administrator ist in der Lage \"uber das Men\"u auf den Privaten Ordner zu zugreifen. Nach Aufruf der Seite kommt eine Login-Maske, in der sich der Administrator Authentifizieren muss. Diese Authentifizierung geschieht \"uber eine .htaccess, in der die entsprechenden Optionen zum Schutz eines Verzeichnisses gesetzt sind und eine .htpasswd Datei, in der sich die Zugangsdaten befinden. Auf der Seite des Privaten Ordners hat der Admin die M\"oglichkeit das Passwort f\"ur den Ordner zu \"andern sowie neue Dateien hochzuladen oder zu l\"oschen. Diese M\"oglichkeiten werden mithilfe von HTML5 Formularen und PHP Scripten gel\"ost. Zur \"Ubersichtlichkeit werden die Bereichen zum \"andern des Passworts und zum hochladen von Dateien mittels CSS verborgen. Zum Anzeigen der Bereiche ist ein Button vorhanden, der mithilfe von Javascript die Bereiche sichtbar macht.
+
 
 \subsection{F3: Schüler}
 Jeder Besucher hat die Möglichkeit ein Profil anzulegen und sich mit den erhaltenen Zugangsdaten einzuloggen.
@@ -252,48 +233,11 @@ Dadurch erhält er Zugriff auf seinen Privaten Bereich, in dem er seine bei der R
 Die persönlichen Daten setzen sich aus Vorname, Nachname, Alter, Anschrift, Passwort und Kontaktdaten zusammen.
 Es besteht die Option seinen Account zu löschen.
 
-% \subsubsection*{F31: Detaillierte Suche}
-%
-% Die Suche wird mittels einer View realisiert. Diese View enthält alles notwendigen Informationen, die es dem User ermöglichen das gewünschte Suchergebnis zu finden,
-% \begin{itemize}
-%  \item Benutzername
-%  \item Wohnort
-%  \item Umkreis
-%  \item Stundenlohn
-%  \item Bewertung
-%  \item Fächer
-%  \item Stufen
-% \end{itemize}
-%
-% Die View wird verwendet um in den normalen Tabellen keine Redundanzen zu haben.
 
 \subsubsection*{F31: Sch\"ulerprofil}
 
 %Matthias G und Sven
 Der Schüler kann durch Ausfüllen von HTML5 Formularen seine Profildaten bearbeiten. Die Eingabe des Users wird mittels HTML5 und JavaScript überprüft. Die Daten in der Datenbank werden über ein PHP Skript geändert.
-
-
-%\subsubsection*{F32: Tutorenprofil}
-
-%Der angemeldete Benutzer ist in der Lage die Profile von anderen einzusehen.
-
-% \subsubsection*{F34: Zugriff auf Nachrichtensystem}
-%
-% In der Datenbank befinden sich eine grosse Tabelle in der alle Nachrichten als Rohdaten abgelegt werden.
-% Jeder Datensatz hat die Felder: Absender, Empfänger, Datum, Zeit, Nachricht, gelesen.
-% Ãœber SQL-Abfragen werden die jeweiligen Nachrichten aus der Datenbank geladen und über JSON an ein
-% jQuery-Script übergeben. Möchte ein Nutzer Beispielsweise alle gesendeten Nachrichten einsehen, wird
-% der aktuell angemeldete Nutzername in die \textit{"WHERE"}-Klausel der Datenbankabfrage eingefügt, um so nur
-% die relevanten Nachrichten abzufragen.
-% \newline \newline
-% Zum Abrufen der Nachrichten wird dem angemeldeten Nutzer eine spezielle Webseite zur Verfügung gestellt,
-% auf welcher er Nachrichten abrufen und erstellen kann. Die Anzeige wird in Form einer Tabelle über
-% ein jQuery-Plugin erstellt.
-% \newline \newline
-% Zum Versenden von Nachrichten muss ein Nutzer den Benutzernamen eines Empfängers in ein Textfeld eingeben.
-% Bevor eine Nachricht abgesendet werden kann, erfolgt eine Validierung des Benutzernamens des Empfängers.
-% Diese Validierung wird durch ein Javascript vorgenommen.
-% Für das Eingabefeld des Empfängers ist es denkbar eine Autovervollständigung über Ajax zur Verfügung zu stellen.
 
 \subsection{F4: Lehrer / Mentor}
 \subsubsection*{F41 Profil einstellen}
@@ -301,40 +245,6 @@ Der Schüler kann durch Ausfüllen von HTML5 Formularen seine Profildaten bearbeit
 %Matthias G und Sven
 % Weiter ausführen, mit Kursen usw
 Der Tutor kann durch Ausfüllen von HTML5 Formularen seine Profildaten bearbeiten. Die Eingabe des Users wird mittels HTML5 und JavaScript überprüft. Die Daten in der Datenbank werden über ein PHP Skript geändert.
-
-% \subsubsection*{F42 Lehrmaterialien online stellen und verteilen}
-%
-% Jeder Schüler muss sich in Online-Kurse eintragen, bei welchem Tutor er welches Fach belegt. Der Tutor kann über einen Upload-Bereich(jquery bietet diese Möglichkeit) Dateien zum Server laden, dort werden diese in der \underline{Datenbank} gespeichert.
-% Der Schüler kann sich dann die Formulare über den Browser wieder herunterladen
-%
-% \subsubsection*{F43 Beurteilungen schreiben}
-%
-% Stefan und Viet
-%
-% Der Schüler kann Feedback für seine abgegeben Aufgaben / Leistungen erhalten
-
-% \subsubsection*{F42 Schwarzes Brett}
-%
-% Das Schwarze Brett wird mit JavaScript und MySQL umgesetzt. Die Ank\"undigungen werden in die Datenbank geschrieben und k\"onnen von dort abgerufen werden.
-
-
-% \subsubsection*{F43: Zugriff auf Nachrichtensystem}
-%
-% In der Datenbank befinden sich eine grosse Tabelle in der alle Nachrichten als Rohdaten abgelegt werden.
-% Jeder Datensatz hat die Felder: Absender, Empfänger, Datum, Zeit, Nachricht, gelesen.
-% Ãœber SQL-Abfragen werden die jeweiligen Nachrichten aus der Datenbank geladen und über JSON an ein
-% jQuery-Script übergeben. Möchte ein Nutzer Beispielsweise alle gesendeten Nachrichten einsehen, wird
-% der aktuell angemeldete Nutzername in die \textit{"WHERE"}-Klausel der Datenbankabfrage eingefügt, um so nur
-% die relevanten Nachrichten abzufragen.
-% \newline \newline
-% Zum Abrufen der Nachrichten wird dem angemeldeten Nutzer eine spezielle Webseite zur Verfügung gestellt,
-% auf welcher er Nachrichten abrufen und erstellen kann. Die Anzeige wird in Form einer Tabelle über
-% ein jQuery-Plugin erstellt.
-% \newline \newline
-% Zum Versenden von Nachrichten muss ein Nutzer den Benutzernamen eines Empfängers in ein Textfeld eingeben.
-% Bevor eine Nachricht abgesendet werden kann, erfolgt eine Validierung des Benutzernamens des Empfängers.
-% Diese Validierung wird durch ein Javascript vorgenommen.
-% Für das Eingabefeld des Empfängers ist es denkbar eine Autovervollständigung über Ajax zur Verfügung zu stellen.
 
 \subsection{F5: Registrierte Benutzer}
 
@@ -402,17 +312,17 @@ Da man mit Hilfe Javascript nur einzelne *.php-Skripte ansprechen kann und nicht
 	\hline
 	Datenbank Design & 16.04.14 & 03.05.14 & Abgeschlossen & \\
 	\hline
-	Navigation und Design & 14.05.14 & 11.06.14 & In Arbeit & \\
+	Navigation und Design & 14.05.14 & 11.06.14 & Abgeschlossen & \\
 	\hline
-	Implementierung & 14.05.14 & 11.06.14 & In Arbeit & \\
+	Implementierung & 25.06.14 & 11.06.14 & Abgeschlossen & \\
 	\hline
-	Test & & 18.06.14 & Geplant & \\
+	Test & 18.06.14 & 18.06.14 & Abgeschlossen & Testbericht zugestellt \\
 	\hline
-	Update & & 25.06.14 & Geplant & \\
+	Update & 25.06.14 & 25.06.14 & Abgeschlossen & Implementierung Ende  \\
 	\hline
-	Projekt Ende & & 26.06.14 & Geplant & \\
+	Projekt Ende & 25.06.14 & 26.06.14 & Abgeschlossen &  \\
 	\hline
-	Präsentation & Ende Juni & Anfang Juli & Geplant & \\
+	Präsentation & 18.06.14 & 02.07.14 & Geplant & \\
 	\hline
 	\end{tabular}
 
