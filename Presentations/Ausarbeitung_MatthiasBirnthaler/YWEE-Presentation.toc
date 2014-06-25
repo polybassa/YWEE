@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {ngerman}
+\beamer@sectionintoc {2}{Einleitung}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{Zust\"andigkeiten}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{Implementierungen}{5}{0}{1}
+\beamer@sectionintoc {3}{SRA}{6}{0}{2}
+\beamer@subsectionintoc {3}{1}{Die Aufgabe}{7}{0}{2}
+\beamer@sectionintoc {4}{SAD}{8}{0}{3}
+\beamer@subsectionintoc {4}{1}{Aufgabe}{9}{0}{3}
+\beamer@sectionintoc {5}{Implementierung}{10}{0}{4}
+\beamer@subsectionintoc {5}{1}{Design}{11}{0}{4}
+\beamer@subsectionintoc {5}{2}{Men\IeC {\"u}}{19}{0}{4}
+\beamer@subsectionintoc {5}{3}{Responsive Webdesign}{23}{0}{4}
+\beamer@subsectionintoc {5}{4}{Testphase}{30}{0}{4}
+\beamer@subsectionintoc {5}{5}{Demonstration}{31}{0}{4}
