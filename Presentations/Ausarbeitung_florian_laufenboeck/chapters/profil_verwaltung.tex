@@ -121,7 +121,7 @@
 \defverbatim[colored]
   \makeset{
     \phpcode
-    
+
   \begin{lstlisting}[name=profile2.php]
           		include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/de/content/profile.html");   // Inkludiert static things
        	}
@@ -143,14 +143,14 @@
 \defverbatim[colored]
   \makeset{
     \phpcode
-      \begin{lstlisting}[GetProfile.php]
+      \begin{lstlisting}[name=GetProfile.php]
 <?php
     include_once($_SERVER["DOCUMENT_ROOT"] . "/test_02/scripts/ConToDB.php"); // connection to DB
     $dbConnection = ConnectToDB();
     $dbConnection->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
     $query = $dbConnection->prepare("select * from mitglieder where benutzername = '" . $fl_username . "'");
     if($query->execute())
-    {	
+    {
        $result = $query->fetchAll(PDO::FETCH_ASSOC);
        return $result;
     }
@@ -179,7 +179,7 @@
 <form name="Formular" method="post" action="/de/profile.php?value=edit&username=<?php echo $_SESSION['user'];?>">
 	<div><label for ="benutzername">Nutzername:</label><input type="text" size="45" maxlength = "45" value="<?php echo $result["benutzername"];?>" id="benutzername" name="benutzername" required readonly></div>
 	[andere Formulardaten]
-</form> 
+</form>
 
 <?php if($result["benutzername"] != $_SESSION['user']) echo '<a href="mailto:' . $result["email"] . '"><img src="/images/mail.png" alt="mail"> </a>'; ?>
 [weitere Abfragen zur Tutorinformation]

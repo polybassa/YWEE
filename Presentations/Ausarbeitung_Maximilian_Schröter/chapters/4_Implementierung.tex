@@ -48,7 +48,7 @@
 	{
     $.post("/scripts/GetLang.php", function(lang) {
         if (lang.length > 2) {  /*Wenn Englisch wird dieser Teil genutzt*/
-            
+
 
       \end{lstlisting}
 }
@@ -228,7 +228,7 @@
 					submitHandler: function(form) {
                     $.post("/scripts/CreateUser.php", $("#registerform").serialize(), /*Daten an PHP Script uebergeben*/
                             function(msg) {
-                                /* msg ist leer, außer fehlgeschlag, dann wird der Fehler ausgegeben */
+                                /* msg ist leer, ausser fehlgeschlag, dann wird der Fehler ausgegeben */
                                 if (msg.length > 2) {
                                     alert(msg.toString());
                                 }

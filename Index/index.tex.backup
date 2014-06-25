@@ -29,45 +29,25 @@
 
 \begin{document}
 
-
-
 \section*{Index}
 
-Pfade ausgehend vom Hauptverzeichnis.
+\begin{itemize}
+ \item [] 01\_GR02\_Protokolle/ (Ordner mit allen Protokollen)
+ \item [] 01\_GR02\_Admin\_Seiten\_Dokumentation.pdf
+ \item [] 01\_GR02\_DB\_Recovery.sql
+ \item [] 01\_GR02\_Enthaltene\_Dateien.pdf
+ \item [] 01\_GR02\_Erfahrungsbericht\_org.pdf
+ \item [] 01\_GR02\_Implemented\_Features.pdf
+ \item [] 01\_GR02\_Logins.txt
+ \item [] 01\_GR02\_Read\_me.txt
+ \item [] 01\_GR02\_Seiten\_Dokumentation.pdf
+ \item [] 02\_GR02\_SAD\_Dokument\_V1.2\_FINAL.pdf
+ \item [] 04\_GR02\_SRA\_Dokument\_V1.4\_FINAL.pdf
 
-\begin{table}[!htbp]
- \centering
- \begin{tabular}{p{9cm}|p{6.5cm}}
-  Was & Wo \\
-  \hline
-  ER-Diagramm & /DB/  \\
-  SQL-Script für die DB & /DB/ \\
-  MySQL Workbench DB File & /DB/  \\
-  SRA / SAD & /Documents/  \\
-  Liste implementierter Features & /Feature-List/  \\
-  Index aller Dateien & /Index/ und /  \\
-  Protokolle & /Protokolle/  \\
-  Read-me.txt & /  \\
-  Git Readme (leer) & /  \\
-  Projektarbeit & /Site/ \\
- \end{tabular}
-\end{table}
 
-\section*{Projektarbeit}
+ \item [] 01\_GR02\_PTS\_Presentation\_Final.pdf
+ \item [] 01\_GR02\_source\_code.zip
 
-Pfade ausgehend von /Site/.
-
-\begin{table}[!htbp]
- \centering
- \begin{tabular}{p{9cm}|p{6.5cm}}
-  Was & Wo \\
-  \hline
-  Deutsche Seiten & /de/  \\
-  Englische Seiten & /en/ \\
-  HTML5 Boilerplate Dokumentation & /doc/ \\
-  Bilder, Logos und Videos & /images/ \\
-
- \end{tabular}
-\end{table}
+\end{itemize}
 
 \end{document}
