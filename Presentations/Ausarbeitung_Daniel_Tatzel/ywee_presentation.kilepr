@@ -53,10 +53,10 @@ Mode=LaTeX
 
 [item:YWEE-presentation.tex]
 archive=true
-column=33
+column=18
 encoding=UTF-8
 highlight=LaTeX
-line=122
+line=54
 mode=LaTeX
 open=false
 order=0
@@ -112,10 +112,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:YWEE-presentation.tex]
-CursorColumn=33
-CursorLine=122
+CursorColumn=18
+CursorLine=54
 JumpList=
-ViMarks=.,122,0,[,122,0,],122,0
+ViMarks=.,24,45,[,24,45,],24,45
 
 [view-settings,view=0,item:chapters/1_Einleitung.tex]
 CursorColumn=32
